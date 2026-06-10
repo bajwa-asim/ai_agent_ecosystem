@@ -17,40 +17,9 @@
       rel="stylesheet"
     />
     <style id="cn-embedded-theme">
-      /**
- * Cognitive Nexus — theme & components only.
- * Bootstrap 4.6 utility/class names are not used as selectors here.
- */
-      :root {
-        --cn-background: #131313;
-        --cn-surface: #131313;
-        --cn-surface-low: #1c1b1b;
-        --cn-surface-high: #2a2a2a;
-        --cn-surface-lowest: #0e0e0e;
-        --cn-surface-bright: #393939;
-        --cn-primary: #f2ca50;
-        --cn-on-primary: #3c2f00;
-        --cn-on-primary-fixed: #241a00;
-        --cn-on-background: #e5e2e1;
-        --cn-on-surface: #e5e2e1;
-        --cn-on-surface-variant: #d0c5af;
-        --cn-outline: #99907c;
-        --cn-outline-variant: #4d4635;
-        --cn-error: #ffb4ab;
-        --cn-tertiary: #e7c9a6;
-        --cn-primary-fixed-dim: #e9c349;
-        --cn-container: 1280px;
-        --cn-gutter: 24px;
-        --cn-margin-desktop: 40px;
-        --cn-margin-mobile: 16px;
-        --cn-base: 8px;
-        --cn-radius-lg: 0.5rem;
-        --cn-radius-xl: 0.75rem;
-      }
-
       html.cn-theme,
       html.cn-theme body {
-        background: var(--cn-background);
+        background: #131313;
       }
 
       html.cn-theme body {
@@ -61,29 +30,29 @@
           BlinkMacSystemFont,
           "Segoe UI",
           sans-serif;
-        background-color: var(--cn-background) !important;
-        color: var(--cn-on-background) !important;
+        background-color: #131313 !important;
+        color: #e5e2e1 !important;
         -webkit-font-smoothing: antialiased;
       }
 
       html.cn-theme body::selection {
-        background: var(--cn-primary);
-        color: var(--cn-on-primary);
+        background: #f2ca50;
+        color: #3c2f00;
       }
 
       .cn-layout-max {
         width: 100%;
-        max-width: var(--cn-container);
+        max-width: 1280px;
         margin-left: auto;
         margin-right: auto;
-        padding-left: var(--cn-margin-desktop);
-        padding-right: var(--cn-margin-desktop);
+        padding-left: 40px;
+        padding-right: 40px;
       }
 
       @media (max-width: 767.98px) {
         .cn-layout-max {
-          padding-left: var(--cn-margin-mobile);
-          padding-right: var(--cn-margin-mobile);
+          padding-left: 16px;
+          padding-right: 16px;
         }
       }
 
@@ -198,27 +167,27 @@
       }
 
       .cn-text-gold {
-        color: var(--cn-primary) !important;
+        color: #f2ca50 !important;
       }
 
       .cn-text-on-primary {
-        color: var(--cn-on-primary) !important;
+        color: #3c2f00 !important;
       }
 
       .cn-text-on-primary-fixed {
-        color: var(--cn-on-primary-fixed) !important;
+        color: #241a00 !important;
       }
 
       .cn-text-on-background {
-        color: var(--cn-on-background) !important;
+        color: #e5e2e1 !important;
       }
 
       .cn-text-on-surface {
-        color: var(--cn-on-surface) !important;
+        color: #e5e2e1 !important;
       }
 
       .cn-text-muted {
-        color: var(--cn-on-surface-variant) !important;
+        color: #d0c5af !important;
       }
 
       .cn-text-muted-soft {
@@ -230,7 +199,7 @@
       }
 
       .cn-text-error {
-        color: var(--cn-error) !important;
+        color: #ffb4ab !important;
       }
 
       .cn-text-gold-soft {
@@ -241,7 +210,7 @@
       .cn-brand {
         font-family: "Hanken Grotesk", system-ui, sans-serif;
         font-weight: 700;
-        color: var(--cn-primary) !important;
+        color: #f2ca50 !important;
         letter-spacing: -0.025em;
         font-size: 20px;
         line-height: 28px;
@@ -261,7 +230,7 @@
         line-height: 40px;
         letter-spacing: -0.02em;
         font-weight: 700;
-        color: var(--cn-primary) !important;
+        color: #f2ca50 !important;
         filter: drop-shadow(0 1px 1px rgba(0, 0, 0, 0.25));
         margin-bottom: 1.5rem;
       }
@@ -279,7 +248,7 @@
         line-height: 56px;
         letter-spacing: -0.02em;
         font-weight: 700;
-        color: var(--cn-primary) !important;
+        color: #f2ca50 !important;
         margin-bottom: 1.5rem;
       }
 
@@ -291,7 +260,7 @@
         font-size: 24px;
         line-height: 32px;
         font-weight: 600;
-        color: var(--cn-primary) !important;
+        color: #f2ca50 !important;
         margin-bottom: 1.5rem;
         font-style: italic;
       }
@@ -300,7 +269,7 @@
         font-size: 20px;
         line-height: 28px;
         font-weight: 600;
-        color: var(--cn-primary) !important;
+        color: #f2ca50 !important;
         margin-bottom: 0.5rem;
       }
 
@@ -308,7 +277,7 @@
         font-size: 24px;
         line-height: 32px;
         font-weight: 600;
-        color: var(--cn-primary) !important;
+        color: #f2ca50 !important;
         margin-bottom: 0.5rem;
       }
 
@@ -316,7 +285,7 @@
         font-size: 18px;
         line-height: 1.625;
         font-weight: 400;
-        color: var(--cn-on-surface-variant) !important;
+        color: #d0c5af !important;
       }
 
       .cn-prose-lead.cn-prose-lead--hero {
@@ -335,7 +304,7 @@
         font-size: 20px;
         line-height: 28px;
         font-weight: 600;
-        color: var(--cn-primary) !important;
+        color: #f2ca50 !important;
       }
 
       .cn-heading.cn-heading-plain {
@@ -347,33 +316,33 @@
         font-size: 24px;
         line-height: 32px;
         font-weight: 600;
-        color: var(--cn-primary) !important;
+        color: #f2ca50 !important;
         margin-bottom: 1.5rem;
       }
 
       /* Surfaces */
       .cn-bg-page {
-        background-color: var(--cn-background) !important;
+        background-color: #131313 !important;
       }
 
       .cn-bg-surface {
-        background-color: var(--cn-surface) !important;
+        background-color: #131313 !important;
       }
 
       .cn-bg-surface-low {
-        background-color: var(--cn-surface-low) !important;
+        background-color: #1c1b1b !important;
       }
 
       .cn-bg-surface-high {
-        background-color: var(--cn-surface-high) !important;
+        background-color: #2a2a2a !important;
       }
 
       .cn-bg-surface-darkest {
-        background-color: var(--cn-surface-lowest) !important;
+        background-color: #0e0e0e !important;
       }
 
       .cn-bg-primary {
-        background-color: var(--cn-primary) !important;
+        background-color: #f2ca50 !important;
       }
 
       .cn-bg-modal-overlay {
@@ -433,7 +402,7 @@
       }
 
       .cn-border-gold-solid {
-        border: 2px solid var(--cn-primary);
+        border: 2px solid #f2ca50;
       }
 
       .cn-border-avatar {
@@ -441,36 +410,18 @@
       }
 
       .cn-radius-lg {
-        border-radius: var(--cn-radius-lg) !important;
+        border-radius: 0.5rem !important;
       }
 
       .cn-radius-xl {
-        border-radius: var(--cn-radius-xl) !important;
+        border-radius: 0.75rem !important;
       }
 
       .cn-radius-pill {
         border-radius: 9999px;
       }
 
-      /* Spacing */
-      .cn-pad-y-tight {
-        padding-top: var(--cn-base);
-        padding-bottom: var(--cn-base);
-      }
-
-      .cn-pad-y-gutter {
-        padding-top: var(--cn-gutter);
-        padding-bottom: var(--cn-gutter);
-      }
-
-      .cn-pad-gutter {
-        padding: var(--cn-gutter);
-      }
-
-      .cn-pad-x-gutter {
-        padding-left: var(--cn-gutter);
-        padding-right: var(--cn-gutter);
-      }
+      /* Spacing — gutter/tight vertical padding use Bootstrap py-2 / py-4 / px-4 / p-4 / mb-2 / mb-4 */
 
       .cn-pad-y-sm {
         padding-top: 0.4rem;
@@ -525,14 +476,6 @@
       .cn-pad-hero {
         padding-top: 6rem;
         padding-bottom: 6rem;
-      }
-
-      .cn-margin-below-xs {
-        margin-bottom: var(--cn-base);
-      }
-
-      .cn-margin-below-gutter {
-        margin-bottom: var(--cn-gutter);
       }
 
       .cn-margin-below {
@@ -608,25 +551,25 @@
         position: sticky;
         top: 0;
         z-index: 50;
-        background-color: var(--cn-surface);
+        background-color: #131313;
         border-bottom: 1px solid rgba(77, 70, 53, 0.2);
       }
 
       .cn-nav-link {
-        color: var(--cn-on-surface-variant);
+        color: #d0c5af;
         font-weight: 500;
         text-decoration: none !important;
         transition: color 0.3s ease;
       }
 
       .cn-nav-link:hover {
-        color: var(--cn-primary-fixed-dim);
+        color: #e9c349;
       }
 
       .cn-nav-link-active {
-        color: var(--cn-primary) !important;
+        color: #f2ca50 !important;
         font-weight: 700;
-        border-bottom: 2px solid var(--cn-primary);
+        border-bottom: 2px solid #f2ca50;
         padding-bottom: 0.25rem;
       }
 
@@ -637,19 +580,19 @@
       }
 
       .cn-nav-row > a + a {
-        margin-left: var(--cn-gutter);
+        margin-left: 24px;
       }
 
       /* Tailwind parity: gap-base / sm:gap-gutter — flex gap is not cleared by button { margin: 0 } */
       .cn-hero-buttons {
-        gap: var(--cn-base);
+        gap: 8px;
       }
 
       @media (min-width: 576px) {
         .cn-hero-buttons {
           flex-direction: row !important;
           justify-content: center;
-          gap: var(--cn-gutter);
+          gap: 24px;
         }
       }
 
@@ -677,15 +620,15 @@
       }
 
       .cn-btn-primary {
-        background-color: var(--cn-primary);
-        color: var(--cn-on-primary) !important;
+        background-color: #f2ca50;
+        color: #3c2f00 !important;
         font-weight: 700;
-        border-radius: var(--cn-radius-lg);
+        border-radius: 0.5rem;
       }
 
       .cn-btn-primary:hover {
         filter: brightness(1.1);
-        color: var(--cn-on-primary) !important;
+        color: #3c2f00 !important;
         text-decoration: none;
       }
 
@@ -712,22 +655,22 @@
       }
 
       .cn-btn-outline {
-        background-color: var(--cn-surface-high);
-        color: var(--cn-primary) !important;
+        background-color: #2a2a2a;
+        color: #f2ca50 !important;
         border: 1px solid rgba(242, 202, 80, 0.4);
         font-weight: 700;
-        border-radius: var(--cn-radius-lg);
+        border-radius: 0.5rem;
       }
 
       .cn-btn-outline:hover {
         background-color: rgba(242, 202, 80, 0.05);
-        color: var(--cn-primary) !important;
+        color: #f2ca50 !important;
         text-decoration: none;
       }
 
       .cn-btn-outline.cn-btn-outline-fill-hover:hover {
-        background-color: var(--cn-primary);
-        color: var(--cn-on-primary) !important;
+        background-color: #f2ca50;
+        color: #3c2f00 !important;
       }
 
       .cn-btn-outline:active {
@@ -754,10 +697,10 @@
 
       /* Cards */
       .cn-card-agent {
-        background-color: var(--cn-surface-low);
+        background-color: #1c1b1b;
         border: 2px solid rgba(242, 202, 80, 0.4);
-        border-radius: var(--cn-radius-xl);
-        padding: var(--cn-gutter);
+        border-radius: 0.75rem;
+        padding: 24px;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
@@ -768,13 +711,13 @@
       }
 
       .cn-card-agent:hover {
-        border-color: var(--cn-primary);
+        border-color: #f2ca50;
       }
 
       .cn-pricing-card {
-        background-color: var(--cn-surface-low);
-        border-radius: var(--cn-radius-xl);
-        padding: var(--cn-gutter);
+        background-color: #1c1b1b;
+        border-radius: 0.75rem;
+        padding: 24px;
         display: flex;
         flex-direction: column;
         height: 100%;
@@ -785,7 +728,7 @@
       }
 
       .cn-pricing-featured {
-        border: 2px solid var(--cn-primary);
+        border: 2px solid #f2ca50;
         position: relative;
         z-index: 10;
         transform: scale(1.05);
@@ -799,8 +742,8 @@
         top: -1rem;
         left: 50%;
         transform: translateX(-50%);
-        background: var(--cn-primary);
-        color: var(--cn-on-primary);
+        background: #f2ca50;
+        color: #3c2f00;
         padding: 0.25rem 1rem;
         border-radius: 9999px;
         font-size: 12px;
@@ -827,7 +770,7 @@
         align-items: flex-start;
         gap: 0.5rem;
         margin-bottom: 1rem;
-        color: var(--cn-on-surface-variant);
+        color: #d0c5af;
       }
 
       .cn-checklist li:last-child {
@@ -839,7 +782,7 @@
         display: flex;
         align-items: center;
         gap: 0.75rem;
-        color: var(--cn-on-surface-variant);
+        color: #d0c5af;
         font-size: 18px;
         line-height: 22px;
         font-weight: 400;
@@ -858,15 +801,15 @@
 
       /* Comparison table */
       .cn-compare-shell {
-        background-color: var(--cn-surface-low);
+        background-color: #1c1b1b;
         border: 1px solid rgba(77, 70, 53, 0.2);
-        border-radius: var(--cn-radius-xl);
+        border-radius: 0.75rem;
         overflow: hidden;
         box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.45);
       }
 
       .cn-compare-head {
-        background-color: var(--cn-surface-high);
+        background-color: #2a2a2a;
         border-bottom: 1px solid rgba(77, 70, 53, 0.3);
         padding: 1.5rem 2rem;
       }
@@ -886,14 +829,14 @@
       }
 
       .cn-compare-foot {
-        background-color: var(--cn-surface-high);
+        background-color: #2a2a2a;
         padding: 2rem;
         border-top: 1px solid rgba(242, 202, 80, 0.2);
       }
 
       /* Media frame */
       .cn-media-frame {
-        border-radius: var(--cn-radius-xl);
+        border-radius: 0.75rem;
         overflow: hidden;
         border: 1px solid rgba(242, 202, 80, 0.2);
         box-shadow: 0 25px 50px -12px rgba(242, 202, 80, 0.1);
@@ -915,7 +858,7 @@
         width: 100%;
         background: none;
         border: 0;
-        padding: var(--cn-gutter) 0;
+        padding: 24px 0;
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -938,7 +881,7 @@
       }
 
       .cn-faq-answer {
-        padding-bottom: var(--cn-gutter);
+        padding-bottom: 24px;
         color: rgba(208, 197, 175, 0.8);
       }
 
@@ -947,15 +890,15 @@
         position: fixed;
         inset: 0;
         z-index: 100;
-        padding: var(--cn-margin-mobile);
+        padding: 16px;
       }
 
       .cn-modal-panel {
         position: relative;
-        background-color: var(--cn-surface-lowest);
+        background-color: #0e0e0e;
         border: 2px solid rgba(242, 202, 80, 0.3);
-        border-radius: var(--cn-radius-xl);
-        padding: var(--cn-gutter);
+        border-radius: 0.75rem;
+        padding: 24px;
         width: 100%;
         max-width: 42rem;
         margin: auto;
@@ -969,18 +912,18 @@
         background: none;
         border: 0;
         padding: 0;
-        color: var(--cn-on-surface-variant);
+        color: #d0c5af;
         cursor: pointer;
         line-height: 1;
       }
 
       .cn-modal-close:hover {
-        color: var(--cn-primary);
+        color: #f2ca50;
       }
 
       /* Footer links */
       .cn-footer-link {
-        color: var(--cn-on-surface-variant);
+        color: #d0c5af;
         text-decoration: none !important;
         font-size: 12px;
         line-height: 16px;
@@ -990,18 +933,18 @@
       }
 
       .cn-footer-link:hover {
-        color: var(--cn-tertiary);
+        color: #e7c9a6;
       }
 
       /* Row gutter to match 24px card gaps */
       .cn-row-tight {
-        margin-left: calc(var(--cn-gutter) / -2);
-        margin-right: calc(var(--cn-gutter) / -2);
+        margin-left: calc(24px / -2);
+        margin-right: calc(24px / -2);
       }
 
       .cn-row-tight > div {
-        padding-left: calc(var(--cn-gutter) / 2);
-        padding-right: calc(var(--cn-gutter) / 2);
+        padding-left: calc(24px / 2);
+        padding-right: calc(24px / 2);
       }
 
       .cn-text-shadow-title {
@@ -1068,8 +1011,8 @@
         width: 100%;
         padding-top: 0.75rem;
         padding-bottom: 0.75rem;
-        border-radius: var(--cn-radius-lg) !important;
-        color: var(--cn-on-primary-fixed) !important;
+        border-radius: 0.5rem !important;
+        color: #241a00 !important;
         font-size: 14px;
         line-height: 20px;
         letter-spacing: 0.01em;
@@ -1081,7 +1024,7 @@
   <body>
     <header class="cn-site-header">
       <div
-        class="cn-layout-max d-flex justify-content-between align-items-center cn-pad-y-tight"
+        class="cn-layout-max d-flex justify-content-between align-items-center py-2"
       >
         <div class="cn-brand">Cognitive Nexus</div>
         <nav class="cn-nav-row d-none d-md-flex">
@@ -1095,7 +1038,7 @@
         <div class="d-flex align-items-center">
           <button
             type="button"
-            class="cn-btn cn-btn-primary cn-text-label cn-pad-x-gutter cn-pad-y-sm mr-2"
+            class="cn-btn cn-btn-primary cn-text-label px-4 cn-pad-y-sm mr-2"
           >
             Executive Portal
           </button>
@@ -1165,7 +1108,7 @@
           <div class="col-12 col-md-6 col-lg-3 mb-4">
             <div class="cn-card-agent cn-surface-sheen">
               <div>
-                <div class="cn-margin-below-xs">
+                <div class="mb-2">
                   <span class="cn-icon cn-icon-lg cn-icon-gold"
                     >support_agent</span
                   >
@@ -1184,7 +1127,7 @@
           <div class="col-12 col-md-6 col-lg-3 mb-4">
             <div class="cn-card-agent cn-surface-sheen">
               <div>
-                <div class="cn-margin-below-xs">
+                <div class="mb-2">
                   <span class="cn-icon cn-icon-lg cn-icon-gold"
                     >calendar_month</span
                   >
@@ -1203,7 +1146,7 @@
           <div class="col-12 col-md-6 col-lg-3 mb-4">
             <div class="cn-card-agent cn-surface-sheen">
               <div>
-                <div class="cn-margin-below-xs">
+                <div class="mb-2">
                   <span class="cn-icon cn-icon-lg cn-icon-gold">bolt</span>
                 </div>
                 <h3 class="cn-heading">AI Instant Speed To Lead</h3>
@@ -1220,7 +1163,7 @@
           <div class="col-12 col-md-6 col-lg-3 mb-4">
             <div class="cn-card-agent cn-surface-sheen">
               <div>
-                <div class="cn-margin-below-xs">
+                <div class="mb-2">
                   <span class="cn-icon cn-icon-lg cn-icon-gold"
                     >verified_user</span
                   >
@@ -1239,7 +1182,7 @@
           <div class="col-12 col-md-6 col-lg-3 mb-4">
             <div class="cn-card-agent cn-surface-sheen">
               <div>
-                <div class="cn-margin-below-xs">
+                <div class="mb-2">
                   <span class="cn-icon cn-icon-lg cn-icon-gold">call</span>
                 </div>
                 <h3 class="cn-heading">AI Cold Caller</h3>
@@ -1256,7 +1199,7 @@
           <div class="col-12 col-md-6 col-lg-3 mb-4">
             <div class="cn-card-agent cn-surface-sheen">
               <div>
-                <div class="cn-margin-below-xs">
+                <div class="mb-2">
                   <span class="cn-icon cn-icon-lg cn-icon-gold">database</span>
                 </div>
                 <h3 class="cn-heading">AI Database Reactivation</h3>
@@ -1273,7 +1216,7 @@
           <div class="col-12 col-md-6 col-lg-3 mb-4">
             <div class="cn-card-agent cn-surface-sheen">
               <div>
-                <div class="cn-margin-below-xs">
+                <div class="mb-2">
                   <span class="cn-icon cn-icon-lg cn-icon-gold"
                     >restaurant</span
                   >
@@ -1292,7 +1235,7 @@
           <div class="col-12 col-md-6 col-lg-3 mb-4">
             <div class="cn-card-agent cn-surface-sheen">
               <div>
-                <div class="cn-margin-below-xs">
+                <div class="mb-2">
                   <span class="cn-icon cn-icon-lg cn-icon-gold">chat</span>
                 </div>
                 <h3 class="cn-heading">AI 24/7 Website Chat</h3>
@@ -1309,7 +1252,7 @@
           <div class="col-12 col-md-6 col-lg-3 mb-4">
             <div class="cn-card-agent cn-surface-sheen">
               <div>
-                <div class="cn-margin-below-xs">
+                <div class="mb-2">
                   <span class="cn-icon cn-icon-lg cn-icon-gold">sms</span>
                 </div>
                 <h3 class="cn-heading">AI 2 Way SMS Texting</h3>
@@ -1325,7 +1268,7 @@
           <div class="col-12 col-md-6 col-lg-3 mb-4">
             <div class="cn-card-agent cn-surface-sheen">
               <div>
-                <div class="cn-margin-below-xs">
+                <div class="mb-2">
                   <span class="cn-icon cn-icon-lg cn-icon-gold">mail</span>
                 </div>
                 <h3 class="cn-heading">AI 2 Way Emails</h3>
@@ -1341,7 +1284,7 @@
           <div class="col-12 col-md-6 col-lg-3 mb-4">
             <div class="cn-card-agent cn-surface-sheen">
               <div>
-                <div class="cn-margin-below-xs">
+                <div class="mb-2">
                   <span class="cn-icon cn-icon-lg cn-icon-gold">public</span>
                 </div>
                 <h3 class="cn-heading">AI 2 Way Facebook</h3>
@@ -1357,7 +1300,7 @@
           <div class="col-12 col-md-6 col-lg-3 mb-4">
             <div class="cn-card-agent cn-surface-sheen">
               <div>
-                <div class="cn-margin-below-xs">
+                <div class="mb-2">
                   <span class="cn-icon cn-icon-lg cn-icon-gold"
                     >photo_camera</span
                   >
@@ -1375,7 +1318,7 @@
           <div class="col-12 col-md-6 col-lg-3 mb-4">
             <div class="cn-card-agent cn-surface-sheen">
               <div>
-                <div class="cn-margin-below-xs">
+                <div class="mb-2">
                   <span class="cn-icon cn-icon-lg cn-icon-gold"
                     >chat_bubble</span
                   >
@@ -1393,7 +1336,7 @@
           <div class="col-12 col-md-6 col-lg-3 mb-4">
             <div class="cn-card-agent cn-surface-sheen">
               <div>
-                <div class="cn-margin-below-xs">
+                <div class="mb-2">
                   <span class="cn-icon cn-icon-lg cn-icon-gold"
                     >phone_missed</span
                   >
@@ -1412,7 +1355,7 @@
           <div class="col-12 col-md-6 col-lg-3 mb-4">
             <div class="cn-card-agent cn-surface-sheen">
               <div>
-                <div class="cn-margin-below-xs">
+                <div class="mb-2">
                   <span class="cn-icon cn-icon-lg cn-icon-gold">search</span>
                 </div>
                 <h3 class="cn-heading">AI Seo Report</h3>
@@ -1429,7 +1372,7 @@
           <div class="col-12 col-md-6 col-lg-3 mb-4">
             <div class="cn-card-agent cn-surface-sheen">
               <div>
-                <div class="cn-margin-below-xs">
+                <div class="mb-2">
                   <span class="cn-icon cn-icon-lg cn-icon-gold"
                     >video_library</span
                   >
@@ -1448,7 +1391,7 @@
           <div class="col-12 col-md-6 col-lg-3 mb-4">
             <div class="cn-card-agent cn-surface-sheen">
               <div>
-                <div class="cn-margin-below-xs">
+                <div class="mb-2">
                   <span class="cn-icon cn-icon-lg cn-icon-gold">web</span>
                 </div>
                 <h3 class="cn-heading">AI 60-Second Website Builder</h3>
@@ -1466,7 +1409,7 @@
           <div class="col-12 col-md-6 col-lg-3 mb-4">
             <div class="cn-card-agent cn-surface-sheen">
               <div>
-                <div class="cn-margin-below-xs">
+                <div class="mb-2">
                   <span class="cn-icon cn-icon-lg cn-icon-gold">share</span>
                 </div>
                 <h3 class="cn-heading">AI Social Media Posts</h3>
@@ -1483,7 +1426,7 @@
           <div class="col-12 col-md-6 col-lg-3 mb-4">
             <div class="cn-card-agent cn-surface-sheen">
               <div>
-                <div class="cn-margin-below-xs">
+                <div class="mb-2">
                   <span class="cn-icon cn-icon-lg cn-icon-gold">star</span>
                 </div>
                 <h3 class="cn-heading">Ai Reviews</h3>
@@ -1500,7 +1443,7 @@
           <div class="col-12 col-md-6 col-lg-3 mb-4">
             <div class="cn-card-agent cn-surface-sheen">
               <div>
-                <div class="cn-margin-below-xs">
+                <div class="mb-2">
                   <span class="cn-icon cn-icon-lg cn-icon-gold">schedule</span>
                 </div>
                 <h3 class="cn-heading">AI Social Media Scheduling</h3>
@@ -1516,7 +1459,7 @@
 
       <section class="cn-layout-max">
         <div class="cn-pad-section cn-bg-surface-darkest cn-border-y-soft">
-          <div class="mx-auto text-center cn-measure-wide cn-pad-x-gutter">
+          <div class="mx-auto text-center cn-measure-wide px-4">
             <h2 class="cn-quote-title">
               Empower your operations with the world's most advanced AI fleet.
             </h2>
@@ -1545,7 +1488,7 @@
           </div>
           <button
             type="button"
-            class="cn-btn cn-btn-outline cn-btn-outline-fill-hover cn-text-label cn-pad-x-gutter cn-pad-y-sm d-inline-flex align-items-center"
+            class="cn-btn cn-btn-outline cn-btn-outline-fill-hover cn-text-label px-4 cn-pad-y-sm d-inline-flex align-items-center"
             id="open-modules-modal"
           >
             <span class="cn-icon cn-text-gold mr-2">info</span>View Module
@@ -2437,7 +2380,7 @@
 
     <footer class="cn-bg-surface-darkest cn-border-footer-top">
       <div
-        class="cn-layout-max d-flex flex-column flex-md-row justify-content-between align-items-center cn-pad-y-gutter"
+        class="cn-layout-max d-flex flex-column flex-md-row justify-content-between align-items-center py-4"
       >
         <div
           class="d-flex flex-column align-items-center align-items-md-start mb-3 mb-md-0"
@@ -2481,7 +2424,7 @@
             <span class="cn-icon cn-icon-xl cn-icon-gold">apps</span>
           </div>
           <h2 class="cn-modal-title">Comprehensive Module Suite</h2>
-          <p class="cn-prose-lead cn-margin-below-gutter">
+          <p class="cn-prose-lead mb-4">
             Our platform includes 40+ specialized software modules designed to
             handle everything from CRM and sales funnels to automated payroll
             and restaurant management. Each module is fully integrated into the
@@ -2489,7 +2432,7 @@
           </p>
           <button
             type="button"
-            class="cn-btn cn-btn-primary w-100 cn-pad-gutter cn-radius-lg cn-text-heading-sm cn-btn-glow-sm"
+            class="cn-btn cn-btn-primary w-100 p-4 cn-radius-lg cn-text-heading-sm cn-btn-glow-sm"
           >
             Start Your 14-Day Free Trial
           </button>
