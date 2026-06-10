@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 
-<html class="dark" lang="en"><head>
+<html class="dark scroll-smooth" lang="en"><head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
@@ -120,10 +120,10 @@
                 Cognitive Nexus
             </div>
 <nav class="hidden md:flex gap-gutter items-center">
-<a class="text-primary font-bold border-b-2 border-primary pb-1 font-label-md text-label-md transition-colors duration-300" href="#">Agents</a>
-<a class="text-on-surface-variant font-medium font-label-md text-label-md hover:text-primary-fixed-dim transition-colors duration-300" href="#">Strategy</a>
-<a class="text-on-surface-variant font-medium font-label-md text-label-md hover:text-primary-fixed-dim transition-colors duration-300" href="#">Operations</a>
-<a class="text-on-surface-variant font-medium font-label-md text-label-md hover:text-primary-fixed-dim transition-colors duration-300" href="#">Intelligence</a>
+<a class="text-on-surface-variant font-medium font-label-md text-label-md hover:text-primary-fixed-dim transition-colors duration-300" href="#ai-agents">AI Agents</a>
+<a class="text-on-surface-variant font-medium font-label-md text-label-md hover:text-primary-fixed-dim transition-colors duration-300" href="#ai-tools">AI Tools</a>
+<a class="text-on-surface-variant font-medium font-label-md text-label-md hover:text-primary-fixed-dim transition-colors duration-300" href="#pricing">Pricing</a>
+<a class="text-on-surface-variant font-medium font-label-md text-label-md hover:text-primary-fixed-dim transition-colors duration-300" href="#faq">FAQ</a>
 </nav>
 <div class="flex items-center gap-base">
 <button class="bg-primary text-on-primary px-gutter py-2 rounded-lg font-label-md text-label-md font-bold cursor-pointer active:opacity-80 transition-all">
@@ -135,7 +135,7 @@
 </header>
 <main class="max-w-container-max mx-auto px-margin-desktop py-16">
 <!-- Hero Section -->
-<section class="mb-16 text-center max-w-3xl mx-auto">
+<section id="ai-agents" class="mb-16 text-center max-w-3xl mx-auto scroll-mt-28">
 <h1 class="font-display-lg text-display-lg mb-6 text-primary">Our AI Agents &amp; Tools</h1>
 <p class="font-body-lg text-body-lg text-on-surface-variant leading-relaxed">
                 Deploy high-performance cognitive agents designed for the modern enterprise. Our suite of specialized tools leverages advanced neural architectures to automate complex strategic and operational workflows with absolute precision.
@@ -255,7 +255,7 @@
 <button class="w-full bg-primary text-on-primary-fixed font-label-md text-label-md font-bold py-3 rounded hover:brightness-110 active:scale-95 transition-all">Learn More</button>
 </div>
 <!-- Card 11: Omni Vision -->
-<div class="bg-surface-container-low border-2 border-primary/40 p-gutter rounded-xl flex flex-col justify-between hover:border-primary transition-all duration-300 card-inner-glow group">
+<div id="ai-tools" class="bg-surface-container-low border-2 border-primary/40 p-gutter rounded-xl flex flex-col justify-between hover:border-primary transition-all duration-300 card-inner-glow group scroll-mt-28">
 <div>
 <div class="mb-base">
 <span class="material-symbols-outlined text-4xl brushed-gold-icon" data-icon="visibility">visibility</span>
@@ -365,7 +365,7 @@
 <button class="w-full bg-primary text-on-primary-fixed font-label-md text-label-md font-bold py-3 rounded hover:brightness-110 active:scale-95 transition-all">Learn More</button>
 </div>
 </div><!-- Free Trial Section -->
-<section class="mt-24 py-16 px-gutter bg-surface-container-low rounded-xl border border-primary/20 text-center max-w-container-max mx-auto card-inner-glow">
+<section id="pricing" class="mt-24 py-16 px-gutter bg-surface-container-low rounded-xl border border-primary/20 text-center max-w-container-max mx-auto card-inner-glow scroll-mt-28">
 <h2 class="font-display-lg text-display-lg text-primary mb-6">Ready to Transform Your Enterprise?</h2>
 <p class="font-body-lg text-body-lg text-on-surface-variant max-w-3xl mx-auto mb-gutter leading-relaxed">
     Start your 14-day free trial today. No credit card required. Full access to all AI agents and core modules.
@@ -375,7 +375,7 @@
   </button>
 </section>
 <!-- Software Modules Section -->
-<section class="mt-24">
+<section id="faq" class="mt-24 scroll-mt-28">
 <h2 class="font-display-lg text-display-lg text-primary mb-16 text-center">Additional Software Modules</h2>
 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-gutter">
 <div class="flex items-center gap-2 text-on-surface-variant font-body-md"><span class="material-symbols-outlined text-primary text-body-md">check_circle</span>Workflow Automations</div>
