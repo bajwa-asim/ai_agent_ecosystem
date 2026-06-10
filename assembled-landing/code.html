@@ -1069,35 +1069,226 @@
         letter-spacing: 0.01em;
         font-weight: 500;
       }
+
+      /* Mobile-only refinements (768px+ unchanged) */
+      @media (max-width: 767.98px) {
+        html.cn-theme,
+        html.cn-theme body {
+          overflow-x: hidden;
+        }
+
+        .cn-title-section {
+          font-size: 28px;
+          line-height: 34px;
+          letter-spacing: -0.02em;
+        }
+
+        .cn-quote-title {
+          font-size: 20px;
+          line-height: 28px;
+        }
+
+        .cn-prose-lead {
+          font-size: 16px;
+          line-height: 26px;
+        }
+
+        .cn-pad-hero {
+          padding-top: 3rem;
+          padding-bottom: 3rem;
+        }
+
+        .cn-pad-section {
+          padding-top: 2.5rem;
+          padding-bottom: 2.5rem;
+        }
+
+        .cn-pad-section-tall {
+          padding-top: 3rem;
+          padding-bottom: 3rem;
+        }
+
+        .cn-pad-section-xl {
+          padding-top: 3rem;
+          padding-bottom: 3rem;
+        }
+
+        .cn-margin-top-section {
+          margin-top: 3rem;
+        }
+
+        .cn-margin-below-section {
+          margin-bottom: 2.5rem;
+        }
+
+        .cn-margin-below-xl {
+          margin-bottom: 3rem;
+        }
+
+        .cn-pad-x-hero {
+          padding-left: 1.25rem;
+          padding-right: 1.25rem;
+        }
+
+        .cn-pad-x-wide {
+          padding-left: 1.25rem;
+          padding-right: 1.25rem;
+        }
+
+        .cn-pad-x-button {
+          padding-left: 1.25rem;
+          padding-right: 1.25rem;
+        }
+
+        .cn-site-header .cn-layout-max > .d-flex:first-child {
+          row-gap: 0.5rem;
+        }
+
+        .cn-site-header .cn-brand {
+          min-width: 0;
+        }
+
+        .cn-btn.cn-text-heading-sm {
+          font-size: 16px;
+          line-height: 22px;
+          white-space: normal;
+        }
+
+        .cn-pricing-featured {
+          transform: none;
+          box-shadow:
+            0 20px 40px -12px rgba(242, 202, 80, 0.18),
+            0 8px 10px -6px rgba(242, 202, 80, 0.12);
+        }
+
+        .cn-pricing-card {
+          padding: 16px;
+        }
+
+        .cn-card-agent {
+          padding: 16px;
+        }
+
+        .cn-compare-head {
+          padding: 1rem 1rem;
+        }
+
+        .cn-compare-row {
+          padding: 1rem 1rem;
+        }
+
+        .cn-compare-foot {
+          padding: 1.25rem 1rem;
+        }
+
+        .cn-row-tight {
+          margin-left: -8px;
+          margin-right: -8px;
+        }
+
+        .cn-row-tight > div {
+          padding-left: 8px;
+          padding-right: 8px;
+        }
+
+        .cn-module-line {
+          align-items: flex-start;
+          font-size: 16px;
+          line-height: 22px;
+        }
+
+        .cn-compare-row .cn-text-body {
+          min-width: 0;
+          word-break: break-word;
+        }
+
+        .cn-modal-panel {
+          max-height: calc(100vh - 32px);
+          overflow-y: auto;
+        }
+
+        .cn-mobile-nav .cn-nav-link {
+          display: block;
+          padding: 0.5rem 0;
+          border-bottom: 1px solid rgba(77, 70, 53, 0.15);
+        }
+
+        .cn-mobile-nav .cn-nav-link:last-child {
+          border-bottom: 0;
+        }
+      }
     </style>
     <title>Cognitive Nexus</title>
   </head>
   <body>
     <header class="cn-site-header">
-      <div
-        class="cn-layout-max d-flex justify-content-between align-items-center py-2"
-      >
-        <div class="cn-brand">Cognitive Nexus</div>
-        <nav class="cn-nav-row d-none d-md-flex">
-          <a class="cn-nav-link cn-nav-link-active cn-text-label" href="#"
-            >Agents</a
+      <div class="cn-layout-max">
+        <div
+          class="d-flex justify-content-between align-items-center py-2 flex-nowrap"
+        >
+          <div class="cn-brand mr-2">Cognitive Nexus</div>
+          <nav class="cn-nav-row d-none d-md-flex flex-shrink-0">
+            <a class="cn-nav-link cn-nav-link-active cn-text-label" href="#"
+              >Agents</a
+            >
+            <a class="cn-nav-link cn-text-label" href="#">Strategy</a>
+            <a class="cn-nav-link cn-text-label" href="#">Operations</a>
+            <a class="cn-nav-link cn-text-label" href="#">Intelligence</a>
+          </nav>
+          <div class="d-none d-md-flex align-items-center flex-shrink-0">
+            <button
+              type="button"
+              class="cn-btn cn-btn-primary cn-text-label px-4 cn-pad-y-sm mr-2"
+            >
+              Executive Portal
+            </button>
+            <img
+              class="cn-avatar cn-border-avatar"
+              alt="Executive User Profile"
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuDt14VmCDIiRFvf8LDi29v4JbeP8Ex01fGjWGdSbuBqlULGDULyC4Ycwm7p0FxWcO6n_LyW8gpPP8JzPr5evYeocfOe26HJZFugHpeqkdcMHC1PS3hYMMT5uAIS__9d0K85PyKLmVfz20DZYWldC8FgithXR4_NVoLBPPUabMhMth5kgS2qMmBREe13GsW_2OmqDY1M06RW1pBmhBU11Qi5bmqaKxPcqCRdok14jAik8FCvgJu0GXKPXve0OGNCH2tv6dyXD_Zh2x8"
+            />
+          </div>
+          <div class="d-flex d-md-none align-items-center flex-shrink-0">
+            <img
+              class="cn-avatar cn-border-avatar mr-2"
+              alt="Executive User Profile"
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuDt14VmCDIiRFvf8LDi29v4JbeP8Ex01fGjWGdSbuBqlULGDULyC4Ycwm7p0FxWcO6n_LyW8gpPP8JzPr5evYeocfOe26HJZFugHpeqkdcMHC1PS3hYMMT5uAIS__9d0K85PyKLmVfz20DZYWldC8FgithXR4_NVoLBPPUabMhMth5kgS2qMmBREe13GsW_2OmqDY1M06RW1pBmhBU11Qi5bmqaKxPcqCRdok14jAik8FCvgJu0GXKPXve0OGNCH2tv6dyXD_Zh2x8"
+            />
+            <button
+              type="button"
+              class="cn-btn cn-btn-outline cn-text-label px-2 cn-pad-y-sm flex-shrink-0"
+              data-toggle="collapse"
+              data-target="#cnMobileNav"
+              aria-controls="cnMobileNav"
+              aria-expanded="false"
+              aria-label="Open menu"
+            >
+              <span class="cn-icon cn-icon-md cn-text-gold">menu</span>
+            </button>
+          </div>
+        </div>
+        <div
+          id="cnMobileNav"
+          class="collapse cn-mobile-nav d-md-none cn-border-top-soft mt-0 pt-2"
+        >
+          <nav class="d-flex flex-column">
+            <a class="cn-nav-link cn-nav-link-active cn-text-label" href="#"
+              >Agents</a
+            >
+            <a class="cn-nav-link cn-text-label" href="#">Strategy</a>
+            <a class="cn-nav-link cn-text-label" href="#">Operations</a>
+            <a class="cn-nav-link cn-text-label" href="#">Intelligence</a>
+          </nav>
+          <div
+            class="cn-mobile-nav-actions cn-border-top-soft d-flex flex-column align-items-stretch pt-3 mt-2"
           >
-          <a class="cn-nav-link cn-text-label" href="#">Strategy</a>
-          <a class="cn-nav-link cn-text-label" href="#">Operations</a>
-          <a class="cn-nav-link cn-text-label" href="#">Intelligence</a>
-        </nav>
-        <div class="d-flex align-items-center">
-          <button
-            type="button"
-            class="cn-btn cn-btn-primary cn-text-label px-4 cn-pad-y-sm mr-2"
-          >
-            Executive Portal
-          </button>
-          <img
-            class="cn-avatar cn-border-avatar"
-            alt="Executive User Profile"
-            src="https://lh3.googleusercontent.com/aida-public/AB6AXuDt14VmCDIiRFvf8LDi29v4JbeP8Ex01fGjWGdSbuBqlULGDULyC4Ycwm7p0FxWcO6n_LyW8gpPP8JzPr5evYeocfOe26HJZFugHpeqkdcMHC1PS3hYMMT5uAIS__9d0K85PyKLmVfz20DZYWldC8FgithXR4_NVoLBPPUabMhMth5kgS2qMmBREe13GsW_2OmqDY1M06RW1pBmhBU11Qi5bmqaKxPcqCRdok14jAik8FCvgJu0GXKPXve0OGNCH2tv6dyXD_Zh2x8"
-          />
+            <button
+              type="button"
+              class="cn-btn cn-btn-primary cn-text-label px-4 cn-pad-y-sm w-100"
+            >
+              Executive Portal
+            </button>
+          </div>
         </div>
       </div>
     </header>
