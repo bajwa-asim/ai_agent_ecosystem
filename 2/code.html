@@ -1,0 +1,774 @@
+<!DOCTYPE html><html class="dark" lang="en"><head></head><body class="bg-background text-on-background font-body-md selection:bg-primary selection:text-on-primary">```html
+
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "tertiary-fixed-dim": "#dfc29f",
+                    "surface-tint": "#e9c349",
+                    "primary": "#f2ca50",
+                    "surface-variant": "#353534",
+                    "surface": "#131313",
+                    "surface-bright": "#393939",
+                    "on-surface-variant": "#d0c5af",
+                    "inverse-primary": "#735c00",
+                    "primary-fixed-dim": "#e9c349",
+                    "on-tertiary-fixed-variant": "#574329",
+                    "on-error": "#690005",
+                    "on-primary": "#3c2f00",
+                    "background": "#131313",
+                    "tertiary": "#e7c9a6",
+                    "surface-container-low": "#1c1b1b",
+                    "on-primary-container": "#554300",
+                    "on-background": "#e5e2e1",
+                    "error-container": "#93000a",
+                    "tertiary-fixed": "#fcdeba",
+                    "on-secondary-container": "#c5b79f",
+                    "on-secondary-fixed-variant": "#4f4533",
+                    "on-surface": "#e5e2e1",
+                    "surface-dim": "#131313",
+                    "primary-container": "#d4af37",
+                    "on-tertiary-fixed": "#281903",
+                    "secondary-container": "#524835",
+                    "surface-container-high": "#2a2a2a",
+                    "on-tertiary-container": "#554127",
+                    "outline-variant": "#4d4635",
+                    "inverse-surface": "#e5e2e1",
+                    "secondary-fixed-dim": "#d3c5ad",
+                    "on-error-container": "#ffdad6",
+                    "primary-fixed": "#ffe088",
+                    "outline": "#99907c",
+                    "on-secondary": "#382f1e",
+                    "surface-container": "#201f1f",
+                    "secondary-fixed": "#f0e0c8",
+                    "on-primary-fixed-variant": "#574500",
+                    "surface-container-lowest": "#0e0e0e",
+                    "on-primary-fixed": "#241a00",
+                    "tertiary-container": "#caae8c",
+                    "surface-container-highest": "#353534",
+                    "secondary": "#d3c5ad",
+                    "on-secondary-fixed": "#221b0b",
+                    "error": "#ffb4ab",
+                    "inverse-on-surface": "#313030",
+                    "on-tertiary": "#3f2d15"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "margin-mobile": "16px",
+                    "container-max": "1280px",
+                    "margin-desktop": "40px",
+                    "gutter": "24px",
+                    "base": "8px"
+            },
+            "fontFamily": {
+                    "body-md": ["Hanken Grotesk"],
+                    "label-md": ["Hanken Grotesk"],
+                    "label-sm": ["Hanken Grotesk"],
+                    "headline-md": ["Hanken Grotesk"],
+                    "display-lg-mobile": ["Hanken Grotesk"],
+                    "headline-sm": ["Hanken Grotesk"],
+                    "display-lg": ["Hanken Grotesk"],
+                    "body-lg": ["Hanken Grotesk"]
+            },
+            "fontSize": {
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "500"}],
+                    "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                    "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                    "display-lg-mobile": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "headline-sm": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                    "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        .brushed-gold-icon {
+            background: linear-gradient(135deg, #f2ca50 0%, #8B7355 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .card-inner-glow {
+            box-shadow: inset 0 1px 0 0 rgba(242, 202, 80, 0.1);
+        }
+        .hero-glow {
+            background: radial-gradient(circle at 50% 50%, rgba(242, 202, 80, 0.08) 0%, transparent 70%);
+        }
+        .comparison-gradient {
+            background: linear-gradient(to bottom, rgba(242, 202, 80, 0.05) 0%, transparent 100%);
+        }
+    </style>
+<!-- TopNavBar -->
+<header class="bg-surface sticky top-0 z-50 border-b border-outline-variant/20">
+<div class="flex justify-between items-center w-full px-margin-desktop py-base max-w-container-max mx-auto">
+<div class="font-display-lg text-headline-md sm:text-display-lg font-bold text-primary tracking-tight">
+            Cognitive Nexus
+        </div>
+<nav class="hidden md:flex gap-gutter items-center">
+<a class="text-primary font-bold border-b-2 border-primary pb-1 font-label-md text-label-md transition-colors duration-300" href="#">Agents</a>
+<a class="text-on-surface-variant font-medium font-label-md text-label-md hover:text-primary-fixed-dim transition-colors duration-300" href="#">Strategy</a>
+<a class="text-on-surface-variant font-medium font-label-md text-label-md hover:text-primary-fixed-dim transition-colors duration-300" href="#">Operations</a>
+<a class="text-on-surface-variant font-medium font-label-md text-label-md hover:text-primary-fixed-dim transition-colors duration-300" href="#">Intelligence</a>
+</nav>
+<div class="flex items-center gap-base">
+<button class="bg-primary text-on-primary px-gutter py-2 rounded-lg font-label-md text-label-md font-bold cursor-pointer active:opacity-80 transition-all">
+                Executive Portal
+            </button>
+<img alt="Executive User Profile" class="w-10 h-10 rounded-full border border-outline/30" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDt14VmCDIiRFvf8LDi29v4JbeP8Ex01fGjWGdSbuBqlULGDULyC4Ycwm7p0FxWcO6n_LyW8gpPP8JzPr5evYeocfOe26HJZFugHpeqkdcMHC1PS3hYMMT5uAIS__9d0K85PyKLmVfz20DZYWldC8FgithXR4_NVoLBPPUabMhMth5kgS2qMmBREe13GsW_2OmqDY1M06RW1pBmhBU11Qi5bmqaKxPcqCRdok14jAik8FCvgJu0GXKPXve0OGNCH2tv6dyXD_Zh2x8">
+</div>
+</div>
+</header>
+<main class="max-w-container-max mx-auto">
+<!-- Hero Section -->
+<section class="relative py-24 px-margin-desktop overflow-hidden hero-glow">
+<div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-10 pointer-events-none"></div>
+<div class="max-w-4xl mx-auto text-center relative z-10">
+<h1 class="font-display-lg text-display-lg-mobile md:text-display-lg mb-6 text-primary drop-shadow-sm">Sell AI Agents Under Your Brand In Minutes</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant leading-relaxed mb-10 max-w-2xl mx-auto">Launch a fully white-label AI business and start charging clients monthly without developers, coding, or building software yourself.</p>
+<div class="flex flex-col sm:flex-row justify-center gap-base sm:gap-gutter">
+<button class="bg-primary text-on-primary px-10 py-4 rounded-lg font-headline-sm text-headline-sm font-bold hover:brightness-110 active:scale-95 transition-all shadow-lg shadow-primary/20">
+                    Start Your Free Trial
+                </button>
+<button class="bg-surface-container-high border border-primary/40 text-primary px-10 py-4 rounded-lg font-headline-sm text-headline-sm font-bold hover:bg-primary/5 transition-all active:scale-95">
+                    Book a Demo
+                </button>
+</div>
+</div>
+</section>
+<!-- Our AI Agents & Tools Section -->
+<section class="py-16 px-margin-desktop">
+<div class="mb-16 text-center max-w-3xl mx-auto"><div class="mb-10 rounded-xl overflow-hidden border border-primary/20 shadow-2xl shadow-primary/10"><img alt="AI Agent Modules" class="w-full h-auto object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCDp8yBLQ7h3RO87MMei8GPYN5tTl9z9gU3VobACreFy-nq6wIGb4RZuGTYwmof6y8qlemozZT_LUGuB2mNsFYtd2ciu__PowCcDsVZjb2aDPXKFy5UC75l-Wr6L-aanV4RyggmRJ0bhII_V2bq9mUXWFm7vURec4N8ueoYEpaXpbLS1O0pbZRFdiq0aEpMWo5EkQRsI0Nselge0_6WybZDIfjXwf1_HEH2M2qygM_Pv74zC4P9TSdlXL-FDTx-15kVcOTog6GyOiM"></div>
+<h2 class="font-display-lg text-display-lg mb-6 text-primary">Our AI Agents &amp; Tools</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant leading-relaxed">
+                High-performance cognitive agents engineered for scale. From voice automation to multi-channel CRM integration, our toolkit optimizes every touchpoint.
+            </p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-gutter"><!-- AI 24/7 Phone Receptionist -->
+<div class="bg-surface-container-low border-2 border-primary/40 p-gutter rounded-xl flex flex-col justify-between hover:border-primary transition-all duration-300 card-inner-glow group">
+    <div>
+        <div class="mb-base"><span class="material-symbols-outlined text-4xl brushed-gold-icon">support_agent</span></div>
+        <h3 class="font-headline-sm text-headline-sm text-primary mb-2">AI 24/7 Phone Receptionist</h3>
+        <p class="font-body-md text-body-md text-on-surface-variant/80 mb-6">An automated receptionist that answers FAQs routes calls and handles customer service 24/7.</p>
+    </div>
+    <button class="w-full bg-primary text-on-primary-fixed font-label-md text-label-md font-bold py-3 rounded hover:brightness-110 active:scale-95 transition-all">Learn More</button>
+</div>
+<!-- AI Appointment Booking -->
+<div class="bg-surface-container-low border-2 border-primary/40 p-gutter rounded-xl flex flex-col justify-between hover:border-primary transition-all duration-300 card-inner-glow group">
+    <div>
+        <div class="mb-base"><span class="material-symbols-outlined text-4xl brushed-gold-icon">calendar_month</span></div>
+        <h3 class="font-headline-sm text-headline-sm text-primary mb-2">AI Appointment Booking</h3>
+        <p class="font-body-md text-body-md text-on-surface-variant/80 mb-6">A voice assistant that checks calendar availability negotiates times and books appointments live on the call.</p>
+    </div>
+    <button class="w-full bg-primary text-on-primary-fixed font-label-md text-label-md font-bold py-3 rounded hover:brightness-110 active:scale-95 transition-all">Learn More</button>
+</div>
+<!-- AI Instant Speed To Lead -->
+<div class="bg-surface-container-low border-2 border-primary/40 p-gutter rounded-xl flex flex-col justify-between hover:border-primary transition-all duration-300 card-inner-glow group">
+    <div>
+        <div class="mb-base"><span class="material-symbols-outlined text-4xl brushed-gold-icon">bolt</span></div>
+        <h3 class="font-headline-sm text-headline-sm text-primary mb-2">AI Instant Speed To Lead</h3>
+        <p class="font-body-md text-body-md text-on-surface-variant/80 mb-6">Instantly calls new leads the second they submit a form automatically bridging them to your live sales team.</p>
+    </div>
+    <button class="w-full bg-primary text-on-primary-fixed font-label-md text-label-md font-bold py-3 rounded hover:brightness-110 active:scale-95 transition-all">Learn More</button>
+</div>
+<!-- AI Lead Qualifier -->
+<div class="bg-surface-container-low border-2 border-primary/40 p-gutter rounded-xl flex flex-col justify-between hover:border-primary transition-all duration-300 card-inner-glow group">
+    <div>
+        <div class="mb-base"><span class="material-symbols-outlined text-4xl brushed-gold-icon">verified_user</span></div>
+        <h3 class="font-headline-sm text-headline-sm text-primary mb-2">AI Lead Qualifier</h3>
+        <p class="font-body-md text-body-md text-on-surface-variant/80 mb-6">Autonomously calls new leads to ask pre-qualification questions and score them before a human speaks to them.</p>
+    </div>
+    <button class="w-full bg-primary text-on-primary-fixed font-label-md text-label-md font-bold py-3 rounded hover:brightness-110 active:scale-95 transition-all">Learn More</button>
+</div>
+<!-- AI Cold Caller -->
+<div class="bg-surface-container-low border-2 border-primary/40 p-gutter rounded-xl flex flex-col justify-between hover:border-primary transition-all duration-300 card-inner-glow group">
+    <div>
+        <div class="mb-base"><span class="material-symbols-outlined text-4xl brushed-gold-icon">call</span></div>
+        <h3 class="font-headline-sm text-headline-sm text-primary mb-2">AI Cold Caller</h3>
+        <p class="font-body-md text-body-md text-on-surface-variant/80 mb-6">A conversational campaign agent that systematically calls through dynamic target lists for cold or warm outreach.</p>
+    </div>
+    <button class="w-full bg-primary text-on-primary-fixed font-label-md text-label-md font-bold py-3 rounded hover:brightness-110 active:scale-95 transition-all">Learn More</button>
+</div>
+<!-- AI Database Reactivation -->
+<div class="bg-surface-container-low border-2 border-primary/40 p-gutter rounded-xl flex flex-col justify-between hover:border-primary transition-all duration-300 card-inner-glow group">
+    <div>
+        <div class="mb-base"><span class="material-symbols-outlined text-4xl brushed-gold-icon">database</span></div>
+        <h3 class="font-headline-sm text-headline-sm text-primary mb-2">AI Database Reactivation</h3>
+        <p class="font-body-md text-body-md text-on-surface-variant/80 mb-6">Autonomously text-blasts or calls old cold databases to uncover hidden revenue and book missed opportunities.</p>
+    </div>
+    <button class="w-full bg-primary text-on-primary-fixed font-label-md text-label-md font-bold py-3 rounded hover:brightness-110 active:scale-95 transition-all">Learn More</button>
+</div>
+<!-- AI Phone Order Taker -->
+<div class="bg-surface-container-low border-2 border-primary/40 p-gutter rounded-xl flex flex-col justify-between hover:border-primary transition-all duration-300 card-inner-glow group">
+    <div>
+        <div class="mb-base"><span class="material-symbols-outlined text-4xl brushed-gold-icon">restaurant</span></div>
+        <h3 class="font-headline-sm text-headline-sm text-primary mb-2">AI Phone Order Taker</h3>
+        <p class="font-body-md text-body-md text-on-surface-variant/80 mb-6">A consumer-facing voice agent that answers hungry customers takes detailed food orders and sends them to the kitchen.</p>
+    </div>
+    <button class="w-full bg-primary text-on-primary-fixed font-label-md text-label-md font-bold py-3 rounded hover:brightness-110 active:scale-95 transition-all">Learn More</button>
+</div>
+<!-- AI 24/7 Website Chat -->
+<div class="bg-surface-container-low border-2 border-primary/40 p-gutter rounded-xl flex flex-col justify-between hover:border-primary transition-all duration-300 card-inner-glow group">
+    <div>
+        <div class="mb-base"><span class="material-symbols-outlined text-4xl brushed-gold-icon">chat</span></div>
+        <h3 class="font-headline-sm text-headline-sm text-primary mb-2">AI 24/7 Website Chat</h3>
+        <p class="font-body-md text-body-md text-on-surface-variant/80 mb-6">An interactive on-site widget that chats with visitors answers questions and captures lead info round-the-clock.</p>
+    </div>
+    <button class="w-full bg-primary text-on-primary-fixed font-label-md text-label-md font-bold py-3 rounded hover:brightness-110 active:scale-95 transition-all">Learn More</button>
+</div>
+<!-- AI 2 Way SMS Texting -->
+<div class="bg-surface-container-low border-2 border-primary/40 p-gutter rounded-xl flex flex-col justify-between hover:border-primary transition-all duration-300 card-inner-glow group">
+    <div>
+        <div class="mb-base"><span class="material-symbols-outlined text-4xl brushed-gold-icon">sms</span></div>
+        <h3 class="font-headline-sm text-headline-sm text-primary mb-2">AI 2 Way SMS Texting</h3>
+        <p class="font-body-md text-body-md text-on-surface-variant/80 mb-6">A multi-channel agent that handles two-way texting</p>
+    </div>
+    <button class="w-full bg-primary text-on-primary-fixed font-label-md text-label-md font-bold py-3 rounded hover:brightness-110 active:scale-95 transition-all">Learn More</button>
+</div>
+<!-- AI 2 Way Emails -->
+<div class="bg-surface-container-low border-2 border-primary/40 p-gutter rounded-xl flex flex-col justify-between hover:border-primary transition-all duration-300 card-inner-glow group">
+    <div>
+        <div class="mb-base"><span class="material-symbols-outlined text-4xl brushed-gold-icon">mail</span></div>
+        <h3 class="font-headline-sm text-headline-sm text-primary mb-2">AI 2 Way Emails</h3>
+        <p class="font-body-md text-body-md text-on-surface-variant/80 mb-6">A multi-channel agent that handles two-way emails</p>
+    </div>
+    <button class="w-full bg-primary text-on-primary-fixed font-label-md text-label-md font-bold py-3 rounded hover:brightness-110 active:scale-95 transition-all">Learn More</button>
+</div>
+<!-- AI 2 Way Facebook -->
+<div class="bg-surface-container-low border-2 border-primary/40 p-gutter rounded-xl flex flex-col justify-between hover:border-primary transition-all duration-300 card-inner-glow group">
+    <div>
+        <div class="mb-base"><span class="material-symbols-outlined text-4xl brushed-gold-icon">public</span></div>
+        <h3 class="font-headline-sm text-headline-sm text-primary mb-2">AI 2 Way Facebook</h3>
+        <p class="font-body-md text-body-md text-on-surface-variant/80 mb-6">An agent that handles two-way Facebook messages</p>
+    </div>
+    <button class="w-full bg-primary text-on-primary-fixed font-label-md text-label-md font-bold py-3 rounded hover:brightness-110 active:scale-95 transition-all">Learn More</button>
+</div>
+<!-- AI 2 Way Instagram -->
+<div class="bg-surface-container-low border-2 border-primary/40 p-gutter rounded-xl flex flex-col justify-between hover:border-primary transition-all duration-300 card-inner-glow group">
+    <div>
+        <div class="mb-base"><span class="material-symbols-outlined text-4xl brushed-gold-icon">photo_camera</span></div>
+        <h3 class="font-headline-sm text-headline-sm text-primary mb-2">AI 2 Way Instagram</h3>
+        <p class="font-body-md text-body-md text-on-surface-variant/80 mb-6">An agent that handles two-way Instagram messages</p>
+    </div>
+    <button class="w-full bg-primary text-on-primary-fixed font-label-md text-label-md font-bold py-3 rounded hover:brightness-110 active:scale-95 transition-all">Learn More</button>
+</div>
+<!-- AI 2 Way Whatsapp -->
+<div class="bg-surface-container-low border-2 border-primary/40 p-gutter rounded-xl flex flex-col justify-between hover:border-primary transition-all duration-300 card-inner-glow group">
+    <div>
+        <div class="mb-base"><span class="material-symbols-outlined text-4xl brushed-gold-icon">chat_bubble</span></div>
+        <h3 class="font-headline-sm text-headline-sm text-primary mb-2">AI 2 Way Whatsapp</h3>
+        <p class="font-body-md text-body-md text-on-surface-variant/80 mb-6">An agent that handles two-way Whatsapp messages</p>
+    </div>
+    <button class="w-full bg-primary text-on-primary-fixed font-label-md text-label-md font-bold py-3 rounded hover:brightness-110 active:scale-95 transition-all">Learn More</button>
+</div>
+<!-- AI Missed Call Text-Back -->
+<div class="bg-surface-container-low border-2 border-primary/40 p-gutter rounded-xl flex flex-col justify-between hover:border-primary transition-all duration-300 card-inner-glow group">
+    <div>
+        <div class="mb-base"><span class="material-symbols-outlined text-4xl brushed-gold-icon">phone_missed</span></div>
+        <h3 class="font-headline-sm text-headline-sm text-primary mb-2">AI Missed Call Text-Back</h3>
+        <p class="font-body-md text-body-md text-on-surface-variant/80 mb-6">Instantly text-backs missed callers with an AI conversational helper to save lost business before they call a competitor.</p>
+    </div>
+    <button class="w-full bg-primary text-on-primary-fixed font-label-md text-label-md font-bold py-3 rounded hover:brightness-110 active:scale-95 transition-all">Learn More</button>
+</div>
+<!-- AI Seo Report -->
+<div class="bg-surface-container-low border-2 border-primary/40 p-gutter rounded-xl flex flex-col justify-between hover:border-primary transition-all duration-300 card-inner-glow group">
+    <div>
+        <div class="mb-base"><span class="material-symbols-outlined text-4xl brushed-gold-icon">search</span></div>
+        <h3 class="font-headline-sm text-headline-sm text-primary mb-2">AI Seo Report</h3>
+        <p class="font-body-md text-body-md text-on-surface-variant/80 mb-6">An autonomous crawler that scans websites diagnoses SEO issues and builds optimization blueprints.</p>
+    </div>
+    <button class="w-full bg-primary text-on-primary-fixed font-label-md text-label-md font-bold py-3 rounded hover:brightness-110 active:scale-95 transition-all">Learn More</button>
+</div>
+<!-- AI Video Generator -->
+<div class="bg-surface-container-low border-2 border-primary/40 p-gutter rounded-xl flex flex-col justify-between hover:border-primary transition-all duration-300 card-inner-glow group">
+    <div>
+        <div class="mb-base"><span class="material-symbols-outlined text-4xl brushed-gold-icon">video_library</span></div>
+        <h3 class="font-headline-sm text-headline-sm text-primary mb-2">AI Video Generator</h3>
+        <p class="font-body-md text-body-md text-on-surface-variant/80 mb-6">A script-to-screen agent that generates engaging marketing videos renders visuals</p>
+    </div>
+    <button class="w-full bg-primary text-on-primary-fixed font-label-md text-label-md font-bold py-3 rounded hover:brightness-110 active:scale-95 transition-all">Learn More</button>
+</div>
+<!-- AI 60-Second Website Builder -->
+<div class="bg-surface-container-low border-2 border-primary/40 p-gutter rounded-xl flex flex-col justify-between hover:border-primary transition-all duration-300 card-inner-glow group">
+    <div>
+        <div class="mb-base"><span class="material-symbols-outlined text-4xl brushed-gold-icon">web</span></div>
+        <h3 class="font-headline-sm text-headline-sm text-primary mb-2">AI 60-Second Website Builder</h3>
+        <p class="font-body-md text-body-md text-on-surface-variant/80 mb-6">A high-speed prompt-to-design platform that builds fully functional conversion-optimized websites and landing pages in under 60 sec</p>
+    </div>
+    <button class="w-full bg-primary text-on-primary-fixed font-label-md text-label-md font-bold py-3 rounded hover:brightness-110 active:scale-95 transition-all">Learn More</button>
+</div>
+<!-- AI Social Media Posts -->
+<div class="bg-surface-container-low border-2 border-primary/40 p-gutter rounded-xl flex flex-col justify-between hover:border-primary transition-all duration-300 card-inner-glow group">
+    <div>
+        <div class="mb-base"><span class="material-symbols-outlined text-4xl brushed-gold-icon">share</span></div>
+        <h3 class="font-headline-sm text-headline-sm text-primary mb-2">AI Social Media Posts</h3>
+        <p class="font-body-md text-body-md text-on-surface-variant/80 mb-6">An on-demand content tool that drafts high-converting social copy and eye-catching graphics based on your prompts.</p>
+    </div>
+    <button class="w-full bg-primary text-on-primary-fixed font-label-md text-label-md font-bold py-3 rounded hover:brightness-110 active:scale-95 transition-all">Learn More</button>
+</div>
+<!-- Ai Reviews -->
+<div class="bg-surface-container-low border-2 border-primary/40 p-gutter rounded-xl flex flex-col justify-between hover:border-primary transition-all duration-300 card-inner-glow group">
+    <div>
+        <div class="mb-base"><span class="material-symbols-outlined text-4xl brushed-gold-icon">star</span></div>
+        <h3 class="font-headline-sm text-headline-sm text-primary mb-2">Ai Reviews</h3>
+        <p class="font-body-md text-body-md text-on-surface-variant/80 mb-6">An intelligent dashboard that monitors incoming business feedback crafts smart replies and boosts search rankings.</p>
+    </div>
+    <button class="w-full bg-primary text-on-primary-fixed font-label-md text-label-md font-bold py-3 rounded hover:brightness-110 active:scale-95 transition-all">Learn More</button>
+</div>
+<!-- AI Social Media Scheduling -->
+<div class="bg-surface-container-low border-2 border-primary/40 p-gutter rounded-xl flex flex-col justify-between hover:border-primary transition-all duration-300 card-inner-glow group">
+    <div>
+        <div class="mb-base"><span class="material-symbols-outlined text-4xl brushed-gold-icon">schedule</span></div>
+        <h3 class="font-headline-sm text-headline-sm text-primary mb-2">AI Social Media Scheduling</h3>
+        <p class="font-body-md text-body-md text-on-surface-variant/80 mb-6">Schedules Social Media Posts</p>
+    </div>
+    <button class="w-full bg-primary text-on-primary-fixed font-label-md text-label-md font-bold py-3 rounded hover:brightness-110 active:scale-95 transition-all">Learn More</button>
+</div></div>
+</section>
+<!-- CTA 1: After AI Agents Grid -->
+<section class="py-16 px-margin-desktop bg-surface-container-lowest border-y border-outline-variant/10">
+<div class="max-w-4xl mx-auto text-center">
+<h2 class="font-headline-md text-headline-md text-primary mb-6 italic">Empower your operations with the world's most advanced AI fleet.</h2>
+<button class="bg-primary text-on-primary px-12 py-5 rounded-lg font-headline-sm font-bold hover:brightness-110 active:scale-95 transition-all shadow-xl shadow-primary/30">
+            Deploy Your Fleet
+        </button>
+</div>
+</section>
+<!-- The Enterprise Shift: Legacy Replace Section -->
+<section class="py-24 px-margin-desktop bg-surface-container-lowest border-y border-outline-variant/20">
+<div class="max-w-container-max mx-auto">
+<div class="text-center mb-16">
+<h2 class="font-display-lg text-display-lg text-primary mb-6">The Enterprise Shift: Replace Fragmented SaaS with Unified Intelligence</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto">Consolidate your tech stack into a single, intelligent ecosystem. Stop paying for disconnected tools and start scaling with unified AI.</p>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-gutter items-center">
+<div class="rounded-xl overflow-hidden border border-primary/30 shadow-2xl">
+<img alt="Enterprise Dashboard" class="w-full h-auto" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBly8IIM9HsDG-zupwewyaQ1U21pFxczstljlpQKuc52NLe3kv2KrYFonWkYLNfncz2HAtPmtC3r24gppvTTfMAzZ-PNgG6ZxDbQ1C2Miy2X_b4CY3zrp-bLLwkPFI200PnGeCejIuzu57UdwOt7yHvpJ-HtKNYNfbMBkXFf4BdJeO0dsN95bJSfRGFZ64KZ6zm45VBNkvwTRqR7VNpffDznOLD3L5pxAl19_KyWHtZ4-abINSXuM9cmsbuhThX0H2RUNFGsdAGdDM">
+</div>
+<div class="space-y-gutter">
+<div class="bg-surface-container-low p-gutter rounded-xl border border-outline-variant/20 card-inner-glow">
+<h3 class="font-headline-sm text-primary mb-gutter">Legacy Tools Replaced</h3>
+<ul class="space-y-4">
+<li class="flex items-center gap-base text-on-surface-variant"><span class="material-symbols-outlined text-error">cancel</span><span class="font-bold">Calendly</span> (Scheduling &amp; Appointments)</li>
+<li class="flex items-center gap-base text-on-surface-variant"><span class="material-symbols-outlined text-error">cancel</span><span class="font-bold">Zendesk</span> (Customer Support &amp; Helpdesk)</li>
+<li class="flex items-center gap-base text-on-surface-variant"><span class="material-symbols-outlined text-error">cancel</span><span class="font-bold">Mailchimp</span> (Email Marketing &amp; Automation)</li>
+<li class="flex items-center gap-base text-on-surface-variant"><span class="material-symbols-outlined text-error">cancel</span><span class="font-bold">HubSpot</span> (CRM &amp; Sales Pipeline)</li>
+<li class="flex items-center gap-base text-on-surface-variant"><span class="material-symbols-outlined text-error">cancel</span><span class="font-bold">Intercom</span> (Website Chat &amp; Engagement)</li>
+<li class="flex items-center gap-base text-on-surface-variant"><span class="material-symbols-outlined text-primary">add_circle</span><span class="italic">And 35+ more specialized modules...</span></li>
+</ul>
+</div>
+<div class="text-center lg:text-left">
+<button class="bg-primary text-on-primary px-10 py-4 rounded-lg font-headline-sm font-bold hover:brightness-110 transition-all">Unify Your Stack Now</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Integrated Comparison Table from Screen 12 -->
+<section class="py-24 px-margin-desktop bg-surface-container-lowest overflow-hidden relative">
+<div class="absolute inset-0 comparison-gradient pointer-events-none"></div>
+<div class="max-w-container-max mx-auto relative z-10">
+<div class="text-center mb-20">
+<h2 class="font-display-lg text-display-lg text-primary mb-6">Compare the Architecture</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto">
+                Discover why market leaders are migrating from fragmented legacy stacks to our unified executive platform.
+            </p>
+</div>
+<div class="bg-surface-container-low border border-outline-variant/20 rounded-xl overflow-hidden shadow-2xl card-inner-glow">
+<div class="grid grid-cols-12 bg-surface-container-high border-b border-outline-variant/30 py-6 px-8">
+<div class="col-span-5 text-label-md text-on-surface font-bold uppercase tracking-widest">Capabilities &amp; Features</div>
+<div class="col-span-4 text-label-md text-on-surface font-bold uppercase tracking-widest text-center">Legacy SaaS Fragments</div>
+<div class="col-span-3 text-label-md text-primary font-bold uppercase tracking-widest text-right">Cognitive Nexus Platform</div>
+</div>
+<div class="divide-y divide-outline-variant/10">
+<!-- Row: CRM -->
+<div class="grid grid-cols-12 py-5 px-8 items-center hover:bg-surface-bright/5 transition-colors group">
+<div class="col-span-5 flex items-center gap-4">
+<span class="material-symbols-outlined text-primary text-2xl">groups</span>
+<span class="text-body-md font-medium text-on-surface">CRM &amp; Pipeline Management</span>
+</div>
+<div class="col-span-4 flex justify-center gap-4">
+<span class="text-label-sm text-on-surface-variant/60 italic">Salesforce, HubSpot</span>
+</div>
+<div class="col-span-3 text-right">
+<span class="material-symbols-outlined text-primary font-bold">check_circle</span>
+</div>
+</div>
+<!-- Row: Funnels -->
+<div class="grid grid-cols-12 py-5 px-8 items-center hover:bg-surface-bright/5 transition-colors group">
+<div class="col-span-5 flex items-center gap-4">
+<span class="material-symbols-outlined text-primary text-2xl">filter_alt</span>
+<span class="text-body-md font-medium text-on-surface">Unlimited Sales Funnels</span>
+</div>
+<div class="col-span-4 flex justify-center gap-4">
+<span class="text-label-sm text-on-surface-variant/60 italic">ClickFunnels, Leadpages</span>
+</div>
+<div class="col-span-3 text-right">
+<span class="material-symbols-outlined text-primary font-bold">check_circle</span>
+</div>
+</div>
+<!-- Row: Website -->
+<div class="grid grid-cols-12 py-5 px-8 items-center hover:bg-surface-bright/5 transition-colors group">
+<div class="col-span-5 flex items-center gap-4">
+<span class="material-symbols-outlined text-primary text-2xl">language</span>
+<span class="text-body-md font-medium text-on-surface">Website Builder</span>
+</div>
+<div class="col-span-4 flex justify-center gap-4">
+<span class="text-label-sm text-on-surface-variant/60 italic">WordPress, Wix, Squarespace</span>
+</div>
+<div class="col-span-3 text-right">
+<span class="material-symbols-outlined text-primary font-bold">check_circle</span>
+</div>
+</div>
+<!-- Row: Email -->
+<div class="grid grid-cols-12 py-5 px-8 items-center hover:bg-surface-bright/5 transition-colors group">
+<div class="col-span-5 flex items-center gap-4">
+<span class="material-symbols-outlined text-primary text-2xl">mail</span>
+<span class="text-body-md font-medium text-on-surface">Email Marketing</span>
+</div>
+<div class="col-span-4 flex justify-center gap-4">
+<span class="text-label-sm text-on-surface-variant/60 italic">Mailchimp, ActiveCampaign</span>
+</div>
+<div class="col-span-3 text-right">
+<span class="material-symbols-outlined text-primary font-bold">check_circle</span>
+</div>
+</div>
+<!-- Row: Booking -->
+<div class="grid grid-cols-12 py-5 px-8 items-center hover:bg-surface-bright/5 transition-colors group">
+<div class="col-span-5 flex items-center gap-4">
+<span class="material-symbols-outlined text-primary text-2xl">calendar_today</span>
+<span class="text-body-md font-medium text-on-surface">Booking &amp; Appointments</span>
+</div>
+<div class="col-span-4 flex justify-center gap-4">
+<span class="text-label-sm text-on-surface-variant/60 italic">Calendly, Acuity</span>
+</div>
+<div class="col-span-3 text-right">
+<span class="material-symbols-outlined text-primary font-bold">check_circle</span>
+</div>
+</div>
+<!-- Row: Workflows -->
+<div class="grid grid-cols-12 py-5 px-8 items-center hover:bg-surface-bright/5 transition-colors group">
+<div class="col-span-5 flex items-center gap-4">
+<span class="material-symbols-outlined text-primary text-2xl">account_tree</span>
+<span class="text-body-md font-medium text-on-surface">Workflow Automation</span>
+</div>
+<div class="col-span-4 flex justify-center gap-4">
+<span class="text-label-sm text-on-surface-variant/60 italic">Zapier, Make</span>
+</div>
+<div class="col-span-3 text-right">
+<span class="material-symbols-outlined text-primary font-bold">check_circle</span>
+</div>
+</div>
+<!-- Row: Document Signing -->
+<div class="grid grid-cols-12 py-5 px-8 items-center hover:bg-surface-bright/5 transition-colors group">
+<div class="col-span-5 flex items-center gap-4">
+<span class="material-symbols-outlined text-primary text-2xl">history_edu</span>
+<span class="text-body-md font-medium text-on-surface">Document Signing</span>
+</div>
+<div class="col-span-4 flex justify-center gap-4">
+<span class="text-label-sm text-on-surface-variant/60 italic">DocuSign, PandaDoc</span>
+</div>
+<div class="col-span-3 text-right">
+<span class="material-symbols-outlined text-primary font-bold">check_circle</span>
+</div>
+</div>
+</div>
+<!-- Overall Comparison Footer -->
+<div class="bg-surface-container-high py-8 px-8 border-t border-primary/20">
+<div class="grid grid-cols-12 items-center">
+<div class="col-span-5">
+<div class="text-headline-sm text-on-surface">Estimated Monthly Investment</div>
+</div>
+<div class="col-span-4 text-center">
+<div class="text-headline-sm text-error font-bold">$1,400+ <span class="text-label-sm font-normal text-on-surface-variant">/mo</span></div>
+</div>
+<div class="col-span-3 text-right">
+<div class="text-headline-md text-primary font-bold">$97 <span class="text-label-sm font-normal text-primary/70">/mo</span></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- CTA 2: After Comparison Table -->
+<section class="py-16 px-margin-desktop bg-background">
+<div class="max-w-4xl mx-auto text-center">
+<h2 class="font-display-lg text-display-lg-mobile md:text-headline-md text-primary mb-8">Stop Overpaying for Fragmentation. Start Scaling with Unity.</h2>
+<button class="bg-primary text-on-primary px-12 py-5 rounded-lg font-headline-sm font-bold hover:brightness-110 active:scale-95 transition-all shadow-xl shadow-primary/40">
+            Start Your Free Trial
+        </button>
+</div>
+</section>
+<!-- Executive Pricing Plans -->
+<section class="py-24 px-margin-desktop bg-background">
+<div class="max-w-container-max mx-auto">
+<div class="text-center mb-16">
+<h2 class="font-display-lg text-display-lg text-primary mb-6">Executive Pricing Plans</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto">Select the tier that aligns with your enterprise scale and growth objectives.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+<!-- Starter Plan -->
+<div class="bg-surface-container-low border-2 border-primary/30 p-gutter rounded-xl flex flex-col card-inner-glow">
+<div class="mb-8">
+<h3 class="font-headline-md text-primary mb-2">Starter</h3>
+<div class="flex items-baseline gap-1 mb-4">
+<span class="text-4xl font-bold text-on-background">$97</span>
+<span class="text-on-surface-variant">/mo</span>
+</div>
+<p class="text-label-sm text-primary font-bold uppercase tracking-wider">Internal License Only</p>
+</div>
+<ul class="space-y-4 mb-10 flex-grow">
+<li class="flex items-start gap-2 text-on-surface-variant font-body-md"><span class="material-symbols-outlined text-primary text-body-md">check_circle</span>Access 1 Sub-Account</li>
+<li class="flex items-start gap-2 text-on-surface-variant font-body-md"><span class="material-symbols-outlined text-primary text-body-md">check_circle</span>Create 3 AI Agents</li>
+<li class="flex items-start gap-2 text-on-surface-variant font-body-md"><span class="material-symbols-outlined text-primary text-body-md">check_circle</span>Unlimited Leads</li>
+<li class="flex items-start gap-2 text-on-surface-variant font-body-md"><span class="material-symbols-outlined text-primary text-body-md">check_circle</span>AI Conversational Booking</li>
+<li class="flex items-start gap-2 text-on-surface-variant font-body-md"><span class="material-symbols-outlined text-primary text-body-md">check_circle</span>Access to 20 AI agents</li>
+<li class="flex items-start gap-2 text-on-surface-variant font-body-md"><span class="material-symbols-outlined text-primary text-body-md">check_circle</span>Automated Follow Ups</li>
+<li class="flex items-start gap-2 text-on-surface-variant font-body-md"><span class="material-symbols-outlined text-primary text-body-md">check_circle</span>Knowledge Base</li>
+</ul>
+<div class="pt-6 border-t border-outline-variant/20">
+<p class="text-label-md text-on-surface-variant mb-6">Add-on: <span class="text-primary font-bold">$67</span> Per Subaccount</p>
+<button class="w-full bg-surface-container-high border border-primary/40 text-primary py-3 rounded-lg font-bold hover:bg-primary hover:text-on-primary transition-all">Get Started</button>
+</div>
+</div>
+<!-- Unlimited Plan -->
+<div class="bg-surface-container-low border-2 border-primary p-gutter rounded-xl flex flex-col card-inner-glow relative scale-105 z-10 shadow-2xl shadow-primary/20">
+<div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-primary text-on-primary px-4 py-1 rounded-full text-label-sm font-bold uppercase tracking-widest">Most Popular</div>
+<div class="mb-8">
+<h3 class="font-headline-md text-primary mb-2">Unlimited</h3>
+<div class="flex items-baseline gap-1 mb-4">
+<span class="text-4xl font-bold text-on-background">$297</span>
+<span class="text-on-surface-variant">/mo</span>
+</div>
+<p class="text-label-sm text-primary font-bold uppercase tracking-wider">Everything in Starter, plus:</p>
+</div>
+<ul class="space-y-4 mb-10 flex-grow">
+<li class="flex items-start gap-2 text-on-surface-variant font-body-md"><span class="material-symbols-outlined text-primary text-body-md">check_circle</span>10 Sub-Accounts</li>
+<li class="flex items-start gap-2 text-on-surface-variant font-body-md"><span class="material-symbols-outlined text-primary text-body-md">check_circle</span>10 AI Agents per Sub-Account</li>
+<li class="flex items-start gap-2 text-on-surface-variant font-body-md"><span class="material-symbols-outlined text-primary text-body-md">check_circle</span>Voicenotes &amp; Analytics</li>
+<li class="flex items-start gap-2 text-on-surface-variant font-body-md"><span class="material-symbols-outlined text-primary text-body-md">check_circle</span>24/7 Executive Support</li>
+<li class="flex items-start gap-2 text-on-surface-variant font-body-md"><span class="material-symbols-outlined text-primary text-body-md">check_circle</span>Campaign Split Testing</li>
+<li class="flex items-start gap-2 text-on-surface-variant font-body-md"><span class="material-symbols-outlined text-primary text-body-md">check_circle</span>Lead Dashboard &amp; Test Env</li>
+<li class="flex items-start gap-2 text-on-surface-variant font-body-md"><span class="material-symbols-outlined text-primary text-body-md">check_circle</span>Unlimited Leads</li>
+</ul>
+<div class="pt-6 border-t border-outline-variant/20">
+<p class="text-label-md text-on-surface-variant mb-6">Add-on: <span class="text-primary font-bold">$29</span> Per Subaccount</p>
+<button class="w-full bg-primary text-on-primary py-4 rounded-lg font-bold hover:brightness-110 transition-all shadow-lg shadow-primary/30">Start 14-Day Free Trial</button>
+</div>
+</div>
+<!-- SaaS Plan -->
+<div class="bg-surface-container-low border-2 border-primary/30 p-gutter rounded-xl flex flex-col card-inner-glow">
+<div class="mb-8">
+<h3 class="font-headline-md text-primary mb-2">SaaS Plan</h3>
+<div class="flex items-baseline gap-1 mb-4">
+<span class="text-4xl font-bold text-on-background">$497</span>
+<span class="text-on-surface-variant">/mo</span>
+</div>
+<p class="text-label-sm text-on-surface-variant leading-tight">Everything You Need To Start Generating Recurring SaaS Revenue.</p>
+</div>
+<ul class="space-y-4 mb-10 flex-grow">
+<li class="flex items-start gap-2 text-on-surface-variant font-body-md"><span class="material-symbols-outlined text-primary text-body-md">check_circle</span>Everything In Unlimited</li>
+<li class="flex items-start gap-2 text-on-surface-variant font-body-md"><span class="material-symbols-outlined text-primary text-body-md">check_circle</span>SaaS Mode - Auto Creation</li>
+<li class="flex items-start gap-2 text-on-surface-variant font-body-md"><span class="material-symbols-outlined text-primary text-body-md">check_circle</span>Rebilling with Custom Markup</li>
+<li class="flex items-start gap-2 text-on-surface-variant font-body-md"><span class="material-symbols-outlined text-primary text-body-md">check_circle</span>Conversation AI Rebilling</li>
+<li class="flex items-start gap-2 text-on-surface-variant font-body-md"><span class="material-symbols-outlined text-primary text-body-md">check_circle</span>White-label Capabilities</li>
+</ul>
+<div class="pt-6 border-t border-outline-variant/20">
+<p class="text-label-md text-on-surface-variant mb-6">Full Resell Rights Included</p>
+<button class="w-full bg-surface-container-high border border-primary/40 text-primary py-3 rounded-lg font-bold hover:bg-primary hover:text-on-primary transition-all">Contact Sales</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- CTA 3: Before FAQ Section -->
+<section class="py-20 px-margin-desktop bg-surface-container-low border-y border-outline-variant/20">
+<div class="max-w-4xl mx-auto text-center">
+<h2 class="font-display-lg text-display-lg-mobile md:text-display-lg text-primary mb-6">Unlock Your Agency's Full Potential</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-10 max-w-2xl mx-auto">Join the exclusive circle of executives scaling their AI business to 7 figures and beyond. No code. No hassle. Just results.</p>
+<button class="bg-primary text-on-primary px-16 py-6 rounded-lg font-headline-sm font-bold hover:brightness-110 active:scale-95 transition-all shadow-2xl shadow-primary/30">
+            Start Your 14-Day Free Trial
+        </button>
+</div>
+</section>
+<!-- FAQ Section -->
+<section class="py-24 px-margin-desktop max-w-4xl mx-auto">
+<h2 class="font-display-lg text-display-lg text-primary mb-16 text-center">Frequently Asked Questions</h2>
+<div class="space-y-gutter">
+<div class="border-b border-outline-variant/20 group">
+<button class="w-full py-gutter flex justify-between items-center text-left focus:outline-none faq-trigger">
+<h3 class="font-headline-sm text-primary">How does the 14-day free trial work?</h3>
+<span class="material-symbols-outlined text-primary transition-transform duration-300 faq-icon">add</span>
+</button>
+<div class="max-h-0 overflow-hidden transition-all duration-300 ease-in-out faq-content">
+<p class="text-on-surface-variant/80 pb-gutter">You get full access to all AI agents and modules for 14 days. No credit card is required to start. Experience the full power of Cognitive Nexus with zero commitment.</p>
+</div>
+</div>
+<div class="border-b border-outline-variant/20 group">
+<button class="w-full py-gutter flex justify-between items-center text-left focus:outline-none faq-trigger">
+<h3 class="font-headline-sm text-primary">Can these agents integrate with my existing CRM?</h3>
+<span class="material-symbols-outlined text-primary transition-transform duration-300 faq-icon">add</span>
+</button>
+<div class="max-h-0 overflow-hidden transition-all duration-300 ease-in-out faq-content">
+<p class="text-on-surface-variant/80 pb-gutter">Yes, Cognitive Nexus is designed for seamless enterprise integration with major CRMs like Salesforce, HubSpot, and various legacy systems via our robust API layer.</p>
+</div>
+</div>
+<div class="border-b border-outline-variant/20 group">
+<button class="w-full py-gutter flex justify-between items-center text-left focus:outline-none faq-trigger">
+<h3 class="font-headline-sm text-primary">Is my data secure?</h3>
+<span class="material-symbols-outlined text-primary transition-transform duration-300 faq-icon">add</span>
+</button>
+<div class="max-h-0 overflow-hidden transition-all duration-300 ease-in-out faq-content">
+<p class="text-on-surface-variant/80 pb-gutter">Absolutely. We utilize enterprise-grade encryption and quantum-resistant security protocols to protect your proprietary intelligence. Your data is never used to train public models.</p>
+</div>
+</div>
+<div class="border-b border-outline-variant/20 group">
+<button class="w-full py-gutter flex justify-between items-center text-left focus:outline-none faq-trigger">
+<h3 class="font-headline-sm text-primary">Do I need technical skills to deploy these agents?</h3>
+<span class="material-symbols-outlined text-primary transition-transform duration-300 faq-icon">add</span>
+</button>
+<div class="max-h-0 overflow-hidden transition-all duration-300 ease-in-out faq-content">
+<p class="text-on-surface-variant/80 pb-gutter">No, our platform is designed for rapid, low-code deployment. Our intuitive interface allows your team to activate and configure agents in minutes without writing a single line of code.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Software Modules Section -->
+<section class="py-16">
+<h2 class="font-display-lg text-display-lg text-primary mb-16 text-center">Additional Software Modules</h2>
+<div class="flex justify-center mb-16">
+<button class="bg-surface-container-high border border-primary/40 text-primary px-gutter py-3 rounded-lg font-label-md text-label-md font-bold hover:bg-primary hover:text-on-primary transition-all active:scale-95 flex items-center gap-2" id="open-modules-modal">
+<span class="material-symbols-outlined">info</span> View Module Details
+            </button>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-gutter px-margin-desktop">
+<div class="flex items-center gap-2 text-on-surface-variant font-body-md"><span class="material-symbols-outlined text-primary text-body-md">check_circle</span>Workflow Automations</div>
+<div class="flex items-center gap-2 text-on-surface-variant font-body-md"><span class="material-symbols-outlined text-primary text-body-md">check_circle</span>Unlimited Sales Funnels</div>
+<div class="flex items-center gap-2 text-on-surface-variant font-body-md"><span class="material-symbols-outlined text-primary text-body-md">check_circle</span>Webinar Funnels</div>
+<div class="flex items-center gap-2 text-on-surface-variant font-body-md"><span class="material-symbols-outlined text-primary text-body-md">check_circle</span>Sales Pipelines</div>
+<div class="flex items-center gap-2 text-on-surface-variant font-body-md"><span class="material-symbols-outlined text-primary text-body-md">check_circle</span>Prospecting Tool</div>
+<div class="flex items-center gap-2 text-on-surface-variant font-body-md"><span class="material-symbols-outlined text-primary text-body-md">check_circle</span>Email Marketing</div>
+<div class="flex items-center gap-2 text-on-surface-variant font-body-md"><span class="material-symbols-outlined text-primary text-body-md">check_circle</span>SMS Marketing</div>
+<div class="flex items-center gap-2 text-on-surface-variant font-body-md"><span class="material-symbols-outlined text-primary text-body-md">check_circle</span>Websites</div>
+<div class="flex items-center gap-2 text-on-surface-variant font-body-md"><span class="material-symbols-outlined text-primary text-body-md">check_circle</span>Ecommerce Websites</div>
+<div class="flex items-center gap-2 text-on-surface-variant font-body-md"><span class="material-symbols-outlined text-primary text-body-md">check_circle</span>Landing Pages</div>
+<div class="flex items-center gap-2 text-on-surface-variant font-body-md"><span class="material-symbols-outlined text-primary text-body-md">check_circle</span>Project Management</div>
+<div class="flex items-center gap-2 text-on-surface-variant font-body-md"><span class="material-symbols-outlined text-primary text-body-md">check_circle</span>Invoicing</div>
+</div>
+</section>
+</main>
+<footer class="bg-surface-container-lowest border-t border-outline-variant/15">
+<div class="w-full px-margin-desktop py-gutter flex flex-col md:flex-row justify-between items-center max-w-container-max mx-auto">
+<div class="flex flex-col items-center md:items-start gap-2 mb-gutter md:mb-0">
+<div class="font-headline-sm text-headline-sm text-primary">Cognitive Nexus</div>
+<p class="font-label-sm text-label-sm text-on-surface-variant">© 2024 Cognitive Nexus. All rights reserved.</p>
+</div>
+<div class="flex gap-gutter">
+<a class="text-on-surface-variant font-label-sm text-label-sm hover:text-tertiary transition-all duration-200" href="#">Privacy Policy</a>
+<a class="text-on-surface-variant font-label-sm text-label-sm hover:text-tertiary transition-all duration-200" href="#">Terms of Service</a>
+<a class="text-on-surface-variant font-label-sm text-label-sm hover:text-tertiary transition-all duration-200" href="#">Executive Support</a>
+<a class="text-on-surface-variant font-label-sm text-label-sm hover:text-tertiary transition-all duration-200" href="#">Contact</a>
+</div>
+</div>
+</footer>
+<!-- Modules Modal Overlay -->
+<div class="fixed inset-0 z-[100] hidden items-center justify-center p-margin-mobile bg-background/80 backdrop-blur-sm" id="modules-modal">
+<div class="bg-surface-container-lowest border-2 border-primary/30 rounded-xl max-w-2xl w-full p-gutter shadow-2xl relative card-inner-glow">
+<button class="absolute top-4 right-4 text-on-surface-variant hover:text-primary transition-colors" id="close-modules-modal">
+<span class="material-symbols-outlined text-3xl">close</span>
+</button>
+<div class="text-center">
+<div class="mb-6"><span class="material-symbols-outlined text-6xl brushed-gold-icon">apps</span></div>
+<h2 class="font-display-lg text-headline-md text-primary mb-6">Comprehensive Module Suite</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-gutter leading-relaxed">
+                Our platform includes 40+ specialized software modules designed to handle everything from CRM and sales funnels to automated payroll and restaurant management. Each module is fully integrated into the Cognitive Nexus ecosystem.
+            </p>
+<button class="w-full bg-primary text-on-primary px-gutter py-gutter rounded-lg font-headline-sm text-headline-sm font-bold hover:brightness-110 active:scale-95 transition-all shadow-lg">
+                Start Your 14-Day Free Trial
+            </button>
+</div>
+</div>
+</div>
+<script>
+    // Micro-interaction for cards
+    document.querySelectorAll('.group').forEach(card => {
+        card.addEventListener('mouseenter', () => {
+            const icon = card.querySelector('.material-symbols-outlined');
+            if (icon) {
+                icon.style.transition = 'transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275)';
+                icon.style.transform = 'scale(1.1) rotate(5deg)';
+            }
+        });
+        card.addEventListener('mouseleave', () => {
+            const icon = card.querySelector('.material-symbols-outlined');
+            if (icon) {
+                icon.style.transform = 'scale(1) rotate(0deg)';
+            }
+        });
+    });
+
+    // Modal functionality
+    (function() {
+        const modal = document.getElementById('modules-modal');
+        const openBtn = document.getElementById('open-modules-modal');
+        const closeBtn = document.getElementById('close-modules-modal');
+
+        const toggleModal = (show) => {
+            if (show) {
+                modal.classList.remove('hidden');
+                modal.classList.add('flex');
+                document.body.style.overflow = 'hidden';
+            } else {
+                modal.classList.add('hidden');
+                modal.classList.remove('flex');
+                document.body.style.overflow = '';
+            }
+        };
+
+        if(openBtn && closeBtn && modal) {
+          openBtn.addEventListener('click', () => toggleModal(true));
+          closeBtn.addEventListener('click', () => toggleModal(false));
+          modal.addEventListener('click', (e) => { if (e.target === modal) toggleModal(false); });
+        }
+    })();
+
+    // FAQ Toggle
+    document.querySelectorAll('.faq-trigger').forEach(trigger => {
+        trigger.addEventListener('click', () => {
+            const content = trigger.nextElementSibling;
+            const icon = trigger.querySelector('.faq-icon');
+            const isOpen = content.style.maxHeight !== '0px' && content.style.maxHeight !== '';
+
+            document.querySelectorAll('.faq-content').forEach(c => c.style.maxHeight = '0px');
+            document.querySelectorAll('.faq-icon').forEach(i => i.textContent = 'add');
+
+            if (!isOpen) {
+                content.style.maxHeight = content.scrollHeight + 'px';
+                icon.textContent = 'remove';
+            } else {
+                content.style.maxHeight = '0px';
+                icon.textContent = 'add';
+            }
+        });
+    });
+</script>
+
+```
+
+</body></html>
