@@ -252,9 +252,9 @@
         margin-bottom: 1.5rem;
       }
 
-      .cn-title-section.cn-title-section--spaced {
+      /* .cn-title-section.cn-title-section--spaced {
         margin-bottom: 4rem;
-      }
+      } */
 
       .cn-quote-title {
         font-size: 24px;
@@ -849,19 +849,45 @@
         object-fit: cover;
       }
 
-      /* FAQ */
+      /* FAQ — card accordion (dark section + boxed rows, + icon) */
+      .cn-faq-section {
+        background-color: #000000;
+      }
+
+      .cn-faq-stack {
+        max-width: 48rem;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
       .cn-faq-item {
-        border-bottom: 1px solid rgba(77, 70, 53, 0.2);
+        background-color: #141414;
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        border-radius: 12px;
+        margin-bottom: 0.75rem;
+        overflow: hidden;
+        transition:
+          border-color 0.2s ease,
+          box-shadow 0.2s ease;
+      }
+
+      .cn-faq-item:last-child {
+        margin-bottom: 0;
+      }
+
+      .cn-faq-item:hover {
+        border-color: rgba(255, 255, 255, 0.12);
       }
 
       .cn-faq-trigger {
         width: 100%;
-        background: none;
+        background: transparent;
         border: 0;
-        padding: 24px 0;
+        padding: 1.125rem 1.25rem;
         display: flex;
         justify-content: space-between;
         align-items: center;
+        gap: 1rem;
         text-align: left;
         cursor: pointer;
       }
@@ -870,7 +896,29 @@
         outline: none;
       }
 
+      .cn-faq-trigger .cn-heading,
+      .cn-faq-trigger h3 {
+        color: #e8e6e4 !important;
+        font-weight: 600;
+        font-size: 1rem;
+        line-height: 1.45;
+      }
+
+      @media (min-width: 768px) {
+        .cn-faq-trigger .cn-heading,
+        .cn-faq-trigger h3 {
+          font-size: 1.0625rem;
+        }
+      }
+
       .cn-faq-trigger .faq-icon {
+        flex-shrink: 0;
+        font-size: 1.5rem;
+        width: 1.5rem;
+        height: 1.5rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
         transition: transform 0.3s ease;
       }
 
@@ -881,8 +929,11 @@
       }
 
       .cn-faq-answer {
-        padding-bottom: 24px;
-        color: rgba(208, 197, 175, 0.8);
+        margin: 0;
+        padding: 0 1.25rem 1.125rem;
+        color: rgba(208, 197, 175, 0.85);
+        font-size: 0.9375rem;
+        line-height: 1.55;
       }
 
       /* Modal */
@@ -2291,69 +2342,199 @@
         </div>
       </section>
 
-      <section class="cn-pad-section-xl cn-layout-max mx-auto cn-measure-wide">
-        <h2 class="cn-title-section cn-title-section--spaced text-center">
-          Frequently Asked Questions
-        </h2>
-        <div>
-          <div class="cn-faq-item">
-            <button type="button" class="cn-faq-trigger faq-trigger">
-              <h3 class="cn-heading cn-heading-plain mb-0">
-                How does the 14-day free trial work?
-              </h3>
-              <span class="cn-icon cn-text-gold faq-icon">add</span>
-            </button>
-            <div class="cn-faq-panel faq-content">
-              <p class="cn-faq-answer">
-                You get full access to all AI agents and modules for 14 days. No
-                credit card is required to start. Experience the full power of
-                Cognitive Nexus with zero commitment.
-              </p>
+      <section class="cn-faq-section cn-pad-section-xl">
+        <div class="cn-layout-max">
+          <h2 class="cn-title-section cn-title-section--spaced text-center">
+            Frequently Asked Questions
+          </h2>
+          <p
+            class="cn-prose-lead text-center mx-auto cn-margin-below-large cn-measure-medium"
+          >
+            Everything you need to know about launching your white-label AI
+            agency.
+          </p>
+          <div class="cn-faq-stack">
+            <div class="cn-faq-item">
+              <button type="button" class="cn-faq-trigger faq-trigger">
+                <h3 class="cn-heading cn-heading-plain mb-0">
+                  How does the 14-day free trial work?
+                </h3>
+                <span class="cn-icon cn-text-gold faq-icon">add</span>
+              </button>
+              <div class="cn-faq-panel faq-content">
+                <p class="cn-faq-answer">
+                  You get full access to all AI agents and modules for 14 days.
+                  No credit card is required to start. Experience the full power
+                  of Cognitive Nexus with zero commitment.
+                </p>
+              </div>
             </div>
-          </div>
-          <div class="cn-faq-item">
-            <button type="button" class="cn-faq-trigger faq-trigger">
-              <h3 class="cn-heading cn-heading-plain mb-0">
-                Can these agents integrate with my existing CRM?
-              </h3>
-              <span class="cn-icon cn-text-gold faq-icon">add</span>
-            </button>
-            <div class="cn-faq-panel faq-content">
-              <p class="cn-faq-answer">
-                Yes, Cognitive Nexus is designed for seamless enterprise
-                integration with major CRMs like Salesforce, HubSpot, and
-                various legacy systems via our robust API layer.
-              </p>
+            <div class="cn-faq-item">
+              <button type="button" class="cn-faq-trigger faq-trigger">
+                <h3 class="cn-heading cn-heading-plain mb-0">
+                  Can these agents integrate with my existing CRM?
+                </h3>
+                <span class="cn-icon cn-text-gold faq-icon">add</span>
+              </button>
+              <div class="cn-faq-panel faq-content">
+                <p class="cn-faq-answer">
+                  Yes, Cognitive Nexus is designed for seamless enterprise
+                  integration with major CRMs like Salesforce, HubSpot, and
+                  various legacy systems via our robust API layer.
+                </p>
+              </div>
             </div>
-          </div>
-          <div class="cn-faq-item">
-            <button type="button" class="cn-faq-trigger faq-trigger">
-              <h3 class="cn-heading cn-heading-plain mb-0">
-                Is my data secure?
-              </h3>
-              <span class="cn-icon cn-text-gold faq-icon">add</span>
-            </button>
-            <div class="cn-faq-panel faq-content">
-              <p class="cn-faq-answer">
-                Absolutely. We utilize enterprise-grade encryption and
-                quantum-resistant security protocols to protect your proprietary
-                intelligence. Your data is never used to train public models.
-              </p>
+            <div class="cn-faq-item">
+              <button type="button" class="cn-faq-trigger faq-trigger">
+                <h3 class="cn-heading cn-heading-plain mb-0">
+                  Is my data secure?
+                </h3>
+                <span class="cn-icon cn-text-gold faq-icon">add</span>
+              </button>
+              <div class="cn-faq-panel faq-content">
+                <p class="cn-faq-answer">
+                  Absolutely. We utilize enterprise-grade encryption and
+                  quantum-resistant security protocols to protect your
+                  proprietary intelligence. Your data is never used to train
+                  public models.
+                </p>
+              </div>
             </div>
-          </div>
-          <div class="cn-faq-item">
-            <button type="button" class="cn-faq-trigger faq-trigger">
-              <h3 class="cn-heading cn-heading-plain mb-0">
-                Do I need technical skills to deploy these agents?
-              </h3>
-              <span class="cn-icon cn-text-gold faq-icon">add</span>
-            </button>
-            <div class="cn-faq-panel faq-content">
-              <p class="cn-faq-answer">
-                No, our platform is designed for rapid, low-code deployment. Our
-                intuitive interface allows your team to activate and configure
-                agents in minutes without writing a single line of code.
-              </p>
+            <div class="cn-faq-item">
+              <button type="button" class="cn-faq-trigger faq-trigger">
+                <h3 class="cn-heading cn-heading-plain mb-0">
+                  Do I need technical skills to deploy these agents?
+                </h3>
+                <span class="cn-icon cn-text-gold faq-icon">add</span>
+              </button>
+              <div class="cn-faq-panel faq-content">
+                <p class="cn-faq-answer">
+                  No, our platform is designed for rapid, low-code deployment.
+                  Our intuitive interface allows your team to activate and
+                  configure agents in minutes without writing a single line of
+                  code.
+                </p>
+              </div>
+            </div>
+            <div class="cn-faq-item">
+              <button type="button" class="cn-faq-trigger faq-trigger">
+                <h3 class="cn-heading cn-heading-plain mb-0">
+                  What happens when my trial ends?
+                </h3>
+                <span class="cn-icon cn-text-gold faq-icon">add</span>
+              </button>
+              <div class="cn-faq-panel faq-content">
+                <p class="cn-faq-answer">
+                  You can choose a plan that fits your agency or pause until you
+                  are ready. Your configuration is saved, and upgrading takes
+                  only a few clicks—no rebuild required.
+                </p>
+              </div>
+            </div>
+            <div class="cn-faq-item">
+              <button type="button" class="cn-faq-trigger faq-trigger">
+                <h3 class="cn-heading cn-heading-plain mb-0">
+                  Can I use my own branding and domain?
+                </h3>
+                <span class="cn-icon cn-text-gold faq-icon">add</span>
+              </button>
+              <div class="cn-faq-panel faq-content">
+                <p class="cn-faq-answer">
+                  Yes. Cognitive Nexus is built for white-label delivery—your
+                  logo, colors, client-facing URLs, and communications can all
+                  reflect your agency brand.
+                </p>
+              </div>
+            </div>
+            <div class="cn-faq-item">
+              <button type="button" class="cn-faq-trigger faq-trigger">
+                <h3 class="cn-heading cn-heading-plain mb-0">
+                  How does billing work for my clients?
+                </h3>
+                <span class="cn-icon cn-text-gold faq-icon">add</span>
+              </button>
+              <div class="cn-faq-panel faq-content">
+                <p class="cn-faq-answer">
+                  You set retail pricing and packaging. The platform supports
+                  recurring subscriptions and usage-based add-ons so you can
+                  mirror how you already sell services.
+                </p>
+              </div>
+            </div>
+            <div class="cn-faq-item">
+              <button type="button" class="cn-faq-trigger faq-trigger">
+                <h3 class="cn-heading cn-heading-plain mb-0">
+                  Is there a limit on agents or seats?
+                </h3>
+                <span class="cn-icon cn-text-gold faq-icon">add</span>
+              </button>
+              <div class="cn-faq-panel faq-content">
+                <p class="cn-faq-answer">
+                  Limits depend on your plan tier. Higher tiers include more
+                  concurrent agents, expanded storage, and priority throughput
+                  for high-volume campaigns.
+                </p>
+              </div>
+            </div>
+            <div class="cn-faq-item">
+              <button type="button" class="cn-faq-trigger faq-trigger">
+                <h3 class="cn-heading cn-heading-plain mb-0">
+                  Do you offer onboarding or launch support?
+                </h3>
+                <span class="cn-icon cn-text-gold faq-icon">add</span>
+              </button>
+              <div class="cn-faq-panel faq-content">
+                <p class="cn-faq-answer">
+                  Yes. Executive onboarding covers account setup, first-agent
+                  launch, and best practices for positioning and pricing with
+                  your clients.
+                </p>
+              </div>
+            </div>
+            <div class="cn-faq-item">
+              <button type="button" class="cn-faq-trigger faq-trigger">
+                <h3 class="cn-heading cn-heading-plain mb-0">
+                  Can I resell at my own price?
+                </h3>
+                <span class="cn-icon cn-text-gold faq-icon">add</span>
+              </button>
+              <div class="cn-faq-panel faq-content">
+                <p class="cn-faq-answer">
+                  You control your margins. Reseller and SaaS-style plans
+                  include tools to apply custom markup and invoice your
+                  customers directly.
+                </p>
+              </div>
+            </div>
+            <div class="cn-faq-item">
+              <button type="button" class="cn-faq-trigger faq-trigger">
+                <h3 class="cn-heading cn-heading-plain mb-0">
+                  Is there an API for custom workflows?
+                </h3>
+                <span class="cn-icon cn-text-gold faq-icon">add</span>
+              </button>
+              <div class="cn-faq-panel faq-content">
+                <p class="cn-faq-answer">
+                  Yes. REST hooks and webhooks let you connect internal tools,
+                  data warehouses, and proprietary stacks without compromising
+                  the no-code experience for day-to-day users.
+                </p>
+              </div>
+            </div>
+            <div class="cn-faq-item">
+              <button type="button" class="cn-faq-trigger faq-trigger">
+                <h3 class="cn-heading cn-heading-plain mb-0">
+                  Where is my data hosted?
+                </h3>
+                <span class="cn-icon cn-text-gold faq-icon">add</span>
+              </button>
+              <div class="cn-faq-panel faq-content">
+                <p class="cn-faq-answer">
+                  Production workloads run in SOC 2–aligned regions with
+                  redundancy and encryption in transit and at rest. Enterprise
+                  customers can discuss dedicated deployment options.
+                </p>
+              </div>
             </div>
           </div>
         </div>
