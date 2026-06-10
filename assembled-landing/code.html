@@ -1,360 +1,2576 @@
-<!DOCTYPE html>
-<html class="cn-dark" lang="en">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" crossorigin="anonymous">
-<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/cognitive-bootstrap.css">
-<title>Cognitive Nexus</title>
-</head>
-<body class="cn-landing">
-<header class="cn-site-header">
-  <div class="cn-wrap d-flex justify-content-between align-items-center cn-py-base">
-    <div class="cn-font-display cn-text-headline-sm cn-text-display-lg-md font-weight-bold cn-text-primary cn-tracking-tight">Cognitive Nexus</div>
-    <nav class="cn-nav-links d-none d-md-flex">
-      <a class="cn-nav-link cn-nav-link--active cn-text-label-md" href="#">Agents</a>
-      <a class="cn-nav-link cn-text-label-md" href="#">Strategy</a>
-      <a class="cn-nav-link cn-text-label-md" href="#">Operations</a>
-      <a class="cn-nav-link cn-text-label-md" href="#">Intelligence</a>
-    </nav>
-    <div class="d-flex align-items-center">
-      <button type="button" class="cn-btn cn-btn-primary cn-text-label-md cn-px-gutter cn-py-3-custom mr-2">Executive Portal</button>
-      <img class="cn-avatar cn-border-outline-icon" alt="Executive User Profile" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDt14VmCDIiRFvf8LDi29v4JbeP8Ex01fGjWGdSbuBqlULGDULyC4Ycwm7p0FxWcO6n_LyW8gpPP8JzPr5evYeocfOe26HJZFugHpeqkdcMHC1PS3hYMMT5uAIS__9d0K85PyKLmVfz20DZYWldC8FgithXR4_NVoLBPPUabMhMth5kgS2qMmBREe13GsW_2OmqDY1M06RW1pBmhBU11Qi5bmqaKxPcqCRdok14jAik8FCvgJu0GXKPXve0OGNCH2tv6dyXD_Zh2x8">
-    </div>
-  </div>
-</header>
+<!doctype html>
+<html class="cn-theme" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@300;400;500;600;700;800&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <style id="cn-embedded-theme">
+      /**
+ * Cognitive Nexus — theme & components only.
+ * Bootstrap 4.6 utility/class names are not used as selectors here.
+ */
+      :root {
+        --cn-background: #131313;
+        --cn-surface: #131313;
+        --cn-surface-low: #1c1b1b;
+        --cn-surface-high: #2a2a2a;
+        --cn-surface-lowest: #0e0e0e;
+        --cn-surface-bright: #393939;
+        --cn-primary: #f2ca50;
+        --cn-on-primary: #3c2f00;
+        --cn-on-primary-fixed: #241a00;
+        --cn-on-background: #e5e2e1;
+        --cn-on-surface: #e5e2e1;
+        --cn-on-surface-variant: #d0c5af;
+        --cn-outline: #99907c;
+        --cn-outline-variant: #4d4635;
+        --cn-error: #ffb4ab;
+        --cn-tertiary: #e7c9a6;
+        --cn-primary-fixed-dim: #e9c349;
+        --cn-container: 1280px;
+        --cn-gutter: 24px;
+        --cn-margin-desktop: 40px;
+        --cn-margin-mobile: 16px;
+        --cn-base: 8px;
+        --cn-radius-lg: 0.5rem;
+        --cn-radius-xl: 0.75rem;
+      }
 
-<main>
-<section class="cn-relative cn-py-hero cn-overflow-hidden cn-hero-glow">
-  <div class="cn-absolute-fill cn-hero-carbon cn-opacity-10 cn-pointer-none"></div>
-  <div class="cn-wrap text-center cn-relative cn-z-10">
-    <div class="mx-auto cn-max-w-4xl">
-      <h1 class="cn-font-display cn-text-display-lg-mobile cn-text-display-lg-md cn-text-primary cn-drop-shadow-title cn-mb-6-custom">Sell AI Agents Under Your Brand In Minutes</h1>
-      <p class="cn-text-body-lg cn-text-on-surface-variant cn-leading-relaxed cn-mb-10-custom mx-auto cn-max-w-2xl">Launch a fully white-label AI business and start charging clients monthly without developers, coding, or building software yourself.</p>
-      <div class="d-flex flex-column cn-hero-actions">
-        <button type="button" class="cn-btn cn-btn-primary cn-text-headline-sm cn-px-10-custom cn-py-4-custom cn-shadow-lg">Start Your Free Trial</button>
-        <button type="button" class="cn-btn cn-btn-outline-gold cn-text-headline-sm cn-px-10-custom cn-py-4-custom">Book a Demo</button>
+      html.cn-theme,
+      html.cn-theme body {
+        background: var(--cn-background);
+      }
+
+      html.cn-theme body {
+        font-family:
+          "Hanken Grotesk",
+          system-ui,
+          -apple-system,
+          BlinkMacSystemFont,
+          "Segoe UI",
+          sans-serif;
+        background-color: var(--cn-background) !important;
+        color: var(--cn-on-background) !important;
+        -webkit-font-smoothing: antialiased;
+      }
+
+      html.cn-theme body::selection {
+        background: var(--cn-primary);
+        color: var(--cn-on-primary);
+      }
+
+      .cn-layout-max {
+        width: 100%;
+        max-width: var(--cn-container);
+        margin-left: auto;
+        margin-right: auto;
+        padding-left: var(--cn-margin-desktop);
+        padding-right: var(--cn-margin-desktop);
+      }
+
+      @media (max-width: 767.98px) {
+        .cn-layout-max {
+          padding-left: var(--cn-margin-mobile);
+          padding-right: var(--cn-margin-mobile);
+        }
+      }
+
+      .cn-icon {
+        font-family: "Material Symbols Outlined", sans-serif;
+        font-variation-settings:
+          "FILL" 0,
+          "wght" 300,
+          "GRAD" 0,
+          "opsz" 24;
+        font-style: normal;
+        line-height: 1;
+        display: inline-block;
+        vertical-align: middle;
+      }
+
+      .cn-icon-gold {
+        background: linear-gradient(135deg, #f2ca50 0%, #8b7355 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+
+      .cn-surface-sheen {
+        box-shadow: inset 0 1px 0 0 rgba(242, 202, 80, 0.1);
+      }
+
+      .cn-hero-glow-bg {
+        background: radial-gradient(
+          circle at 50% 50%,
+          rgba(242, 202, 80, 0.08) 0%,
+          transparent 70%
+        );
+      }
+
+      .cn-gradient-fade {
+        background: linear-gradient(
+          to bottom,
+          rgba(242, 202, 80, 0.05) 0%,
+          transparent 100%
+        );
+      }
+
+      .cn-hero-texture {
+        background-image: url("https://www.transparenttextures.com/patterns/carbon-fibre.png");
+      }
+
+      /* Typography */
+      .cn-font-display {
+        font-family: "Hanken Grotesk", system-ui, sans-serif;
+      }
+
+      .cn-text-display {
+        font-size: 48px;
+        line-height: 56px;
+        letter-spacing: -0.02em;
+        font-weight: 700;
+      }
+
+      .cn-text-display-sm {
+        font-size: 32px;
+        line-height: 40px;
+        letter-spacing: -0.02em;
+        font-weight: 700;
+      }
+
+      @media (min-width: 768px) {
+        .cn-text-display-md-up {
+          font-size: 48px;
+          line-height: 56px;
+          letter-spacing: -0.02em;
+          font-weight: 700;
+        }
+      }
+
+      .cn-text-heading-md {
+        font-size: 24px;
+        line-height: 32px;
+        font-weight: 600;
+      }
+
+      .cn-text-heading-sm {
+        font-size: 20px;
+        line-height: 28px;
+        font-weight: 600;
+      }
+
+      .cn-text-lead-size {
+        font-size: 18px;
+        line-height: 28px;
+        font-weight: 400;
+      }
+
+      .cn-text-body {
+        font-size: 16px;
+        line-height: 24px;
+        font-weight: 400;
+      }
+
+      .cn-text-label {
+        font-size: 14px;
+        line-height: 20px;
+        letter-spacing: 0.01em;
+        font-weight: 500;
+      }
+
+      .cn-text-caption {
+        font-size: 12px;
+        line-height: 16px;
+        letter-spacing: 0.05em;
+        font-weight: 600;
+      }
+
+      .cn-text-gold {
+        color: var(--cn-primary) !important;
+      }
+
+      .cn-text-on-primary {
+        color: var(--cn-on-primary) !important;
+      }
+
+      .cn-text-on-primary-fixed {
+        color: var(--cn-on-primary-fixed) !important;
+      }
+
+      .cn-text-on-background {
+        color: var(--cn-on-background) !important;
+      }
+
+      .cn-text-on-surface {
+        color: var(--cn-on-surface) !important;
+      }
+
+      .cn-text-muted {
+        color: var(--cn-on-surface-variant) !important;
+      }
+
+      .cn-text-muted-soft {
+        color: rgba(208, 197, 175, 0.8);
+      }
+
+      .cn-text-muted-faint {
+        color: rgba(208, 197, 175, 0.6);
+      }
+
+      .cn-text-error {
+        color: var(--cn-error) !important;
+      }
+
+      .cn-text-gold-soft {
+        color: rgba(242, 202, 80, 0.7);
+      }
+
+      /* Composites — reuse same classes across the landing */
+      .cn-brand {
+        font-family: "Hanken Grotesk", system-ui, sans-serif;
+        font-weight: 700;
+        color: var(--cn-primary) !important;
+        letter-spacing: -0.025em;
+        font-size: 20px;
+        line-height: 28px;
+      }
+
+      @media (min-width: 768px) {
+        .cn-brand {
+          font-size: 48px;
+          line-height: 56px;
+          letter-spacing: -0.02em;
+        }
+      }
+
+      .cn-title-hero {
+        font-family: "Hanken Grotesk", system-ui, sans-serif;
+        font-size: 32px;
+        line-height: 40px;
+        letter-spacing: -0.02em;
+        font-weight: 700;
+        color: var(--cn-primary) !important;
+        filter: drop-shadow(0 1px 1px rgba(0, 0, 0, 0.25));
+        margin-bottom: 1.5rem;
+      }
+
+      @media (min-width: 768px) {
+        .cn-title-hero {
+          font-size: 48px;
+          line-height: 56px;
+        }
+      }
+
+      .cn-title-section {
+        font-family: "Hanken Grotesk", system-ui, sans-serif;
+        font-size: 48px;
+        line-height: 56px;
+        letter-spacing: -0.02em;
+        font-weight: 700;
+        color: var(--cn-primary) !important;
+        margin-bottom: 1.5rem;
+      }
+
+      .cn-title-section.cn-title-section--spaced {
+        margin-bottom: 4rem;
+      }
+
+      .cn-quote-title {
+        font-size: 24px;
+        line-height: 32px;
+        font-weight: 600;
+        color: var(--cn-primary) !important;
+        margin-bottom: 1.5rem;
+        font-style: italic;
+      }
+
+      .cn-heading {
+        font-size: 20px;
+        line-height: 28px;
+        font-weight: 600;
+        color: var(--cn-primary) !important;
+        margin-bottom: 0.5rem;
+      }
+
+      .cn-heading-tier {
+        font-size: 24px;
+        line-height: 32px;
+        font-weight: 600;
+        color: var(--cn-primary) !important;
+        margin-bottom: 0.5rem;
+      }
+
+      .cn-prose-lead {
+        font-size: 18px;
+        line-height: 1.625;
+        font-weight: 400;
+        color: var(--cn-on-surface-variant) !important;
+      }
+
+      .cn-prose-lead.cn-prose-lead--hero {
+        margin-bottom: 2.5rem;
+      }
+
+      .cn-card-summary {
+        font-size: 16px;
+        line-height: 24px;
+        font-weight: 400;
+        color: rgba(208, 197, 175, 0.8);
+        margin-bottom: 1.5rem;
+      }
+
+      .cn-footer-brand {
+        font-size: 20px;
+        line-height: 28px;
+        font-weight: 600;
+        color: var(--cn-primary) !important;
+      }
+
+      .cn-heading.cn-heading-plain {
+        margin-bottom: 0 !important;
+      }
+
+      .cn-modal-title {
+        font-family: "Hanken Grotesk", system-ui, sans-serif;
+        font-size: 24px;
+        line-height: 32px;
+        font-weight: 600;
+        color: var(--cn-primary) !important;
+        margin-bottom: 1.5rem;
+      }
+
+      /* Surfaces */
+      .cn-bg-page {
+        background-color: var(--cn-background) !important;
+      }
+
+      .cn-bg-surface {
+        background-color: var(--cn-surface) !important;
+      }
+
+      .cn-bg-surface-low {
+        background-color: var(--cn-surface-low) !important;
+      }
+
+      .cn-bg-surface-high {
+        background-color: var(--cn-surface-high) !important;
+      }
+
+      .cn-bg-surface-darkest {
+        background-color: var(--cn-surface-lowest) !important;
+      }
+
+      .cn-bg-primary {
+        background-color: var(--cn-primary) !important;
+      }
+
+      .cn-bg-modal-overlay {
+        background-color: rgba(19, 19, 19, 0.8);
+        backdrop-filter: blur(4px);
+      }
+
+      /* Borders */
+      .cn-border-faint {
+        border: 1px solid rgba(77, 70, 53, 0.1);
+      }
+
+      .cn-border-footer-top {
+        border-top: 1px solid rgba(77, 70, 53, 0.15);
+      }
+
+      .cn-border-soft {
+        border-color: rgba(77, 70, 53, 0.2);
+      }
+
+      .cn-border-medium {
+        border-color: rgba(77, 70, 53, 0.3);
+      }
+
+      .cn-border-y-soft {
+        border-top: 1px solid rgba(77, 70, 53, 0.1);
+        border-bottom: 1px solid rgba(77, 70, 53, 0.1);
+      }
+
+      .cn-border-y-strong {
+        border-top: 1px solid rgba(77, 70, 53, 0.2);
+        border-bottom: 1px solid rgba(77, 70, 53, 0.2);
+      }
+
+      .cn-border-bottom-soft {
+        border-bottom: 1px solid rgba(77, 70, 53, 0.2);
+      }
+
+      .cn-border-top-soft {
+        border-top: 1px solid rgba(77, 70, 53, 0.2);
+      }
+
+      .cn-border-top-gold {
+        border-top: 1px solid rgba(242, 202, 80, 0.2);
+      }
+
+      .cn-border-gold-soft {
+        border: 1px solid rgba(242, 202, 80, 0.2);
+      }
+
+      .cn-border-gold-medium {
+        border: 2px solid rgba(242, 202, 80, 0.3);
+      }
+
+      .cn-border-gold-bold {
+        border: 2px solid rgba(242, 202, 80, 0.4);
+      }
+
+      .cn-border-gold-solid {
+        border: 2px solid var(--cn-primary);
+      }
+
+      .cn-border-avatar {
+        border: 1px solid rgba(153, 144, 124, 0.3);
+      }
+
+      .cn-radius-lg {
+        border-radius: var(--cn-radius-lg) !important;
+      }
+
+      .cn-radius-xl {
+        border-radius: var(--cn-radius-xl) !important;
+      }
+
+      .cn-radius-pill {
+        border-radius: 9999px;
+      }
+
+      /* Spacing */
+      .cn-pad-y-tight {
+        padding-top: var(--cn-base);
+        padding-bottom: var(--cn-base);
+      }
+
+      .cn-pad-y-gutter {
+        padding-top: var(--cn-gutter);
+        padding-bottom: var(--cn-gutter);
+      }
+
+      .cn-pad-gutter {
+        padding: var(--cn-gutter);
+      }
+
+      .cn-pad-x-gutter {
+        padding-left: var(--cn-gutter);
+        padding-right: var(--cn-gutter);
+      }
+
+      .cn-pad-y-sm {
+        padding-top: 0.4rem;
+        padding-bottom: 0.4rem;
+      }
+
+      .cn-pad-y-md {
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+      }
+
+      .cn-pad-y-lg {
+        padding-top: 1.25rem;
+        padding-bottom: 1.25rem;
+      }
+
+      .cn-pad-y-xl {
+        padding-top: 1.5rem;
+        padding-bottom: 1.5rem;
+      }
+
+      .cn-pad-x-button {
+        padding-left: 2.5rem;
+        padding-right: 2.5rem;
+      }
+
+      .cn-pad-x-wide {
+        padding-left: 3rem;
+        padding-right: 3rem;
+      }
+
+      .cn-pad-x-hero {
+        padding-left: 4rem;
+        padding-right: 4rem;
+      }
+
+      .cn-pad-section {
+        padding-top: 4rem;
+        padding-bottom: 4rem;
+      }
+
+      .cn-pad-section-tall {
+        padding-top: 5rem;
+        padding-bottom: 5rem;
+      }
+
+      .cn-pad-section-xl {
+        padding-top: 6rem;
+        padding-bottom: 6rem;
+      }
+
+      .cn-pad-hero {
+        padding-top: 6rem;
+        padding-bottom: 6rem;
+      }
+
+      .cn-margin-below-xs {
+        margin-bottom: var(--cn-base);
+      }
+
+      .cn-margin-below-gutter {
+        margin-bottom: var(--cn-gutter);
+      }
+
+      .cn-margin-below {
+        margin-bottom: 1.5rem;
+      }
+
+      .cn-margin-below-medium {
+        margin-bottom: 2rem;
+      }
+
+      .cn-margin-below-large {
+        margin-bottom: 2.5rem;
+      }
+
+      .cn-margin-below-section {
+        margin-bottom: 4rem;
+      }
+
+      .cn-margin-below-xl {
+        margin-bottom: 5rem;
+      }
+
+      .cn-pad-top-section {
+        padding-top: 1.5rem;
+      }
+
+      .cn-flex-grow {
+        flex-grow: 1 !important;
+      }
+
+      .cn-margin-top-large {
+        margin-top: 4rem;
+      }
+
+      .cn-margin-top-section {
+        margin-top: 6rem;
+      }
+
+      .cn-margin-top {
+        margin-top: 1.5rem;
+      }
+
+      .cn-margin-top-tight {
+        margin-top: 0.5rem;
+      }
+
+      .cn-margin-below-tight {
+        margin-bottom: 0.5rem;
+      }
+
+      .cn-margin-below-compact {
+        margin-bottom: 1rem;
+      }
+
+      .cn-measure-narrow {
+        max-width: 42rem;
+      }
+
+      .cn-measure-medium {
+        max-width: 48rem;
+      }
+
+      .cn-measure-wide {
+        max-width: 56rem;
+      }
+
+      .cn-measure-modal {
+        max-width: 42rem;
+      }
+
+      /* Header */
+      .cn-site-header {
+        position: sticky;
+        top: 0;
+        z-index: 50;
+        background-color: var(--cn-surface);
+        border-bottom: 1px solid rgba(77, 70, 53, 0.2);
+      }
+
+      .cn-nav-link {
+        color: var(--cn-on-surface-variant);
+        font-weight: 500;
+        text-decoration: none !important;
+        transition: color 0.3s ease;
+      }
+
+      .cn-nav-link:hover {
+        color: var(--cn-primary-fixed-dim);
+      }
+
+      .cn-nav-link-active {
+        color: var(--cn-primary) !important;
+        font-weight: 700;
+        border-bottom: 2px solid var(--cn-primary);
+        padding-bottom: 0.25rem;
+      }
+
+      .cn-nav-row {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+      }
+
+      .cn-nav-row > a + a {
+        margin-left: var(--cn-gutter);
+      }
+
+      /* Tailwind parity: gap-base / sm:gap-gutter — flex gap is not cleared by button { margin: 0 } */
+      .cn-hero-buttons {
+        gap: var(--cn-base);
+      }
+
+      @media (min-width: 576px) {
+        .cn-hero-buttons {
+          flex-direction: row !important;
+          justify-content: center;
+          gap: var(--cn-gutter);
+        }
+      }
+
+      .cn-avatar {
+        width: 2.5rem;
+        height: 2.5rem;
+        border-radius: 9999px;
+        object-fit: cover;
+      }
+
+      /* Buttons */
+      .cn-btn {
+        display: inline-block;
+        font-family: inherit;
+        text-align: center;
+        vertical-align: middle;
+        user-select: none;
+        border: 1px solid transparent;
+        transition: all 0.15s ease;
+        cursor: pointer;
+      }
+
+      .cn-btn:focus {
+        outline: 0;
+      }
+
+      .cn-btn-primary {
+        background-color: var(--cn-primary);
+        color: var(--cn-on-primary) !important;
+        font-weight: 700;
+        border-radius: var(--cn-radius-lg);
+      }
+
+      .cn-btn-primary:hover {
+        filter: brightness(1.1);
+        color: var(--cn-on-primary) !important;
+        text-decoration: none;
+      }
+
+      .cn-btn-primary:active {
+        transform: scale(0.95);
+      }
+
+      .cn-btn-primary.cn-btn-glow-sm {
+        box-shadow:
+          0 10px 15px -3px rgba(242, 202, 80, 0.2),
+          0 4px 6px -4px rgba(242, 202, 80, 0.15);
+      }
+
+      .cn-btn-primary.cn-btn-glow-md {
+        box-shadow:
+          0 20px 25px -5px rgba(242, 202, 80, 0.25),
+          0 8px 10px -6px rgba(242, 202, 80, 0.2);
+      }
+
+      .cn-btn-primary.cn-btn-glow-lg {
+        box-shadow:
+          0 25px 50px -12px rgba(242, 202, 80, 0.25),
+          0 10px 15px -3px rgba(0, 0, 0, 0.2);
+      }
+
+      .cn-btn-outline {
+        background-color: var(--cn-surface-high);
+        color: var(--cn-primary) !important;
+        border: 1px solid rgba(242, 202, 80, 0.4);
+        font-weight: 700;
+        border-radius: var(--cn-radius-lg);
+      }
+
+      .cn-btn-outline:hover {
+        background-color: rgba(242, 202, 80, 0.05);
+        color: var(--cn-primary) !important;
+        text-decoration: none;
+      }
+
+      .cn-btn-outline.cn-btn-outline-fill-hover:hover {
+        background-color: var(--cn-primary);
+        color: var(--cn-on-primary) !important;
+      }
+
+      .cn-btn-outline:active {
+        transform: scale(0.95);
+      }
+
+      .cn-icon-sm {
+        font-size: 1rem;
+        width: 1em;
+        height: 1em;
+      }
+
+      .cn-icon-md {
+        font-size: 1.5rem;
+      }
+
+      .cn-icon-lg {
+        font-size: 2.25rem;
+      }
+
+      .cn-icon-xl {
+        font-size: 3.75rem;
+      }
+
+      /* Cards */
+      .cn-card-agent {
+        background-color: var(--cn-surface-low);
+        border: 2px solid rgba(242, 202, 80, 0.4);
+        border-radius: var(--cn-radius-xl);
+        padding: var(--cn-gutter);
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        min-height: 100%;
+        transition:
+          border-color 0.3s ease,
+          box-shadow 0.3s ease;
+      }
+
+      .cn-card-agent:hover {
+        border-color: var(--cn-primary);
+      }
+
+      .cn-pricing-card {
+        background-color: var(--cn-surface-low);
+        border-radius: var(--cn-radius-xl);
+        padding: var(--cn-gutter);
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+      }
+
+      .cn-pricing-border-soft {
+        border: 2px solid rgba(242, 202, 80, 0.3);
+      }
+
+      .cn-pricing-featured {
+        border: 2px solid var(--cn-primary);
+        position: relative;
+        z-index: 10;
+        transform: scale(1.05);
+        box-shadow:
+          0 25px 50px -12px rgba(242, 202, 80, 0.2),
+          0 10px 15px -3px rgba(242, 202, 80, 0.15);
+      }
+
+      .cn-badge-popular {
+        position: absolute;
+        top: -1rem;
+        left: 50%;
+        transform: translateX(-50%);
+        background: var(--cn-primary);
+        color: var(--cn-on-primary);
+        padding: 0.25rem 1rem;
+        border-radius: 9999px;
+        font-size: 12px;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        white-space: nowrap;
+      }
+
+      .cn-price-row {
+        display: flex;
+        align-items: baseline;
+        gap: 0.25rem;
+      }
+
+      .cn-checklist {
+        list-style: none;
+        padding-left: 0;
+        margin: 0 0 2.5rem;
+      }
+
+      .cn-checklist li {
+        display: flex;
+        align-items: flex-start;
+        gap: 0.5rem;
+        margin-bottom: 1rem;
+        color: var(--cn-on-surface-variant);
+      }
+
+      .cn-checklist li:last-child {
+        margin-bottom: 0;
+      }
+
+      /* Module list row (Additional Software Modules — matches compact grid reference) */
+      .cn-module-line {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        color: var(--cn-on-surface-variant);
+        font-size: 18px;
+        line-height: 22px;
+        font-weight: 400;
+      }
+
+      .cn-module-line > .cn-icon {
+        font-size: 1.6rem;
+        width: 1.4rem;
+        height: 1.4rem;
+        flex-shrink: 0;
+      }
+
+      .cn-row-modules.cn-row-tight > [class*="col-"] {
+        margin-bottom: 1.8rem !important;
+      }
+
+      /* Comparison table */
+      .cn-compare-shell {
+        background-color: var(--cn-surface-low);
+        border: 1px solid rgba(77, 70, 53, 0.2);
+        border-radius: var(--cn-radius-xl);
+        overflow: hidden;
+        box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.45);
+      }
+
+      .cn-compare-head {
+        background-color: var(--cn-surface-high);
+        border-bottom: 1px solid rgba(77, 70, 53, 0.3);
+        padding: 1.5rem 2rem;
+      }
+
+      .cn-compare-row {
+        padding: 1.25rem 2rem;
+        align-items: center;
+        transition: background-color 0.15s ease;
+      }
+
+      .cn-compare-row:hover {
+        background-color: rgba(57, 57, 57, 0.05);
+      }
+
+      .cn-compare-row + .cn-compare-row {
+        border-top: 1px solid rgba(77, 70, 53, 0.1);
+      }
+
+      .cn-compare-foot {
+        background-color: var(--cn-surface-high);
+        padding: 2rem;
+        border-top: 1px solid rgba(242, 202, 80, 0.2);
+      }
+
+      /* Media frame */
+      .cn-media-frame {
+        border-radius: var(--cn-radius-xl);
+        overflow: hidden;
+        border: 1px solid rgba(242, 202, 80, 0.2);
+        box-shadow: 0 25px 50px -12px rgba(242, 202, 80, 0.1);
+      }
+
+      .cn-media-frame img {
+        width: 100%;
+        height: auto;
+        display: block;
+        object-fit: cover;
+      }
+
+      /* FAQ */
+      .cn-faq-item {
+        border-bottom: 1px solid rgba(77, 70, 53, 0.2);
+      }
+
+      .cn-faq-trigger {
+        width: 100%;
+        background: none;
+        border: 0;
+        padding: var(--cn-gutter) 0;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        text-align: left;
+        cursor: pointer;
+      }
+
+      .cn-faq-trigger:focus {
+        outline: none;
+      }
+
+      .cn-faq-trigger .faq-icon {
+        transition: transform 0.3s ease;
+      }
+
+      .cn-faq-panel {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease-in-out;
+      }
+
+      .cn-faq-answer {
+        padding-bottom: var(--cn-gutter);
+        color: rgba(208, 197, 175, 0.8);
+      }
+
+      /* Modal */
+      .cn-modal-root {
+        position: fixed;
+        inset: 0;
+        z-index: 100;
+        padding: var(--cn-margin-mobile);
+      }
+
+      .cn-modal-panel {
+        position: relative;
+        background-color: var(--cn-surface-lowest);
+        border: 2px solid rgba(242, 202, 80, 0.3);
+        border-radius: var(--cn-radius-xl);
+        padding: var(--cn-gutter);
+        width: 100%;
+        max-width: 42rem;
+        margin: auto;
+        box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.45);
+      }
+
+      .cn-modal-close {
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+        background: none;
+        border: 0;
+        padding: 0;
+        color: var(--cn-on-surface-variant);
+        cursor: pointer;
+        line-height: 1;
+      }
+
+      .cn-modal-close:hover {
+        color: var(--cn-primary);
+      }
+
+      /* Footer links */
+      .cn-footer-link {
+        color: var(--cn-on-surface-variant);
+        text-decoration: none !important;
+        font-size: 12px;
+        line-height: 16px;
+        letter-spacing: 0.05em;
+        font-weight: 600;
+        transition: color 0.2s ease;
+      }
+
+      .cn-footer-link:hover {
+        color: var(--cn-tertiary);
+      }
+
+      /* Row gutter to match 24px card gaps */
+      .cn-row-tight {
+        margin-left: calc(var(--cn-gutter) / -2);
+        margin-right: calc(var(--cn-gutter) / -2);
+      }
+
+      .cn-row-tight > div {
+        padding-left: calc(var(--cn-gutter) / 2);
+        padding-right: calc(var(--cn-gutter) / 2);
+      }
+
+      .cn-text-shadow-title {
+        filter: drop-shadow(0 1px 1px rgba(0, 0, 0, 0.25));
+      }
+
+      .cn-tracking-tight {
+        letter-spacing: -0.025em;
+      }
+
+      .cn-tracking-widest {
+        letter-spacing: 0.1em;
+      }
+
+      .cn-tracking-wide {
+        letter-spacing: 0.05em;
+      }
+
+      .cn-leading-relaxed {
+        line-height: 1.625;
+      }
+
+      .cn-leading-tight {
+        line-height: 1.25;
+      }
+
+      .cn-italic {
+        font-style: italic;
+      }
+
+      .cn-uppercase {
+        text-transform: uppercase;
+      }
+
+      .cn-opacity-muted {
+        opacity: 0.1;
+      }
+
+      .cn-z-raised {
+        z-index: 10;
+      }
+
+      .cn-relative {
+        position: relative;
+      }
+
+      .cn-absolute-fill {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+      }
+
+      .cn-pointer-none {
+        pointer-events: none;
+      }
+
+      .cn-overflow-hidden {
+        overflow: hidden;
+      }
+
+      .cn-card-agent .cn-btn.cn-btn-primary.cn-btn-card {
+        width: 100%;
+        padding-top: 0.75rem;
+        padding-bottom: 0.75rem;
+        border-radius: var(--cn-radius-lg) !important;
+        color: var(--cn-on-primary-fixed) !important;
+        font-size: 14px;
+        line-height: 20px;
+        letter-spacing: 0.01em;
+        font-weight: 500;
+      }
+    </style>
+    <title>Cognitive Nexus</title>
+  </head>
+  <body>
+    <header class="cn-site-header">
+      <div
+        class="cn-layout-max d-flex justify-content-between align-items-center cn-pad-y-tight"
+      >
+        <div class="cn-brand">Cognitive Nexus</div>
+        <nav class="cn-nav-row d-none d-md-flex">
+          <a class="cn-nav-link cn-nav-link-active cn-text-label" href="#"
+            >Agents</a
+          >
+          <a class="cn-nav-link cn-text-label" href="#">Strategy</a>
+          <a class="cn-nav-link cn-text-label" href="#">Operations</a>
+          <a class="cn-nav-link cn-text-label" href="#">Intelligence</a>
+        </nav>
+        <div class="d-flex align-items-center">
+          <button
+            type="button"
+            class="cn-btn cn-btn-primary cn-text-label cn-pad-x-gutter cn-pad-y-sm mr-2"
+          >
+            Executive Portal
+          </button>
+          <img
+            class="cn-avatar cn-border-avatar"
+            alt="Executive User Profile"
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuDt14VmCDIiRFvf8LDi29v4JbeP8Ex01fGjWGdSbuBqlULGDULyC4Ycwm7p0FxWcO6n_LyW8gpPP8JzPr5evYeocfOe26HJZFugHpeqkdcMHC1PS3hYMMT5uAIS__9d0K85PyKLmVfz20DZYWldC8FgithXR4_NVoLBPPUabMhMth5kgS2qMmBREe13GsW_2OmqDY1M06RW1pBmhBU11Qi5bmqaKxPcqCRdok14jAik8FCvgJu0GXKPXve0OGNCH2tv6dyXD_Zh2x8"
+          />
+        </div>
       </div>
-    </div>
-  </div>
-</section>
+    </header>
 
-<section class="cn-py-16-section cn-wrap">
-  <div class="cn-mb-16-custom text-center mx-auto cn-max-w-3xl">
-    <div class="cn-mb-10-custom cn-media-frame"><img alt="AI Agent Modules" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCDp8yBLQ7h3RO87MMei8GPYN5tTl9z9gU3VobACreFy-nq6wIGb4RZuGTYwmof6y8qlemozZT_LUGuB2mNsFYtd2ciu__PowCcDsVZjb2aDPXKFy5UC75l-Wr6L-aanV4RyggmRJ0bhII_V2bq9mUXWFm7vURec4N8ueoYEpaXpbLS1O0pbZRFdiq0aEpMWo5EkQRsI0Nselge0_6WybZDIfjXwf1_HEH2M2qygM_Pv74zC4P9TSdlXL-FDTx-15kVcOTog6GyOiM"></div>
-    <h2 class="cn-font-display cn-text-display-lg cn-text-primary cn-mb-6-custom">Our AI Agents &amp; Tools</h2>
-    <p class="cn-text-body-lg cn-text-on-surface-variant cn-leading-relaxed">High-performance cognitive agents engineered for scale. From voice automation to multi-channel CRM integration, our toolkit optimizes every touchpoint.</p>
-  </div>
-  <div class="row cn-row-tight">
-    <div class="col-12 col-md-6 col-lg-3 mb-4"><div class="cn-agent-card cn-card-inner-glow"><div><div class="cn-mb-base"><span class="cn-material cn-icon-size-lg cn-brushed-gold">support_agent</span></div><h3 class="cn-text-headline-sm cn-text-primary cn-mb-2">AI 24/7 Phone Receptionist</h3><p class="cn-text-body-md cn-text-on-surface-variant-muted cn-mb-6-custom">An automated receptionist that answers FAQs routes calls and handles customer service 24/7.</p></div><button type="button" class="cn-btn cn-btn-primary w-100 cn-text-label-md cn-py-3-custom cn-rounded-lg cn-text-on-primary-fixed">Learn More</button></div></div>
-    <div class="col-12 col-md-6 col-lg-3 mb-4"><div class="cn-agent-card cn-card-inner-glow"><div><div class="cn-mb-base"><span class="cn-material cn-icon-size-lg cn-brushed-gold">calendar_month</span></div><h3 class="cn-text-headline-sm cn-text-primary cn-mb-2">AI Appointment Booking</h3><p class="cn-text-body-md cn-text-on-surface-variant-muted cn-mb-6-custom">A voice assistant that checks calendar availability negotiates times and books appointments live on the call.</p></div><button type="button" class="cn-btn cn-btn-primary w-100 cn-text-label-md cn-py-3-custom cn-rounded-lg cn-text-on-primary-fixed">Learn More</button></div></div>
-    <div class="col-12 col-md-6 col-lg-3 mb-4"><div class="cn-agent-card cn-card-inner-glow"><div><div class="cn-mb-base"><span class="cn-material cn-icon-size-lg cn-brushed-gold">bolt</span></div><h3 class="cn-text-headline-sm cn-text-primary cn-mb-2">AI Instant Speed To Lead</h3><p class="cn-text-body-md cn-text-on-surface-variant-muted cn-mb-6-custom">Instantly calls new leads the second they submit a form automatically bridging them to your live sales team.</p></div><button type="button" class="cn-btn cn-btn-primary w-100 cn-text-label-md cn-py-3-custom cn-rounded-lg cn-text-on-primary-fixed">Learn More</button></div></div>
-    <div class="col-12 col-md-6 col-lg-3 mb-4"><div class="cn-agent-card cn-card-inner-glow"><div><div class="cn-mb-base"><span class="cn-material cn-icon-size-lg cn-brushed-gold">verified_user</span></div><h3 class="cn-text-headline-sm cn-text-primary cn-mb-2">AI Lead Qualifier</h3><p class="cn-text-body-md cn-text-on-surface-variant-muted cn-mb-6-custom">Autonomously calls new leads to ask pre-qualification questions and score them before a human speaks to them.</p></div><button type="button" class="cn-btn cn-btn-primary w-100 cn-text-label-md cn-py-3-custom cn-rounded-lg cn-text-on-primary-fixed">Learn More</button></div></div>
-    <div class="col-12 col-md-6 col-lg-3 mb-4"><div class="cn-agent-card cn-card-inner-glow"><div><div class="cn-mb-base"><span class="cn-material cn-icon-size-lg cn-brushed-gold">call</span></div><h3 class="cn-text-headline-sm cn-text-primary cn-mb-2">AI Cold Caller</h3><p class="cn-text-body-md cn-text-on-surface-variant-muted cn-mb-6-custom">A conversational campaign agent that systematically calls through dynamic target lists for cold or warm outreach.</p></div><button type="button" class="cn-btn cn-btn-primary w-100 cn-text-label-md cn-py-3-custom cn-rounded-lg cn-text-on-primary-fixed">Learn More</button></div></div>
-    <div class="col-12 col-md-6 col-lg-3 mb-4"><div class="cn-agent-card cn-card-inner-glow"><div><div class="cn-mb-base"><span class="cn-material cn-icon-size-lg cn-brushed-gold">database</span></div><h3 class="cn-text-headline-sm cn-text-primary cn-mb-2">AI Database Reactivation</h3><p class="cn-text-body-md cn-text-on-surface-variant-muted cn-mb-6-custom">Autonomously text-blasts or calls old cold databases to uncover hidden revenue and book missed opportunities.</p></div><button type="button" class="cn-btn cn-btn-primary w-100 cn-text-label-md cn-py-3-custom cn-rounded-lg cn-text-on-primary-fixed">Learn More</button></div></div>
-    <div class="col-12 col-md-6 col-lg-3 mb-4"><div class="cn-agent-card cn-card-inner-glow"><div><div class="cn-mb-base"><span class="cn-material cn-icon-size-lg cn-brushed-gold">restaurant</span></div><h3 class="cn-text-headline-sm cn-text-primary cn-mb-2">AI Phone Order Taker</h3><p class="cn-text-body-md cn-text-on-surface-variant-muted cn-mb-6-custom">A consumer-facing voice agent that answers hungry customers takes detailed food orders and sends them to the kitchen.</p></div><button type="button" class="cn-btn cn-btn-primary w-100 cn-text-label-md cn-py-3-custom cn-rounded-lg cn-text-on-primary-fixed">Learn More</button></div></div>
-    <div class="col-12 col-md-6 col-lg-3 mb-4"><div class="cn-agent-card cn-card-inner-glow"><div><div class="cn-mb-base"><span class="cn-material cn-icon-size-lg cn-brushed-gold">chat</span></div><h3 class="cn-text-headline-sm cn-text-primary cn-mb-2">AI 24/7 Website Chat</h3><p class="cn-text-body-md cn-text-on-surface-variant-muted cn-mb-6-custom">An interactive on-site widget that chats with visitors answers questions and captures lead info round-the-clock.</p></div><button type="button" class="cn-btn cn-btn-primary w-100 cn-text-label-md cn-py-3-custom cn-rounded-lg cn-text-on-primary-fixed">Learn More</button></div></div>
-    <div class="col-12 col-md-6 col-lg-3 mb-4"><div class="cn-agent-card cn-card-inner-glow"><div><div class="cn-mb-base"><span class="cn-material cn-icon-size-lg cn-brushed-gold">sms</span></div><h3 class="cn-text-headline-sm cn-text-primary cn-mb-2">AI 2 Way SMS Texting</h3><p class="cn-text-body-md cn-text-on-surface-variant-muted cn-mb-6-custom">A multi-channel agent that handles two-way texting</p></div><button type="button" class="cn-btn cn-btn-primary w-100 cn-text-label-md cn-py-3-custom cn-rounded-lg cn-text-on-primary-fixed">Learn More</button></div></div>
-    <div class="col-12 col-md-6 col-lg-3 mb-4"><div class="cn-agent-card cn-card-inner-glow"><div><div class="cn-mb-base"><span class="cn-material cn-icon-size-lg cn-brushed-gold">mail</span></div><h3 class="cn-text-headline-sm cn-text-primary cn-mb-2">AI 2 Way Emails</h3><p class="cn-text-body-md cn-text-on-surface-variant-muted cn-mb-6-custom">A multi-channel agent that handles two-way emails</p></div><button type="button" class="cn-btn cn-btn-primary w-100 cn-text-label-md cn-py-3-custom cn-rounded-lg cn-text-on-primary-fixed">Learn More</button></div></div>
-    <div class="col-12 col-md-6 col-lg-3 mb-4"><div class="cn-agent-card cn-card-inner-glow"><div><div class="cn-mb-base"><span class="cn-material cn-icon-size-lg cn-brushed-gold">public</span></div><h3 class="cn-text-headline-sm cn-text-primary cn-mb-2">AI 2 Way Facebook</h3><p class="cn-text-body-md cn-text-on-surface-variant-muted cn-mb-6-custom">An agent that handles two-way Facebook messages</p></div><button type="button" class="cn-btn cn-btn-primary w-100 cn-text-label-md cn-py-3-custom cn-rounded-lg cn-text-on-primary-fixed">Learn More</button></div></div>
-    <div class="col-12 col-md-6 col-lg-3 mb-4"><div class="cn-agent-card cn-card-inner-glow"><div><div class="cn-mb-base"><span class="cn-material cn-icon-size-lg cn-brushed-gold">photo_camera</span></div><h3 class="cn-text-headline-sm cn-text-primary cn-mb-2">AI 2 Way Instagram</h3><p class="cn-text-body-md cn-text-on-surface-variant-muted cn-mb-6-custom">An agent that handles two-way Instagram messages</p></div><button type="button" class="cn-btn cn-btn-primary w-100 cn-text-label-md cn-py-3-custom cn-rounded-lg cn-text-on-primary-fixed">Learn More</button></div></div>
-    <div class="col-12 col-md-6 col-lg-3 mb-4"><div class="cn-agent-card cn-card-inner-glow"><div><div class="cn-mb-base"><span class="cn-material cn-icon-size-lg cn-brushed-gold">chat_bubble</span></div><h3 class="cn-text-headline-sm cn-text-primary cn-mb-2">AI 2 Way Whatsapp</h3><p class="cn-text-body-md cn-text-on-surface-variant-muted cn-mb-6-custom">An agent that handles two-way Whatsapp messages</p></div><button type="button" class="cn-btn cn-btn-primary w-100 cn-text-label-md cn-py-3-custom cn-rounded-lg cn-text-on-primary-fixed">Learn More</button></div></div>
-    <div class="col-12 col-md-6 col-lg-3 mb-4"><div class="cn-agent-card cn-card-inner-glow"><div><div class="cn-mb-base"><span class="cn-material cn-icon-size-lg cn-brushed-gold">phone_missed</span></div><h3 class="cn-text-headline-sm cn-text-primary cn-mb-2">AI Missed Call Text-Back</h3><p class="cn-text-body-md cn-text-on-surface-variant-muted cn-mb-6-custom">Instantly text-backs missed callers with an AI conversational helper to save lost business before they call a competitor.</p></div><button type="button" class="cn-btn cn-btn-primary w-100 cn-text-label-md cn-py-3-custom cn-rounded-lg cn-text-on-primary-fixed">Learn More</button></div></div>
-    <div class="col-12 col-md-6 col-lg-3 mb-4"><div class="cn-agent-card cn-card-inner-glow"><div><div class="cn-mb-base"><span class="cn-material cn-icon-size-lg cn-brushed-gold">search</span></div><h3 class="cn-text-headline-sm cn-text-primary cn-mb-2">AI Seo Report</h3><p class="cn-text-body-md cn-text-on-surface-variant-muted cn-mb-6-custom">An autonomous crawler that scans websites diagnoses SEO issues and builds optimization blueprints.</p></div><button type="button" class="cn-btn cn-btn-primary w-100 cn-text-label-md cn-py-3-custom cn-rounded-lg cn-text-on-primary-fixed">Learn More</button></div></div>
-    <div class="col-12 col-md-6 col-lg-3 mb-4"><div class="cn-agent-card cn-card-inner-glow"><div><div class="cn-mb-base"><span class="cn-material cn-icon-size-lg cn-brushed-gold">video_library</span></div><h3 class="cn-text-headline-sm cn-text-primary cn-mb-2">AI Video Generator</h3><p class="cn-text-body-md cn-text-on-surface-variant-muted cn-mb-6-custom">A script-to-screen agent that generates engaging marketing videos renders visuals</p></div><button type="button" class="cn-btn cn-btn-primary w-100 cn-text-label-md cn-py-3-custom cn-rounded-lg cn-text-on-primary-fixed">Learn More</button></div></div>
-    <div class="col-12 col-md-6 col-lg-3 mb-4"><div class="cn-agent-card cn-card-inner-glow"><div><div class="cn-mb-base"><span class="cn-material cn-icon-size-lg cn-brushed-gold">web</span></div><h3 class="cn-text-headline-sm cn-text-primary cn-mb-2">AI 60-Second Website Builder</h3><p class="cn-text-body-md cn-text-on-surface-variant-muted cn-mb-6-custom">A high-speed prompt-to-design platform that builds fully functional conversion-optimized websites and landing pages in under 60 sec</p></div><button type="button" class="cn-btn cn-btn-primary w-100 cn-text-label-md cn-py-3-custom cn-rounded-lg cn-text-on-primary-fixed">Learn More</button></div></div>
-    <div class="col-12 col-md-6 col-lg-3 mb-4"><div class="cn-agent-card cn-card-inner-glow"><div><div class="cn-mb-base"><span class="cn-material cn-icon-size-lg cn-brushed-gold">share</span></div><h3 class="cn-text-headline-sm cn-text-primary cn-mb-2">AI Social Media Posts</h3><p class="cn-text-body-md cn-text-on-surface-variant-muted cn-mb-6-custom">An on-demand content tool that drafts high-converting social copy and eye-catching graphics based on your prompts.</p></div><button type="button" class="cn-btn cn-btn-primary w-100 cn-text-label-md cn-py-3-custom cn-rounded-lg cn-text-on-primary-fixed">Learn More</button></div></div>
-    <div class="col-12 col-md-6 col-lg-3 mb-4"><div class="cn-agent-card cn-card-inner-glow"><div><div class="cn-mb-base"><span class="cn-material cn-icon-size-lg cn-brushed-gold">star</span></div><h3 class="cn-text-headline-sm cn-text-primary cn-mb-2">Ai Reviews</h3><p class="cn-text-body-md cn-text-on-surface-variant-muted cn-mb-6-custom">An intelligent dashboard that monitors incoming business feedback crafts smart replies and boosts search rankings.</p></div><button type="button" class="cn-btn cn-btn-primary w-100 cn-text-label-md cn-py-3-custom cn-rounded-lg cn-text-on-primary-fixed">Learn More</button></div></div>
-    <div class="col-12 col-md-6 col-lg-3 mb-4"><div class="cn-agent-card cn-card-inner-glow"><div><div class="cn-mb-base"><span class="cn-material cn-icon-size-lg cn-brushed-gold">schedule</span></div><h3 class="cn-text-headline-sm cn-text-primary cn-mb-2">AI Social Media Scheduling</h3><p class="cn-text-body-md cn-text-on-surface-variant-muted cn-mb-6-custom">Schedules Social Media Posts</p></div><button type="button" class="cn-btn cn-btn-primary w-100 cn-text-label-md cn-py-3-custom cn-rounded-lg cn-text-on-primary-fixed">Learn More</button></div></div>
-  </div>
-</section>
+    <main>
+      <section
+        class="cn-relative cn-pad-hero cn-overflow-hidden cn-hero-glow-bg"
+      >
+        <div
+          class="cn-absolute-fill cn-hero-texture cn-opacity-muted cn-pointer-none"
+        ></div>
+        <div class="cn-layout-max text-center cn-relative cn-z-raised">
+          <div class="mx-auto cn-measure-wide">
+            <h1 class="cn-title-hero">
+              Sell AI Agents Under Your Brand In Minutes
+            </h1>
+            <p
+              class="cn-prose-lead cn-prose-lead--hero mx-auto cn-measure-narrow"
+            >
+              Launch a fully white-label AI business and start charging clients
+              monthly without developers, coding, or building software yourself.
+            </p>
+            <div class="d-flex flex-column cn-hero-buttons">
+              <button
+                type="button"
+                class="cn-btn cn-btn-primary cn-text-heading-sm cn-pad-x-button cn-pad-y-md cn-btn-glow-sm"
+              >
+                Start Your Free Trial
+              </button>
+              <button
+                type="button"
+                class="cn-btn cn-btn-outline cn-text-heading-sm cn-pad-x-button cn-pad-y-md"
+              >
+                Book a Demo
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
 
-<section class="cn-py-16-section cn-bg-surface-lowest cn-border-y-outline-10">
-  <div class="mx-auto text-center cn-max-w-4xl cn-px-gutter">
-    <h2 class="cn-text-headline-md cn-text-primary cn-mb-6-custom cn-italic">Empower your operations with the world's most advanced AI fleet.</h2>
-    <button type="button" class="cn-btn cn-btn-primary cn-px-12-custom cn-py-5-custom cn-text-headline-sm cn-shadow-xl">Deploy Your Fleet</button>
-  </div>
-</section>
+      <section class="cn-pad-section cn-layout-max">
+        <div
+          class="cn-margin-below-section text-center mx-auto cn-measure-medium"
+        >
+          <div class="cn-margin-below-large cn-media-frame">
+            <img
+              alt="AI Agent Modules"
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuCDp8yBLQ7h3RO87MMei8GPYN5tTl9z9gU3VobACreFy-nq6wIGb4RZuGTYwmof6y8qlemozZT_LUGuB2mNsFYtd2ciu__PowCcDsVZjb2aDPXKFy5UC75l-Wr6L-aanV4RyggmRJ0bhII_V2bq9mUXWFm7vURec4N8ueoYEpaXpbLS1O0pbZRFdiq0aEpMWo5EkQRsI0Nselge0_6WybZDIfjXwf1_HEH2M2qygM_Pv74zC4P9TSdlXL-FDTx-15kVcOTog6GyOiM"
+            />
+          </div>
+          <h2 class="cn-title-section">Our AI Agents &amp; Tools</h2>
+          <p class="cn-prose-lead">
+            High-performance cognitive agents engineered for scale. From voice
+            automation to multi-channel CRM integration, our toolkit optimizes
+            every touchpoint.
+          </p>
+        </div>
+        <div class="row cn-row-tight">
+          <div class="col-12 col-md-6 col-lg-3 mb-4">
+            <div class="cn-card-agent cn-surface-sheen">
+              <div>
+                <div class="cn-margin-below-xs">
+                  <span class="cn-icon cn-icon-lg cn-icon-gold"
+                    >support_agent</span
+                  >
+                </div>
+                <h3 class="cn-heading">AI 24/7 Phone Receptionist</h3>
+                <p class="cn-card-summary">
+                  An automated receptionist that answers FAQs routes calls and
+                  handles customer service 24/7.
+                </p>
+              </div>
+              <button type="button" class="cn-btn cn-btn-primary cn-btn-card">
+                Learn More
+              </button>
+            </div>
+          </div>
+          <div class="col-12 col-md-6 col-lg-3 mb-4">
+            <div class="cn-card-agent cn-surface-sheen">
+              <div>
+                <div class="cn-margin-below-xs">
+                  <span class="cn-icon cn-icon-lg cn-icon-gold"
+                    >calendar_month</span
+                  >
+                </div>
+                <h3 class="cn-heading">AI Appointment Booking</h3>
+                <p class="cn-card-summary">
+                  A voice assistant that checks calendar availability negotiates
+                  times and books appointments live on the call.
+                </p>
+              </div>
+              <button type="button" class="cn-btn cn-btn-primary cn-btn-card">
+                Learn More
+              </button>
+            </div>
+          </div>
+          <div class="col-12 col-md-6 col-lg-3 mb-4">
+            <div class="cn-card-agent cn-surface-sheen">
+              <div>
+                <div class="cn-margin-below-xs">
+                  <span class="cn-icon cn-icon-lg cn-icon-gold">bolt</span>
+                </div>
+                <h3 class="cn-heading">AI Instant Speed To Lead</h3>
+                <p class="cn-card-summary">
+                  Instantly calls new leads the second they submit a form
+                  automatically bridging them to your live sales team.
+                </p>
+              </div>
+              <button type="button" class="cn-btn cn-btn-primary cn-btn-card">
+                Learn More
+              </button>
+            </div>
+          </div>
+          <div class="col-12 col-md-6 col-lg-3 mb-4">
+            <div class="cn-card-agent cn-surface-sheen">
+              <div>
+                <div class="cn-margin-below-xs">
+                  <span class="cn-icon cn-icon-lg cn-icon-gold"
+                    >verified_user</span
+                  >
+                </div>
+                <h3 class="cn-heading">AI Lead Qualifier</h3>
+                <p class="cn-card-summary">
+                  Autonomously calls new leads to ask pre-qualification
+                  questions and score them before a human speaks to them.
+                </p>
+              </div>
+              <button type="button" class="cn-btn cn-btn-primary cn-btn-card">
+                Learn More
+              </button>
+            </div>
+          </div>
+          <div class="col-12 col-md-6 col-lg-3 mb-4">
+            <div class="cn-card-agent cn-surface-sheen">
+              <div>
+                <div class="cn-margin-below-xs">
+                  <span class="cn-icon cn-icon-lg cn-icon-gold">call</span>
+                </div>
+                <h3 class="cn-heading">AI Cold Caller</h3>
+                <p class="cn-card-summary">
+                  A conversational campaign agent that systematically calls
+                  through dynamic target lists for cold or warm outreach.
+                </p>
+              </div>
+              <button type="button" class="cn-btn cn-btn-primary cn-btn-card">
+                Learn More
+              </button>
+            </div>
+          </div>
+          <div class="col-12 col-md-6 col-lg-3 mb-4">
+            <div class="cn-card-agent cn-surface-sheen">
+              <div>
+                <div class="cn-margin-below-xs">
+                  <span class="cn-icon cn-icon-lg cn-icon-gold">database</span>
+                </div>
+                <h3 class="cn-heading">AI Database Reactivation</h3>
+                <p class="cn-card-summary">
+                  Autonomously text-blasts or calls old cold databases to
+                  uncover hidden revenue and book missed opportunities.
+                </p>
+              </div>
+              <button type="button" class="cn-btn cn-btn-primary cn-btn-card">
+                Learn More
+              </button>
+            </div>
+          </div>
+          <div class="col-12 col-md-6 col-lg-3 mb-4">
+            <div class="cn-card-agent cn-surface-sheen">
+              <div>
+                <div class="cn-margin-below-xs">
+                  <span class="cn-icon cn-icon-lg cn-icon-gold"
+                    >restaurant</span
+                  >
+                </div>
+                <h3 class="cn-heading">AI Phone Order Taker</h3>
+                <p class="cn-card-summary">
+                  A consumer-facing voice agent that answers hungry customers
+                  takes detailed food orders and sends them to the kitchen.
+                </p>
+              </div>
+              <button type="button" class="cn-btn cn-btn-primary cn-btn-card">
+                Learn More
+              </button>
+            </div>
+          </div>
+          <div class="col-12 col-md-6 col-lg-3 mb-4">
+            <div class="cn-card-agent cn-surface-sheen">
+              <div>
+                <div class="cn-margin-below-xs">
+                  <span class="cn-icon cn-icon-lg cn-icon-gold">chat</span>
+                </div>
+                <h3 class="cn-heading">AI 24/7 Website Chat</h3>
+                <p class="cn-card-summary">
+                  An interactive on-site widget that chats with visitors answers
+                  questions and captures lead info round-the-clock.
+                </p>
+              </div>
+              <button type="button" class="cn-btn cn-btn-primary cn-btn-card">
+                Learn More
+              </button>
+            </div>
+          </div>
+          <div class="col-12 col-md-6 col-lg-3 mb-4">
+            <div class="cn-card-agent cn-surface-sheen">
+              <div>
+                <div class="cn-margin-below-xs">
+                  <span class="cn-icon cn-icon-lg cn-icon-gold">sms</span>
+                </div>
+                <h3 class="cn-heading">AI 2 Way SMS Texting</h3>
+                <p class="cn-card-summary">
+                  A multi-channel agent that handles two-way texting
+                </p>
+              </div>
+              <button type="button" class="cn-btn cn-btn-primary cn-btn-card">
+                Learn More
+              </button>
+            </div>
+          </div>
+          <div class="col-12 col-md-6 col-lg-3 mb-4">
+            <div class="cn-card-agent cn-surface-sheen">
+              <div>
+                <div class="cn-margin-below-xs">
+                  <span class="cn-icon cn-icon-lg cn-icon-gold">mail</span>
+                </div>
+                <h3 class="cn-heading">AI 2 Way Emails</h3>
+                <p class="cn-card-summary">
+                  A multi-channel agent that handles two-way emails
+                </p>
+              </div>
+              <button type="button" class="cn-btn cn-btn-primary cn-btn-card">
+                Learn More
+              </button>
+            </div>
+          </div>
+          <div class="col-12 col-md-6 col-lg-3 mb-4">
+            <div class="cn-card-agent cn-surface-sheen">
+              <div>
+                <div class="cn-margin-below-xs">
+                  <span class="cn-icon cn-icon-lg cn-icon-gold">public</span>
+                </div>
+                <h3 class="cn-heading">AI 2 Way Facebook</h3>
+                <p class="cn-card-summary">
+                  An agent that handles two-way Facebook messages
+                </p>
+              </div>
+              <button type="button" class="cn-btn cn-btn-primary cn-btn-card">
+                Learn More
+              </button>
+            </div>
+          </div>
+          <div class="col-12 col-md-6 col-lg-3 mb-4">
+            <div class="cn-card-agent cn-surface-sheen">
+              <div>
+                <div class="cn-margin-below-xs">
+                  <span class="cn-icon cn-icon-lg cn-icon-gold"
+                    >photo_camera</span
+                  >
+                </div>
+                <h3 class="cn-heading">AI 2 Way Instagram</h3>
+                <p class="cn-card-summary">
+                  An agent that handles two-way Instagram messages
+                </p>
+              </div>
+              <button type="button" class="cn-btn cn-btn-primary cn-btn-card">
+                Learn More
+              </button>
+            </div>
+          </div>
+          <div class="col-12 col-md-6 col-lg-3 mb-4">
+            <div class="cn-card-agent cn-surface-sheen">
+              <div>
+                <div class="cn-margin-below-xs">
+                  <span class="cn-icon cn-icon-lg cn-icon-gold"
+                    >chat_bubble</span
+                  >
+                </div>
+                <h3 class="cn-heading">AI 2 Way Whatsapp</h3>
+                <p class="cn-card-summary">
+                  An agent that handles two-way Whatsapp messages
+                </p>
+              </div>
+              <button type="button" class="cn-btn cn-btn-primary cn-btn-card">
+                Learn More
+              </button>
+            </div>
+          </div>
+          <div class="col-12 col-md-6 col-lg-3 mb-4">
+            <div class="cn-card-agent cn-surface-sheen">
+              <div>
+                <div class="cn-margin-below-xs">
+                  <span class="cn-icon cn-icon-lg cn-icon-gold"
+                    >phone_missed</span
+                  >
+                </div>
+                <h3 class="cn-heading">AI Missed Call Text-Back</h3>
+                <p class="cn-card-summary">
+                  Instantly text-backs missed callers with an AI conversational
+                  helper to save lost business before they call a competitor.
+                </p>
+              </div>
+              <button type="button" class="cn-btn cn-btn-primary cn-btn-card">
+                Learn More
+              </button>
+            </div>
+          </div>
+          <div class="col-12 col-md-6 col-lg-3 mb-4">
+            <div class="cn-card-agent cn-surface-sheen">
+              <div>
+                <div class="cn-margin-below-xs">
+                  <span class="cn-icon cn-icon-lg cn-icon-gold">search</span>
+                </div>
+                <h3 class="cn-heading">AI Seo Report</h3>
+                <p class="cn-card-summary">
+                  An autonomous crawler that scans websites diagnoses SEO issues
+                  and builds optimization blueprints.
+                </p>
+              </div>
+              <button type="button" class="cn-btn cn-btn-primary cn-btn-card">
+                Learn More
+              </button>
+            </div>
+          </div>
+          <div class="col-12 col-md-6 col-lg-3 mb-4">
+            <div class="cn-card-agent cn-surface-sheen">
+              <div>
+                <div class="cn-margin-below-xs">
+                  <span class="cn-icon cn-icon-lg cn-icon-gold"
+                    >video_library</span
+                  >
+                </div>
+                <h3 class="cn-heading">AI Video Generator</h3>
+                <p class="cn-card-summary">
+                  A script-to-screen agent that generates engaging marketing
+                  videos renders visuals
+                </p>
+              </div>
+              <button type="button" class="cn-btn cn-btn-primary cn-btn-card">
+                Learn More
+              </button>
+            </div>
+          </div>
+          <div class="col-12 col-md-6 col-lg-3 mb-4">
+            <div class="cn-card-agent cn-surface-sheen">
+              <div>
+                <div class="cn-margin-below-xs">
+                  <span class="cn-icon cn-icon-lg cn-icon-gold">web</span>
+                </div>
+                <h3 class="cn-heading">AI 60-Second Website Builder</h3>
+                <p class="cn-card-summary">
+                  A high-speed prompt-to-design platform that builds fully
+                  functional conversion-optimized websites and landing pages in
+                  under 60 sec
+                </p>
+              </div>
+              <button type="button" class="cn-btn cn-btn-primary cn-btn-card">
+                Learn More
+              </button>
+            </div>
+          </div>
+          <div class="col-12 col-md-6 col-lg-3 mb-4">
+            <div class="cn-card-agent cn-surface-sheen">
+              <div>
+                <div class="cn-margin-below-xs">
+                  <span class="cn-icon cn-icon-lg cn-icon-gold">share</span>
+                </div>
+                <h3 class="cn-heading">AI Social Media Posts</h3>
+                <p class="cn-card-summary">
+                  An on-demand content tool that drafts high-converting social
+                  copy and eye-catching graphics based on your prompts.
+                </p>
+              </div>
+              <button type="button" class="cn-btn cn-btn-primary cn-btn-card">
+                Learn More
+              </button>
+            </div>
+          </div>
+          <div class="col-12 col-md-6 col-lg-3 mb-4">
+            <div class="cn-card-agent cn-surface-sheen">
+              <div>
+                <div class="cn-margin-below-xs">
+                  <span class="cn-icon cn-icon-lg cn-icon-gold">star</span>
+                </div>
+                <h3 class="cn-heading">Ai Reviews</h3>
+                <p class="cn-card-summary">
+                  An intelligent dashboard that monitors incoming business
+                  feedback crafts smart replies and boosts search rankings.
+                </p>
+              </div>
+              <button type="button" class="cn-btn cn-btn-primary cn-btn-card">
+                Learn More
+              </button>
+            </div>
+          </div>
+          <div class="col-12 col-md-6 col-lg-3 mb-4">
+            <div class="cn-card-agent cn-surface-sheen">
+              <div>
+                <div class="cn-margin-below-xs">
+                  <span class="cn-icon cn-icon-lg cn-icon-gold">schedule</span>
+                </div>
+                <h3 class="cn-heading">AI Social Media Scheduling</h3>
+                <p class="cn-card-summary">Schedules Social Media Posts</p>
+              </div>
+              <button type="button" class="cn-btn cn-btn-primary cn-btn-card">
+                Learn More
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
 
-<section class="cn-mt-24-custom cn-py-16-section">
-  <h2 class="cn-font-display cn-text-display-lg cn-text-primary cn-mb-16-custom text-center">Additional Software Modules</h2>
-  <div class="d-flex flex-column align-items-center cn-mb-16-custom">
-    <div class="cn-mb-10-custom cn-media-frame"><img alt="AI Agent Modules" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCDp8yBLQ7h3RO87MMei8GPYN5tTl9z9gU3VobACreFy-nq6wIGb4RZuGTYwmof6y8qlemozZT_LUGuB2mNsFYtd2ciu__PowCcDsVZjb2aDPXKFy5UC75l-Wr6L-aanV4RyggmRJ0bhII_V2bq9mUXWFm7vURec4N8ueoYEpaXpbLS1O0pbZRFdiq0aEpMWo5EkQRsI0Nselge0_6WybZDIfjXwf1_HEH2M2qygM_Pv74zC4P9TSdlXL-FDTx-15kVcOTog6GyOiM"></div>
-    <button type="button" class="cn-btn cn-btn-outline-gold cn-btn-fill-hover cn-text-label-md cn-px-gutter cn-py-3-custom d-inline-flex align-items-center" id="open-modules-modal"><span class="cn-material cn-text-primary mr-2">info</span>View Module Details</button>
-  </div>
-  <div class="row cn-row-tight cn-wrap mx-auto">
-    <div class="col-12 col-md-6 col-lg-3 mb-2"><div class="cn-module-row"><span class="cn-material cn-text-primary cn-icon-size-sm">check_circle</span>Workflow Automations</div></div>
-    <div class="col-12 col-md-6 col-lg-3 mb-2"><div class="cn-module-row"><span class="cn-material cn-text-primary cn-icon-size-sm">check_circle</span>Unlimited Sales Funnels</div></div>
-    <div class="col-12 col-md-6 col-lg-3 mb-2"><div class="cn-module-row"><span class="cn-material cn-text-primary cn-icon-size-sm">check_circle</span>Webinar Funnels</div></div>
-    <div class="col-12 col-md-6 col-lg-3 mb-2"><div class="cn-module-row"><span class="cn-material cn-text-primary cn-icon-size-sm">check_circle</span>Sales Pipelines</div></div>
-    <div class="col-12 col-md-6 col-lg-3 mb-2"><div class="cn-module-row"><span class="cn-material cn-text-primary cn-icon-size-sm">check_circle</span>Prospecting Tool</div></div>
-    <div class="col-12 col-md-6 col-lg-3 mb-2"><div class="cn-module-row"><span class="cn-material cn-text-primary cn-icon-size-sm">check_circle</span>Email Marketing</div></div>
-    <div class="col-12 col-md-6 col-lg-3 mb-2"><div class="cn-module-row"><span class="cn-material cn-text-primary cn-icon-size-sm">check_circle</span>SMS Marketing</div></div>
-    <div class="col-12 col-md-6 col-lg-3 mb-2"><div class="cn-module-row"><span class="cn-material cn-text-primary cn-icon-size-sm">check_circle</span>Websites</div></div>
-    <div class="col-12 col-md-6 col-lg-3 mb-2"><div class="cn-module-row"><span class="cn-material cn-text-primary cn-icon-size-sm">check_circle</span>Ecommerce Websites</div></div>
-    <div class="col-12 col-md-6 col-lg-3 mb-2"><div class="cn-module-row"><span class="cn-material cn-text-primary cn-icon-size-sm">check_circle</span>Takeaway Websites</div></div>
-    <div class="col-12 col-md-6 col-lg-3 mb-2"><div class="cn-module-row"><span class="cn-material cn-text-primary cn-icon-size-sm">check_circle</span>Landing Pages</div></div>
-    <div class="col-12 col-md-6 col-lg-3 mb-2"><div class="cn-module-row"><span class="cn-material cn-text-primary cn-icon-size-sm">check_circle</span>Epos Software</div></div>
-    <div class="col-12 col-md-6 col-lg-3 mb-2"><div class="cn-module-row"><span class="cn-material cn-text-primary cn-icon-size-sm">check_circle</span>Accountancy</div></div>
-    <div class="col-12 col-md-6 col-lg-3 mb-2"><div class="cn-module-row"><span class="cn-material cn-text-primary cn-icon-size-sm">check_circle</span>Invoicing</div></div>
-    <div class="col-12 col-md-6 col-lg-3 mb-2"><div class="cn-module-row"><span class="cn-material cn-text-primary cn-icon-size-sm">check_circle</span>Payroll</div></div>
-    <div class="col-12 col-md-6 col-lg-3 mb-2"><div class="cn-module-row"><span class="cn-material cn-text-primary cn-icon-size-sm">check_circle</span>Expenses</div></div>
-    <div class="col-12 col-md-6 col-lg-3 mb-2"><div class="cn-module-row"><span class="cn-material cn-text-primary cn-icon-size-sm">check_circle</span>Project Management</div></div>
-    <div class="col-12 col-md-6 col-lg-3 mb-2"><div class="cn-module-row"><span class="cn-material cn-text-primary cn-icon-size-sm">check_circle</span>Appointment Reminders</div></div>
-    <div class="col-12 col-md-6 col-lg-3 mb-2"><div class="cn-module-row"><span class="cn-material cn-text-primary cn-icon-size-sm">check_circle</span>Booking System</div></div>
-    <div class="col-12 col-md-6 col-lg-3 mb-2"><div class="cn-module-row"><span class="cn-material cn-text-primary cn-icon-size-sm">check_circle</span>Booking Calendars</div></div>
-    <div class="col-12 col-md-6 col-lg-3 mb-2"><div class="cn-module-row"><span class="cn-material cn-text-primary cn-icon-size-sm">check_circle</span>Meeting Calendar</div></div>
-    <div class="col-12 col-md-6 col-lg-3 mb-2"><div class="cn-module-row"><span class="cn-material cn-text-primary cn-icon-size-sm">check_circle</span>Forms, Surveys Quizzes</div></div>
-    <div class="col-12 col-md-6 col-lg-3 mb-2"><div class="cn-module-row"><span class="cn-material cn-text-primary cn-icon-size-sm">check_circle</span>Call Tracking</div></div>
-    <div class="col-12 col-md-6 col-lg-3 mb-2"><div class="cn-module-row"><span class="cn-material cn-text-primary cn-icon-size-sm">check_circle</span>Affiliate Manager (For Referral Tracking)</div></div>
-    <div class="col-12 col-md-6 col-lg-3 mb-2"><div class="cn-module-row"><span class="cn-material cn-text-primary cn-icon-size-sm">check_circle</span>Smart Lists / Segmentation</div></div>
-    <div class="col-12 col-md-6 col-lg-3 mb-2"><div class="cn-module-row"><span class="cn-material cn-text-primary cn-icon-size-sm">check_circle</span>Loyalty Programs</div></div>
-    <div class="col-12 col-md-6 col-lg-3 mb-2"><div class="cn-module-row"><span class="cn-material cn-text-primary cn-icon-size-sm">check_circle</span>Property Management</div></div>
-    <div class="col-12 col-md-6 col-lg-3 mb-2"><div class="cn-module-row"><span class="cn-material cn-text-primary cn-icon-size-sm">check_circle</span>Rental Software</div></div>
-    <div class="col-12 col-md-6 col-lg-3 mb-2"><div class="cn-module-row"><span class="cn-material cn-text-primary cn-icon-size-sm">check_circle</span>Hire Software</div></div>
-    <div class="col-12 col-md-6 col-lg-3 mb-2"><div class="cn-module-row"><span class="cn-material cn-text-primary cn-icon-size-sm">check_circle</span>Inventory Management</div></div>
-    <div class="col-12 col-md-6 col-lg-3 mb-2"><div class="cn-module-row"><span class="cn-material cn-text-primary cn-icon-size-sm">check_circle</span>Staff Management</div></div>
-    <div class="col-12 col-md-6 col-lg-3 mb-2"><div class="cn-module-row"><span class="cn-material cn-text-primary cn-icon-size-sm">check_circle</span>School Management Software</div></div>
-    <div class="col-12 col-md-6 col-lg-3 mb-2"><div class="cn-module-row"><span class="cn-material cn-text-primary cn-icon-size-sm">check_circle</span>Salon Software</div></div>
-    <div class="col-12 col-md-6 col-lg-3 mb-2"><div class="cn-module-row"><span class="cn-material cn-text-primary cn-icon-size-sm">check_circle</span>Restaurant Table Software</div></div>
-    <div class="col-12 col-md-6 col-lg-3 mb-2"><div class="cn-module-row"><span class="cn-material cn-text-primary cn-icon-size-sm">check_circle</span>Chef Screen</div></div>
-    <div class="col-12 col-md-6 col-lg-3 mb-2"><div class="cn-module-row"><span class="cn-material cn-text-primary cn-icon-size-sm">check_circle</span>Delivery Driver Management</div></div>
-    <div class="col-12 col-md-6 col-lg-3 mb-2"><div class="cn-module-row"><span class="cn-material cn-text-primary cn-icon-size-sm">check_circle</span>Barcode Software</div></div>
-    <div class="col-12 col-md-6 col-lg-3 mb-2"><div class="cn-module-row"><span class="cn-material cn-text-primary cn-icon-size-sm">check_circle</span>Digital Signage</div></div>
-    <div class="col-12 col-md-6 col-lg-3 mb-2"><div class="cn-module-row"><span class="cn-material cn-text-primary cn-icon-size-sm">check_circle</span>E Sign</div></div>
-    <div class="col-12 col-md-6 col-lg-3 mb-2"><div class="cn-module-row"><span class="cn-material cn-text-primary cn-icon-size-sm">check_circle</span>Discounts &amp; Offers</div></div>
-  </div>
-</section>
+      <section class="cn-layout-max">
+        <div class="cn-pad-section cn-bg-surface-darkest cn-border-y-soft">
+          <div class="mx-auto text-center cn-measure-wide cn-pad-x-gutter">
+            <h2 class="cn-quote-title">
+              Empower your operations with the world's most advanced AI fleet.
+            </h2>
+            <button
+              type="button"
+              class="cn-btn cn-btn-primary cn-pad-x-wide cn-pad-y-lg cn-text-heading-sm cn-btn-glow-md"
+            >
+              Deploy Your Fleet
+            </button>
+          </div>
+        </div>
+      </section>
 
-<section class="cn-py-24-section cn-border-y-outline-20 cn-bg-surface-lowest cn-relative cn-overflow-hidden">
-  <div class="cn-absolute-fill cn-comparison-gradient cn-pointer-none"></div>
-  <div class="cn-wrap cn-relative cn-z-10">
-    <div class="text-center cn-mb-20-custom">
-      <h2 class="cn-font-display cn-text-display-lg cn-text-primary cn-mb-6-custom">The Enterprise Shift: Replace Fragmented SaaS with 10 Ways</h2>
-      <p class="cn-text-body-lg cn-text-on-surface-variant mx-auto cn-max-w-2xl">Consolidate your entire tech stack into the 10 Ways unified intelligence platform. Eliminate expensive, disconnected tools and scale with an integrated AI ecosystem.</p>
-    </div>
-    <div class="cn-compare-shell cn-card-inner-glow">
-      <div class="row cn-compare-head mx-0 align-items-center">
-        <div class="col-12 col-md-5 cn-text-label-md cn-text-on-surface font-weight-bold cn-uppercase cn-tracking-widest">Capabilities &amp; Features</div>
-        <div class="col-12 col-md-4 cn-text-label-md cn-text-on-surface font-weight-bold cn-uppercase cn-tracking-widest text-center d-none d-md-block">Legacy SaaS Fragments</div>
-        <div class="col-12 col-md-3 cn-text-label-md cn-text-primary font-weight-bold cn-uppercase cn-tracking-widest text-md-right text-center">10 Ways Platform</div>
+      <section class="cn-margin-top-section cn-pad-section">
+        <h2 class="cn-title-section cn-title-section--spaced text-center">
+          Additional Software Modules
+        </h2>
+        <div
+          class="d-flex flex-column align-items-center cn-margin-below-section"
+        >
+          <div class="cn-margin-below-large cn-media-frame">
+            <img
+              alt="AI Agent Modules"
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuCDp8yBLQ7h3RO87MMei8GPYN5tTl9z9gU3VobACreFy-nq6wIGb4RZuGTYwmof6y8qlemozZT_LUGuB2mNsFYtd2ciu__PowCcDsVZjb2aDPXKFy5UC75l-Wr6L-aanV4RyggmRJ0bhII_V2bq9mUXWFm7vURec4N8ueoYEpaXpbLS1O0pbZRFdiq0aEpMWo5EkQRsI0Nselge0_6WybZDIfjXwf1_HEH2M2qygM_Pv74zC4P9TSdlXL-FDTx-15kVcOTog6GyOiM"
+            />
+          </div>
+          <button
+            type="button"
+            class="cn-btn cn-btn-outline cn-btn-outline-fill-hover cn-text-label cn-pad-x-gutter cn-pad-y-sm d-inline-flex align-items-center"
+            id="open-modules-modal"
+          >
+            <span class="cn-icon cn-text-gold mr-2">info</span>View Module
+            Details
+          </button>
+        </div>
+        <div class="row cn-row-tight cn-row-modules cn-layout-max mx-auto">
+          <div class="col-12 col-md-6 col-lg-3 mb-2">
+            <div class="cn-module-line">
+              <span class="cn-icon cn-text-gold cn-icon-sm">check_circle</span
+              >Workflow Automations
+            </div>
+          </div>
+          <div class="col-12 col-md-6 col-lg-3 mb-2">
+            <div class="cn-module-line">
+              <span class="cn-icon cn-text-gold cn-icon-sm">check_circle</span
+              >Unlimited Sales Funnels
+            </div>
+          </div>
+          <div class="col-12 col-md-6 col-lg-3 mb-2">
+            <div class="cn-module-line">
+              <span class="cn-icon cn-text-gold cn-icon-sm">check_circle</span
+              >Webinar Funnels
+            </div>
+          </div>
+          <div class="col-12 col-md-6 col-lg-3 mb-2">
+            <div class="cn-module-line">
+              <span class="cn-icon cn-text-gold cn-icon-sm">check_circle</span
+              >Sales Pipelines
+            </div>
+          </div>
+          <div class="col-12 col-md-6 col-lg-3 mb-2">
+            <div class="cn-module-line">
+              <span class="cn-icon cn-text-gold cn-icon-sm">check_circle</span
+              >Prospecting Tool
+            </div>
+          </div>
+          <div class="col-12 col-md-6 col-lg-3 mb-2">
+            <div class="cn-module-line">
+              <span class="cn-icon cn-text-gold cn-icon-sm">check_circle</span
+              >Email Marketing
+            </div>
+          </div>
+          <div class="col-12 col-md-6 col-lg-3 mb-2">
+            <div class="cn-module-line">
+              <span class="cn-icon cn-text-gold cn-icon-sm">check_circle</span
+              >SMS Marketing
+            </div>
+          </div>
+          <div class="col-12 col-md-6 col-lg-3 mb-2">
+            <div class="cn-module-line">
+              <span class="cn-icon cn-text-gold cn-icon-sm">check_circle</span
+              >Websites
+            </div>
+          </div>
+          <div class="col-12 col-md-6 col-lg-3 mb-2">
+            <div class="cn-module-line">
+              <span class="cn-icon cn-text-gold cn-icon-sm">check_circle</span
+              >Ecommerce Websites
+            </div>
+          </div>
+          <div class="col-12 col-md-6 col-lg-3 mb-2">
+            <div class="cn-module-line">
+              <span class="cn-icon cn-text-gold cn-icon-sm">check_circle</span
+              >Takeaway Websites
+            </div>
+          </div>
+          <div class="col-12 col-md-6 col-lg-3 mb-2">
+            <div class="cn-module-line">
+              <span class="cn-icon cn-text-gold cn-icon-sm">check_circle</span
+              >Landing Pages
+            </div>
+          </div>
+          <div class="col-12 col-md-6 col-lg-3 mb-2">
+            <div class="cn-module-line">
+              <span class="cn-icon cn-text-gold cn-icon-sm">check_circle</span
+              >Epos Software
+            </div>
+          </div>
+          <div class="col-12 col-md-6 col-lg-3 mb-2">
+            <div class="cn-module-line">
+              <span class="cn-icon cn-text-gold cn-icon-sm">check_circle</span
+              >Accountancy
+            </div>
+          </div>
+          <div class="col-12 col-md-6 col-lg-3 mb-2">
+            <div class="cn-module-line">
+              <span class="cn-icon cn-text-gold cn-icon-sm">check_circle</span
+              >Invoicing
+            </div>
+          </div>
+          <div class="col-12 col-md-6 col-lg-3 mb-2">
+            <div class="cn-module-line">
+              <span class="cn-icon cn-text-gold cn-icon-sm">check_circle</span
+              >Payroll
+            </div>
+          </div>
+          <div class="col-12 col-md-6 col-lg-3 mb-2">
+            <div class="cn-module-line">
+              <span class="cn-icon cn-text-gold cn-icon-sm">check_circle</span
+              >Expenses
+            </div>
+          </div>
+          <div class="col-12 col-md-6 col-lg-3 mb-2">
+            <div class="cn-module-line">
+              <span class="cn-icon cn-text-gold cn-icon-sm">check_circle</span
+              >Project Management
+            </div>
+          </div>
+          <div class="col-12 col-md-6 col-lg-3 mb-2">
+            <div class="cn-module-line">
+              <span class="cn-icon cn-text-gold cn-icon-sm">check_circle</span
+              >Appointment Reminders
+            </div>
+          </div>
+          <div class="col-12 col-md-6 col-lg-3 mb-2">
+            <div class="cn-module-line">
+              <span class="cn-icon cn-text-gold cn-icon-sm">check_circle</span
+              >Booking System
+            </div>
+          </div>
+          <div class="col-12 col-md-6 col-lg-3 mb-2">
+            <div class="cn-module-line">
+              <span class="cn-icon cn-text-gold cn-icon-sm">check_circle</span
+              >Booking Calendars
+            </div>
+          </div>
+          <div class="col-12 col-md-6 col-lg-3 mb-2">
+            <div class="cn-module-line">
+              <span class="cn-icon cn-text-gold cn-icon-sm">check_circle</span
+              >Meeting Calendar
+            </div>
+          </div>
+          <div class="col-12 col-md-6 col-lg-3 mb-2">
+            <div class="cn-module-line">
+              <span class="cn-icon cn-text-gold cn-icon-sm">check_circle</span
+              >Forms, Surveys Quizzes
+            </div>
+          </div>
+          <div class="col-12 col-md-6 col-lg-3 mb-2">
+            <div class="cn-module-line">
+              <span class="cn-icon cn-text-gold cn-icon-sm">check_circle</span
+              >Call Tracking
+            </div>
+          </div>
+          <div class="col-12 col-md-6 col-lg-3 mb-2">
+            <div class="cn-module-line">
+              <span class="cn-icon cn-text-gold cn-icon-sm">check_circle</span
+              >Affiliate Manager (For Referral Tracking)
+            </div>
+          </div>
+          <div class="col-12 col-md-6 col-lg-3 mb-2">
+            <div class="cn-module-line">
+              <span class="cn-icon cn-text-gold cn-icon-sm">check_circle</span
+              >Smart Lists / Segmentation
+            </div>
+          </div>
+          <div class="col-12 col-md-6 col-lg-3 mb-2">
+            <div class="cn-module-line">
+              <span class="cn-icon cn-text-gold cn-icon-sm">check_circle</span
+              >Loyalty Programs
+            </div>
+          </div>
+          <div class="col-12 col-md-6 col-lg-3 mb-2">
+            <div class="cn-module-line">
+              <span class="cn-icon cn-text-gold cn-icon-sm">check_circle</span
+              >Property Management
+            </div>
+          </div>
+          <div class="col-12 col-md-6 col-lg-3 mb-2">
+            <div class="cn-module-line">
+              <span class="cn-icon cn-text-gold cn-icon-sm">check_circle</span
+              >Rental Software
+            </div>
+          </div>
+          <div class="col-12 col-md-6 col-lg-3 mb-2">
+            <div class="cn-module-line">
+              <span class="cn-icon cn-text-gold cn-icon-sm">check_circle</span
+              >Hire Software
+            </div>
+          </div>
+          <div class="col-12 col-md-6 col-lg-3 mb-2">
+            <div class="cn-module-line">
+              <span class="cn-icon cn-text-gold cn-icon-sm">check_circle</span
+              >Inventory Management
+            </div>
+          </div>
+          <div class="col-12 col-md-6 col-lg-3 mb-2">
+            <div class="cn-module-line">
+              <span class="cn-icon cn-text-gold cn-icon-sm">check_circle</span
+              >Staff Management
+            </div>
+          </div>
+          <div class="col-12 col-md-6 col-lg-3 mb-2">
+            <div class="cn-module-line">
+              <span class="cn-icon cn-text-gold cn-icon-sm">check_circle</span
+              >School Management Software
+            </div>
+          </div>
+          <div class="col-12 col-md-6 col-lg-3 mb-2">
+            <div class="cn-module-line">
+              <span class="cn-icon cn-text-gold cn-icon-sm">check_circle</span
+              >Salon Software
+            </div>
+          </div>
+          <div class="col-12 col-md-6 col-lg-3 mb-2">
+            <div class="cn-module-line">
+              <span class="cn-icon cn-text-gold cn-icon-sm">check_circle</span
+              >Restaurant Table Software
+            </div>
+          </div>
+          <div class="col-12 col-md-6 col-lg-3 mb-2">
+            <div class="cn-module-line">
+              <span class="cn-icon cn-text-gold cn-icon-sm">check_circle</span
+              >Chef Screen
+            </div>
+          </div>
+          <div class="col-12 col-md-6 col-lg-3 mb-2">
+            <div class="cn-module-line">
+              <span class="cn-icon cn-text-gold cn-icon-sm">check_circle</span
+              >Delivery Driver Management
+            </div>
+          </div>
+          <div class="col-12 col-md-6 col-lg-3 mb-2">
+            <div class="cn-module-line">
+              <span class="cn-icon cn-text-gold cn-icon-sm">check_circle</span
+              >Barcode Software
+            </div>
+          </div>
+          <div class="col-12 col-md-6 col-lg-3 mb-2">
+            <div class="cn-module-line">
+              <span class="cn-icon cn-text-gold cn-icon-sm">check_circle</span
+              >Digital Signage
+            </div>
+          </div>
+          <div class="col-12 col-md-6 col-lg-3 mb-2">
+            <div class="cn-module-line">
+              <span class="cn-icon cn-text-gold cn-icon-sm">check_circle</span
+              >E-Sign
+            </div>
+          </div>
+          <div class="col-12 col-md-6 col-lg-3 mb-2">
+            <div class="cn-module-line">
+              <span class="cn-icon cn-text-gold cn-icon-sm">check_circle</span
+              >Discounts &amp; Offers
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section
+        class="cn-pad-section-xl cn-border-y-strong cn-bg-surface-darkest cn-relative cn-overflow-hidden"
+      >
+        <div class="cn-absolute-fill cn-gradient-fade cn-pointer-none"></div>
+        <div class="cn-layout-max cn-relative cn-z-raised">
+          <div class="text-center cn-margin-below-xl">
+            <h2 class="cn-title-section">
+              The Enterprise Shift: Replace Fragmented SaaS with 10 Ways
+            </h2>
+            <p class="cn-prose-lead mx-auto cn-measure-narrow">
+              Consolidate your entire tech stack into the 10 Ways unified
+              intelligence platform. Eliminate expensive, disconnected tools and
+              scale with an integrated AI ecosystem.
+            </p>
+          </div>
+          <div class="cn-compare-shell cn-surface-sheen">
+            <div class="row cn-compare-head mx-0 align-items-center">
+              <div
+                class="col-12 col-md-5 cn-text-label cn-text-on-surface font-weight-bold cn-uppercase cn-tracking-widest"
+              >
+                Capabilities &amp; Features
+              </div>
+              <div
+                class="col-12 col-md-4 cn-text-label cn-text-on-surface font-weight-bold cn-uppercase cn-tracking-widest text-center d-none d-md-block"
+              >
+                Legacy SaaS Fragments
+              </div>
+              <div
+                class="col-12 col-md-3 cn-text-label cn-text-gold font-weight-bold cn-uppercase cn-tracking-widest text-md-right text-center"
+              >
+                10 Ways Platform
+              </div>
+            </div>
+            <div>
+              <div class="row cn-compare-row mx-0">
+                <div
+                  class="col-12 col-md-5 d-flex align-items-center mb-2 mb-md-0"
+                >
+                  <span class="cn-icon cn-text-gold cn-icon-md mr-3"
+                    >groups</span
+                  ><span
+                    class="cn-text-body font-weight-medium cn-text-on-surface"
+                    >CRM &amp; Pipeline Management</span
+                  >
+                </div>
+                <div
+                  class="col-12 col-md-4 d-flex justify-content-center mb-2 mb-md-0"
+                >
+                  <span class="cn-text-caption cn-text-muted-faint cn-italic"
+                    >Salesforce, HubSpot</span
+                  >
+                </div>
+                <div class="col-12 col-md-3 text-md-right text-center">
+                  <span class="cn-icon cn-text-gold font-weight-bold"
+                    >check_circle</span
+                  >
+                </div>
+              </div>
+              <div class="row cn-compare-row mx-0">
+                <div
+                  class="col-12 col-md-5 d-flex align-items-center mb-2 mb-md-0"
+                >
+                  <span class="cn-icon cn-text-gold cn-icon-md mr-3"
+                    >filter_alt</span
+                  ><span
+                    class="cn-text-body font-weight-medium cn-text-on-surface"
+                    >Unlimited Sales Funnels</span
+                  >
+                </div>
+                <div
+                  class="col-12 col-md-4 d-flex justify-content-center mb-2 mb-md-0"
+                >
+                  <span class="cn-text-caption cn-text-muted-faint cn-italic"
+                    >ClickFunnels, Leadpages</span
+                  >
+                </div>
+                <div class="col-12 col-md-3 text-md-right text-center">
+                  <span class="cn-icon cn-text-gold font-weight-bold"
+                    >check_circle</span
+                  >
+                </div>
+              </div>
+              <div class="row cn-compare-row mx-0">
+                <div
+                  class="col-12 col-md-5 d-flex align-items-center mb-2 mb-md-0"
+                >
+                  <span class="cn-icon cn-text-gold cn-icon-md mr-3"
+                    >language</span
+                  ><span
+                    class="cn-text-body font-weight-medium cn-text-on-surface"
+                    >Website Builder</span
+                  >
+                </div>
+                <div
+                  class="col-12 col-md-4 d-flex justify-content-center mb-2 mb-md-0"
+                >
+                  <span class="cn-text-caption cn-text-muted-faint cn-italic"
+                    >WordPress, Wix, Squarespace</span
+                  >
+                </div>
+                <div class="col-12 col-md-3 text-md-right text-center">
+                  <span class="cn-icon cn-text-gold font-weight-bold"
+                    >check_circle</span
+                  >
+                </div>
+              </div>
+              <div class="row cn-compare-row mx-0">
+                <div
+                  class="col-12 col-md-5 d-flex align-items-center mb-2 mb-md-0"
+                >
+                  <span class="cn-icon cn-text-gold cn-icon-md mr-3">quiz</span
+                  ><span
+                    class="cn-text-body font-weight-medium cn-text-on-surface"
+                    >Surveys &amp; Forms</span
+                  >
+                </div>
+                <div
+                  class="col-12 col-md-4 d-flex justify-content-center mb-2 mb-md-0"
+                >
+                  <span class="cn-text-caption cn-text-muted-faint cn-italic"
+                    >Typeform, SurveyMonkey</span
+                  >
+                </div>
+                <div class="col-12 col-md-3 text-md-right text-center">
+                  <span class="cn-icon cn-text-gold font-weight-bold"
+                    >check_circle</span
+                  >
+                </div>
+              </div>
+              <div class="row cn-compare-row mx-0">
+                <div
+                  class="col-12 col-md-5 d-flex align-items-center mb-2 mb-md-0"
+                >
+                  <span class="cn-icon cn-text-gold cn-icon-md mr-3">mail</span
+                  ><span
+                    class="cn-text-body font-weight-medium cn-text-on-surface"
+                    >Email Marketing</span
+                  >
+                </div>
+                <div
+                  class="col-12 col-md-4 d-flex justify-content-center mb-2 mb-md-0"
+                >
+                  <span class="cn-text-caption cn-text-muted-faint cn-italic"
+                    >Mailchimp, ActiveCampaign</span
+                  >
+                </div>
+                <div class="col-12 col-md-3 text-md-right text-center">
+                  <span class="cn-icon cn-text-gold font-weight-bold"
+                    >check_circle</span
+                  >
+                </div>
+              </div>
+              <div class="row cn-compare-row mx-0">
+                <div
+                  class="col-12 col-md-5 d-flex align-items-center mb-2 mb-md-0"
+                >
+                  <span class="cn-icon cn-text-gold cn-icon-md mr-3">sms</span
+                  ><span
+                    class="cn-text-body font-weight-medium cn-text-on-surface"
+                    >2-Way SMS Marketing</span
+                  >
+                </div>
+                <div
+                  class="col-12 col-md-4 d-flex justify-content-center mb-2 mb-md-0"
+                >
+                  <span class="cn-text-caption cn-text-muted-faint cn-italic"
+                    >Twilio, Podium</span
+                  >
+                </div>
+                <div class="col-12 col-md-3 text-md-right text-center">
+                  <span class="cn-icon cn-text-gold font-weight-bold"
+                    >check_circle</span
+                  >
+                </div>
+              </div>
+              <div class="row cn-compare-row mx-0">
+                <div
+                  class="col-12 col-md-5 d-flex align-items-center mb-2 mb-md-0"
+                >
+                  <span class="cn-icon cn-text-gold cn-icon-md mr-3"
+                    >calendar_today</span
+                  ><span
+                    class="cn-text-body font-weight-medium cn-text-on-surface"
+                    >Booking &amp; Appointments</span
+                  >
+                </div>
+                <div
+                  class="col-12 col-md-4 d-flex justify-content-center mb-2 mb-md-0"
+                >
+                  <span class="cn-text-caption cn-text-muted-faint cn-italic"
+                    >Calendly, Acuity</span
+                  >
+                </div>
+                <div class="col-12 col-md-3 text-md-right text-center">
+                  <span class="cn-icon cn-text-gold font-weight-bold"
+                    >check_circle</span
+                  >
+                </div>
+              </div>
+              <div class="row cn-compare-row mx-0">
+                <div
+                  class="col-12 col-md-5 d-flex align-items-center mb-2 mb-md-0"
+                >
+                  <span class="cn-icon cn-text-gold cn-icon-md mr-3"
+                    >account_tree</span
+                  ><span
+                    class="cn-text-body font-weight-medium cn-text-on-surface"
+                    >Workflow Automation</span
+                  >
+                </div>
+                <div
+                  class="col-12 col-md-4 d-flex justify-content-center mb-2 mb-md-0"
+                >
+                  <span class="cn-text-caption cn-text-muted-faint cn-italic"
+                    >Zapier, Make</span
+                  >
+                </div>
+                <div class="col-12 col-md-3 text-md-right text-center">
+                  <span class="cn-icon cn-text-gold font-weight-bold"
+                    >check_circle</span
+                  >
+                </div>
+              </div>
+              <div class="row cn-compare-row mx-0">
+                <div
+                  class="col-12 col-md-5 d-flex align-items-center mb-2 mb-md-0"
+                >
+                  <span class="cn-icon cn-text-gold cn-icon-md mr-3"
+                    >school</span
+                  ><span
+                    class="cn-text-body font-weight-medium cn-text-on-surface"
+                    >Courses &amp; Membership</span
+                  >
+                </div>
+                <div
+                  class="col-12 col-md-4 d-flex justify-content-center mb-2 mb-md-0"
+                >
+                  <span class="cn-text-caption cn-text-muted-faint cn-italic"
+                    >Kajabi, Teachable</span
+                  >
+                </div>
+                <div class="col-12 col-md-3 text-md-right text-center">
+                  <span class="cn-icon cn-text-gold font-weight-bold"
+                    >check_circle</span
+                  >
+                </div>
+              </div>
+              <div class="row cn-compare-row mx-0">
+                <div
+                  class="col-12 col-md-5 d-flex align-items-center mb-2 mb-md-0"
+                >
+                  <span class="cn-icon cn-text-gold cn-icon-md mr-3">stars</span
+                  ><span
+                    class="cn-text-body font-weight-medium cn-text-on-surface"
+                    >Reputation Management</span
+                  >
+                </div>
+                <div
+                  class="col-12 col-md-4 d-flex justify-content-center mb-2 mb-md-0"
+                >
+                  <span class="cn-text-caption cn-text-muted-faint cn-italic"
+                    >BirdEye, Yotpo</span
+                  >
+                </div>
+                <div class="col-12 col-md-3 text-md-right text-center">
+                  <span class="cn-icon cn-text-gold font-weight-bold"
+                    >check_circle</span
+                  >
+                </div>
+              </div>
+              <div class="row cn-compare-row mx-0">
+                <div
+                  class="col-12 col-md-5 d-flex align-items-center mb-2 mb-md-0"
+                >
+                  <span class="cn-icon cn-text-gold cn-icon-md mr-3"
+                    >history_edu</span
+                  ><span
+                    class="cn-text-body font-weight-medium cn-text-on-surface"
+                    >Document Signing</span
+                  >
+                </div>
+                <div
+                  class="col-12 col-md-4 d-flex justify-content-center mb-2 mb-md-0"
+                >
+                  <span class="cn-text-caption cn-text-muted-faint cn-italic"
+                    >DocuSign, PandaDoc</span
+                  >
+                </div>
+                <div class="col-12 col-md-3 text-md-right text-center">
+                  <span class="cn-icon cn-text-gold font-weight-bold"
+                    >check_circle</span
+                  >
+                </div>
+              </div>
+            </div>
+            <div class="cn-compare-foot">
+              <div class="row align-items-center mx-0">
+                <div class="col-12 col-md-5 mb-3 mb-md-0">
+                  <div class="cn-text-heading-sm cn-text-on-surface">
+                    Estimated Monthly Investment
+                  </div>
+                </div>
+                <div class="col-12 col-md-4 text-center mb-3 mb-md-0">
+                  <div
+                    class="cn-text-heading-sm cn-text-error font-weight-bold"
+                  >
+                    $1,400+
+                    <span
+                      class="cn-text-caption font-weight-normal cn-text-muted"
+                      >/mo</span
+                    >
+                  </div>
+                </div>
+                <div class="col-12 col-md-3 text-md-right text-center">
+                  <div class="cn-text-heading-md cn-text-gold font-weight-bold">
+                    $97
+                    <span
+                      class="cn-text-caption font-weight-normal cn-text-gold-soft"
+                      >/mo</span
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="cn-margin-top-large text-center">
+            <button
+              type="button"
+              class="cn-btn cn-btn-primary cn-pad-x-wide cn-pad-y-lg cn-text-heading-sm cn-btn-glow-md"
+            >
+              Consolidate Your Stack with 10 Ways Now
+            </button>
+            <p class="cn-margin-top cn-text-label cn-text-muted cn-italic">
+              Join 500+ enterprises who unified their intelligence this year.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="cn-pad-section-xl cn-bg-page cn-layout-max">
+        <div class="text-center cn-margin-below-section">
+          <h2 class="cn-title-section">Executive Pricing Plans</h2>
+          <p class="cn-prose-lead mx-auto cn-measure-narrow">
+            Select the tier that aligns with your enterprise scale and growth
+            objectives.
+          </p>
+        </div>
+        <div class="row cn-row-tight align-items-stretch">
+          <div class="col-12 col-md-4 mb-5 mb-md-0 d-flex">
+            <div
+              class="cn-pricing-card cn-pricing-border-soft cn-surface-sheen w-100"
+            >
+              <div class="cn-margin-below-medium">
+                <h3 class="cn-heading-tier">Starter</h3>
+                <div class="cn-price-row cn-margin-below-compact">
+                  <span
+                    class="display-4 font-weight-bold cn-text-on-background"
+                    style="font-size: 2.25rem"
+                    >$97</span
+                  ><span class="cn-text-muted">/mo</span>
+                </div>
+                <p
+                  class="cn-text-caption cn-text-gold font-weight-bold cn-uppercase cn-tracking-wide"
+                >
+                  Internal License Only
+                </p>
+              </div>
+              <ul class="cn-checklist cn-flex-grow">
+                <li>
+                  <span class="cn-icon cn-text-gold cn-icon-sm"
+                    >check_circle</span
+                  >Access 1 Sub-Account
+                </li>
+                <li>
+                  <span class="cn-icon cn-text-gold cn-icon-sm"
+                    >check_circle</span
+                  >Create 3 AI Agents
+                </li>
+                <li>
+                  <span class="cn-icon cn-text-gold cn-icon-sm"
+                    >check_circle</span
+                  >Unlimited Leads
+                </li>
+                <li>
+                  <span class="cn-icon cn-text-gold cn-icon-sm"
+                    >check_circle</span
+                  >AI Conversational Booking
+                </li>
+                <li>
+                  <span class="cn-icon cn-text-gold cn-icon-sm"
+                    >check_circle</span
+                  >Access to 20 AI agents
+                </li>
+                <li>
+                  <span class="cn-icon cn-text-gold cn-icon-sm"
+                    >check_circle</span
+                  >Automated Follow Ups
+                </li>
+                <li>
+                  <span class="cn-icon cn-text-gold cn-icon-sm"
+                    >check_circle</span
+                  >Knowledge Base
+                </li>
+              </ul>
+              <div class="cn-border-top-soft cn-pad-top-section mt-auto">
+                <p class="cn-text-label cn-text-muted cn-margin-below">
+                  Add-on:
+                  <span class="cn-text-gold font-weight-bold">$67</span> Per
+                  Subaccount
+                </p>
+                <button
+                  type="button"
+                  class="cn-btn cn-btn-outline cn-btn-outline-fill-hover w-100 cn-pad-y-sm font-weight-bold cn-radius-lg"
+                >
+                  Get Started
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-md-4 mb-5 mb-md-0 d-flex">
+            <div
+              class="cn-pricing-card cn-pricing-featured cn-surface-sheen w-100"
+            >
+              <span class="cn-badge-popular">Most Popular</span>
+              <div class="cn-margin-below-medium cn-margin-top-tight">
+                <h3 class="cn-heading-tier">Unlimited</h3>
+                <div class="cn-price-row cn-margin-below-compact">
+                  <span
+                    class="display-4 font-weight-bold cn-text-on-background"
+                    style="font-size: 2.25rem"
+                    >$297</span
+                  ><span class="cn-text-muted">/mo</span>
+                </div>
+                <p
+                  class="cn-text-caption cn-text-gold font-weight-bold cn-uppercase cn-tracking-wide"
+                >
+                  Everything in Starter, plus:
+                </p>
+              </div>
+              <ul class="cn-checklist cn-flex-grow">
+                <li>
+                  <span class="cn-icon cn-text-gold cn-icon-sm"
+                    >check_circle</span
+                  >10 Sub-Accounts
+                </li>
+                <li>
+                  <span class="cn-icon cn-text-gold cn-icon-sm"
+                    >check_circle</span
+                  >10 AI Agents per Sub-Account
+                </li>
+                <li>
+                  <span class="cn-icon cn-text-gold cn-icon-sm"
+                    >check_circle</span
+                  >Voicenotes &amp; Analytics
+                </li>
+                <li>
+                  <span class="cn-icon cn-text-gold cn-icon-sm"
+                    >check_circle</span
+                  >24/7 Executive Support
+                </li>
+                <li>
+                  <span class="cn-icon cn-text-gold cn-icon-sm"
+                    >check_circle</span
+                  >Campaign Split Testing
+                </li>
+                <li>
+                  <span class="cn-icon cn-text-gold cn-icon-sm"
+                    >check_circle</span
+                  >Lead Dashboard &amp; Test Env
+                </li>
+                <li>
+                  <span class="cn-icon cn-text-gold cn-icon-sm"
+                    >check_circle</span
+                  >Unlimited Leads
+                </li>
+              </ul>
+              <div class="cn-border-top-soft cn-pad-top-section mt-auto">
+                <p class="cn-text-label cn-text-muted cn-margin-below">
+                  Add-on:
+                  <span class="cn-text-gold font-weight-bold">$29</span> Per
+                  Subaccount
+                </p>
+                <button
+                  type="button"
+                  class="cn-btn cn-btn-primary w-100 cn-pad-y-md font-weight-bold cn-radius-lg cn-btn-glow-sm"
+                >
+                  Start 14-Day Free Trial
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-md-4 d-flex">
+            <div
+              class="cn-pricing-card cn-pricing-border-soft cn-surface-sheen w-100"
+            >
+              <div class="cn-margin-below-medium">
+                <h3 class="cn-heading-tier">SaaS Plan</h3>
+                <div class="cn-price-row cn-margin-below-compact">
+                  <span
+                    class="display-4 font-weight-bold cn-text-on-background"
+                    style="font-size: 2.25rem"
+                    >$497</span
+                  ><span class="cn-text-muted">/mo</span>
+                </div>
+                <p class="cn-text-caption cn-text-muted cn-leading-tight">
+                  Everything You Need To Start Generating Recurring SaaS
+                  Revenue.
+                </p>
+              </div>
+              <ul class="cn-checklist cn-flex-grow">
+                <li>
+                  <span class="cn-icon cn-text-gold cn-icon-sm"
+                    >check_circle</span
+                  >Everything In Unlimited
+                </li>
+                <li>
+                  <span class="cn-icon cn-text-gold cn-icon-sm"
+                    >check_circle</span
+                  >SaaS Mode - Auto Creation
+                </li>
+                <li>
+                  <span class="cn-icon cn-text-gold cn-icon-sm"
+                    >check_circle</span
+                  >Rebilling with Custom Markup
+                </li>
+                <li>
+                  <span class="cn-icon cn-text-gold cn-icon-sm"
+                    >check_circle</span
+                  >Conversation AI Rebilling
+                </li>
+                <li>
+                  <span class="cn-icon cn-text-gold cn-icon-sm"
+                    >check_circle</span
+                  >White-label Capabilities
+                </li>
+              </ul>
+              <div class="cn-border-top-soft cn-pad-top-section mt-auto">
+                <p class="cn-text-label cn-text-muted cn-margin-below">
+                  Full Resell Rights Included
+                </p>
+                <button
+                  type="button"
+                  class="cn-btn cn-btn-outline cn-btn-outline-fill-hover w-100 cn-pad-y-sm font-weight-bold cn-radius-lg"
+                >
+                  Contact Sales
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="cn-pad-section-xl cn-layout-max mx-auto cn-measure-wide">
+        <h2 class="cn-title-section cn-title-section--spaced text-center">
+          Frequently Asked Questions
+        </h2>
+        <div>
+          <div class="cn-faq-item">
+            <button type="button" class="cn-faq-trigger faq-trigger">
+              <h3 class="cn-heading cn-heading-plain mb-0">
+                How does the 14-day free trial work?
+              </h3>
+              <span class="cn-icon cn-text-gold faq-icon">add</span>
+            </button>
+            <div class="cn-faq-panel faq-content">
+              <p class="cn-faq-answer">
+                You get full access to all AI agents and modules for 14 days. No
+                credit card is required to start. Experience the full power of
+                Cognitive Nexus with zero commitment.
+              </p>
+            </div>
+          </div>
+          <div class="cn-faq-item">
+            <button type="button" class="cn-faq-trigger faq-trigger">
+              <h3 class="cn-heading cn-heading-plain mb-0">
+                Can these agents integrate with my existing CRM?
+              </h3>
+              <span class="cn-icon cn-text-gold faq-icon">add</span>
+            </button>
+            <div class="cn-faq-panel faq-content">
+              <p class="cn-faq-answer">
+                Yes, Cognitive Nexus is designed for seamless enterprise
+                integration with major CRMs like Salesforce, HubSpot, and
+                various legacy systems via our robust API layer.
+              </p>
+            </div>
+          </div>
+          <div class="cn-faq-item">
+            <button type="button" class="cn-faq-trigger faq-trigger">
+              <h3 class="cn-heading cn-heading-plain mb-0">
+                Is my data secure?
+              </h3>
+              <span class="cn-icon cn-text-gold faq-icon">add</span>
+            </button>
+            <div class="cn-faq-panel faq-content">
+              <p class="cn-faq-answer">
+                Absolutely. We utilize enterprise-grade encryption and
+                quantum-resistant security protocols to protect your proprietary
+                intelligence. Your data is never used to train public models.
+              </p>
+            </div>
+          </div>
+          <div class="cn-faq-item">
+            <button type="button" class="cn-faq-trigger faq-trigger">
+              <h3 class="cn-heading cn-heading-plain mb-0">
+                Do I need technical skills to deploy these agents?
+              </h3>
+              <span class="cn-icon cn-text-gold faq-icon">add</span>
+            </button>
+            <div class="cn-faq-panel faq-content">
+              <p class="cn-faq-answer">
+                No, our platform is designed for rapid, low-code deployment. Our
+                intuitive interface allows your team to activate and configure
+                agents in minutes without writing a single line of code.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="cn-pad-section-tall cn-bg-surface-low cn-border-y-strong">
+        <div class="mx-auto text-center cn-measure-wide cn-layout-max">
+          <h2 class="cn-title-hero">Unlock Your Agency's Full Potential</h2>
+          <p
+            class="cn-prose-lead cn-prose-lead--hero mx-auto cn-measure-narrow"
+          >
+            Join the exclusive circle of executives scaling their AI business to
+            7 figures and beyond. No code. No hassle. Just results.
+          </p>
+          <button
+            type="button"
+            class="cn-btn cn-btn-primary cn-pad-x-hero cn-pad-y-xl cn-text-heading-sm cn-btn-glow-lg"
+          >
+            Start Your 14-Day Free Trial
+          </button>
+        </div>
+      </section>
+    </main>
+
+    <footer class="cn-bg-surface-darkest cn-border-footer-top">
+      <div
+        class="cn-layout-max d-flex flex-column flex-md-row justify-content-between align-items-center cn-pad-y-gutter"
+      >
+        <div
+          class="d-flex flex-column align-items-center align-items-md-start mb-3 mb-md-0"
+        >
+          <div class="cn-footer-brand">Cognitive Nexus</div>
+          <p class="cn-text-caption cn-text-muted mb-0">
+            © 2024 Cognitive Nexus. All rights reserved.
+          </p>
+        </div>
+        <div class="d-flex flex-wrap justify-content-center">
+          <a class="cn-footer-link mr-3 mb-2 mb-md-0" href="#"
+            >Privacy Policy</a
+          >
+          <a class="cn-footer-link mr-3 mb-2 mb-md-0" href="#"
+            >Terms of Service</a
+          >
+          <a class="cn-footer-link mr-3 mb-2 mb-md-0" href="#"
+            >Executive Support</a
+          >
+          <a class="cn-footer-link" href="#">Contact</a>
+        </div>
       </div>
-      <div>
-        <div class="row cn-compare-row mx-0"><div class="col-12 col-md-5 d-flex align-items-center mb-2 mb-md-0"><span class="cn-material cn-text-primary cn-icon-size-md mr-3">groups</span><span class="cn-text-body-md font-weight-medium cn-text-on-surface">CRM &amp; Pipeline Management</span></div><div class="col-12 col-md-4 d-flex justify-content-center mb-2 mb-md-0"><span class="cn-text-label-sm cn-text-on-surface-variant-faint cn-italic">Salesforce, HubSpot</span></div><div class="col-12 col-md-3 text-md-right text-center"><span class="cn-material cn-text-primary font-weight-bold">check_circle</span></div></div>
-        <div class="row cn-compare-row mx-0"><div class="col-12 col-md-5 d-flex align-items-center mb-2 mb-md-0"><span class="cn-material cn-text-primary cn-icon-size-md mr-3">filter_alt</span><span class="cn-text-body-md font-weight-medium cn-text-on-surface">Unlimited Sales Funnels</span></div><div class="col-12 col-md-4 d-flex justify-content-center mb-2 mb-md-0"><span class="cn-text-label-sm cn-text-on-surface-variant-faint cn-italic">ClickFunnels, Leadpages</span></div><div class="col-12 col-md-3 text-md-right text-center"><span class="cn-material cn-text-primary font-weight-bold">check_circle</span></div></div>
-        <div class="row cn-compare-row mx-0"><div class="col-12 col-md-5 d-flex align-items-center mb-2 mb-md-0"><span class="cn-material cn-text-primary cn-icon-size-md mr-3">language</span><span class="cn-text-body-md font-weight-medium cn-text-on-surface">Website Builder</span></div><div class="col-12 col-md-4 d-flex justify-content-center mb-2 mb-md-0"><span class="cn-text-label-sm cn-text-on-surface-variant-faint cn-italic">WordPress, Wix, Squarespace</span></div><div class="col-12 col-md-3 text-md-right text-center"><span class="cn-material cn-text-primary font-weight-bold">check_circle</span></div></div>
-        <div class="row cn-compare-row mx-0"><div class="col-12 col-md-5 d-flex align-items-center mb-2 mb-md-0"><span class="cn-material cn-text-primary cn-icon-size-md mr-3">quiz</span><span class="cn-text-body-md font-weight-medium cn-text-on-surface">Surveys &amp; Forms</span></div><div class="col-12 col-md-4 d-flex justify-content-center mb-2 mb-md-0"><span class="cn-text-label-sm cn-text-on-surface-variant-faint cn-italic">Typeform, SurveyMonkey</span></div><div class="col-12 col-md-3 text-md-right text-center"><span class="cn-material cn-text-primary font-weight-bold">check_circle</span></div></div>
-        <div class="row cn-compare-row mx-0"><div class="col-12 col-md-5 d-flex align-items-center mb-2 mb-md-0"><span class="cn-material cn-text-primary cn-icon-size-md mr-3">mail</span><span class="cn-text-body-md font-weight-medium cn-text-on-surface">Email Marketing</span></div><div class="col-12 col-md-4 d-flex justify-content-center mb-2 mb-md-0"><span class="cn-text-label-sm cn-text-on-surface-variant-faint cn-italic">Mailchimp, ActiveCampaign</span></div><div class="col-12 col-md-3 text-md-right text-center"><span class="cn-material cn-text-primary font-weight-bold">check_circle</span></div></div>
-        <div class="row cn-compare-row mx-0"><div class="col-12 col-md-5 d-flex align-items-center mb-2 mb-md-0"><span class="cn-material cn-text-primary cn-icon-size-md mr-3">sms</span><span class="cn-text-body-md font-weight-medium cn-text-on-surface">2-Way SMS Marketing</span></div><div class="col-12 col-md-4 d-flex justify-content-center mb-2 mb-md-0"><span class="cn-text-label-sm cn-text-on-surface-variant-faint cn-italic">Twilio, Podium</span></div><div class="col-12 col-md-3 text-md-right text-center"><span class="cn-material cn-text-primary font-weight-bold">check_circle</span></div></div>
-        <div class="row cn-compare-row mx-0"><div class="col-12 col-md-5 d-flex align-items-center mb-2 mb-md-0"><span class="cn-material cn-text-primary cn-icon-size-md mr-3">calendar_today</span><span class="cn-text-body-md font-weight-medium cn-text-on-surface">Booking &amp; Appointments</span></div><div class="col-12 col-md-4 d-flex justify-content-center mb-2 mb-md-0"><span class="cn-text-label-sm cn-text-on-surface-variant-faint cn-italic">Calendly, Acuity</span></div><div class="col-12 col-md-3 text-md-right text-center"><span class="cn-material cn-text-primary font-weight-bold">check_circle</span></div></div>
-        <div class="row cn-compare-row mx-0"><div class="col-12 col-md-5 d-flex align-items-center mb-2 mb-md-0"><span class="cn-material cn-text-primary cn-icon-size-md mr-3">account_tree</span><span class="cn-text-body-md font-weight-medium cn-text-on-surface">Workflow Automation</span></div><div class="col-12 col-md-4 d-flex justify-content-center mb-2 mb-md-0"><span class="cn-text-label-sm cn-text-on-surface-variant-faint cn-italic">Zapier, Make</span></div><div class="col-12 col-md-3 text-md-right text-center"><span class="cn-material cn-text-primary font-weight-bold">check_circle</span></div></div>
-        <div class="row cn-compare-row mx-0"><div class="col-12 col-md-5 d-flex align-items-center mb-2 mb-md-0"><span class="cn-material cn-text-primary cn-icon-size-md mr-3">school</span><span class="cn-text-body-md font-weight-medium cn-text-on-surface">Courses &amp; Membership</span></div><div class="col-12 col-md-4 d-flex justify-content-center mb-2 mb-md-0"><span class="cn-text-label-sm cn-text-on-surface-variant-faint cn-italic">Kajabi, Teachable</span></div><div class="col-12 col-md-3 text-md-right text-center"><span class="cn-material cn-text-primary font-weight-bold">check_circle</span></div></div>
-        <div class="row cn-compare-row mx-0"><div class="col-12 col-md-5 d-flex align-items-center mb-2 mb-md-0"><span class="cn-material cn-text-primary cn-icon-size-md mr-3">stars</span><span class="cn-text-body-md font-weight-medium cn-text-on-surface">Reputation Management</span></div><div class="col-12 col-md-4 d-flex justify-content-center mb-2 mb-md-0"><span class="cn-text-label-sm cn-text-on-surface-variant-faint cn-italic">BirdEye, Yotpo</span></div><div class="col-12 col-md-3 text-md-right text-center"><span class="cn-material cn-text-primary font-weight-bold">check_circle</span></div></div>
-        <div class="row cn-compare-row mx-0"><div class="col-12 col-md-5 d-flex align-items-center mb-2 mb-md-0"><span class="cn-material cn-text-primary cn-icon-size-md mr-3">history_edu</span><span class="cn-text-body-md font-weight-medium cn-text-on-surface">Document Signing</span></div><div class="col-12 col-md-4 d-flex justify-content-center mb-2 mb-md-0"><span class="cn-text-label-sm cn-text-on-surface-variant-faint cn-italic">DocuSign, PandaDoc</span></div><div class="col-12 col-md-3 text-md-right text-center"><span class="cn-material cn-text-primary font-weight-bold">check_circle</span></div></div>
-      </div>
-      <div class="cn-compare-foot">
-        <div class="row align-items-center mx-0">
-          <div class="col-12 col-md-5 mb-3 mb-md-0"><div class="cn-text-headline-sm cn-text-on-surface">Estimated Monthly Investment</div></div>
-          <div class="col-12 col-md-4 text-center mb-3 mb-md-0"><div class="cn-text-headline-sm cn-text-error font-weight-bold">$1,400+ <span class="cn-text-label-sm font-weight-normal cn-text-on-surface-variant">/mo</span></div></div>
-          <div class="col-12 col-md-3 text-md-right text-center"><div class="cn-text-headline-md cn-text-primary font-weight-bold">$97 <span class="cn-text-label-sm font-weight-normal cn-text-primary-soft">/mo</span></div></div>
+    </footer>
+
+    <div
+      id="modules-modal"
+      class="cn-modal-root cn-bg-modal-overlay d-none align-items-center justify-content-center"
+      style="overflow-y: auto"
+    >
+      <div class="cn-modal-panel cn-surface-sheen">
+        <button
+          type="button"
+          class="cn-modal-close"
+          id="close-modules-modal"
+          aria-label="Close"
+        >
+          <span class="cn-icon cn-icon-md">close</span>
+        </button>
+        <div class="text-center">
+          <div class="cn-margin-below">
+            <span class="cn-icon cn-icon-xl cn-icon-gold">apps</span>
+          </div>
+          <h2 class="cn-modal-title">Comprehensive Module Suite</h2>
+          <p class="cn-prose-lead cn-margin-below-gutter">
+            Our platform includes 40+ specialized software modules designed to
+            handle everything from CRM and sales funnels to automated payroll
+            and restaurant management. Each module is fully integrated into the
+            Cognitive Nexus ecosystem.
+          </p>
+          <button
+            type="button"
+            class="cn-btn cn-btn-primary w-100 cn-pad-gutter cn-radius-lg cn-text-heading-sm cn-btn-glow-sm"
+          >
+            Start Your 14-Day Free Trial
+          </button>
         </div>
       </div>
     </div>
-    <div class="cn-mt-16-custom text-center">
-      <button type="button" class="cn-btn cn-btn-primary cn-px-12-custom cn-py-5-custom cn-text-headline-sm cn-shadow-xl">Consolidate Your Stack with 10 Ways Now</button>
-      <p class="cn-mt-6-custom cn-text-label-md cn-text-on-surface-variant cn-italic">Join 500+ enterprises who unified their intelligence this year.</p>
-    </div>
-  </div>
-</section>
 
-<section class="cn-py-24-section cn-bg-page cn-wrap">
-  <div class="text-center cn-mb-16-custom">
-    <h2 class="cn-font-display cn-text-display-lg cn-text-primary cn-mb-6-custom">Executive Pricing Plans</h2>
-    <p class="cn-text-body-lg cn-text-on-surface-variant mx-auto cn-max-w-2xl">Select the tier that aligns with your enterprise scale and growth objectives.</p>
-  </div>
-  <div class="row cn-row-tight align-items-stretch">
-    <div class="col-12 col-md-4 mb-5 mb-md-0 d-flex">
-      <div class="cn-pricing-card cn-pricing-card--border-soft cn-card-inner-glow w-100">
-        <div class="cn-mb-8-custom">
-          <h3 class="cn-text-headline-md cn-text-primary cn-mb-2">Starter</h3>
-          <div class="cn-price-row cn-mb-4-custom"><span class="display-4 font-weight-bold cn-text-on-background" style="font-size: 2.25rem;">$97</span><span class="cn-text-on-surface-variant">/mo</span></div>
-          <p class="cn-text-label-sm cn-text-primary font-weight-bold cn-uppercase cn-tracking-wider">Internal License Only</p>
-        </div>
-        <ul class="cn-list-check cn-flex-grow">
-          <li><span class="cn-material cn-text-primary cn-icon-size-sm">check_circle</span>Access 1 Sub-Account</li>
-          <li><span class="cn-material cn-text-primary cn-icon-size-sm">check_circle</span>Create 3 AI Agents</li>
-          <li><span class="cn-material cn-text-primary cn-icon-size-sm">check_circle</span>Unlimited Leads</li>
-          <li><span class="cn-material cn-text-primary cn-icon-size-sm">check_circle</span>AI Conversational Booking</li>
-          <li><span class="cn-material cn-text-primary cn-icon-size-sm">check_circle</span>Access to 20 AI agents</li>
-          <li><span class="cn-material cn-text-primary cn-icon-size-sm">check_circle</span>Automated Follow Ups</li>
-          <li><span class="cn-material cn-text-primary cn-icon-size-sm">check_circle</span>Knowledge Base</li>
-        </ul>
-        <div class="cn-border-t-outline-20 cn-pt-6-custom mt-auto">
-          <p class="cn-text-label-md cn-text-on-surface-variant cn-mb-6-custom">Add-on: <span class="cn-text-primary font-weight-bold">$67</span> Per Subaccount</p>
-          <button type="button" class="cn-btn cn-btn-outline-gold cn-btn-fill-hover w-100 cn-py-3-custom font-weight-bold cn-rounded-lg">Get Started</button>
-        </div>
-      </div>
-    </div>
-    <div class="col-12 col-md-4 mb-5 mb-md-0 d-flex">
-      <div class="cn-pricing-card cn-pricing-card--featured cn-card-inner-glow w-100">
-        <span class="cn-badge-popular">Most Popular</span>
-        <div class="cn-mb-8-custom cn-mt-2">
-          <h3 class="cn-text-headline-md cn-text-primary cn-mb-2">Unlimited</h3>
-          <div class="cn-price-row cn-mb-4-custom"><span class="display-4 font-weight-bold cn-text-on-background" style="font-size: 2.25rem;">$297</span><span class="cn-text-on-surface-variant">/mo</span></div>
-          <p class="cn-text-label-sm cn-text-primary font-weight-bold cn-uppercase cn-tracking-wider">Everything in Starter, plus:</p>
-        </div>
-        <ul class="cn-list-check cn-flex-grow">
-          <li><span class="cn-material cn-text-primary cn-icon-size-sm">check_circle</span>10 Sub-Accounts</li>
-          <li><span class="cn-material cn-text-primary cn-icon-size-sm">check_circle</span>10 AI Agents per Sub-Account</li>
-          <li><span class="cn-material cn-text-primary cn-icon-size-sm">check_circle</span>Voicenotes &amp; Analytics</li>
-          <li><span class="cn-material cn-text-primary cn-icon-size-sm">check_circle</span>24/7 Executive Support</li>
-          <li><span class="cn-material cn-text-primary cn-icon-size-sm">check_circle</span>Campaign Split Testing</li>
-          <li><span class="cn-material cn-text-primary cn-icon-size-sm">check_circle</span>Lead Dashboard &amp; Test Env</li>
-          <li><span class="cn-material cn-text-primary cn-icon-size-sm">check_circle</span>Unlimited Leads</li>
-        </ul>
-        <div class="cn-border-t-outline-20 cn-pt-6-custom mt-auto">
-          <p class="cn-text-label-md cn-text-on-surface-variant cn-mb-6-custom">Add-on: <span class="cn-text-primary font-weight-bold">$29</span> Per Subaccount</p>
-          <button type="button" class="cn-btn cn-btn-primary w-100 cn-py-4-custom font-weight-bold cn-rounded-lg cn-shadow-lg">Start 14-Day Free Trial</button>
-        </div>
-      </div>
-    </div>
-    <div class="col-12 col-md-4 d-flex">
-      <div class="cn-pricing-card cn-pricing-card--border-soft cn-card-inner-glow w-100">
-        <div class="cn-mb-8-custom">
-          <h3 class="cn-text-headline-md cn-text-primary cn-mb-2">SaaS Plan</h3>
-          <div class="cn-price-row cn-mb-4-custom"><span class="display-4 font-weight-bold cn-text-on-background" style="font-size: 2.25rem;">$497</span><span class="cn-text-on-surface-variant">/mo</span></div>
-          <p class="cn-text-label-sm cn-text-on-surface-variant cn-leading-tight">Everything You Need To Start Generating Recurring SaaS Revenue.</p>
-        </div>
-        <ul class="cn-list-check cn-flex-grow">
-          <li><span class="cn-material cn-text-primary cn-icon-size-sm">check_circle</span>Everything In Unlimited</li>
-          <li><span class="cn-material cn-text-primary cn-icon-size-sm">check_circle</span>SaaS Mode - Auto Creation</li>
-          <li><span class="cn-material cn-text-primary cn-icon-size-sm">check_circle</span>Rebilling with Custom Markup</li>
-          <li><span class="cn-material cn-text-primary cn-icon-size-sm">check_circle</span>Conversation AI Rebilling</li>
-          <li><span class="cn-material cn-text-primary cn-icon-size-sm">check_circle</span>White-label Capabilities</li>
-        </ul>
-        <div class="cn-border-t-outline-20 cn-pt-6-custom mt-auto">
-          <p class="cn-text-label-md cn-text-on-surface-variant cn-mb-6-custom">Full Resell Rights Included</p>
-          <button type="button" class="cn-btn cn-btn-outline-gold cn-btn-fill-hover w-100 cn-py-3-custom font-weight-bold cn-rounded-lg">Contact Sales</button>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="cn-py-24-section cn-wrap mx-auto cn-max-w-4xl">
-  <h2 class="cn-font-display cn-text-display-lg cn-text-primary cn-mb-16-custom text-center">Frequently Asked Questions</h2>
-  <div>
-    <div class="cn-faq-item">
-      <button type="button" class="cn-faq-trigger faq-trigger"><h3 class="cn-text-headline-sm cn-text-primary mb-0">How does the 14-day free trial work?</h3><span class="cn-material cn-text-primary faq-icon">add</span></button>
-      <div class="cn-faq-content faq-content"><p class="cn-faq-body">You get full access to all AI agents and modules for 14 days. No credit card is required to start. Experience the full power of Cognitive Nexus with zero commitment.</p></div>
-    </div>
-    <div class="cn-faq-item">
-      <button type="button" class="cn-faq-trigger faq-trigger"><h3 class="cn-text-headline-sm cn-text-primary mb-0">Can these agents integrate with my existing CRM?</h3><span class="cn-material cn-text-primary faq-icon">add</span></button>
-      <div class="cn-faq-content faq-content"><p class="cn-faq-body">Yes, Cognitive Nexus is designed for seamless enterprise integration with major CRMs like Salesforce, HubSpot, and various legacy systems via our robust API layer.</p></div>
-    </div>
-    <div class="cn-faq-item">
-      <button type="button" class="cn-faq-trigger faq-trigger"><h3 class="cn-text-headline-sm cn-text-primary mb-0">Is my data secure?</h3><span class="cn-material cn-text-primary faq-icon">add</span></button>
-      <div class="cn-faq-content faq-content"><p class="cn-faq-body">Absolutely. We utilize enterprise-grade encryption and quantum-resistant security protocols to protect your proprietary intelligence. Your data is never used to train public models.</p></div>
-    </div>
-    <div class="cn-faq-item">
-      <button type="button" class="cn-faq-trigger faq-trigger"><h3 class="cn-text-headline-sm cn-text-primary mb-0">Do I need technical skills to deploy these agents?</h3><span class="cn-material cn-text-primary faq-icon">add</span></button>
-      <div class="cn-faq-content faq-content"><p class="cn-faq-body">No, our platform is designed for rapid, low-code deployment. Our intuitive interface allows your team to activate and configure agents in minutes without writing a single line of code.</p></div>
-    </div>
-  </div>
-</section>
-
-<section class="cn-py-20-section cn-bg-surface-low cn-border-y-outline-20">
-  <div class="mx-auto text-center cn-max-w-4xl cn-wrap">
-    <h2 class="cn-font-display cn-text-display-lg-mobile cn-text-display-lg-md cn-text-primary cn-mb-6-custom">Unlock Your Agency's Full Potential</h2>
-    <p class="cn-text-body-lg cn-text-on-surface-variant cn-mb-10-custom mx-auto cn-max-w-2xl">Join the exclusive circle of executives scaling their AI business to 7 figures and beyond. No code. No hassle. Just results.</p>
-    <button type="button" class="cn-btn cn-btn-primary cn-px-16-custom cn-py-6-custom cn-text-headline-sm cn-shadow-2xl">Start Your 14-Day Free Trial</button>
-  </div>
-</section>
-</main>
-
-<footer class="cn-bg-surface-lowest cn-border-outline-15">
-  <div class="cn-wrap d-flex flex-column flex-md-row justify-content-between align-items-center cn-py-gutter">
-    <div class="d-flex flex-column align-items-center align-items-md-start mb-3 mb-md-0">
-      <div class="cn-text-headline-sm cn-text-primary">Cognitive Nexus</div>
-      <p class="cn-text-label-sm cn-text-on-surface-variant mb-0">© 2024 Cognitive Nexus. All rights reserved.</p>
-    </div>
-    <div class="d-flex flex-wrap justify-content-center">
-      <a class="cn-footer-link mr-3 mb-2 mb-md-0" href="#">Privacy Policy</a>
-      <a class="cn-footer-link mr-3 mb-2 mb-md-0" href="#">Terms of Service</a>
-      <a class="cn-footer-link mr-3 mb-2 mb-md-0" href="#">Executive Support</a>
-      <a class="cn-footer-link" href="#">Contact</a>
-    </div>
-  </div>
-</footer>
-
-<div id="modules-modal" class="cn-modal-root cn-bg-modal-scrim d-none align-items-center justify-content-center" style="overflow-y: auto;">
-  <div class="cn-modal-panel cn-card-inner-glow">
-    <button type="button" class="cn-modal-close" id="close-modules-modal" aria-label="Close"><span class="cn-material cn-icon-size-md">close</span></button>
-    <div class="text-center">
-      <div class="cn-mb-6-custom"><span class="cn-material cn-icon-size-xl cn-brushed-gold">apps</span></div>
-      <h2 class="cn-font-display cn-text-headline-md cn-text-primary cn-mb-6-custom">Comprehensive Module Suite</h2>
-      <p class="cn-text-body-lg cn-text-on-surface-variant cn-mb-gutter cn-leading-relaxed">Our platform includes 40+ specialized software modules designed to handle everything from CRM and sales funnels to automated payroll and restaurant management. Each module is fully integrated into the Cognitive Nexus ecosystem.</p>
-      <button type="button" class="cn-btn cn-btn-primary w-100 cn-p-gutter cn-rounded-lg cn-text-headline-sm cn-shadow-lg">Start Your 14-Day Free Trial</button>
-    </div>
-  </div>
-</div>
-
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
-<script>
-document.querySelectorAll('.cn-agent-card').forEach(function (card) {
-  card.addEventListener('mouseenter', function () {
-    var icon = card.querySelector('.cn-material');
-    if (icon) {
-      icon.style.transition = 'transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275)';
-      icon.style.transform = 'scale(1.1) rotate(5deg)';
-    }
-  });
-  card.addEventListener('mouseleave', function () {
-    var icon = card.querySelector('.cn-material');
-    if (icon) { icon.style.transform = 'scale(1) rotate(0deg)'; }
-  });
-});
-(function () {
-  var modal = document.getElementById('modules-modal');
-  var openBtn = document.getElementById('open-modules-modal');
-  var closeBtn = document.getElementById('close-modules-modal');
-  function toggleModal(show) {
-    if (!modal) return;
-    if (show) {
-      modal.classList.remove('d-none');
-      modal.classList.add('d-flex');
-      document.body.style.overflow = 'hidden';
-    } else {
-      modal.classList.add('d-none');
-      modal.classList.remove('d-flex');
-      document.body.style.overflow = '';
-    }
-  }
-  if (openBtn && closeBtn && modal) {
-    openBtn.addEventListener('click', function () { toggleModal(true); });
-    closeBtn.addEventListener('click', function () { toggleModal(false); });
-    modal.addEventListener('click', function (e) { if (e.target === modal) toggleModal(false); });
-  }
-})();
-document.querySelectorAll('.faq-trigger').forEach(function (trigger) {
-  trigger.addEventListener('click', function () {
-    var content = trigger.nextElementSibling;
-    var icon = trigger.querySelector('.faq-icon');
-    var isOpen = content.style.maxHeight !== '0px' && content.style.maxHeight !== '';
-    document.querySelectorAll('.faq-content').forEach(function (c) { c.style.maxHeight = '0px'; });
-    document.querySelectorAll('.faq-icon').forEach(function (i) { i.textContent = 'add'; });
-    if (!isOpen) {
-      content.style.maxHeight = content.scrollHeight + 'px';
-      icon.textContent = 'remove';
-    } else {
-      content.style.maxHeight = '0px';
-      icon.textContent = 'add';
-    }
-  });
-});
-</script>
-</body>
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      document.querySelectorAll(".cn-card-agent").forEach(function (card) {
+        card.addEventListener("mouseenter", function () {
+          var icon = card.querySelector(".cn-icon");
+          if (icon) {
+            icon.style.transition =
+              "transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275)";
+            icon.style.transform = "scale(1.1) rotate(5deg)";
+          }
+        });
+        card.addEventListener("mouseleave", function () {
+          var icon = card.querySelector(".cn-icon");
+          if (icon) {
+            icon.style.transform = "scale(1) rotate(0deg)";
+          }
+        });
+      });
+      (function () {
+        var modal = document.getElementById("modules-modal");
+        var openBtn = document.getElementById("open-modules-modal");
+        var closeBtn = document.getElementById("close-modules-modal");
+        function toggleModal(show) {
+          if (!modal) return;
+          if (show) {
+            modal.classList.remove("d-none");
+            modal.classList.add("d-flex");
+            document.body.style.overflow = "hidden";
+          } else {
+            modal.classList.add("d-none");
+            modal.classList.remove("d-flex");
+            document.body.style.overflow = "";
+          }
+        }
+        if (openBtn && closeBtn && modal) {
+          openBtn.addEventListener("click", function () {
+            toggleModal(true);
+          });
+          closeBtn.addEventListener("click", function () {
+            toggleModal(false);
+          });
+          modal.addEventListener("click", function (e) {
+            if (e.target === modal) toggleModal(false);
+          });
+        }
+      })();
+      document.querySelectorAll(".faq-trigger").forEach(function (trigger) {
+        trigger.addEventListener("click", function () {
+          var content = trigger.nextElementSibling;
+          var icon = trigger.querySelector(".faq-icon");
+          var isOpen =
+            content.style.maxHeight !== "0px" && content.style.maxHeight !== "";
+          document.querySelectorAll(".faq-content").forEach(function (c) {
+            c.style.maxHeight = "0px";
+          });
+          document.querySelectorAll(".faq-icon").forEach(function (i) {
+            i.textContent = "add";
+          });
+          if (!isOpen) {
+            content.style.maxHeight = content.scrollHeight + "px";
+            icon.textContent = "remove";
+          } else {
+            content.style.maxHeight = "0px";
+            icon.textContent = "add";
+          }
+        });
+      });
+    </script>
+  </body>
 </html>
