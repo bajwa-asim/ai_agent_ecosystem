@@ -1055,6 +1055,18 @@
         pointer-events: none;
       }
 
+      .cn-agent-modal-copy {
+        max-width: 36rem;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .cn-agent-modal-para {
+        font-size: 16px;
+        line-height: 26px;
+        text-align: center;
+      }
+
       .cn-card-agent .cn-btn.cn-btn-primary.cn-btn-card {
         width: 100%;
         padding-top: 0.75rem;
@@ -1463,12 +1475,6 @@
         <div
           class="cn-margin-below-section text-center mx-auto cn-measure-medium"
         >
-          <div class="cn-agents-hero-img cn-margin-below-section">
-            <img
-              alt="AI Agent Modules"
-              src="https://lh3.googleusercontent.com/aida-public/AB6AXuCDp8yBLQ7h3RO87MMei8GPYN5tTl9z9gU3VobACreFy-nq6wIGb4RZuGTYwmof6y8qlemozZT_LUGuB2mNsFYtd2ciu__PowCcDsVZjb2aDPXKFy5UC75l-Wr6L-aanV4RyggmRJ0bhII_V2bq9mUXWFm7vURec4N8ueoYEpaXpbLS1O0pbZRFdiq0aEpMWo5EkQRsI0Nselge0_6WybZDIfjXwf1_HEH2M2qygM_Pv74zC4P9TSdlXL-FDTx-15kVcOTog6GyOiM"
-            />
-          </div>
           <h2 class="cn-title-section">Our AI Agents &amp; Tools</h2>
           <p class="cn-prose-lead">
             High-performance cognitive agents engineered for scale. From voice
@@ -2822,8 +2828,20 @@
             ></span>
             <h2 id="agent-modal-title" class="cn-modal-title"></h2>
           </div>
-          <!-- <h2 id="agent-modal-title" class="cn-modal-title"></h2> -->
-          <p id="agent-modal-text" class="cn-prose-lead mb-4"></p>
+          <div id="agent-modal-copy" class="cn-agent-modal-copy text-left mb-4">
+            <p
+              id="agent-modal-p1"
+              class="cn-prose-lead cn-agent-modal-para mb-3"
+            ></p>
+            <p
+              id="agent-modal-p2"
+              class="cn-prose-lead cn-agent-modal-para mb-3"
+            ></p>
+            <p
+              id="agent-modal-p3"
+              class="cn-prose-lead cn-agent-modal-para mb-0"
+            ></p>
+          </div>
           <button
             type="button"
             class="cn-btn cn-btn-primary w-100 p-4 cn-radius-lg cn-text-heading-sm cn-btn-glow-sm"
@@ -2867,6 +2885,91 @@
         </div>
       </div>
     </div>
+
+    <script type="application/json" id="cn-agent-modal-data">
+      {
+        "AI Missed Call Text-Back": {
+          "p1": "Every missed call is money walking straight to your competitor. The moment a call goes unanswered, this AI fires off a friendly text and strikes up a real conversation - answering questions, handling objections, and keeping the lead warm before they cool off.",
+          "p2": "Instead of losing that customer forever, you recover the sale before they dial the next business on Google. It works around the clock, never forgets to follow up, and turns your biggest silent leak into booked jobs and recovered revenue.",
+          "p3": "For any business that lives off inbound calls, this is the fastest win there is. It plugs the hole you didn't know was draining you - and pays for itself almost immediately."
+        },
+        "AI 24/7 Phone Receptionist": {
+          "p1": "Stop losing customers to voicemail and hold music. This AI receptionist answers every call instantly, around the clock, handling FAQs, routing callers, and delivering warm, professional service that sounds genuinely human.",
+          "p2": "Crucially, it doesn't just answer - it books appointments live on the call, checking your calendar and locking in the slot before the customer hangs up. No missed calls, no after-hours gaps, no wages for extra staff.",
+          "p3": "Whether it's 2pm or 2am, every caller gets a helpful response and a reason to stay. Your phone line stops being a cost and starts working as a 24-hour booking machine."
+        },
+        "AI Instant Speed-to-Lead": {
+          "p1": "Leads go cold in minutes - and the first business to call almost always wins. This AI calls every new lead the second they submit a form, while their interest is still red-hot.",
+          "p2": "From there it either bridges them straight to your sales team or books the appointment itself, live on the call. No delays, no leads slipping through the cracks, no competitor getting there first.",
+          "p3": "By striking instantly, it dramatically lifts your connection and conversion rates and turns form fills into booked calls automatically. If you're paying for leads, this makes sure you actually cash in on every single one."
+        },
+        "AI Appointment Booking": {
+          "p1": "A diary full of appointments, booked without you lifting a finger. This voice assistant checks your calendar in real time, negotiates a time that suits the customer, and confirms the booking live on the call.",
+          "p2": "No back-and-forth, no callbacks, no email tag. It strips out every ounce of scheduling friction, so customers lock in their slot the moment they're motivated, instead of drifting off and forgetting.",
+          "p3": "The result is a fuller diary, fewer no-shows, and hours of admin time handed back to your team. It quietly fills your calendar day and night while you focus on the actual work."
+        },
+        "AI 24/7 Website Chat": {
+          "p1": "Most website visitors leave without ever telling you they were there. This chat widget engages them the instant they land, answers their questions, captures their details, and books appointments straight into your calendar.",
+          "p2": "It guides people toward a decision while their interest is high, so no enquiry slips away unanswered and no visitor leaves empty-handed. Anonymous browsers become booked customers, round the clock.",
+          "p3": "Working 24/7 without breaks, it converts the traffic you're already paying for into real, actionable leads and confirmed bookings - squeezing far more revenue out of every click that hits your site."
+        },
+        "AI Database Reactivation": {
+          "p1": "There's a goldmine of revenue sitting dead in your CRM right now. This AI autonomously texts and calls your old, cold leads and lapsed customers, sparks genuine conversations, and books appointments from contacts you'd written off completely.",
+          "p2": "It turns a forgotten list into fresh, paying business - often surfacing serious revenue from data you already own, at almost zero cost. No ad spend, no new lead gen, just hidden opportunities reawakened and dropped into your calendar.",
+          "p3": "For most businesses, this is the fastest way to generate booked appointments and cash from assets they didn't even realise they were sitting on. Pure profit, hiding in plain sight."
+        },
+        "AI Omnichannel Messaging": {
+          "p1": "Your customers message everywhere - and expect instant replies on all of it. This AI handles two-way conversations across SMS, email, Facebook, Instagram, and WhatsApp from one place.",
+          "p2": "It answers questions, captures leads, and books appointments straight into your calendar on whichever channel they prefer. No more juggling inboxes, no slow replies, no leads going cold while you're asleep.",
+          "p3": "It keeps every conversation alive and consistent, round the clock, moving people from message to booked appointment without your team lifting a finger. One tireless agent, every channel covered, every message answered the moment it lands."
+        },
+        "AI Lead Qualifier": {
+          "p1": "Stop wasting your sales team's time on tyre-kickers. This AI calls every new lead, asks your qualifying questions, scores them, and books the genuinely hot ones straight onto your team's calendar - all before a human says a word.",
+          "p2": "Time-wasters get filtered out, ready-to-buy prospects get fast-tracked, and your closers spend their energy only where it actually converts. The result is a sharper pipeline and noticeably higher close rates.",
+          "p3": "It does the heavy lifting up front so your people only ever talk to leads worth talking to. Your team stops chasing and starts closing."
+        },
+        "AI Reviews": {
+          "p1": "Your online reputation decides whether customers choose you or scroll right past. This intelligent dashboard monitors every piece of incoming feedback, crafts smart, on-brand replies in seconds, and actively boosts your search rankings.",
+          "p2": "By responding fast and professionally to every review, it builds the trust that turns searchers into customers and lifts you above competitors in local results. More five-star visibility, more credibility, more clicks - all managed automatically.",
+          "p3": "In a world where buyers check reviews before they buy, this keeps your reputation working as your hardest-selling, always-on salesperson. It earns trust while you sleep."
+        },
+        "AI Social Media Posts": {
+          "p1": "Consistent, scroll-stopping content - without the creative headache. Just give it a prompt and this AI drafts high-converting copy and designs eye-catching graphics tailored to your brand in seconds.",
+          "p2": "No more blank-page paralysis, no expensive agency retainers, no posting drought. It hands you ready-to-publish content that grabs attention and drives real engagement, keeping your brand visible and magnetic across every channel.",
+          "p3": "Whenever inspiration runs dry, it delivers fresh, on-brand material instantly - keeping your feed active and your audience hooked while you get on with running the business."
+        },
+        "AI Cold Caller": {
+          "p1": "Outreach at a scale no human team could match. This conversational AI works systematically through your target lists, holding natural cold and warm conversations and delivering your pitch flawlessly every single time.",
+          "p2": "It books interested prospects straight into your calendar, never tires, never gets nervous, and never skips a call. It powers through lists and generates booked opportunities far faster and cheaper than a room full of reps.",
+          "p3": "For businesses that live on outbound, it turns prospecting from a grind into a predictable, always-on appointment engine — one that fills your diary on autopilot."
+        },
+        "AI Social Media Scheduling": {
+          "p1": "Show up everywhere, effortlessly. This AI automatically schedules and publishes your posts across every platform at the exact times your audience is most active, keeping your brand consistently visible without you lifting a finger.",
+          "p2": "No more forgetting to post, no more scrambling for content at the last minute, no more dead patches in your feed. It queues everything up to go live at peak engagement, so you stay relevant and top-of-mind.",
+          "p3": "Set it once and let your presence build automatically. The daily grind of posting runs itself in the background while you focus on the business."
+        },
+        "AI 60-Second Website Builder": {
+          "p1": "A professional, high-converting website in less time than it takes to make a coffee. Just describe what you need, and this AI builds a fully functional, conversion-optimised site or landing page in under 60 seconds - complete with structure, copy, and design.",
+          "p2": "No developers, no designers, no weeks of waiting and ballooning costs. You get a polished, ready-to-launch web presence almost instantly, built to turn visitors into enquiries from day one.",
+          "p3": "Perfect for getting online fast or spinning up campaign pages on demand, it puts a credible, selling website within everyone's reach. Launch in minutes, not months."
+        },
+        "AI SEO Report": {
+          "p1": "Know exactly why you're not ranking — and precisely how to fix it. This autonomous crawler scans your website, diagnoses every SEO issue, and builds a clear, actionable optimisation blueprint.",
+          "p2": "No jargon, no guesswork, no need for an expensive in-house expert. It pinpoints the technical faults, content gaps, and ranking opportunities holding you back, then hands you a straightforward roadmap to climb the search results.",
+          "p3": "For any business that wants to be found on Google, it turns invisible SEO problems into a simple, prioritised plan of attack. You stop guessing and start ranking."
+        },
+        "AI Video Generator": {
+          "p1": "Eye-catching marketing videos, without the cameras, crews, or editing software. This AI turns your script or idea into polished, ready-to-share video content in minutes — rendering professional visuals that stop the scroll and sell your message.",
+          "p2": "No production costs, no steep learning curve, no waiting on freelancers. Ideal for ads, social media, and promotions, it lets you pump out engaging video whenever you need it, as often as you need it.",
+          "p3": "Video is what gets attention online — and this makes producing it effortless and affordable. More reach, more engagement, a fraction of the usual cost."
+        },
+        "AI Phone Order Taker": {
+          "p1": "Never lose a hungry customer to a busy line again. This voice agent answers every caller, takes detailed food orders with perfect accuracy, captures every modification and special request, and sends it straight to your kitchen.",
+          "p2": "No hold times, no missed orders, no mistakes from a frazzled team at peak rush. It handles high call volumes effortlessly, so your staff stay focused on prep and service while orders flow in smoothly.",
+          "p3": "For takeaways and restaurants, it means more orders captured, fewer errors, and a faster, smoother service when it matters most. Every call answered, every order banked."
+        }
+      }
+    </script>
 
     <script
       src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
@@ -2926,9 +3029,20 @@
       (function () {
         var modal = document.getElementById("agent-modal");
         var closeBtn = document.getElementById("close-agent-modal");
+        var dataEl = document.getElementById("cn-agent-modal-data");
+        var agentData = {};
+        if (dataEl) {
+          try {
+            agentData = JSON.parse(dataEl.textContent);
+          } catch (err) {
+            agentData = {};
+          }
+        }
         var iconEl = document.getElementById("agent-modal-icon");
         var titleEl = document.getElementById("agent-modal-title");
-        var textEl = document.getElementById("agent-modal-text");
+        var p1El = document.getElementById("agent-modal-p1");
+        var p2El = document.getElementById("agent-modal-p2");
+        var p3El = document.getElementById("agent-modal-p3");
         function toggleAgentModal(show) {
           if (!modal) return;
           if (show) {
@@ -2949,14 +3063,23 @@
               if (!card) return;
               var icon = card.querySelector(".cn-icon-gold");
               var heading = card.querySelector(".cn-heading");
-              var summary =
-                card.querySelector(".cn-agent-card-desc") ||
-                card.querySelector(".cn-card-summary");
+              var title = heading ? heading.textContent.trim() : "";
+              var detail = agentData[title];
               if (iconEl && icon) iconEl.textContent = icon.textContent.trim();
-              if (titleEl && heading)
-                titleEl.textContent = heading.textContent.trim();
-              if (textEl && summary)
-                textEl.textContent = summary.textContent.trim();
+              if (titleEl && heading) titleEl.textContent = title;
+              if (detail) {
+                if (p1El) p1El.textContent = detail.p1;
+                if (p2El) p2El.textContent = detail.p2;
+                if (p3El) p3El.textContent = detail.p3;
+              } else {
+                var summary =
+                  card.querySelector(".cn-agent-card-desc") ||
+                  card.querySelector(".cn-card-summary");
+                if (p1El && summary)
+                  p1El.textContent = summary.textContent.trim();
+                if (p2El) p2El.textContent = "";
+                if (p3El) p3El.textContent = "";
+              }
               toggleAgentModal(true);
             });
           });
