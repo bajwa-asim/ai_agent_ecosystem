@@ -1,0 +1,402 @@
+<!doctype html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Aurelian Gold - Free Trial Modal</title>
+    <!-- Bootstrap 4.6 CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <style data-purpose="custom-styling">
+      :root {
+        --aurelian-gold: #d4af37;
+        --obsidian-black: #0a0a0a;
+        --deep-graphite: #1a1a1a;
+      }
+
+      body {
+        background-color: var(--obsidian-black);
+        color: #ffffff;
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family:
+          -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+          "Helvetica Neue", Arial, sans-serif;
+      }
+
+      /* Modal Backdrop Override */
+      .modal-backdrop-custom {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.85);
+        backdrop-filter: blur(8px);
+        z-index: 1040;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 1rem;
+      }
+
+      /* Main Modal Container */
+      .onboarding-modal {
+        background-color: var(--deep-graphite);
+        border: 1px solid rgba(212, 175, 55, 0.3);
+        border-radius: 0.75rem;
+        box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.5);
+        width: 100%;
+        max-width: 500px;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .btn-close-custom {
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+        background: transparent;
+        border: none;
+        color: rgba(255, 255, 255, 0.5);
+        font-size: 1.5rem;
+        line-height: 1;
+        cursor: pointer;
+        transition: color 0.3s;
+        z-index: 10;
+      }
+
+      .btn-close-custom:hover {
+        color: var(--aurelian-gold);
+      }
+
+      /* Typography & Header */
+      .modal-header-content {
+        padding: 2rem 2rem 0 2rem;
+        text-align: center;
+      }
+
+      .modal-title-custom {
+        font-size: 1.75rem;
+        font-weight: 700;
+        letter-spacing: -0.025em;
+        margin-bottom: 1.5rem;
+      }
+
+      .text-gold {
+        color: var(--aurelian-gold);
+      }
+
+      /* Step Indicator */
+      .step-nav {
+        display: flex;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        position: relative;
+      }
+
+      .step-item {
+        flex: 1;
+        padding-bottom: 1rem;
+        text-align: center;
+      }
+
+      .step-item.active {
+        border-bottom: 2px solid var(--aurelian-gold);
+        color: var(--aurelian-gold);
+      }
+
+      .step-item.inactive {
+        color: rgba(255, 255, 255, 0.3);
+      }
+
+      .step-label {
+        display: block;
+        font-size: 0.75rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+      }
+
+      .step-desc {
+        font-size: 0.7rem;
+      }
+
+      .active-arrow {
+        position: absolute;
+        bottom: -1px;
+        left: 25%;
+        transform: translateX(-50%);
+        width: 0;
+        height: 0;
+        border-left: 6px solid transparent;
+        border-right: 6px solid transparent;
+        border-bottom: 6px solid var(--aurelian-gold);
+      }
+
+      /* Form Styling */
+      .form-container {
+        padding: 2rem;
+      }
+
+      .form-group label {
+        font-size: 0.7rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        color: rgba(212, 175, 55, 0.8);
+        margin-bottom: 0.25rem;
+      }
+
+      .form-control-custom {
+        background-color: rgba(0, 0, 0, 0.4) !important;
+        border: 1px solid rgba(255, 255, 255, 0.1) !important;
+        border-radius: 0.5rem;
+        color: #ffffff !important;
+        padding: 0.75rem;
+        transition: all 0.3s;
+      }
+
+      .form-control-custom:focus {
+        outline: none;
+        box-shadow: 0 0 0 2px rgba(212, 175, 55, 0.5);
+        border-color: var(--aurelian-gold) !important;
+        background-color: rgba(0, 0, 0, 0.5) !important;
+      }
+
+      .form-control-custom::placeholder {
+        color: rgba(255, 255, 255, 0.2);
+      }
+
+      /* Phone Input Group */
+      .input-group-prepend .btn-mock {
+        background-color: rgba(0, 0, 0, 0.6);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-right: none;
+        color: white;
+        display: flex;
+        align-items: center;
+        padding: 0 0.75rem;
+        border-top-left-radius: 0.5rem;
+        border-bottom-left-radius: 0.5rem;
+      }
+
+      .input-group-prepend .btn-mock:hover {
+        background-color: rgba(0, 0, 0, 0.8);
+      }
+
+      .phone-input {
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+      }
+
+      /* Submit Button */
+      .btn-gold-submit {
+        width: 100%;
+        background-color: rgba(212, 175, 55, 0.4);
+        color: #000000;
+        font-weight: 900;
+        padding: 1rem;
+        border: none;
+        border-radius: 0.5rem;
+        text-transform: uppercase;
+        letter-spacing: 0.15em;
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        cursor: not-allowed;
+        opacity: 0.5;
+      }
+
+      .btn-gold-submit.enabled {
+        background-color: var(--aurelian-gold);
+        opacity: 1;
+        cursor: pointer;
+        box-shadow: 0 0 20px rgba(212, 175, 55, 0.4);
+      }
+
+      .btn-gold-submit.enabled:hover {
+        transform: scale(1.01);
+      }
+
+      .btn-gold-submit.enabled:active {
+        transform: scale(0.99);
+      }
+
+      .footer-note {
+        margin-top: 1rem;
+        font-size: 10px;
+        color: rgba(255, 255, 255, 0.4);
+        line-height: 1.5;
+        font-style: italic;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="modal-backdrop-custom">
+      <main class="onboarding-modal" data-purpose="onboarding-modal">
+        <!-- Close Button -->
+        <button aria-label="Close" class="btn-close-custom">
+          <svg
+            fill="none"
+            height="24"
+            stroke="currentColor"
+            viewbox="0 0 24 24"
+            width="24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M6 18L18 6M6 6l12 12"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+            ></path>
+          </svg>
+        </button>
+        <!-- Modal Content Header -->
+        <header class="modal-header-content">
+          <h1 class="modal-title-custom">
+            Start Your <span class="text-gold">14 Day</span> Free Trial Today!
+          </h1>
+          <!-- Step Indicator -->
+          <nav class="step-nav">
+            <!-- Step 1 Active -->
+            <div class="step-item active">
+              <span class="step-label">Step 1</span>
+              <span class="step-desc">Tell Us About Your Business</span>
+              <div class="active-arrow"></div>
+            </div>
+            <!-- Step 2 Inactive -->
+            <div class="step-item inactive">
+              <span class="step-label">Step 2</span>
+              <span class="step-desc">Trial Details</span>
+            </div>
+          </nav>
+        </header>
+        <!-- Onboarding Form -->
+        <form class="form-container" id="onboarding-form">
+          <!-- Company Name Field -->
+          <div class="form-group">
+            <label for="company-name">Company Name</label>
+            <input
+              class="form-control form-control-custom"
+              id="company-name"
+              name="company-name"
+              placeholder="e.g. Aurelian Enterprises"
+              required=""
+              type="text"
+            />
+          </div>
+          <!-- Full Name Field -->
+          <div class="form-group">
+            <label for="full-name">Full Name</label>
+            <input
+              class="form-control form-control-custom"
+              id="full-name"
+              name="full-name"
+              placeholder="Johnathan Doe"
+              required=""
+              type="text"
+            />
+          </div>
+          <!-- Email Address Field -->
+          <div class="form-group">
+            <label for="email">Email Address</label>
+            <input
+              class="form-control form-control-custom"
+              id="email"
+              name="email"
+              placeholder="john@executive.com"
+              required=""
+              type="email"
+            />
+          </div>
+          <!-- Phone Number Field -->
+          <div class="form-group">
+            <label for="phone">Phone Number</label>
+            <div class="input-group">
+              <div class="input-group-prepend">
+                <button class="btn btn-mock" type="button">
+                  <span class="mr-1">🇬🇧</span>
+                  <svg
+                    fill="none"
+                    height="12"
+                    stroke="currentColor"
+                    viewbox="0 0 24 24"
+                    width="12"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M19 9l-7 7-7-7"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                    ></path>
+                  </svg>
+                </button>
+              </div>
+              <input
+                class="form-control form-control-custom phone-input"
+                id="phone"
+                name="phone"
+                placeholder="+44 000 000 0000"
+                required=""
+                type="tel"
+              />
+            </div>
+          </div>
+          <!-- Submit Button Section -->
+          <div class="mt-4">
+            <button
+              class="btn-gold-submit"
+              disabled=""
+              id="submit-btn"
+              type="submit"
+            >
+              Go To Step #2
+            </button>
+            <p class="footer-note">
+              Receive exclusive executive updates, industry news, and bespoke
+              offers via encrypted email and secure text.
+            </p>
+          </div>
+        </form>
+      </main>
+    </div>
+    <!-- Bootstrap JS Dependencies -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Form Logic -->
+    <script data-purpose="form-validation">
+      $(document).ready(function () {
+        const $form = $("#onboarding-form");
+        const $submitBtn = $("#submit-btn");
+        const $inputs = $form.find("input[required]");
+
+        const checkFormValidity = () => {
+          let isFormValid = true;
+          $inputs.each(function () {
+            if (!$(this).val().trim() || !this.checkValidity()) {
+              isFormValid = false;
+            }
+          });
+
+          if (isFormValid) {
+            $submitBtn.prop("disabled", false).addClass("enabled");
+          } else {
+            $submitBtn.prop("disabled", true).removeClass("enabled");
+          }
+        };
+
+        $inputs.on("input change", checkFormValidity);
+
+        $form.on("submit", function (e) {
+          e.preventDefault();
+          alert("Transitioning to Step 2...");
+        });
+      });
+    </script>
+  </body>
+</html>

@@ -17,7 +17,6 @@
       rel="stylesheet"
     />
     <style id="cn-embedded-theme">
-      /* 10ways.ai theme: cn-* tokens; pair with Bootstrap 4 utilities on markup. */
       html.cn-theme {
         scroll-behavior: smooth;
       }
@@ -770,7 +769,8 @@
         margin-bottom: 1.8rem !important;
       }
 
-      .cn-compare-shell {
+      /* xc-* = enterprise compare table (short names; no Bootstrap in selectors) */
+      .xc-box {
         background-color: #1c1b1b;
         border: 1px solid rgba(77, 70, 53, 0.2);
         border-radius: 0.75rem;
@@ -778,33 +778,33 @@
         box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.45);
       }
 
-      .cn-compare-head {
+      .xc-hd {
         background-color: #2a2a2a;
         border-bottom: 1px solid rgba(77, 70, 53, 0.3);
         padding: 1.5rem 2rem;
       }
 
-      .cn-compare-row {
+      .xc-rw {
         padding: 1.25rem 2rem;
         align-items: center;
         transition: background-color 0.15s ease;
       }
 
-      .cn-compare-row:hover {
+      .xc-rw:hover {
         background-color: rgba(57, 57, 57, 0.05);
       }
 
-      .cn-compare-row + .cn-compare-row {
+      .xc-rw + .xc-rw {
         border-top: 1px solid rgba(77, 70, 53, 0.1);
       }
 
-      .cn-compare-foot {
+      .xc-ft {
         background-color: #2a2a2a;
         padding: 2rem;
         border-top: 1px solid rgba(242, 202, 80, 0.2);
       }
 
-      .cn-compare-scroll-wrap {
+      .xc-scr {
         width: 100%;
       }
 
@@ -912,7 +912,7 @@
         border-radius: 0.75rem;
         padding: 24px;
         width: 100%;
-        max-width: 42rem;
+        max-width: 500px;
         margin: auto;
         box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.45);
       }
@@ -1119,15 +1119,15 @@
           padding: 16px;
         }
 
-        .cn-compare-head {
+        .xc-hd {
           padding: 1rem 1rem;
         }
 
-        .cn-compare-row {
+        .xc-rw {
           padding: 1rem 1rem;
         }
 
-        .cn-compare-foot {
+        .xc-ft {
           padding: 1.25rem 1rem;
         }
 
@@ -1147,70 +1147,70 @@
           line-height: 22px;
         }
 
-        .cn-compare-row .cn-text-body {
+        .xc-rw .cn-text-body {
           min-width: 0;
           word-break: break-word;
         }
 
-        .cn-enterprise-compare-section .cn-layout-max {
+        .xc-sec .cn-layout-max {
           padding-left: 1.25rem;
           padding-right: 1.25rem;
         }
 
-        .cn-enterprise-compare-section .cn-compare-head,
-        .cn-enterprise-compare-section .cn-compare-row,
-        .cn-enterprise-compare-section .cn-compare-foot {
+        .xc-sec .xc-hd,
+        .xc-sec .xc-rw,
+        .xc-sec .xc-ft {
           padding-left: 0;
           padding-right: 0;
         }
 
-        .cn-enterprise-compare-section .cn-margin-below-xl {
+        .xc-sec .cn-margin-below-xl {
           padding-left: 0;
           padding-right: 0;
         }
 
-        .cn-enterprise-compare-section .cn-title-section,
-        .cn-enterprise-compare-section .cn-prose-lead {
+        .xc-sec .cn-title-section,
+        .xc-sec .cn-prose-lead {
           margin-left: auto;
           margin-right: auto;
           max-width: 100%;
         }
 
-        .cn-enterprise-compare-section .cn-compare-head {
+        .xc-sec .xc-hd {
           text-align: center;
         }
 
-        .cn-enterprise-compare-section .cn-compare-head > [class*="col-"] {
+        .xc-sec .xc-hd > .xc-col {
           text-align: center !important;
         }
 
-        .cn-enterprise-compare-section .cn-compare-head .col-12.col-md-3 {
+        .xc-sec .xc-hd .xc-c3 {
           margin-top: 0.5rem;
         }
 
-        .cn-enterprise-compare-section .cn-compare-row > .col-12.col-md-5 {
+        .xc-sec .xc-rw > .xc-c5 {
           align-items: flex-start !important;
         }
 
-        .cn-enterprise-compare-section .cn-compare-row > .col-12.col-md-4 {
+        .xc-sec .xc-rw > .xc-c4 {
           justify-content: flex-start !important;
           text-align: left;
           padding-left: 2.75rem;
           padding-right: 0;
         }
 
-        .cn-enterprise-compare-section .cn-compare-row > .col-12.col-md-3 {
+        .xc-sec .xc-rw > .xc-c3 {
           text-align: left !important;
           padding-left: 2.75rem;
           padding-right: 0;
         }
 
-        .cn-enterprise-compare-section .cn-compare-foot .col-12.col-md-5 {
+        .xc-sec .xc-ft .xc-c5 {
           text-align: left;
         }
 
-        .cn-enterprise-compare-section .cn-compare-foot .col-12.col-md-4,
-        .cn-enterprise-compare-section .cn-compare-foot .col-12.col-md-3 {
+        .xc-sec .xc-ft .xc-c4,
+        .xc-sec .xc-ft .xc-c3 {
           text-align: left !important;
         }
 
@@ -1240,136 +1240,93 @@
         }
 
         /* Compare table: desktop-style 3 columns on mobile + horizontal scroll */
-        .cn-enterprise-compare-section .cn-compare-scroll-wrap {
+        .xc-sec .xc-scr {
           overflow-x: auto;
           -webkit-overflow-scrolling: touch;
           overscroll-behavior-x: contain;
         }
 
-        .cn-enterprise-compare-section .cn-compare-scroll-wrap .cn-compare-shell {
+        .xc-sec .xc-scr .xc-box {
           min-width: 720px;
         }
 
-        .cn-enterprise-compare-section .cn-compare-scroll-wrap .row.mx-0 {
+        .xc-sec .xc-scr .xc-gr {
           flex-wrap: nowrap !important;
         }
 
-        .cn-enterprise-compare-section
-          .cn-compare-scroll-wrap
-          .row
-          > .col-12.col-md-5 {
+        .xc-sec .xc-scr .xc-gr > .xc-c5 {
           flex: 0 0 41.666667% !important;
           max-width: 41.666667% !important;
           width: 41.666667% !important;
         }
 
-        .cn-enterprise-compare-section
-          .cn-compare-scroll-wrap
-          .row
-          > .col-12.col-md-4 {
+        .xc-sec .xc-scr .xc-gr > .xc-c4 {
           flex: 0 0 33.333333% !important;
           max-width: 33.333333% !important;
           width: 33.333333% !important;
         }
 
-        .cn-enterprise-compare-section
-          .cn-compare-scroll-wrap
-          .row
-          > .col-12.col-md-3 {
+        .xc-sec .xc-scr .xc-gr > .xc-c3 {
           flex: 0 0 25% !important;
           max-width: 25% !important;
           width: 25% !important;
         }
 
-        .cn-enterprise-compare-section .cn-compare-scroll-wrap .cn-compare-head,
-        .cn-enterprise-compare-section .cn-compare-scroll-wrap .cn-compare-row,
-        .cn-enterprise-compare-section .cn-compare-scroll-wrap .cn-compare-foot {
+        .xc-sec .xc-scr .xc-hd,
+        .xc-sec .xc-scr .xc-rw,
+        .xc-sec .xc-scr .xc-ft {
           padding-left: 1rem !important;
           padding-right: 1rem !important;
         }
 
-        .cn-enterprise-compare-section .cn-compare-scroll-wrap .cn-compare-head {
+        .xc-sec .xc-scr .xc-hd {
           text-align: left;
         }
 
-        .cn-enterprise-compare-section
-          .cn-compare-scroll-wrap
-          .cn-compare-head
-          > [class*="col-"] {
+        .xc-sec .xc-scr .xc-hd > .xc-col {
           text-align: inherit !important;
         }
 
-        .cn-enterprise-compare-section
-          .cn-compare-scroll-wrap
-          .cn-compare-head
-          > .col-12.col-md-5 {
+        .xc-sec .xc-scr .xc-hd > .xc-c5 {
           text-align: left !important;
         }
 
-        .cn-enterprise-compare-section
-          .cn-compare-scroll-wrap
-          .cn-compare-head
-          > .col-12.col-md-4 {
-            text-align: left !important;
+        .xc-sec .xc-scr .xc-hd > .xc-c4 {
+          text-align: left !important;
         }
 
-        .cn-enterprise-compare-section
-          .cn-compare-scroll-wrap
-          .cn-compare-head
-          > .col-12.col-md-3 {
+        .xc-sec .xc-scr .xc-hd > .xc-c3 {
           text-align: center !important;
           margin-top: 0 !important;
         }
 
-        .cn-enterprise-compare-section
-          .cn-compare-scroll-wrap
-          .cn-compare-row
-          > [class*="col-"] {
+        .xc-sec .xc-scr .xc-rw > .xc-col {
           margin-bottom: 0 !important;
         }
 
-        .cn-enterprise-compare-section
-          .cn-compare-scroll-wrap
-          .cn-compare-row
-          > .col-12.col-md-4 {
+        .xc-sec .xc-scr .xc-rw > .xc-c4 {
           justify-content: center !important;
           text-align: center !important;
           padding-left: 0.5rem !important;
           padding-right: 0.5rem !important;
         }
 
-        .cn-enterprise-compare-section
-          .cn-compare-scroll-wrap
-          .cn-compare-row
-          > .col-12.col-md-3 {
+        .xc-sec .xc-scr .xc-rw > .xc-c3 {
           text-align: center !important;
           padding-left: 0.5rem !important;
           padding-right: 0.5rem !important;
         }
 
-        .cn-enterprise-compare-section
-          .cn-compare-scroll-wrap
-          .cn-compare-foot
-          .row
-          > [class*="col-"] {
+        .xc-sec .xc-scr .xc-ft .xc-gr > .xc-col {
           margin-bottom: 0 !important;
         }
 
-        .cn-enterprise-compare-section
-          .cn-compare-scroll-wrap
-          .cn-compare-foot
-          .col-12.col-md-5 {
+        .xc-sec .xc-scr .xc-ft .xc-c5 {
           text-align: left;
         }
 
-        .cn-enterprise-compare-section
-          .cn-compare-scroll-wrap
-          .cn-compare-foot
-          .col-12.col-md-4,
-        .cn-enterprise-compare-section
-          .cn-compare-scroll-wrap
-          .cn-compare-foot
-          .col-12.col-md-3 {
+        .xc-sec .xc-scr .xc-ft .xc-c4,
+        .xc-sec .xc-scr .xc-ft .xc-c3 {
           text-align: center !important;
         }
       }
@@ -1392,19 +1349,8 @@
               <a class="cn-nav-link cn-text-label" href="#pricing">Pricing</a>
               <a class="cn-nav-link cn-text-label" href="#faq">FAQ</a>
             </nav>
-            <div class="d-none d-md-flex align-items-center flex-shrink-0">
-              <img
-                class="cn-avatar cn-border-avatar"
-                alt="Executive User Profile"
-                src="https://lh3.googleusercontent.com/aida-public/AB6AXuDt14VmCDIiRFvf8LDi29v4JbeP8Ex01fGjWGdSbuBqlULGDULyC4Ycwm7p0FxWcO6n_LyW8gpPP8JzPr5evYeocfOe26HJZFugHpeqkdcMHC1PS3hYMMT5uAIS__9d0K85PyKLmVfz20DZYWldC8FgithXR4_NVoLBPPUabMhMth5kgS2qMmBREe13GsW_2OmqDY1M06RW1pBmhBU11Qi5bmqaKxPcqCRdok14jAik8FCvgJu0GXKPXve0OGNCH2tv6dyXD_Zh2x8"
-              />
-            </div>
+
             <div class="d-flex d-md-none align-items-center flex-shrink-0">
-              <img
-                class="cn-avatar cn-border-avatar mr-2"
-                alt="Executive User Profile"
-                src="https://lh3.googleusercontent.com/aida-public/AB6AXuDt14VmCDIiRFvf8LDi29v4JbeP8Ex01fGjWGdSbuBqlULGDULyC4Ycwm7p0FxWcO6n_LyW8gpPP8JzPr5evYeocfOe26HJZFugHpeqkdcMHC1PS3hYMMT5uAIS__9d0K85PyKLmVfz20DZYWldC8FgithXR4_NVoLBPPUabMhMth5kgS2qMmBREe13GsW_2OmqDY1M06RW1pBmhBU11Qi5bmqaKxPcqCRdok14jAik8FCvgJu0GXKPXve0OGNCH2tv6dyXD_Zh2x8"
-              />
               <button
                 type="button"
                 class="cn-btn cn-btn-outline cn-text-label px-2 cn-pad-y-sm flex-shrink-0"
@@ -1424,34 +1370,10 @@
           class="collapse cn-mobile-nav d-md-none cn-border-top-soft mt-0 pt-2"
         >
           <nav class="d-flex flex-column">
-            <a
-              class="cn-nav-link cn-text-label"
-              href="#ai-agents"
-              data-toggle="collapse"
-              data-target="#cnMobileNav"
-              >AI Agents</a
-            >
-            <a
-              class="cn-nav-link cn-text-label"
-              href="#ai-tools"
-              data-toggle="collapse"
-              data-target="#cnMobileNav"
-              >AI Tools</a
-            >
-            <a
-              class="cn-nav-link cn-text-label"
-              href="#pricing"
-              data-toggle="collapse"
-              data-target="#cnMobileNav"
-              >Pricing</a
-            >
-            <a
-              class="cn-nav-link cn-text-label"
-              href="#faq"
-              data-toggle="collapse"
-              data-target="#cnMobileNav"
-              >FAQ</a
-            >
+            <a class="cn-nav-link cn-text-label" href="#ai-agents">AI Agents</a>
+            <a class="cn-nav-link cn-text-label" href="#ai-tools">AI Tools</a>
+            <a class="cn-nav-link cn-text-label" href="#pricing">Pricing</a>
+            <a class="cn-nav-link cn-text-label" href="#faq">FAQ</a>
           </nav>
         </div>
       </div>
@@ -2130,12 +2052,11 @@
               </div>
             </div>
           </div>
-         
         </div>
       </section>
 
       <section
-        class="cn-enterprise-compare-section cn-pad-section-xl cn-border-y-strong cn-bg-surface-darkest position-relative overflow-hidden"
+        class="xc-sec cn-pad-section-xl cn-border-y-strong cn-bg-surface-darkest position-relative overflow-hidden"
       >
         <div class="cn-absolute-fill cn-gradient-fade cn-pointer-none"></div>
         <div class="cn-layout-max position-relative cn-z-raised">
@@ -2149,299 +2070,303 @@
               scale with an integrated AI ecosystem.
             </p>
           </div>
-          <div class="cn-compare-scroll-wrap">
-            <div class="cn-compare-shell cn-surface-sheen">
-            <div class="row cn-compare-head mx-0 align-items-center">
-              <div
-                class="col-12 col-md-5 cn-text-label cn-text-on-surface font-weight-bold cn-uppercase cn-tracking-widest"
-              >
-       Features
-              </div>
-              <div
-                class="col-12 col-md-4 cn-text-label cn-text-on-surface font-weight-bold cn-uppercase cn-tracking-widest text-center"
-              >
-                Legacy SaaS Fragments
-              </div>
-              <div
-                class="col-12 col-md-3 cn-text-label cn-text-gold font-weight-bold cn-uppercase cn-tracking-widest text-center"
-              >
-                10 Ways Platform
-              </div>
-            </div>
-            <div>
-              <div class="row cn-compare-row mx-0">
+          <div class="xc-scr">
+            <div class="xc-box cn-surface-sheen">
+              <div class="row xc-hd xc-gr mx-0 align-items-center">
                 <div
-                  class="col-12 col-md-5 d-flex align-items-center mb-2 mb-md-0"
+                  class="xc-col xc-c5 col-12 col-md-5 cn-text-label cn-text-on-surface font-weight-bold cn-uppercase cn-tracking-widest"
                 >
-                  <span
-                    class="cn-text-body font-weight-medium cn-text-on-surface"
-                    >CRM &amp; Pipeline Management</span
-                  >
+                  Features
                 </div>
                 <div
-                  class="col-12 col-md-4 d-flex justify-content-center mb-2 mb-md-0"
+                  class="xc-col xc-c4 col-12 col-md-4 cn-text-label cn-text-on-surface font-weight-bold cn-uppercase cn-tracking-widest text-center"
                 >
-                  <span class="cn-text-caption cn-text-gold"
-                    >Salesforce, HubSpot</span
-                  >
+                  Legacy SaaS Fragments
                 </div>
-                <div class="col-12 col-md-3 text-center">
-                  <span class="cn-icon cn-text-gold font-weight-bold"
-                    >check_circle</span
-                  >
+                <div
+                  class="xc-col xc-c3 col-12 col-md-3 cn-text-label cn-text-gold font-weight-bold cn-uppercase cn-tracking-widest text-center"
+                >
+                  10 Ways Platform
                 </div>
               </div>
-              <div class="row cn-compare-row mx-0">
-                <div
-                  class="col-12 col-md-5 d-flex align-items-center mb-2 mb-md-0"
-                >
-                  <span
-                    class="cn-text-body font-weight-medium cn-text-on-surface"
-                    >Unlimited Sales Funnels</span
-                  >
-                </div>
-                <div
-                  class="col-12 col-md-4 d-flex justify-content-center mb-2 mb-md-0"
-                >
-                  <span class="cn-text-caption cn-text-gold"
-                    >ClickFunnels, Leadpages</span
-                  >
-                </div>
-                <div class="col-12 col-md-3 text-center">
-                  <span class="cn-icon cn-text-gold font-weight-bold"
-                    >check_circle</span
-                  >
-                </div>
-              </div>
-              <div class="row cn-compare-row mx-0">
-                <div
-                  class="col-12 col-md-5 d-flex align-items-center mb-2 mb-md-0"
-                >
-                  <span
-                    class="cn-text-body font-weight-medium cn-text-on-surface"
-                    >Website Builder</span
-                  >
-                </div>
-                <div
-                  class="col-12 col-md-4 d-flex justify-content-center mb-2 mb-md-0"
-                >
-                  <span class="cn-text-caption cn-text-gold"
-                    >WordPress, Wix, Squarespace</span
-                  >
-                </div>
-                <div class="col-12 col-md-3 text-center">
-                  <span class="cn-icon cn-text-gold font-weight-bold"
-                    >check_circle</span
-                  >
-                </div>
-              </div>
-              <div class="row cn-compare-row mx-0">
-                <div
-                  class="col-12 col-md-5 d-flex align-items-center mb-2 mb-md-0"
-                >
-                  <span
-                    class="cn-text-body font-weight-medium cn-text-on-surface"
-                    >Surveys &amp; Forms</span
-                  >
-                </div>
-                <div
-                  class="col-12 col-md-4 d-flex justify-content-center mb-2 mb-md-0"
-                >
-                  <span class="cn-text-caption cn-text-gold"
-                    >Typeform, SurveyMonkey</span
-                  >
-                </div>
-                <div class="col-12 col-md-3 text-center">
-                  <span class="cn-icon cn-text-gold font-weight-bold"
-                    >check_circle</span
-                  >
-                </div>
-              </div>
-              <div class="row cn-compare-row mx-0">
-                <div
-                  class="col-12 col-md-5 d-flex align-items-center mb-2 mb-md-0"
-                >
-                  <span
-                    class="cn-text-body font-weight-medium cn-text-on-surface"
-                    >Email Marketing</span
-                  >
-                </div>
-                <div
-                  class="col-12 col-md-4 d-flex justify-content-center mb-2 mb-md-0"
-                >
-                  <span class="cn-text-caption cn-text-gold"
-                    >Mailchimp, ActiveCampaign</span
-                  >
-                </div>
-                <div class="col-12 col-md-3 text-center">
-                  <span class="cn-icon cn-text-gold font-weight-bold"
-                    >check_circle</span
-                  >
-                </div>
-              </div>
-              <div class="row cn-compare-row mx-0">
-                <div
-                  class="col-12 col-md-5 d-flex align-items-center mb-2 mb-md-0"
-                >
-                  <span
-                    class="cn-text-body font-weight-medium cn-text-on-surface"
-                    >2-Way SMS Marketing</span
-                  >
-                </div>
-                <div
-                  class="col-12 col-md-4 d-flex justify-content-center mb-2 mb-md-0"
-                >
-                  <span class="cn-text-caption cn-text-gold"
-                    >Twilio, Podium</span
-                  >
-                </div>
-                <div class="col-12 col-md-3 text-center">
-                  <span class="cn-icon cn-text-gold font-weight-bold"
-                    >check_circle</span
-                  >
-                </div>
-              </div>
-              <div class="row cn-compare-row mx-0">
-                <div
-                  class="col-12 col-md-5 d-flex align-items-center mb-2 mb-md-0"
-                >
-                  <span
-                    class="cn-text-body font-weight-medium cn-text-on-surface"
-                    >Booking &amp; Appointments</span
-                  >
-                </div>
-                <div
-                  class="col-12 col-md-4 d-flex justify-content-center mb-2 mb-md-0"
-                >
-                  <span class="cn-text-caption cn-text-gold"
-                    >Calendly, Acuity</span
-                  >
-                </div>
-                <div class="col-12 col-md-3 text-center">
-                  <span class="cn-icon cn-text-gold font-weight-bold"
-                    >check_circle</span
-                  >
-                </div>
-              </div>
-              <div class="row cn-compare-row mx-0">
-                <div
-                  class="col-12 col-md-5 d-flex align-items-center mb-2 mb-md-0"
-                >
-                  <span
-                    class="cn-text-body font-weight-medium cn-text-on-surface"
-                    >Workflow Automation</span
-                  >
-                </div>
-                <div
-                  class="col-12 col-md-4 d-flex justify-content-center mb-2 mb-md-0"
-                >
-                  <span class="cn-text-caption cn-text-gold"
-                    >Zapier, Make</span
-                  >
-                </div>
-                <div class="col-12 col-md-3 text-center">
-                  <span class="cn-icon cn-text-gold font-weight-bold"
-                    >check_circle</span
-                  >
-                </div>
-              </div>
-              <div class="row cn-compare-row mx-0">
-                <div
-                  class="col-12 col-md-5 d-flex align-items-center mb-2 mb-md-0"
-                >
-                  <span
-                    class="cn-text-body font-weight-medium cn-text-on-surface"
-                    >Courses &amp; Membership</span
-                  >
-                </div>
-                <div
-                  class="col-12 col-md-4 d-flex justify-content-center mb-2 mb-md-0"
-                >
-                  <span class="cn-text-caption cn-text-gold"
-                    >Kajabi, Teachable</span
-                  >
-                </div>
-                <div class="col-12 col-md-3 text-center">
-                  <span class="cn-icon cn-text-gold font-weight-bold"
-                    >check_circle</span
-                  >
-                </div>
-              </div>
-              <div class="row cn-compare-row mx-0">
-                <div
-                  class="col-12 col-md-5 d-flex align-items-center mb-2 mb-md-0"
-                >
-                  <span
-                    class="cn-text-body font-weight-medium cn-text-on-surface"
-                    >Reputation Management</span
-                  >
-                </div>
-                <div
-                  class="col-12 col-md-4 d-flex justify-content-center mb-2 mb-md-0"
-                >
-                  <span class="cn-text-caption cn-text-gold"
-                    >BirdEye, Yotpo</span
-                  >
-                </div>
-                <div class="col-12 col-md-3 text-center">
-                  <span class="cn-icon cn-text-gold font-weight-bold"
-                    >check_circle</span
-                  >
-                </div>
-              </div>
-              <div class="row cn-compare-row mx-0">
-                <div
-                  class="col-12 col-md-5 d-flex align-items-center mb-2 mb-md-0"
-                >
-                  <span
-                    class="cn-text-body font-weight-medium cn-text-on-surface"
-                    >Document Signing</span
-                  >
-                </div>
-                <div
-                  class="col-12 col-md-4 d-flex justify-content-center mb-2 mb-md-0"
-                >
-                  <span class="cn-text-caption cn-text-gold"
-                    >DocuSign, PandaDoc</span
-                  >
-                </div>
-                <div class="col-12 col-md-3 text-center">
-                  <span class="cn-icon cn-text-gold font-weight-bold"
-                    >check_circle</span
-                  >
-                </div>
-              </div>
-            </div>
-            <div class="cn-compare-foot">
-              <div class="row align-items-center mx-0">
-                <div class="col-12 col-md-5 mb-3 mb-md-0">
-                  <div class="cn-text-heading-sm cn-text-on-surface">
-                    Estimated Monthly Investment
-                  </div>
-                </div>
-                <div class="col-12 col-md-4 text-center mb-3 mb-md-0">
+              <div>
+                <div class="row xc-rw xc-gr mx-0">
                   <div
-                    class="cn-text-heading-sm cn-text-error font-weight-bold"
+                    class="xc-col xc-c5 col-12 col-md-5 d-flex align-items-center mb-2 mb-md-0"
                   >
-                    $1,400+
                     <span
-                      class="cn-text-caption font-weight-normal cn-text-muted"
-                      >/mo</span
+                      class="cn-text-body font-weight-medium cn-text-on-surface"
+                      >CRM &amp; Pipeline Management</span
+                    >
+                  </div>
+                  <div
+                    class="xc-col xc-c4 col-12 col-md-4 d-flex justify-content-center mb-2 mb-md-0"
+                  >
+                    <span class="cn-text-caption cn-text-gold"
+                      >Salesforce, HubSpot</span
+                    >
+                  </div>
+                  <div class="xc-col xc-c3 col-12 col-md-3 text-center">
+                    <span class="cn-icon cn-text-gold font-weight-bold"
+                      >check_circle</span
                     >
                   </div>
                 </div>
-                <div class="col-12 col-md-3 text-center">
-                  <div class="cn-text-heading-md cn-text-gold font-weight-bold">
-                    $97
+                <div class="row xc-rw xc-gr mx-0">
+                  <div
+                    class="xc-col xc-c5 col-12 col-md-5 d-flex align-items-center mb-2 mb-md-0"
+                  >
                     <span
-                      class="cn-text-caption font-weight-normal cn-text-gold-soft"
-                      >/mo</span
+                      class="cn-text-body font-weight-medium cn-text-on-surface"
+                      >Unlimited Sales Funnels</span
+                    >
+                  </div>
+                  <div
+                    class="xc-col xc-c4 col-12 col-md-4 d-flex justify-content-center mb-2 mb-md-0"
+                  >
+                    <span class="cn-text-caption cn-text-gold"
+                      >ClickFunnels, Leadpages</span
+                    >
+                  </div>
+                  <div class="xc-col xc-c3 col-12 col-md-3 text-center">
+                    <span class="cn-icon cn-text-gold font-weight-bold"
+                      >check_circle</span
+                    >
+                  </div>
+                </div>
+                <div class="row xc-rw xc-gr mx-0">
+                  <div
+                    class="xc-col xc-c5 col-12 col-md-5 d-flex align-items-center mb-2 mb-md-0"
+                  >
+                    <span
+                      class="cn-text-body font-weight-medium cn-text-on-surface"
+                      >Website Builder</span
+                    >
+                  </div>
+                  <div
+                    class="xc-col xc-c4 col-12 col-md-4 d-flex justify-content-center mb-2 mb-md-0"
+                  >
+                    <span class="cn-text-caption cn-text-gold"
+                      >WordPress, Wix, Squarespace</span
+                    >
+                  </div>
+                  <div class="xc-col xc-c3 col-12 col-md-3 text-center">
+                    <span class="cn-icon cn-text-gold font-weight-bold"
+                      >check_circle</span
+                    >
+                  </div>
+                </div>
+                <div class="row xc-rw xc-gr mx-0">
+                  <div
+                    class="xc-col xc-c5 col-12 col-md-5 d-flex align-items-center mb-2 mb-md-0"
+                  >
+                    <span
+                      class="cn-text-body font-weight-medium cn-text-on-surface"
+                      >Surveys &amp; Forms</span
+                    >
+                  </div>
+                  <div
+                    class="xc-col xc-c4 col-12 col-md-4 d-flex justify-content-center mb-2 mb-md-0"
+                  >
+                    <span class="cn-text-caption cn-text-gold"
+                      >Typeform, SurveyMonkey</span
+                    >
+                  </div>
+                  <div class="xc-col xc-c3 col-12 col-md-3 text-center">
+                    <span class="cn-icon cn-text-gold font-weight-bold"
+                      >check_circle</span
+                    >
+                  </div>
+                </div>
+                <div class="row xc-rw xc-gr mx-0">
+                  <div
+                    class="xc-col xc-c5 col-12 col-md-5 d-flex align-items-center mb-2 mb-md-0"
+                  >
+                    <span
+                      class="cn-text-body font-weight-medium cn-text-on-surface"
+                      >Email Marketing</span
+                    >
+                  </div>
+                  <div
+                    class="xc-col xc-c4 col-12 col-md-4 d-flex justify-content-center mb-2 mb-md-0"
+                  >
+                    <span class="cn-text-caption cn-text-gold"
+                      >Mailchimp, ActiveCampaign</span
+                    >
+                  </div>
+                  <div class="xc-col xc-c3 col-12 col-md-3 text-center">
+                    <span class="cn-icon cn-text-gold font-weight-bold"
+                      >check_circle</span
+                    >
+                  </div>
+                </div>
+                <div class="row xc-rw xc-gr mx-0">
+                  <div
+                    class="xc-col xc-c5 col-12 col-md-5 d-flex align-items-center mb-2 mb-md-0"
+                  >
+                    <span
+                      class="cn-text-body font-weight-medium cn-text-on-surface"
+                      >2-Way SMS Marketing</span
+                    >
+                  </div>
+                  <div
+                    class="xc-col xc-c4 col-12 col-md-4 d-flex justify-content-center mb-2 mb-md-0"
+                  >
+                    <span class="cn-text-caption cn-text-gold"
+                      >Twilio, Podium</span
+                    >
+                  </div>
+                  <div class="xc-col xc-c3 col-12 col-md-3 text-center">
+                    <span class="cn-icon cn-text-gold font-weight-bold"
+                      >check_circle</span
+                    >
+                  </div>
+                </div>
+                <div class="row xc-rw xc-gr mx-0">
+                  <div
+                    class="xc-col xc-c5 col-12 col-md-5 d-flex align-items-center mb-2 mb-md-0"
+                  >
+                    <span
+                      class="cn-text-body font-weight-medium cn-text-on-surface"
+                      >Booking &amp; Appointments</span
+                    >
+                  </div>
+                  <div
+                    class="xc-col xc-c4 col-12 col-md-4 d-flex justify-content-center mb-2 mb-md-0"
+                  >
+                    <span class="cn-text-caption cn-text-gold"
+                      >Calendly, Acuity</span
+                    >
+                  </div>
+                  <div class="xc-col xc-c3 col-12 col-md-3 text-center">
+                    <span class="cn-icon cn-text-gold font-weight-bold"
+                      >check_circle</span
+                    >
+                  </div>
+                </div>
+                <div class="row xc-rw xc-gr mx-0">
+                  <div
+                    class="xc-col xc-c5 col-12 col-md-5 d-flex align-items-center mb-2 mb-md-0"
+                  >
+                    <span
+                      class="cn-text-body font-weight-medium cn-text-on-surface"
+                      >Workflow Automation</span
+                    >
+                  </div>
+                  <div
+                    class="xc-col xc-c4 col-12 col-md-4 d-flex justify-content-center mb-2 mb-md-0"
+                  >
+                    <span class="cn-text-caption cn-text-gold"
+                      >Zapier, Make</span
+                    >
+                  </div>
+                  <div class="xc-col xc-c3 col-12 col-md-3 text-center">
+                    <span class="cn-icon cn-text-gold font-weight-bold"
+                      >check_circle</span
+                    >
+                  </div>
+                </div>
+                <div class="row xc-rw xc-gr mx-0">
+                  <div
+                    class="xc-col xc-c5 col-12 col-md-5 d-flex align-items-center mb-2 mb-md-0"
+                  >
+                    <span
+                      class="cn-text-body font-weight-medium cn-text-on-surface"
+                      >Courses &amp; Membership</span
+                    >
+                  </div>
+                  <div
+                    class="xc-col xc-c4 col-12 col-md-4 d-flex justify-content-center mb-2 mb-md-0"
+                  >
+                    <span class="cn-text-caption cn-text-gold"
+                      >Kajabi, Teachable</span
+                    >
+                  </div>
+                  <div class="xc-col xc-c3 col-12 col-md-3 text-center">
+                    <span class="cn-icon cn-text-gold font-weight-bold"
+                      >check_circle</span
+                    >
+                  </div>
+                </div>
+                <div class="row xc-rw xc-gr mx-0">
+                  <div
+                    class="xc-col xc-c5 col-12 col-md-5 d-flex align-items-center mb-2 mb-md-0"
+                  >
+                    <span
+                      class="cn-text-body font-weight-medium cn-text-on-surface"
+                      >Reputation Management</span
+                    >
+                  </div>
+                  <div
+                    class="xc-col xc-c4 col-12 col-md-4 d-flex justify-content-center mb-2 mb-md-0"
+                  >
+                    <span class="cn-text-caption cn-text-gold"
+                      >BirdEye, Yotpo</span
+                    >
+                  </div>
+                  <div class="xc-col xc-c3 col-12 col-md-3 text-center">
+                    <span class="cn-icon cn-text-gold font-weight-bold"
+                      >check_circle</span
+                    >
+                  </div>
+                </div>
+                <div class="row xc-rw xc-gr mx-0">
+                  <div
+                    class="xc-col xc-c5 col-12 col-md-5 d-flex align-items-center mb-2 mb-md-0"
+                  >
+                    <span
+                      class="cn-text-body font-weight-medium cn-text-on-surface"
+                      >Document Signing</span
+                    >
+                  </div>
+                  <div
+                    class="xc-col xc-c4 col-12 col-md-4 d-flex justify-content-center mb-2 mb-md-0"
+                  >
+                    <span class="cn-text-caption cn-text-gold"
+                      >DocuSign, PandaDoc</span
+                    >
+                  </div>
+                  <div class="xc-col xc-c3 col-12 col-md-3 text-center">
+                    <span class="cn-icon cn-text-gold font-weight-bold"
+                      >check_circle</span
                     >
                   </div>
                 </div>
               </div>
+              <div class="xc-ft">
+                <div class="row xc-gr align-items-center mx-0">
+                  <div class="xc-col xc-c5 col-12 col-md-5 mb-3 mb-md-0">
+                    <div class="cn-text-heading-sm cn-text-on-surface">
+                      Estimated Monthly Investment
+                    </div>
+                  </div>
+                  <div
+                    class="xc-col xc-c4 col-12 col-md-4 text-center mb-3 mb-md-0"
+                  >
+                    <div
+                      class="cn-text-heading-sm cn-text-error font-weight-bold"
+                    >
+                      $1,400+
+                      <span
+                        class="cn-text-caption font-weight-normal cn-text-muted"
+                        >/mo</span
+                      >
+                    </div>
+                  </div>
+                  <div class="xc-col xc-c3 col-12 col-md-3 text-center">
+                    <div
+                      class="cn-text-heading-md cn-text-gold font-weight-bold"
+                    >
+                      $97
+                      <span
+                        class="cn-text-caption font-weight-normal cn-text-gold-soft"
+                        >/mo</span
+                      >
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
-          </div>
           </div>
           <div class="cn-margin-top-large text-center">
             <button
@@ -2534,7 +2459,7 @@
                   type="button"
                   class="cn-btn cn-btn-outline cn-btn-outline-fill-hover w-100 cn-pad-y-sm font-weight-bold cn-radius-lg cn-open-modules-modal"
                 >
-                Start 14-Day Free Trial
+                  Start 14-Day Free Trial
                 </button>
               </div>
             </div>
@@ -2662,7 +2587,7 @@
                   type="button"
                   class="cn-btn cn-btn-outline cn-btn-outline-fill-hover w-100 cn-pad-y-sm font-weight-bold cn-radius-lg cn-open-modules-modal"
                 >
-                Start 14-Day Free Trial
+                  Start 14-Day Free Trial
                 </button>
               </div>
             </div>
@@ -2896,9 +2821,6 @@
           class="d-flex flex-column align-items-center align-items-md-start mb-3 mb-md-0"
         >
           <div class="cn-footer-brand">10ways.ai</div>
-          <p class="cn-text-caption cn-text-muted mb-0">
-            © 2024 10ways.ai. All rights reserved.
-          </p>
         </div>
         <div class="d-flex flex-wrap justify-content-center">
           <a class="cn-footer-link mr-3 mb-2 mb-md-0" href="#"
@@ -2910,6 +2832,38 @@
         </div>
       </div>
     </footer>
+
+    <div
+      id="agent-modal"
+      class="cn-modal-root cn-bg-modal-overlay d-none align-items-center justify-content-center overflow-auto p-3"
+    >
+      <div class="cn-modal-panel cn-surface-sheen p-4">
+        <button
+          type="button"
+          class="cn-modal-close"
+          id="close-agent-modal"
+          aria-label="Close"
+        >
+          <span class="cn-icon cn-icon-md">close</span>
+        </button>
+        <div class="text-center">
+          <div class="mb-4">
+            <span
+              id="agent-modal-icon"
+              class="cn-icon cn-icon-xl cn-icon-gold"
+            ></span>
+          </div>
+          <h2 id="agent-modal-title" class="cn-modal-title"></h2>
+          <p id="agent-modal-text" class="cn-prose-lead mb-4"></p>
+          <button
+            type="button"
+            class="cn-btn cn-btn-primary w-100 p-4 cn-radius-lg cn-text-heading-sm cn-btn-glow-sm"
+          >
+            Start Your 14-Day Free Trial
+          </button>
+        </div>
+      </div>
+    </div>
 
     <div
       id="modules-modal"
@@ -3001,6 +2955,51 @@
         }
       })();
       (function () {
+        var modal = document.getElementById("agent-modal");
+        var closeBtn = document.getElementById("close-agent-modal");
+        var iconEl = document.getElementById("agent-modal-icon");
+        var titleEl = document.getElementById("agent-modal-title");
+        var textEl = document.getElementById("agent-modal-text");
+        function toggleAgentModal(show) {
+          if (!modal) return;
+          if (show) {
+            modal.classList.remove("d-none");
+            modal.classList.add("d-flex");
+            document.body.style.overflow = "hidden";
+          } else {
+            modal.classList.add("d-none");
+            modal.classList.remove("d-flex");
+            document.body.style.overflow = "";
+          }
+        }
+        document
+          .querySelectorAll(".cn-card-agent .cn-btn-card")
+          .forEach(function (btn) {
+            btn.addEventListener("click", function () {
+              var card = btn.closest(".cn-card-agent");
+              if (!card) return;
+              var icon = card.querySelector(".cn-icon-gold");
+              var heading = card.querySelector(".cn-heading");
+              var summary = card.querySelector(".cn-card-summary");
+              if (iconEl && icon)
+                iconEl.textContent = icon.textContent.trim();
+              if (titleEl && heading)
+                titleEl.textContent = heading.textContent.trim();
+              if (textEl && summary)
+                textEl.textContent = summary.textContent.trim();
+              toggleAgentModal(true);
+            });
+          });
+        if (closeBtn && modal) {
+          closeBtn.addEventListener("click", function () {
+            toggleAgentModal(false);
+          });
+          modal.addEventListener("click", function (e) {
+            if (e.target === modal) toggleAgentModal(false);
+          });
+        }
+      })();
+      (function () {
         var sectionIds = ["ai-agents", "ai-tools", "pricing", "faq"];
         var navLinks = document.querySelectorAll(
           'header.cn-site-header a.cn-nav-link[href^="#"]',
@@ -3029,6 +3028,36 @@
         window.addEventListener("hashchange", syncNavActive);
         document.addEventListener("DOMContentLoaded", syncNavActive);
         syncNavActive();
+      })();
+      /* Mobile menu: close drawer then scroll — Bootstrap collapse on <a> was blocking hash navigation */
+      (function () {
+        var mobileNav = document.getElementById("cnMobileNav");
+        if (!mobileNav || typeof jQuery === "undefined") return;
+        var $nav = jQuery("#cnMobileNav");
+        mobileNav
+          .querySelectorAll("nav a.cn-nav-link[href^='#']")
+          .forEach(function (anchor) {
+            anchor.addEventListener("click", function (e) {
+              var href = anchor.getAttribute("href");
+              if (!href || href.length < 2 || href.charAt(0) !== "#") return;
+              var targetEl = document.getElementById(href.slice(1));
+              if (!targetEl) return;
+              e.preventDefault();
+              function go() {
+                targetEl.scrollIntoView({ behavior: "smooth", block: "start" });
+                if (window.history && window.history.replaceState) {
+                  window.history.replaceState(null, "", href);
+                }
+                window.dispatchEvent(new Event("hashchange"));
+              }
+              if ($nav.hasClass("show")) {
+                $nav.one("hidden.bs.collapse", go);
+                $nav.collapse("hide");
+              } else {
+                go();
+              }
+            });
+          });
       })();
       document.querySelectorAll(".faq-trigger").forEach(function (trigger) {
         trigger.addEventListener("click", function () {
