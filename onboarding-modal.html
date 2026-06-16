@@ -65,6 +65,19 @@
         position: relative;
       }
 
+      /* Mobile: centered with side breathing room */
+      @media (max-width: 540px) {
+        .backdrop {
+          padding: 1rem;
+          align-items: center;
+        }
+        .modal-box {
+          max-width: 100%;
+          max-height: 94vh;
+          border-radius: 0.75rem;
+        }
+      }
+
       /* ── Close btn ── */
       .btn-x {
         position: absolute;
@@ -95,12 +108,24 @@
         padding: 1.75rem 3.25rem 0 2rem;
         text-align: center;
       }
+      @media (max-width: 400px) {
+        .modal-head {
+          padding: 1.5rem 3rem 0 1.5rem;
+        }
+      }
+
       .modal-title {
         font-size: 1.65rem;
         font-weight: 700;
         letter-spacing: -0.02em;
         line-height: 1.2;
         margin-bottom: 1.4rem;
+      }
+      @media (max-width: 400px) {
+        .modal-title {
+          font-size: 1.35rem;
+          margin-bottom: 1.1rem;
+        }
       }
       .gold {
         color: var(--gold);
@@ -138,6 +163,14 @@
       .step-tab .desc {
         font-size: 0.68rem;
       }
+      @media (max-width: 360px) {
+        .step-tab .lbl {
+          font-size: 0.62rem;
+        }
+        .step-tab .desc {
+          font-size: 0.6rem;
+        }
+      }
       .step-arrow {
         position: absolute;
         bottom: -1px;
@@ -158,16 +191,14 @@
       }
 
       /* ── Panels ── */
-      /* Step 1: no scroll — content fits naturally */
       #panel1 {
         display: none;
-        flex-shrink: 0; /* don't grow/shrink — let content be natural height */
+        flex-shrink: 0;
       }
       #panel1.active {
         display: block;
       }
 
-      /* Step 2: scrollable */
       #panel2 {
         display: none;
         flex: 1 1 auto;
@@ -175,6 +206,7 @@
         overflow-x: hidden;
         scrollbar-width: thin;
         scrollbar-color: rgba(212, 175, 55, 0.4) transparent;
+        -webkit-overflow-scrolling: touch;
       }
       #panel2::-webkit-scrollbar {
         width: 4px;
@@ -210,6 +242,8 @@
         font-size: 0.88rem;
         transition: all 0.25s;
         outline: none;
+        /* prevent iOS zoom on focus */
+        font-size: max(0.88rem, 16px);
       }
       .inp:focus {
         box-shadow: 0 0 0 2px rgba(212, 175, 55, 0.4);
@@ -220,12 +254,11 @@
         color: rgba(255, 255, 255, 0.22);
       }
 
-      /* ── intl-tel-input dark theme ── */
+      /* ── intl-tel-input ── */
       .iti {
         width: 100%;
       }
 
-      /* wrapper input gets left room for the flag button */
       .iti input#phone {
         width: 100%;
         background: rgba(0, 0, 0, 0.4) !important;
@@ -233,7 +266,7 @@
         border-radius: 0.5rem !important;
         color: #fff !important;
         padding: 0.72rem 1rem 0.72rem 5.4rem !important;
-        font-size: 0.88rem !important;
+        font-size: max(0.88rem, 16px) !important;
         transition: all 0.25s;
         outline: none !important;
       }
@@ -246,7 +279,6 @@
         color: rgba(255, 255, 255, 0.22);
       }
 
-      /* Flag button */
       .iti__flag-container {
         height: 100%;
       }
@@ -256,7 +288,6 @@
         border-radius: 0.5rem 0 0 0.5rem !important;
         padding: 0 0.55rem !important;
         height: 100%;
-        /* gap: 0.35rem; */
       }
       .iti__selected-flag:hover,
       .iti__selected-flag:focus {
@@ -273,7 +304,6 @@
         border-bottom-color: var(--gold) !important;
       }
 
-      /* Dropdown */
       .iti__dropdown-content {
         background: #141414 !important;
         border: 1px solid rgba(212, 175, 55, 0.25) !important;
@@ -342,6 +372,9 @@
         align-items: center;
         justify-content: center;
         gap: 0.2rem;
+        /* big tap target on mobile */
+        min-height: 52px;
+        touch-action: manipulation;
       }
       .btn-gold.on {
         background: var(--gold);
@@ -370,7 +403,7 @@
         text-align: center;
       }
 
-      /* ── Step 2 elements ── */
+      /* ── Step 2 ── */
       .back-btn {
         background: none;
         border: none;
@@ -386,6 +419,8 @@
         gap: 0.25rem;
         margin: 0.7rem auto 0;
         transition: color 0.25s;
+        touch-action: manipulation;
+        min-height: 36px;
       }
       .back-btn:hover {
         color: var(--gold);
@@ -408,11 +443,17 @@
         letter-spacing: 0.05em;
       }
 
+      /* Plans grid — 3 cols desktop, stays 3 on mobile but smaller */
       .plan-grid {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         gap: 0.65rem;
         margin-bottom: 1.4rem;
+      }
+      @media (max-width: 360px) {
+        .plan-grid {
+          gap: 0.45rem;
+        }
       }
       .plan-card {
         background: rgba(0, 0, 0, 0.3);
@@ -423,6 +464,12 @@
         transition: all 0.25s;
         position: relative;
         display: block;
+        touch-action: manipulation;
+      }
+      @media (max-width: 400px) {
+        .plan-card {
+          padding: 0.7rem 0.5rem 2rem;
+        }
       }
       .plan-card:hover {
         border-color: rgba(212, 175, 55, 0.5);
@@ -451,6 +498,17 @@
         color: rgba(255, 255, 255, 0.4);
         line-height: 1.3;
       }
+      @media (max-width: 380px) {
+        .plan-price {
+          font-size: 1rem;
+        }
+        .plan-name {
+          font-size: 0.55rem;
+        }
+        .plan-info {
+          font-size: 0.52rem;
+        }
+      }
       .radio-ring {
         position: absolute;
         bottom: 0.65rem;
@@ -477,7 +535,6 @@
         display: block;
       }
 
-      /* card input row */
       .card-wrap {
         position: relative;
         margin-bottom: 0.85rem;
@@ -501,6 +558,7 @@
         cursor: pointer;
         white-space: nowrap;
         transition: background 0.2s;
+        touch-action: manipulation;
       }
       .autofill-btn:hover {
         background: rgba(16, 185, 129, 0.22);
@@ -522,6 +580,7 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
+        gap: 0.75rem;
       }
       .sum-lbl {
         font-size: 0.58rem;
@@ -545,12 +604,21 @@
         font-weight: 800;
         color: var(--gold);
         line-height: 1;
+        white-space: nowrap;
       }
       .sum-due {
         font-size: 0.58rem;
         color: rgba(255, 255, 255, 0.3);
         text-decoration: line-through;
         margin-top: 0.2rem;
+      }
+      @media (max-width: 360px) {
+        .sum-val {
+          font-size: 0.82rem;
+        }
+        .sum-tot {
+          font-size: 1.15rem;
+        }
       }
 
       .terms-row {
@@ -563,6 +631,8 @@
         margin-top: 0.22rem;
         flex-shrink: 0;
         accent-color: var(--gold);
+        width: 16px;
+        height: 16px;
       }
       .terms-txt {
         font-size: 0.68rem;
@@ -585,6 +655,7 @@
         font-weight: 700;
         text-transform: uppercase;
         letter-spacing: 0.1em;
+        padding-bottom: 0.5rem;
       }
       .sec-foot .ln {
         height: 1px;
@@ -603,12 +674,23 @@
         padding: 0 2rem;
         text-align: center;
       }
+
+      @media (max-width: 400px) {
+        .pad1 {
+          padding: 1.25rem 1.25rem 1.5rem;
+        }
+        .pad2 {
+          padding: 1rem 1.25rem 2rem;
+        }
+        .pad-back {
+          padding: 0 1.25rem;
+        }
+      }
     </style>
   </head>
   <body>
     <div class="backdrop">
       <main class="modal-box">
-        <!-- Close -->
         <button class="btn-x" id="xBtn" aria-label="Close">
           <svg
             width="15"
@@ -624,7 +706,7 @@
           </svg>
         </button>
 
-        <!-- Header (fixed) -->
+        <!-- Fixed Header -->
         <header class="modal-head">
           <h1 class="modal-title">
             Start Your <span class="gold">14 Day</span> Free Trial Today!
@@ -642,7 +724,7 @@
           </nav>
         </header>
 
-        <!-- ===== STEP 1 ===== -->
+        <!-- STEP 1 -->
         <div id="panel1" class="active">
           <form class="pad1" id="form1" novalidate>
             <div class="fgroup">
@@ -653,6 +735,7 @@
                 type="text"
                 placeholder="e.g. Aurelian Enterprises"
                 required
+                autocomplete="organization"
               />
             </div>
 
@@ -664,6 +747,7 @@
                 type="text"
                 placeholder="Johnathan Doe"
                 required
+                autocomplete="name"
               />
             </div>
 
@@ -675,6 +759,7 @@
                 type="email"
                 placeholder="john@executive.com"
                 required
+                autocomplete="email"
               />
             </div>
 
@@ -685,6 +770,7 @@
                 type="tel"
                 placeholder="000 000 0000"
                 required
+                autocomplete="tel"
               />
             </div>
 
@@ -700,7 +786,7 @@
           </form>
         </div>
 
-        <!-- ===== STEP 2 ===== -->
+        <!-- STEP 2 -->
         <div id="panel2">
           <div class="pad-back">
             <button class="back-btn" id="backBtn" type="button">
@@ -721,7 +807,6 @@
           </div>
 
           <form class="pad2" id="form2" novalidate>
-            <!-- Plans -->
             <div class="sec-title">
               Select Your Plan <span class="dim">Price / Mo</span>
             </div>
@@ -766,15 +851,16 @@
               </label>
             </div>
 
-            <!-- Payment -->
             <div class="sec-title">Payment Details</div>
             <div class="card-wrap">
               <input
                 class="inp"
                 id="cardNum"
                 type="text"
+                inputmode="numeric"
                 placeholder="Card number (XXXX XXXX XXXX XXXX)"
                 required
+                autocomplete="cc-number"
               />
               <button class="autofill-btn" type="button">Autofill</button>
             </div>
@@ -783,38 +869,39 @@
                 class="inp"
                 id="expiry"
                 type="text"
+                inputmode="numeric"
                 placeholder="MM / YY"
                 required
+                autocomplete="cc-exp"
               />
               <input
                 class="inp"
                 id="cvc"
                 type="text"
+                inputmode="numeric"
                 placeholder="CVC"
                 required
+                autocomplete="cc-csc"
               />
             </div>
 
-            <!-- Summary -->
             <div class="summary">
               <div>
                 <span class="sum-lbl">Active Subscription</span>
                 <div class="sum-val" id="sumPlan">$97 Starter Plan</div>
                 <span class="sum-sub">Your trial ends in 14 days</span>
               </div>
-              <div style="text-align: right">
+              <div style="text-align: right; flex-shrink: 0">
                 <div class="sum-tot">$0.00</div>
                 <div class="sum-due" id="sumDue">DUE TODAY: $97.00</div>
               </div>
             </div>
 
-            <!-- Terms -->
             <div class="terms-row">
               <input type="checkbox" id="terms" />
               <label class="terms-txt" for="terms">
-                I understand that after my 14-day trial, my card will be charged
-                the monthly rate. By continuing, I agree to the
-                <a href="#">Terms of Service</a>.
+                I agree to the Terms of Service and Privacy Policy of 10 Ways.
+                <a href="#">Privacy Policy</a>.
               </label>
             </div>
 
@@ -837,7 +924,7 @@
     <script src="https://cdn.jsdelivr.net/npm/intl-tel-input@19.5.7/build/js/intlTelInput.min.js"></script>
     <script>
       $(function () {
-        /* ── intl-tel-input ── */
+        /* intl-tel-input */
         const phoneEl = document.getElementById("phone");
         const iti = window.intlTelInput(phoneEl, {
           initialCountry: "gb",
@@ -845,10 +932,9 @@
           showSelectedDialCode: true,
           utilsScript:
             "https://cdn.jsdelivr.net/npm/intl-tel-input@19.5.7/build/js/utils.js",
-          containerClass: "iti-wrap",
         });
 
-        /* ── Navigation ── */
+        /* Navigation */
         function goStep(n) {
           if (n === 1) {
             $("#panel1").addClass("active");
@@ -866,18 +952,16 @@
           }
         }
 
-        /* ── Step 1 validation ── */
+        /* Step 1 validation */
         function checkS1() {
           const filled =
             $("#cname").val().trim() &&
             $("#fname").val().trim() &&
             /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test($("#email").val()) &&
             $(phoneEl).val().trim();
-          const phoneValid = iti.isValidNumber();
-          const ok = filled && phoneValid;
+          const ok = filled && iti.isValidNumber();
           $("#s1Btn").prop("disabled", !ok).toggleClass("on", !!ok);
         }
-
         $("#cname, #fname, #email").on("input", checkS1);
         $(phoneEl).on("input keyup", checkS1);
         phoneEl.addEventListener("countrychange", checkS1);
@@ -892,10 +976,10 @@
           goStep(2);
         });
 
-        /* ── Back ── */
+        /* Back */
         $("#backBtn").on("click", () => goStep(1));
 
-        /* ── Plans ── */
+        /* Plans */
         const PLANS = {
           starter: { text: "$97 Starter Plan", due: "DUE TODAY: $97.00" },
           unlimited: { text: "$297 Unlimited Plan", due: "DUE TODAY: $297.00" },
@@ -909,7 +993,7 @@
           $("#sumDue").text(p.due);
         });
 
-        /* ── Step 2 validation ── */
+        /* Step 2 validation */
         function checkS2() {
           const ok =
             $("#terms").is(":checked") && $("#cardNum").val().length >= 12;
@@ -922,10 +1006,10 @@
           alert("Activating your 14-day free trial...");
         });
 
-        /* ── Close ── */
+        /* Close */
         $("#xBtn").on("click", () => $(".backdrop").fadeOut(300));
 
-        /* ── Auto-format card & expiry ── */
+        /* Auto-format */
         $("#cardNum").on("input", function () {
           let v = $(this).val().replace(/\D/g, "").slice(0, 16);
           v = v.match(/.{1,4}/g)?.join(" ") || v;
@@ -936,6 +1020,9 @@
           let v = $(this).val().replace(/\D/g, "");
           if (v.length >= 3) v = v.slice(0, 2) + " / " + v.slice(2, 4);
           $(this).val(v);
+        });
+        $("#cvc").on("input", function () {
+          $(this).val($(this).val().replace(/\D/g, "").slice(0, 4));
         });
       });
     </script>

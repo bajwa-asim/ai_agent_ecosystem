@@ -668,17 +668,63 @@
       }
 
       .cn-card-agent {
+        position: relative;
         background-color: #1c1b1b;
         border: 2px solid rgba(242, 202, 80, 0.4);
         border-radius: 0.75rem;
         padding: 24px;
         display: flex;
         flex-direction: column;
-        justify-content: space-between;
         min-height: 100%;
         transition:
           border-color 0.3s ease,
           box-shadow 0.3s ease;
+      }
+
+      .cn-agent-badge {
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+        width: 1.5rem;
+        height: 1.5rem;
+        border-radius: 9999px;
+        border: 1px solid rgba(242, 202, 80, 0.3);
+        background: rgba(242, 202, 80, 0.1);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 12px;
+        line-height: 16px;
+        letter-spacing: 0.05em;
+        font-weight: 600;
+        color: #f2ca50;
+      }
+
+      .cn-agent-card-desc {
+        font-size: 16px;
+        line-height: 24px;
+        font-weight: 400;
+        color: rgba(208, 197, 175, 0.8);
+        margin-bottom: 1.5rem;
+        display: -webkit-box;
+        -webkit-line-clamp: 4;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        min-height: 96px;
+      }
+
+      .cn-agents-hero-img {
+        border-radius: 0.75rem;
+        overflow: hidden;
+        border: 1px solid rgba(242, 202, 80, 0.2);
+        box-shadow: 0 25px 50px -12px rgba(242, 202, 80, 0.1);
+      }
+
+      .cn-agents-hero-img img {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+        display: block;
       }
 
       .cn-card-agent:hover {
@@ -1018,7 +1064,8 @@
         font-size: 14px;
         line-height: 20px;
         letter-spacing: 0.01em;
-        font-weight: 500;
+        font-weight: 700;
+        margin-top: auto;
       }
 
       @media (max-width: 767.98px) {
@@ -1416,6 +1463,12 @@
         <div
           class="cn-margin-below-section text-center mx-auto cn-measure-medium"
         >
+          <div class="cn-agents-hero-img cn-margin-below-section">
+            <img
+              alt="AI Agent Modules"
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuCDp8yBLQ7h3RO87MMei8GPYN5tTl9z9gU3VobACreFy-nq6wIGb4RZuGTYwmof6y8qlemozZT_LUGuB2mNsFYtd2ciu__PowCcDsVZjb2aDPXKFy5UC75l-Wr6L-aanV4RyggmRJ0bhII_V2bq9mUXWFm7vURec4N8ueoYEpaXpbLS1O0pbZRFdiq0aEpMWo5EkQRsI0Nselge0_6WybZDIfjXwf1_HEH2M2qygM_Pv74zC4P9TSdlXL-FDTx-15kVcOTog6GyOiM"
+            />
+          </div>
           <h2 class="cn-title-section">Our AI Agents &amp; Tools</h2>
           <p class="cn-prose-lead">
             High-performance cognitive agents engineered for scale. From voice
@@ -1426,18 +1479,17 @@
         <div class="row cn-row-tight">
           <div class="col-12 col-md-6 col-lg-3 mb-4">
             <div class="cn-card-agent cn-surface-sheen">
-              <div>
-                <div class="mb-2">
-                  <span class="cn-icon cn-icon-lg cn-icon-gold"
-                    >support_agent</span
-                  >
-                </div>
-                <h3 class="cn-heading">AI 24/7 Phone Receptionist</h3>
-                <p class="cn-card-summary">
-                  An automated receptionist that answers FAQs routes calls and
-                  handles customer service 24/7.
-                </p>
+              <div class="cn-agent-badge">1</div>
+              <div class="mb-2">
+                <span class="cn-icon cn-icon-lg cn-icon-gold"
+                  >phone_missed</span
+                >
               </div>
+              <h3 class="cn-heading">AI Missed Call Text-Back</h3>
+              <p class="cn-agent-card-desc">
+                Instantly text-backs missed callers with an AI conversational
+                helper to save lost business by qualifying interest immediately.
+              </p>
               <button type="button" class="cn-btn cn-btn-primary cn-btn-card">
                 Learn More
               </button>
@@ -1445,18 +1497,18 @@
           </div>
           <div class="col-12 col-md-6 col-lg-3 mb-4">
             <div class="cn-card-agent cn-surface-sheen">
-              <div>
-                <div class="mb-2">
-                  <span class="cn-icon cn-icon-lg cn-icon-gold"
-                    >calendar_month</span
-                  >
-                </div>
-                <h3 class="cn-heading">AI Appointment Booking</h3>
-                <p class="cn-card-summary">
-                  A voice assistant that checks calendar availability negotiates
-                  times and books appointments live on the call.
-                </p>
+              <div class="cn-agent-badge">2</div>
+              <div class="mb-2">
+                <span class="cn-icon cn-icon-lg cn-icon-gold"
+                  >support_agent</span
+                >
               </div>
+              <h3 class="cn-heading">AI 24/7 Phone Receptionist</h3>
+              <p class="cn-agent-card-desc">
+                An automated receptionist that answers FAQs, routes calls, and
+                handles customer service 24/7 with human-like precision and
+                warmth.
+              </p>
               <button type="button" class="cn-btn cn-btn-primary cn-btn-card">
                 Learn More
               </button>
@@ -1464,16 +1516,16 @@
           </div>
           <div class="col-12 col-md-6 col-lg-3 mb-4">
             <div class="cn-card-agent cn-surface-sheen">
-              <div>
-                <div class="mb-2">
-                  <span class="cn-icon cn-icon-lg cn-icon-gold">bolt</span>
-                </div>
-                <h3 class="cn-heading">AI Instant Speed To Lead</h3>
-                <p class="cn-card-summary">
-                  Instantly calls new leads the second they submit a form
-                  automatically bridging them to your live sales team.
-                </p>
+              <div class="cn-agent-badge">3</div>
+              <div class="mb-2">
+                <span class="cn-icon cn-icon-lg cn-icon-gold">bolt</span>
               </div>
+              <h3 class="cn-heading">AI Instant Speed-to-Lead</h3>
+              <p class="cn-agent-card-desc">
+                Instantly calls new leads the second they submit a form,
+                automatically bridging them to your live sales team for maximum
+                conversion rates.
+              </p>
               <button type="button" class="cn-btn cn-btn-primary cn-btn-card">
                 Learn More
               </button>
@@ -1481,18 +1533,18 @@
           </div>
           <div class="col-12 col-md-6 col-lg-3 mb-4">
             <div class="cn-card-agent cn-surface-sheen">
-              <div>
-                <div class="mb-2">
-                  <span class="cn-icon cn-icon-lg cn-icon-gold"
-                    >verified_user</span
-                  >
-                </div>
-                <h3 class="cn-heading">AI Lead Qualifier</h3>
-                <p class="cn-card-summary">
-                  Autonomously calls new leads to ask pre-qualification
-                  questions and score them before a human speaks to them.
-                </p>
+              <div class="cn-agent-badge">4</div>
+              <div class="mb-2">
+                <span class="cn-icon cn-icon-lg cn-icon-gold"
+                  >calendar_month</span
+                >
               </div>
+              <h3 class="cn-heading">AI Appointment Booking</h3>
+              <p class="cn-agent-card-desc">
+                A voice assistant that checks calendar availability, negotiates
+                times, and books appointments live on the call directly into
+                your calendar.
+              </p>
               <button type="button" class="cn-btn cn-btn-primary cn-btn-card">
                 Learn More
               </button>
@@ -1500,16 +1552,16 @@
           </div>
           <div class="col-12 col-md-6 col-lg-3 mb-4">
             <div class="cn-card-agent cn-surface-sheen">
-              <div>
-                <div class="mb-2">
-                  <span class="cn-icon cn-icon-lg cn-icon-gold">call</span>
-                </div>
-                <h3 class="cn-heading">AI Cold Caller</h3>
-                <p class="cn-card-summary">
-                  A conversational campaign agent that systematically calls
-                  through dynamic target lists for cold or warm outreach.
-                </p>
+              <div class="cn-agent-badge">5</div>
+              <div class="mb-2">
+                <span class="cn-icon cn-icon-lg cn-icon-gold">chat</span>
               </div>
+              <h3 class="cn-heading">AI 24/7 Website Chat</h3>
+              <p class="cn-agent-card-desc">
+                An interactive on-site widget that chats with visitors, answers
+                complex questions, and captures lead info round-the-clock
+                without delays.
+              </p>
               <button type="button" class="cn-btn cn-btn-primary cn-btn-card">
                 Learn More
               </button>
@@ -1517,16 +1569,16 @@
           </div>
           <div class="col-12 col-md-6 col-lg-3 mb-4">
             <div class="cn-card-agent cn-surface-sheen">
-              <div>
-                <div class="mb-2">
-                  <span class="cn-icon cn-icon-lg cn-icon-gold">database</span>
-                </div>
-                <h3 class="cn-heading">AI Database Reactivation</h3>
-                <p class="cn-card-summary">
-                  Autonomously text-blasts or calls old cold databases to
-                  uncover hidden revenue and book missed opportunities.
-                </p>
+              <div class="cn-agent-badge">6</div>
+              <div class="mb-2">
+                <span class="cn-icon cn-icon-lg cn-icon-gold">database</span>
               </div>
+              <h3 class="cn-heading">AI Database Reactivation</h3>
+              <p class="cn-agent-card-desc">
+                Autonomously text-blasts or calls old cold databases to uncover
+                hidden revenue and book missed opportunities from your past
+                prospects.
+              </p>
               <button type="button" class="cn-btn cn-btn-primary cn-btn-card">
                 Learn More
               </button>
@@ -1534,18 +1586,16 @@
           </div>
           <div class="col-12 col-md-6 col-lg-3 mb-4">
             <div class="cn-card-agent cn-surface-sheen">
-              <div>
-                <div class="mb-2">
-                  <span class="cn-icon cn-icon-lg cn-icon-gold"
-                    >restaurant</span
-                  >
-                </div>
-                <h3 class="cn-heading">AI Phone Order Taker</h3>
-                <p class="cn-card-summary">
-                  A consumer-facing voice agent that answers hungry customers
-                  takes detailed food orders and sends them to the kitchen.
-                </p>
+              <div class="cn-agent-badge">7</div>
+              <div class="mb-2">
+                <span class="cn-icon cn-icon-lg cn-icon-gold">hub</span>
               </div>
+              <h3 class="cn-heading">AI Omnichannel Messaging</h3>
+              <p class="cn-agent-card-desc">
+                A central agent that synchronizes messaging across SMS, Email,
+                Facebook, Instagram, and WhatsApp for a unified customer
+                experience.
+              </p>
               <button type="button" class="cn-btn cn-btn-primary cn-btn-card">
                 Learn More
               </button>
@@ -1553,16 +1603,17 @@
           </div>
           <div class="col-12 col-md-6 col-lg-3 mb-4">
             <div class="cn-card-agent cn-surface-sheen">
-              <div>
-                <div class="mb-2">
-                  <span class="cn-icon cn-icon-lg cn-icon-gold">chat</span>
-                </div>
-                <h3 class="cn-heading">AI 24/7 Website Chat</h3>
-                <p class="cn-card-summary">
-                  An interactive on-site widget that chats with visitors answers
-                  questions and captures lead info round-the-clock.
-                </p>
+              <div class="cn-agent-badge">8</div>
+              <div class="mb-2">
+                <span class="cn-icon cn-icon-lg cn-icon-gold"
+                  >verified_user</span
+                >
               </div>
+              <h3 class="cn-heading">AI Lead Qualifier</h3>
+              <p class="cn-agent-card-desc">
+                Autonomously calls or texts new leads to ask pre-qualification
+                questions and score them before a human ever speaks to them.
+              </p>
               <button type="button" class="cn-btn cn-btn-primary cn-btn-card">
                 Learn More
               </button>
@@ -1570,15 +1621,16 @@
           </div>
           <div class="col-12 col-md-6 col-lg-3 mb-4">
             <div class="cn-card-agent cn-surface-sheen">
-              <div>
-                <div class="mb-2">
-                  <span class="cn-icon cn-icon-lg cn-icon-gold">sms</span>
-                </div>
-                <h3 class="cn-heading">AI 2 Way SMS Texting</h3>
-                <p class="cn-card-summary">
-                  A multi-channel agent that handles two-way texting
-                </p>
+              <div class="cn-agent-badge">9</div>
+              <div class="mb-2">
+                <span class="cn-icon cn-icon-lg cn-icon-gold">star</span>
               </div>
+              <h3 class="cn-heading">AI Reviews</h3>
+              <p class="cn-agent-card-desc">
+                An intelligent dashboard that monitors feedback, crafts smart
+                replies, and boosts search rankings by requesting positive
+                reviews automatically.
+              </p>
               <button type="button" class="cn-btn cn-btn-primary cn-btn-card">
                 Learn More
               </button>
@@ -1586,15 +1638,16 @@
           </div>
           <div class="col-12 col-md-6 col-lg-3 mb-4">
             <div class="cn-card-agent cn-surface-sheen">
-              <div>
-                <div class="mb-2">
-                  <span class="cn-icon cn-icon-lg cn-icon-gold">mail</span>
-                </div>
-                <h3 class="cn-heading">AI 2 Way Emails</h3>
-                <p class="cn-card-summary">
-                  A multi-channel agent that handles two-way emails
-                </p>
+              <div class="cn-agent-badge">10</div>
+              <div class="mb-2">
+                <span class="cn-icon cn-icon-lg cn-icon-gold">share</span>
               </div>
+              <h3 class="cn-heading">AI Social Media Posts</h3>
+              <p class="cn-agent-card-desc">
+                An on-demand content tool that drafts high-converting social
+                copy and eye-catching graphics tailored to your brand's unique
+                voice.
+              </p>
               <button type="button" class="cn-btn cn-btn-primary cn-btn-card">
                 Learn More
               </button>
@@ -1602,15 +1655,16 @@
           </div>
           <div class="col-12 col-md-6 col-lg-3 mb-4">
             <div class="cn-card-agent cn-surface-sheen">
-              <div>
-                <div class="mb-2">
-                  <span class="cn-icon cn-icon-lg cn-icon-gold">public</span>
-                </div>
-                <h3 class="cn-heading">AI 2 Way Facebook</h3>
-                <p class="cn-card-summary">
-                  An agent that handles two-way Facebook messages
-                </p>
+              <div class="cn-agent-badge">11</div>
+              <div class="mb-2">
+                <span class="cn-icon cn-icon-lg cn-icon-gold">call</span>
               </div>
+              <h3 class="cn-heading">AI Cold Caller</h3>
+              <p class="cn-agent-card-desc">
+                A conversational campaign agent that systematically calls
+                through dynamic target lists for cold or warm outreach and
+                appointment setting.
+              </p>
               <button type="button" class="cn-btn cn-btn-primary cn-btn-card">
                 Learn More
               </button>
@@ -1618,17 +1672,15 @@
           </div>
           <div class="col-12 col-md-6 col-lg-3 mb-4">
             <div class="cn-card-agent cn-surface-sheen">
-              <div>
-                <div class="mb-2">
-                  <span class="cn-icon cn-icon-lg cn-icon-gold"
-                    >photo_camera</span
-                  >
-                </div>
-                <h3 class="cn-heading">AI 2 Way Instagram</h3>
-                <p class="cn-card-summary">
-                  An agent that handles two-way Instagram messages
-                </p>
+              <div class="cn-agent-badge">12</div>
+              <div class="mb-2">
+                <span class="cn-icon cn-icon-lg cn-icon-gold">schedule</span>
               </div>
+              <h3 class="cn-heading">AI Social Media Scheduling</h3>
+              <p class="cn-agent-card-desc">
+                Automatically schedules and publishes your AI-generated social
+                media content across all platforms at peak engagement times.
+              </p>
               <button type="button" class="cn-btn cn-btn-primary cn-btn-card">
                 Learn More
               </button>
@@ -1636,17 +1688,15 @@
           </div>
           <div class="col-12 col-md-6 col-lg-3 mb-4">
             <div class="cn-card-agent cn-surface-sheen">
-              <div>
-                <div class="mb-2">
-                  <span class="cn-icon cn-icon-lg cn-icon-gold"
-                    >chat_bubble</span
-                  >
-                </div>
-                <h3 class="cn-heading">AI 2 Way Whatsapp</h3>
-                <p class="cn-card-summary">
-                  An agent that handles two-way Whatsapp messages
-                </p>
+              <div class="cn-agent-badge">13</div>
+              <div class="mb-2">
+                <span class="cn-icon cn-icon-lg cn-icon-gold">web</span>
               </div>
+              <h3 class="cn-heading">AI 60-Second Website Builder</h3>
+              <p class="cn-agent-card-desc">
+                A high-speed prompt-to-design platform that builds fully
+                functional, conversion-optimized websites in less than a minute.
+              </p>
               <button type="button" class="cn-btn cn-btn-primary cn-btn-card">
                 Learn More
               </button>
@@ -1654,18 +1704,16 @@
           </div>
           <div class="col-12 col-md-6 col-lg-3 mb-4">
             <div class="cn-card-agent cn-surface-sheen">
-              <div>
-                <div class="mb-2">
-                  <span class="cn-icon cn-icon-lg cn-icon-gold"
-                    >phone_missed</span
-                  >
-                </div>
-                <h3 class="cn-heading">AI Missed Call Text-Back</h3>
-                <p class="cn-card-summary">
-                  Instantly text-backs missed callers with an AI conversational
-                  helper to save lost business before they call a competitor.
-                </p>
+              <div class="cn-agent-badge">14</div>
+              <div class="mb-2">
+                <span class="cn-icon cn-icon-lg cn-icon-gold">search</span>
               </div>
+              <h3 class="cn-heading">AI SEO Report</h3>
+              <p class="cn-agent-card-desc">
+                An autonomous crawler that scans websites, diagnoses critical
+                SEO issues, and builds actionable optimization blueprints
+                instantly.
+              </p>
               <button type="button" class="cn-btn cn-btn-primary cn-btn-card">
                 Learn More
               </button>
@@ -1673,16 +1721,18 @@
           </div>
           <div class="col-12 col-md-6 col-lg-3 mb-4">
             <div class="cn-card-agent cn-surface-sheen">
-              <div>
-                <div class="mb-2">
-                  <span class="cn-icon cn-icon-lg cn-icon-gold">search</span>
-                </div>
-                <h3 class="cn-heading">AI Seo Report</h3>
-                <p class="cn-card-summary">
-                  An autonomous crawler that scans websites diagnoses SEO issues
-                  and builds optimization blueprints.
-                </p>
+              <div class="cn-agent-badge">15</div>
+              <div class="mb-2">
+                <span class="cn-icon cn-icon-lg cn-icon-gold"
+                  >video_library</span
+                >
               </div>
+              <h3 class="cn-heading">AI Video Generator</h3>
+              <p class="cn-agent-card-desc">
+                A script-to-screen agent that generates engaging marketing
+                videos, renders visuals, and adds voiceovers automatically for
+                social ads.
+              </p>
               <button type="button" class="cn-btn cn-btn-primary cn-btn-card">
                 Learn More
               </button>
@@ -1690,84 +1740,16 @@
           </div>
           <div class="col-12 col-md-6 col-lg-3 mb-4">
             <div class="cn-card-agent cn-surface-sheen">
-              <div>
-                <div class="mb-2">
-                  <span class="cn-icon cn-icon-lg cn-icon-gold"
-                    >video_library</span
-                  >
-                </div>
-                <h3 class="cn-heading">AI Video Generator</h3>
-                <p class="cn-card-summary">
-                  A script-to-screen agent that generates engaging marketing
-                  videos renders visuals
-                </p>
+              <div class="cn-agent-badge">16</div>
+              <div class="mb-2">
+                <span class="cn-icon cn-icon-lg cn-icon-gold">restaurant</span>
               </div>
-              <button type="button" class="cn-btn cn-btn-primary cn-btn-card">
-                Learn More
-              </button>
-            </div>
-          </div>
-          <div class="col-12 col-md-6 col-lg-3 mb-4">
-            <div class="cn-card-agent cn-surface-sheen">
-              <div>
-                <div class="mb-2">
-                  <span class="cn-icon cn-icon-lg cn-icon-gold">web</span>
-                </div>
-                <h3 class="cn-heading">AI 60-Second Website Builder</h3>
-                <p class="cn-card-summary">
-                  A high-speed prompt-to-design platform that builds fully
-                  functional conversion-optimized websites and landing pages in
-                  under 60 sec
-                </p>
-              </div>
-              <button type="button" class="cn-btn cn-btn-primary cn-btn-card">
-                Learn More
-              </button>
-            </div>
-          </div>
-          <div class="col-12 col-md-6 col-lg-3 mb-4">
-            <div class="cn-card-agent cn-surface-sheen">
-              <div>
-                <div class="mb-2">
-                  <span class="cn-icon cn-icon-lg cn-icon-gold">share</span>
-                </div>
-                <h3 class="cn-heading">AI Social Media Posts</h3>
-                <p class="cn-card-summary">
-                  An on-demand content tool that drafts high-converting social
-                  copy and eye-catching graphics based on your prompts.
-                </p>
-              </div>
-              <button type="button" class="cn-btn cn-btn-primary cn-btn-card">
-                Learn More
-              </button>
-            </div>
-          </div>
-          <div class="col-12 col-md-6 col-lg-3 mb-4">
-            <div class="cn-card-agent cn-surface-sheen">
-              <div>
-                <div class="mb-2">
-                  <span class="cn-icon cn-icon-lg cn-icon-gold">star</span>
-                </div>
-                <h3 class="cn-heading">Ai Reviews</h3>
-                <p class="cn-card-summary">
-                  An intelligent dashboard that monitors incoming business
-                  feedback crafts smart replies and boosts search rankings.
-                </p>
-              </div>
-              <button type="button" class="cn-btn cn-btn-primary cn-btn-card">
-                Learn More
-              </button>
-            </div>
-          </div>
-          <div class="col-12 col-md-6 col-lg-3 mb-4">
-            <div class="cn-card-agent cn-surface-sheen">
-              <div>
-                <div class="mb-2">
-                  <span class="cn-icon cn-icon-lg cn-icon-gold">schedule</span>
-                </div>
-                <h3 class="cn-heading">AI Social Media Scheduling</h3>
-                <p class="cn-card-summary">Schedules Social Media Posts</p>
-              </div>
+              <h3 class="cn-heading">AI Phone Order Taker</h3>
+              <p class="cn-agent-card-desc">
+                A consumer-facing voice agent that answers hungry customers,
+                takes detailed food orders, and sends them directly to the
+                kitchen.
+              </p>
               <button type="button" class="cn-btn cn-btn-primary cn-btn-card">
                 Learn More
               </button>
@@ -1775,7 +1757,6 @@
           </div>
         </div>
       </section>
-
       <section class="cn-layout-max">
         <div class="cn-pad-section cn-bg-surface-darkest cn-border-y-soft">
           <div class="mx-auto text-center cn-measure-wide px-4">
@@ -2450,11 +2431,6 @@
                 </li>
               </ul>
               <div class="cn-border-top-soft pt-4 mt-auto">
-                <p class="cn-text-label cn-text-muted mb-4">
-                  Add-on:
-                  <span class="cn-text-gold font-weight-bold">$67</span> Per
-                  Subaccount
-                </p>
                 <button
                   type="button"
                   class="cn-btn cn-btn-outline cn-btn-outline-fill-hover w-100 cn-pad-y-sm font-weight-bold cn-radius-lg cn-open-modules-modal"
@@ -2521,11 +2497,6 @@
                 </li>
               </ul>
               <div class="cn-border-top-soft pt-4 mt-auto">
-                <p class="cn-text-label cn-text-muted mb-4">
-                  Add-on:
-                  <span class="cn-text-gold font-weight-bold">$29</span> Per
-                  Subaccount
-                </p>
                 <button
                   type="button"
                   class="cn-btn cn-btn-primary w-100 py-3 font-weight-bold cn-radius-lg cn-btn-glow-sm cn-open-modules-modal"
@@ -2580,9 +2551,6 @@
                 </li>
               </ul>
               <div class="cn-border-top-soft pt-4 mt-auto">
-                <p class="cn-text-label cn-text-muted mb-4">
-                  Full Resell Rights Included
-                </p>
                 <button
                   type="button"
                   class="cn-btn cn-btn-outline cn-btn-outline-fill-hover w-100 cn-pad-y-sm font-weight-bold cn-radius-lg cn-open-modules-modal"
@@ -2981,7 +2949,9 @@
               if (!card) return;
               var icon = card.querySelector(".cn-icon-gold");
               var heading = card.querySelector(".cn-heading");
-              var summary = card.querySelector(".cn-card-summary");
+              var summary =
+                card.querySelector(".cn-agent-card-desc") ||
+                card.querySelector(".cn-card-summary");
               if (iconEl && icon) iconEl.textContent = icon.textContent.trim();
               if (titleEl && heading)
                 titleEl.textContent = heading.textContent.trim();
