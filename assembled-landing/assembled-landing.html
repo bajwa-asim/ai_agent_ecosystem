@@ -2852,8 +2852,9 @@
               id="agent-modal-icon"
               class="cn-icon cn-icon-xl cn-icon-gold"
             ></span>
+            <h2 id="agent-modal-title" class="cn-modal-title"></h2>
           </div>
-          <h2 id="agent-modal-title" class="cn-modal-title"></h2>
+          <!-- <h2 id="agent-modal-title" class="cn-modal-title"></h2> -->
           <p id="agent-modal-text" class="cn-prose-lead mb-4"></p>
           <button
             type="button"
@@ -2981,8 +2982,7 @@
               var icon = card.querySelector(".cn-icon-gold");
               var heading = card.querySelector(".cn-heading");
               var summary = card.querySelector(".cn-card-summary");
-              if (iconEl && icon)
-                iconEl.textContent = icon.textContent.trim();
+              if (iconEl && icon) iconEl.textContent = icon.textContent.trim();
               if (titleEl && heading)
                 titleEl.textContent = heading.textContent.trim();
               if (textEl && summary)

@@ -1,0 +1,943 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Aurelian Gold - Free Trial</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/intl-tel-input@19.5.7/build/css/intlTelInput.css"
+    />
+    <style>
+      :root {
+        --gold: #d4af37;
+        --black: #0a0a0a;
+        --graphite: #1a1a1a;
+      }
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        background: var(--black);
+        color: #fff;
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family:
+          -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      }
+
+      /* ── Backdrop ── */
+      .backdrop {
+        position: fixed;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.85);
+        backdrop-filter: blur(8px);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 1rem;
+        z-index: 100;
+      }
+
+      /* ── Modal shell ── */
+      .modal-box {
+        background: var(--graphite);
+        border: 1px solid rgba(212, 175, 55, 0.3);
+        border-radius: 0.75rem;
+        box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.5);
+        width: 100%;
+        max-width: 500px;
+        max-height: 92vh;
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+        position: relative;
+      }
+
+      /* ── Close btn ── */
+      .btn-x {
+        position: absolute;
+        top: 0.9rem;
+        right: 0.9rem;
+        width: 2rem;
+        height: 2rem;
+        background: rgba(255, 255, 255, 0.06);
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: rgba(255, 255, 255, 0.5);
+        cursor: pointer;
+        transition: all 0.25s;
+        z-index: 20;
+      }
+      .btn-x:hover {
+        color: var(--gold);
+        background: rgba(212, 175, 55, 0.1);
+        border-color: rgba(212, 175, 55, 0.3);
+      }
+
+      /* ── Fixed header ── */
+      .modal-head {
+        flex-shrink: 0;
+        padding: 1.75rem 3.25rem 0 2rem;
+        text-align: center;
+      }
+      .modal-title {
+        font-size: 1.65rem;
+        font-weight: 700;
+        letter-spacing: -0.02em;
+        line-height: 1.2;
+        margin-bottom: 1.4rem;
+      }
+      .gold {
+        color: var(--gold);
+      }
+
+      /* ── Step nav ── */
+      .step-nav {
+        display: flex;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        position: relative;
+      }
+      .step-tab {
+        flex: 1;
+        padding-bottom: 0.9rem;
+        text-align: center;
+      }
+      .step-tab.active {
+        color: var(--gold);
+        border-bottom: 2px solid var(--gold);
+      }
+      .step-tab.done {
+        color: var(--gold);
+        opacity: 0.6;
+      }
+      .step-tab.idle {
+        color: rgba(255, 255, 255, 0.3);
+      }
+      .step-tab .lbl {
+        display: block;
+        font-size: 0.72rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+      }
+      .step-tab .desc {
+        font-size: 0.68rem;
+      }
+      .step-arrow {
+        position: absolute;
+        bottom: -1px;
+        width: 0;
+        height: 0;
+        border-left: 6px solid transparent;
+        border-right: 6px solid transparent;
+        border-bottom: 6px solid var(--gold);
+        transition: left 0.4s ease;
+      }
+      .step-arrow.s1 {
+        left: 25%;
+        transform: translateX(-50%);
+      }
+      .step-arrow.s2 {
+        left: 75%;
+        transform: translateX(-50%);
+      }
+
+      /* ── Panels ── */
+      /* Step 1: no scroll — content fits naturally */
+      #panel1 {
+        display: none;
+        flex-shrink: 0; /* don't grow/shrink — let content be natural height */
+      }
+      #panel1.active {
+        display: block;
+      }
+
+      /* Step 2: scrollable */
+      #panel2 {
+        display: none;
+        flex: 1 1 auto;
+        overflow-y: auto;
+        overflow-x: hidden;
+        scrollbar-width: thin;
+        scrollbar-color: rgba(212, 175, 55, 0.4) transparent;
+      }
+      #panel2::-webkit-scrollbar {
+        width: 4px;
+      }
+      #panel2::-webkit-scrollbar-thumb {
+        background: rgba(212, 175, 55, 0.4);
+        border-radius: 2px;
+      }
+      #panel2.active {
+        display: block;
+      }
+
+      /* ── Inputs ── */
+      .fgroup {
+        margin-bottom: 0.9rem;
+      }
+      .flabel {
+        display: block;
+        font-size: 0.68rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        color: rgba(212, 175, 55, 0.8);
+        letter-spacing: 0.05em;
+        margin-bottom: 0.3rem;
+      }
+      .inp {
+        width: 100%;
+        background: rgba(0, 0, 0, 0.4);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 0.5rem;
+        color: #fff;
+        padding: 0.72rem 1rem;
+        font-size: 0.88rem;
+        transition: all 0.25s;
+        outline: none;
+      }
+      .inp:focus {
+        box-shadow: 0 0 0 2px rgba(212, 175, 55, 0.4);
+        border-color: var(--gold);
+        background: rgba(0, 0, 0, 0.55);
+      }
+      .inp::placeholder {
+        color: rgba(255, 255, 255, 0.22);
+      }
+
+      /* ── intl-tel-input dark theme ── */
+      .iti {
+        width: 100%;
+      }
+
+      /* wrapper input gets left room for the flag button */
+      .iti input#phone {
+        width: 100%;
+        background: rgba(0, 0, 0, 0.4) !important;
+        border: 1px solid rgba(255, 255, 255, 0.1) !important;
+        border-radius: 0.5rem !important;
+        color: #fff !important;
+        padding: 0.72rem 1rem 0.72rem 5.4rem !important;
+        font-size: 0.88rem !important;
+        transition: all 0.25s;
+        outline: none !important;
+      }
+      .iti input#phone:focus {
+        box-shadow: 0 0 0 2px rgba(212, 175, 55, 0.4) !important;
+        border-color: var(--gold) !important;
+        background: rgba(0, 0, 0, 0.55) !important;
+      }
+      .iti input#phone::placeholder {
+        color: rgba(255, 255, 255, 0.22);
+      }
+
+      /* Flag button */
+      .iti__flag-container {
+        height: 100%;
+      }
+      .iti__selected-flag {
+        background: rgba(0, 0, 0, 0.55) !important;
+        border-right: 1px solid rgba(255, 255, 255, 0.1) !important;
+        border-radius: 0.5rem 0 0 0.5rem !important;
+        padding: 0 0.55rem !important;
+        height: 100%;
+        /* gap: 0.35rem; */
+      }
+      .iti__selected-flag:hover,
+      .iti__selected-flag:focus {
+        background: rgba(212, 175, 55, 0.1) !important;
+      }
+      .iti__selected-dial-code {
+        color: #fff !important;
+        font-size: 0.82rem !important;
+      }
+      .iti__arrow {
+        border-top-color: rgba(255, 255, 255, 0.5) !important;
+      }
+      .iti__arrow--up {
+        border-bottom-color: var(--gold) !important;
+      }
+
+      /* Dropdown */
+      .iti__dropdown-content {
+        background: #141414 !important;
+        border: 1px solid rgba(212, 175, 55, 0.25) !important;
+        border-radius: 0.5rem !important;
+        box-shadow: 0 10px 36px rgba(0, 0, 0, 0.7) !important;
+        z-index: 9999 !important;
+      }
+      .iti__search-input {
+        background: rgba(0, 0, 0, 0.6) !important;
+        border: none !important;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
+        color: #fff !important;
+        padding: 0.5rem 0.75rem !important;
+        font-size: 0.82rem !important;
+        width: 100% !important;
+        outline: none !important;
+      }
+      .iti__search-input::placeholder {
+        color: rgba(255, 255, 255, 0.3) !important;
+      }
+      .iti__country-list {
+        background: transparent !important;
+      }
+      .iti__country {
+        padding: 0.42rem 0.75rem !important;
+        display: flex !important;
+        align-items: center !important;
+        gap: 0.5rem !important;
+      }
+      .iti__country-name {
+        color: #ddd !important;
+        font-size: 0.8rem !important;
+      }
+      .iti__dial-code {
+        color: rgba(212, 175, 55, 0.75) !important;
+        font-size: 0.78rem !important;
+      }
+      .iti__country:hover {
+        background: rgba(212, 175, 55, 0.1) !important;
+      }
+      .iti__country--highlight {
+        background: rgba(212, 175, 55, 0.15) !important;
+      }
+      .iti__divider {
+        border-top: 1px solid rgba(255, 255, 255, 0.08) !important;
+        margin: 0.2rem 0 !important;
+      }
+
+      /* ── Gold button ── */
+      .btn-gold {
+        width: 100%;
+        background: rgba(212, 175, 55, 0.35);
+        color: #000;
+        font-weight: 900;
+        padding: 0.95rem 1rem;
+        border: none;
+        border-radius: 0.5rem;
+        text-transform: uppercase;
+        letter-spacing: 0.15em;
+        font-size: 0.88rem;
+        cursor: not-allowed;
+        opacity: 0.5;
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 0.2rem;
+      }
+      .btn-gold.on {
+        background: var(--gold);
+        opacity: 1;
+        cursor: pointer;
+        box-shadow: 0 0 22px rgba(212, 175, 55, 0.38);
+      }
+      .btn-gold.on:hover {
+        transform: scale(1.01);
+      }
+      .btn-gold.on:active {
+        transform: scale(0.99);
+      }
+      .btn-sub {
+        font-size: 0.54rem;
+        font-weight: 700;
+        opacity: 0.7;
+      }
+
+      .foot-note {
+        margin-top: 0.75rem;
+        font-size: 0.62rem;
+        color: rgba(255, 255, 255, 0.35);
+        line-height: 1.5;
+        font-style: italic;
+        text-align: center;
+      }
+
+      /* ── Step 2 elements ── */
+      .back-btn {
+        background: none;
+        border: none;
+        color: rgba(255, 255, 255, 0.4);
+        font-size: 0.63rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.25rem;
+        margin: 0.7rem auto 0;
+        transition: color 0.25s;
+      }
+      .back-btn:hover {
+        color: var(--gold);
+      }
+
+      .sec-title {
+        font-size: 0.68rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        color: var(--gold);
+        letter-spacing: 0.15em;
+        margin-bottom: 0.8rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .sec-title .dim {
+        color: rgba(255, 255, 255, 0.3);
+        font-weight: 400;
+        letter-spacing: 0.05em;
+      }
+
+      .plan-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 0.65rem;
+        margin-bottom: 1.4rem;
+      }
+      .plan-card {
+        background: rgba(0, 0, 0, 0.3);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 0.5rem;
+        padding: 0.85rem 0.65rem 2rem;
+        cursor: pointer;
+        transition: all 0.25s;
+        position: relative;
+        display: block;
+      }
+      .plan-card:hover {
+        border-color: rgba(212, 175, 55, 0.5);
+      }
+      .plan-card.sel {
+        border-color: var(--gold);
+        background: rgba(212, 175, 55, 0.06);
+      }
+      .plan-name {
+        display: block;
+        font-size: 0.6rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        color: rgba(255, 255, 255, 0.5);
+        margin-bottom: 0.2rem;
+      }
+      .plan-price {
+        display: block;
+        font-size: 1.15rem;
+        font-weight: 700;
+        color: #fff;
+        margin-bottom: 0.35rem;
+      }
+      .plan-info {
+        font-size: 0.57rem;
+        color: rgba(255, 255, 255, 0.4);
+        line-height: 1.3;
+      }
+      .radio-ring {
+        position: absolute;
+        bottom: 0.65rem;
+        right: 0.65rem;
+        width: 14px;
+        height: 14px;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .sel .radio-ring {
+        border-color: var(--gold);
+      }
+      .radio-dot {
+        width: 6px;
+        height: 6px;
+        background: var(--gold);
+        border-radius: 50%;
+        display: none;
+      }
+      .sel .radio-dot {
+        display: block;
+      }
+
+      /* card input row */
+      .card-wrap {
+        position: relative;
+        margin-bottom: 0.85rem;
+      }
+      .card-wrap .inp {
+        padding-right: 5.2rem;
+      }
+      .autofill-btn {
+        position: absolute;
+        right: 0.55rem;
+        top: 50%;
+        transform: translateY(-50%);
+        background: rgba(16, 185, 129, 0.12);
+        border: 1px solid rgba(16, 185, 129, 0.3);
+        color: #10b981;
+        font-size: 0.58rem;
+        font-weight: 800;
+        padding: 0.22rem 0.45rem;
+        border-radius: 0.25rem;
+        text-transform: uppercase;
+        cursor: pointer;
+        white-space: nowrap;
+        transition: background 0.2s;
+      }
+      .autofill-btn:hover {
+        background: rgba(16, 185, 129, 0.22);
+      }
+
+      .two-col {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 0.75rem;
+        margin-bottom: 1.1rem;
+      }
+
+      .summary {
+        background: rgba(0, 0, 0, 0.2);
+        border: 1px solid rgba(255, 255, 255, 0.05);
+        border-radius: 0.5rem;
+        padding: 1.1rem;
+        margin-bottom: 1.2rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .sum-lbl {
+        font-size: 0.58rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        color: rgba(255, 255, 255, 0.4);
+        display: block;
+      }
+      .sum-val {
+        font-weight: 700;
+        font-size: 0.92rem;
+        color: #fff;
+      }
+      .sum-sub {
+        font-size: 0.6rem;
+        color: rgba(255, 255, 255, 0.3);
+        display: block;
+      }
+      .sum-tot {
+        font-size: 1.35rem;
+        font-weight: 800;
+        color: var(--gold);
+        line-height: 1;
+      }
+      .sum-due {
+        font-size: 0.58rem;
+        color: rgba(255, 255, 255, 0.3);
+        text-decoration: line-through;
+        margin-top: 0.2rem;
+      }
+
+      .terms-row {
+        display: flex;
+        gap: 0.65rem;
+        margin-bottom: 1.2rem;
+        align-items: flex-start;
+      }
+      .terms-row input {
+        margin-top: 0.22rem;
+        flex-shrink: 0;
+        accent-color: var(--gold);
+      }
+      .terms-txt {
+        font-size: 0.68rem;
+        color: rgba(255, 255, 255, 0.4);
+        line-height: 1.5;
+      }
+      .terms-txt a {
+        color: var(--gold);
+        text-decoration: underline;
+      }
+
+      .sec-foot {
+        margin-top: 1rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.7rem;
+        color: rgba(255, 255, 255, 0.2);
+        font-size: 0.58rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+      }
+      .sec-foot .ln {
+        height: 1px;
+        width: 18px;
+        background: rgba(255, 255, 255, 0.1);
+      }
+
+      /* paddings */
+      .pad1 {
+        padding: 1.5rem 2rem 1.75rem;
+      }
+      .pad2 {
+        padding: 1.1rem 2rem 2.25rem;
+      }
+      .pad-back {
+        padding: 0 2rem;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="backdrop">
+      <main class="modal-box">
+        <!-- Close -->
+        <button class="btn-x" id="xBtn" aria-label="Close">
+          <svg
+            width="15"
+            height="15"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2.5"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+
+        <!-- Header (fixed) -->
+        <header class="modal-head">
+          <h1 class="modal-title">
+            Start Your <span class="gold">14 Day</span> Free Trial Today!
+          </h1>
+          <nav class="step-nav">
+            <div class="step-tab active" id="tab1">
+              <span class="lbl">Step 1</span>
+              <span class="desc">Tell Us About Your Business</span>
+            </div>
+            <div class="step-tab idle" id="tab2">
+              <span class="lbl">Step 2</span>
+              <span class="desc">Trial Details</span>
+            </div>
+            <div class="step-arrow s1" id="arrow"></div>
+          </nav>
+        </header>
+
+        <!-- ===== STEP 1 ===== -->
+        <div id="panel1" class="active">
+          <form class="pad1" id="form1" novalidate>
+            <div class="fgroup">
+              <label class="flabel" for="cname">Company Name</label>
+              <input
+                class="inp"
+                id="cname"
+                type="text"
+                placeholder="e.g. Aurelian Enterprises"
+                required
+              />
+            </div>
+
+            <div class="fgroup">
+              <label class="flabel" for="fname">Full Name</label>
+              <input
+                class="inp"
+                id="fname"
+                type="text"
+                placeholder="Johnathan Doe"
+                required
+              />
+            </div>
+
+            <div class="fgroup">
+              <label class="flabel" for="email">Email Address</label>
+              <input
+                class="inp"
+                id="email"
+                type="email"
+                placeholder="john@executive.com"
+                required
+              />
+            </div>
+
+            <div class="fgroup">
+              <label class="flabel" for="phone">Phone Number</label>
+              <input
+                id="phone"
+                type="tel"
+                placeholder="000 000 0000"
+                required
+              />
+            </div>
+
+            <div style="margin-top: 0.9rem">
+              <button class="btn-gold" id="s1Btn" type="submit" disabled>
+                Go To Step #2
+              </button>
+              <p class="foot-note">
+                Receive exclusive executive updates, industry news, and bespoke
+                offers via encrypted email and secure text.
+              </p>
+            </div>
+          </form>
+        </div>
+
+        <!-- ===== STEP 2 ===== -->
+        <div id="panel2">
+          <div class="pad-back">
+            <button class="back-btn" id="backBtn" type="button">
+              <svg
+                width="11"
+                height="11"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2.8"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M15 19l-7-7 7-7" />
+              </svg>
+              Go Back to Step 1
+            </button>
+          </div>
+
+          <form class="pad2" id="form2" novalidate>
+            <!-- Plans -->
+            <div class="sec-title">
+              Select Your Plan <span class="dim">Price / Mo</span>
+            </div>
+            <div class="plan-grid">
+              <label class="plan-card sel">
+                <input
+                  class="d-none"
+                  type="radio"
+                  name="plan"
+                  value="starter"
+                  checked
+                />
+                <span class="plan-name">Starter</span>
+                <span class="plan-price">$97</span>
+                <p class="plan-info">
+                  14 Day Trial then $97/mo. Perfect for individuals.
+                </p>
+                <div class="radio-ring"><div class="radio-dot"></div></div>
+              </label>
+              <label class="plan-card">
+                <input
+                  class="d-none"
+                  type="radio"
+                  name="plan"
+                  value="unlimited"
+                />
+                <span class="plan-name">Unlimited</span>
+                <span class="plan-price">$297</span>
+                <p class="plan-info">
+                  14 Day Trial then $297/mo. For growing teams.
+                </p>
+                <div class="radio-ring"><div class="radio-dot"></div></div>
+              </label>
+              <label class="plan-card">
+                <input class="d-none" type="radio" name="plan" value="pro" />
+                <span class="plan-name">Pro</span>
+                <span class="plan-price">$497</span>
+                <p class="plan-info">
+                  14 Day Trial then $497/mo. Enterprise scaling.
+                </p>
+                <div class="radio-ring"><div class="radio-dot"></div></div>
+              </label>
+            </div>
+
+            <!-- Payment -->
+            <div class="sec-title">Payment Details</div>
+            <div class="card-wrap">
+              <input
+                class="inp"
+                id="cardNum"
+                type="text"
+                placeholder="Card number (XXXX XXXX XXXX XXXX)"
+                required
+              />
+              <button class="autofill-btn" type="button">Autofill</button>
+            </div>
+            <div class="two-col">
+              <input
+                class="inp"
+                id="expiry"
+                type="text"
+                placeholder="MM / YY"
+                required
+              />
+              <input
+                class="inp"
+                id="cvc"
+                type="text"
+                placeholder="CVC"
+                required
+              />
+            </div>
+
+            <!-- Summary -->
+            <div class="summary">
+              <div>
+                <span class="sum-lbl">Active Subscription</span>
+                <div class="sum-val" id="sumPlan">$97 Starter Plan</div>
+                <span class="sum-sub">Your trial ends in 14 days</span>
+              </div>
+              <div style="text-align: right">
+                <div class="sum-tot">$0.00</div>
+                <div class="sum-due" id="sumDue">DUE TODAY: $97.00</div>
+              </div>
+            </div>
+
+            <!-- Terms -->
+            <div class="terms-row">
+              <input type="checkbox" id="terms" />
+              <label class="terms-txt" for="terms">
+                I understand that after my 14-day trial, my card will be charged
+                the monthly rate. By continuing, I agree to the
+                <a href="#">Terms of Service</a>.
+              </label>
+            </div>
+
+            <button class="btn-gold" id="s2Btn" type="submit" disabled>
+              <span>Start Free Trial</span>
+              <span class="btn-sub">No commitment, cancel anytime.</span>
+            </button>
+
+            <div class="sec-foot">
+              <div class="ln"></div>
+              <span>Encrypted • Secure • Private</span>
+              <div class="ln"></div>
+            </div>
+          </form>
+        </div>
+      </main>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/intl-tel-input@19.5.7/build/js/intlTelInput.min.js"></script>
+    <script>
+      $(function () {
+        /* ── intl-tel-input ── */
+        const phoneEl = document.getElementById("phone");
+        const iti = window.intlTelInput(phoneEl, {
+          initialCountry: "gb",
+          separateDialCode: true,
+          showSelectedDialCode: true,
+          utilsScript:
+            "https://cdn.jsdelivr.net/npm/intl-tel-input@19.5.7/build/js/utils.js",
+          containerClass: "iti-wrap",
+        });
+
+        /* ── Navigation ── */
+        function goStep(n) {
+          if (n === 1) {
+            $("#panel1").addClass("active");
+            $("#panel2").removeClass("active");
+            $("#tab1").removeClass("done idle").addClass("active");
+            $("#tab2").removeClass("active done").addClass("idle");
+            $("#arrow").removeClass("s2").addClass("s1");
+          } else {
+            $("#panel1").removeClass("active");
+            $("#panel2").addClass("active");
+            $("#tab1").removeClass("active idle").addClass("done");
+            $("#tab2").removeClass("idle done").addClass("active");
+            $("#arrow").removeClass("s1").addClass("s2");
+            $("#panel2").scrollTop(0);
+          }
+        }
+
+        /* ── Step 1 validation ── */
+        function checkS1() {
+          const filled =
+            $("#cname").val().trim() &&
+            $("#fname").val().trim() &&
+            /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test($("#email").val()) &&
+            $(phoneEl).val().trim();
+          const phoneValid = iti.isValidNumber();
+          const ok = filled && phoneValid;
+          $("#s1Btn").prop("disabled", !ok).toggleClass("on", !!ok);
+        }
+
+        $("#cname, #fname, #email").on("input", checkS1);
+        $(phoneEl).on("input keyup", checkS1);
+        phoneEl.addEventListener("countrychange", checkS1);
+
+        $("#form1").on("submit", function (e) {
+          e.preventDefault();
+          if (!iti.isValidNumber()) {
+            phoneEl.style.borderColor = "rgba(239,68,68,.7)";
+            return;
+          }
+          phoneEl.style.borderColor = "";
+          goStep(2);
+        });
+
+        /* ── Back ── */
+        $("#backBtn").on("click", () => goStep(1));
+
+        /* ── Plans ── */
+        const PLANS = {
+          starter: { text: "$97 Starter Plan", due: "DUE TODAY: $97.00" },
+          unlimited: { text: "$297 Unlimited Plan", due: "DUE TODAY: $297.00" },
+          pro: { text: "$497 Pro Plan", due: "DUE TODAY: $497.00" },
+        };
+        $('input[name="plan"]').on("change", function () {
+          $(".plan-card").removeClass("sel");
+          $(this).closest(".plan-card").addClass("sel");
+          const p = PLANS[$(this).val()];
+          $("#sumPlan").text(p.text);
+          $("#sumDue").text(p.due);
+        });
+
+        /* ── Step 2 validation ── */
+        function checkS2() {
+          const ok =
+            $("#terms").is(":checked") && $("#cardNum").val().length >= 12;
+          $("#s2Btn").prop("disabled", !ok).toggleClass("on", ok);
+        }
+        $("#terms, #cardNum").on("change input", checkS2);
+
+        $("#form2").on("submit", function (e) {
+          e.preventDefault();
+          alert("Activating your 14-day free trial...");
+        });
+
+        /* ── Close ── */
+        $("#xBtn").on("click", () => $(".backdrop").fadeOut(300));
+
+        /* ── Auto-format card & expiry ── */
+        $("#cardNum").on("input", function () {
+          let v = $(this).val().replace(/\D/g, "").slice(0, 16);
+          v = v.match(/.{1,4}/g)?.join(" ") || v;
+          $(this).val(v);
+          checkS2();
+        });
+        $("#expiry").on("input", function () {
+          let v = $(this).val().replace(/\D/g, "");
+          if (v.length >= 3) v = v.slice(0, 2) + " / " + v.slice(2, 4);
+          $(this).val(v);
+        });
+      });
+    </script>
+  </body>
+</html>
