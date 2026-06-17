@@ -12,47 +12,20 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/intl-tel-input@19.5.7/build/css/intlTelInput.css"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
     <style>
-      /* ── Design Tokens ── */
-      :root {
-        --color-gold: #d4af37;
-        --color-gold-dim: rgba(212, 175, 55, 0.8);
-        --color-gold-glow: rgba(212, 175, 55, 0.38);
-        --color-gold-subtle: rgba(212, 175, 55, 0.06);
-        --color-gold-border: rgba(212, 175, 55, 0.3);
-        --color-gold-bg: rgba(212, 175, 55, 0.1);
-        --color-gold-faded: rgba(212, 175, 55, 0.35);
-
-        --color-black: #0a0a0a;
-        --color-graphite: #1a1a1a;
-        --color-surface: rgba(0, 0, 0, 0.4);
-        --color-surface-2: rgba(0, 0, 0, 0.2);
-
-        --color-border: rgba(255, 255, 255, 0.1);
-        --color-border-2: rgba(255, 255, 255, 0.05);
-        --color-text-dim: rgba(255, 255, 255, 0.4);
-        --color-text-mute: rgba(255, 255, 255, 0.3);
-        --color-text-faint: rgba(255, 255, 255, 0.2);
-
-        --color-green: #10b981;
-        --color-green-bg: rgba(16, 185, 129, 0.12);
-        --color-green-border: rgba(16, 185, 129, 0.3);
-        --color-green-hover: rgba(16, 185, 129, 0.22);
-
-        --radius-base: 0.5rem;
-        --radius-lg: 0.75rem;
-      }
-
-      /* ── Reset (only what Bootstrap doesn't cover) ── */
+      /* ── Base ── */
       *,
       *::before,
       *::after {
         box-sizing: border-box;
       }
 
-      /* ── Body / Layout ── */
       body {
-        background: var(--color-black);
+        background: #0a0a0a;
         color: #fff;
         min-height: 100vh;
         display: flex;
@@ -77,9 +50,9 @@
 
       /* ── Modal ── */
       .ag-modal {
-        background: var(--color-graphite);
-        border: 1px solid var(--color-gold-border);
-        border-radius: var(--radius-lg);
+        background: #1a1a1a;
+        border: 1px solid rgba(212, 175, 55, 0.3);
+        border-radius: 0.75rem;
         box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.5);
         width: 100%;
         max-width: 500px;
@@ -96,7 +69,7 @@
         }
       }
 
-      /* ── Close Button ── */
+      /* ── Close Btn ── */
       .ag-close {
         position: absolute;
         top: 0.9rem;
@@ -115,12 +88,12 @@
         z-index: 20;
       }
       .ag-close:hover {
-        color: var(--color-gold);
-        background: var(--color-gold-bg);
-        border-color: var(--color-gold-border);
+        color: #d4af37;
+        background: rgba(212, 175, 55, 0.1);
+        border-color: rgba(212, 175, 55, 0.3);
       }
 
-      /* ── Modal Header ── */
+      /* ── Header ── */
       .ag-header {
         flex-shrink: 0;
         padding: 1.75rem 3.25rem 0 2rem;
@@ -134,8 +107,9 @@
         margin-bottom: 1.4rem;
       }
       .ag-gold {
-        color: var(--color-gold);
+        color: #d4af37;
       }
+
       @media (max-width: 400px) {
         .ag-header {
           padding: 1.5rem 3rem 0 1.5rem;
@@ -149,7 +123,7 @@
       /* ── Step Nav ── */
       .ag-steps {
         display: flex;
-        border-bottom: 1px solid var(--color-border);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
         position: relative;
       }
       .ag-step {
@@ -158,16 +132,17 @@
         text-align: center;
       }
       .ag-step.is-active {
-        color: var(--color-gold);
-        border-bottom: 2px solid var(--color-gold);
+        color: #d4af37;
+        border-bottom: 2px solid #d4af37;
       }
       .ag-step.is-done {
-        color: var(--color-gold);
+        color: #d4af37;
         opacity: 0.6;
       }
       .ag-step.is-idle {
-        color: var(--color-text-dim);
+        color: rgba(255, 255, 255, 0.4);
       }
+
       .ag-step-label {
         display: block;
         font-size: 0.72rem;
@@ -178,6 +153,7 @@
       .ag-step-desc {
         font-size: 0.68rem;
       }
+
       @media (max-width: 360px) {
         .ag-step-label {
           font-size: 0.62rem;
@@ -186,6 +162,7 @@
           font-size: 0.6rem;
         }
       }
+
       .ag-step-arrow {
         position: absolute;
         bottom: -1px;
@@ -193,7 +170,7 @@
         height: 0;
         border-left: 6px solid transparent;
         border-right: 6px solid transparent;
-        border-bottom: 6px solid var(--color-gold);
+        border-bottom: 6px solid #d4af37;
         transition: left 0.4s ease;
       }
       .ag-step-arrow.at-1 {
@@ -210,11 +187,11 @@
         display: none;
         flex-shrink: 0;
       }
-      .ag-panel.is-active {
+      .ag-panel.active {
         display: block;
       }
 
-      .ag-panel--scroll {
+      .ag-panel-scroll {
         display: none;
         flex: 1 1 auto;
         overflow-y: auto;
@@ -223,14 +200,14 @@
         scrollbar-color: rgba(212, 175, 55, 0.4) transparent;
         -webkit-overflow-scrolling: touch;
       }
-      .ag-panel--scroll::-webkit-scrollbar {
+      .ag-panel-scroll::-webkit-scrollbar {
         width: 4px;
       }
-      .ag-panel--scroll::-webkit-scrollbar-thumb {
+      .ag-panel-scroll::-webkit-scrollbar-thumb {
         background: rgba(212, 175, 55, 0.4);
         border-radius: 2px;
       }
-      .ag-panel--scroll.is-active {
+      .ag-panel-scroll.active {
         display: block;
       }
 
@@ -240,15 +217,15 @@
         font-size: 0.68rem;
         font-weight: 600;
         text-transform: uppercase;
-        color: var(--color-gold-dim);
+        color: rgba(212, 175, 55, 0.8);
         letter-spacing: 0.05em;
         margin-bottom: 0.3rem;
       }
       .ag-input {
         width: 100%;
-        background: var(--color-surface);
-        border: 1px solid var(--color-border);
-        border-radius: var(--radius-base);
+        background: rgba(0, 0, 0, 0.4);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 0.5rem;
         color: #fff;
         padding: 0.72rem 1rem;
         font-size: max(0.88rem, 16px);
@@ -257,22 +234,22 @@
       }
       .ag-input:focus {
         box-shadow: 0 0 0 2px rgba(212, 175, 55, 0.4);
-        border-color: var(--color-gold);
+        border-color: #d4af37;
         background: rgba(0, 0, 0, 0.55);
       }
       .ag-input::placeholder {
         color: rgba(255, 255, 255, 0.22);
       }
 
-      /* ── intl-tel-input theme ── */
+      /* ── intl-tel-input ── */
       .iti {
         width: 100%;
       }
       .iti input#phone {
         width: 100% !important;
-        background: var(--color-surface) !important;
-        border: 1px solid var(--color-border) !important;
-        border-radius: var(--radius-base) !important;
+        background: rgba(0, 0, 0, 0.4) !important;
+        border: 1px solid rgba(255, 255, 255, 0.1) !important;
+        border-radius: 0.5rem !important;
         color: #fff !important;
         padding: 0.72rem 1rem 0.72rem 5.4rem !important;
         font-size: max(0.88rem, 16px) !important;
@@ -281,7 +258,7 @@
       }
       .iti input#phone:focus {
         box-shadow: 0 0 0 2px rgba(212, 175, 55, 0.4) !important;
-        border-color: var(--color-gold) !important;
+        border-color: #d4af37 !important;
         background: rgba(0, 0, 0, 0.55) !important;
       }
       .iti input#phone::placeholder {
@@ -292,14 +269,14 @@
       }
       .iti__selected-flag {
         background: rgba(0, 0, 0, 0.55) !important;
-        border-right: 1px solid var(--color-border) !important;
-        border-radius: var(--radius-base) 0 0 var(--radius-base) !important;
+        border-right: 1px solid rgba(255, 255, 255, 0.1) !important;
+        border-radius: 0.5rem 0 0 0.5rem !important;
         padding: 0 0.55rem !important;
         height: 100%;
       }
       .iti__selected-flag:hover,
       .iti__selected-flag:focus {
-        background: var(--color-gold-bg) !important;
+        background: rgba(212, 175, 55, 0.1) !important;
       }
       .iti__selected-dial-code {
         color: #fff !important;
@@ -309,12 +286,12 @@
         border-top-color: rgba(255, 255, 255, 0.5) !important;
       }
       .iti__arrow--up {
-        border-bottom-color: var(--color-gold) !important;
+        border-bottom-color: #d4af37 !important;
       }
       .iti__dropdown-content {
         background: #141414 !important;
         border: 1px solid rgba(212, 175, 55, 0.25) !important;
-        border-radius: var(--radius-base) !important;
+        border-radius: 0.5rem !important;
         box-shadow: 0 10px 36px rgba(0, 0, 0, 0.7) !important;
         z-index: 9999 !important;
       }
@@ -349,7 +326,7 @@
         font-size: 0.78rem !important;
       }
       .iti__country:hover {
-        background: var(--color-gold-bg) !important;
+        background: rgba(212, 175, 55, 0.1) !important;
       }
       .iti__country--highlight {
         background: rgba(212, 175, 55, 0.15) !important;
@@ -359,15 +336,15 @@
         margin: 0.2rem 0 !important;
       }
 
-      /* ── Gold CTA Button ── */
+      /* ── CTA Button ── */
       .ag-btn {
         width: 100%;
-        background: var(--color-gold-faded);
+        background: rgba(212, 175, 55, 0.35);
         color: #000;
         font-weight: 900;
         padding: 0.95rem 1rem;
         border: none;
-        border-radius: var(--radius-base);
+        border-radius: 0.5rem;
         text-transform: uppercase;
         letter-spacing: 0.15em;
         font-size: 0.88rem;
@@ -383,10 +360,10 @@
         touch-action: manipulation;
       }
       .ag-btn.is-ready {
-        background: var(--color-gold);
+        background: #d4af37;
         opacity: 1;
         cursor: pointer;
-        box-shadow: 0 0 22px var(--color-gold-glow);
+        box-shadow: 0 0 22px rgba(212, 175, 55, 0.38);
       }
       .ag-btn.is-ready:hover {
         transform: scale(1.01);
@@ -403,17 +380,17 @@
       .ag-footnote {
         margin-top: 0.75rem;
         font-size: 0.62rem;
-        color: var(--color-text-dim);
+        color: rgba(255, 255, 255, 0.4);
         line-height: 1.5;
         font-style: italic;
         text-align: center;
       }
 
-      /* ── Step 2: Back Button ── */
+      /* ── Back Btn ── */
       .ag-back {
         background: none;
         border: none;
-        color: var(--color-text-dim);
+        color: rgba(255, 255, 255, 0.4);
         font-size: 0.63rem;
         font-weight: 700;
         text-transform: uppercase;
@@ -429,7 +406,7 @@
         min-height: 36px;
       }
       .ag-back:hover {
-        color: var(--color-gold);
+        color: #d4af37;
       }
 
       /* ── Section Title ── */
@@ -437,7 +414,7 @@
         font-size: 0.68rem;
         font-weight: 700;
         text-transform: uppercase;
-        color: var(--color-gold);
+        color: #d4af37;
         letter-spacing: 0.15em;
         margin-bottom: 0.8rem;
         display: flex;
@@ -445,7 +422,7 @@
         align-items: center;
       }
       .ag-sec-title .ag-dim {
-        color: var(--color-text-mute);
+        color: rgba(255, 255, 255, 0.3);
         font-weight: 400;
         letter-spacing: 0.05em;
       }
@@ -464,9 +441,9 @@
       }
 
       .ag-plan {
-        background: var(--color-surface-2);
-        border: 1px solid var(--color-border);
-        border-radius: var(--radius-base);
+        background: rgba(0, 0, 0, 0.2);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 0.5rem;
         padding: 0.85rem 0.65rem 2rem;
         cursor: pointer;
         transition: all 0.25s;
@@ -483,8 +460,8 @@
         border-color: rgba(212, 175, 55, 0.5);
       }
       .ag-plan.is-selected {
-        border-color: var(--color-gold);
-        background: var(--color-gold-subtle);
+        border-color: #d4af37;
+        background: rgba(212, 175, 55, 0.06);
       }
 
       .ag-plan-name {
@@ -492,7 +469,7 @@
         font-size: 0.6rem;
         font-weight: 700;
         text-transform: uppercase;
-        color: var(--color-text-dim);
+        color: rgba(255, 255, 255, 0.4);
         margin-bottom: 0.2rem;
       }
       .ag-plan-price {
@@ -504,9 +481,10 @@
       }
       .ag-plan-info {
         font-size: 0.57rem;
-        color: var(--color-text-dim);
+        color: rgba(255, 255, 255, 0.4);
         line-height: 1.3;
       }
+
       @media (max-width: 380px) {
         .ag-plan-price {
           font-size: 1rem;
@@ -532,12 +510,12 @@
         justify-content: center;
       }
       .is-selected .ag-radio {
-        border-color: var(--color-gold);
+        border-color: #d4af37;
       }
       .ag-radio-dot {
         width: 6px;
         height: 6px;
-        background: var(--color-gold);
+        background: #d4af37;
         border-radius: 50%;
         display: none;
       }
@@ -545,7 +523,7 @@
         display: block;
       }
 
-      /* ── Card Number Wrap ── */
+      /* ── Card Number ── */
       .ag-card-wrap {
         position: relative;
         margin-bottom: 0.85rem;
@@ -558,9 +536,9 @@
         right: 0.55rem;
         top: 50%;
         transform: translateY(-50%);
-        background: var(--color-green-bg);
-        border: 1px solid var(--color-green-border);
-        color: var(--color-green);
+        background: rgba(16, 185, 129, 0.12);
+        border: 1px solid rgba(16, 185, 129, 0.3);
+        color: #10b981;
         font-size: 0.58rem;
         font-weight: 800;
         padding: 0.22rem 0.45rem;
@@ -572,14 +550,14 @@
         touch-action: manipulation;
       }
       .ag-autofill:hover {
-        background: var(--color-green-hover);
+        background: rgba(16, 185, 129, 0.22);
       }
 
       /* ── Order Summary ── */
       .ag-summary {
-        background: var(--color-surface-2);
-        border: 1px solid var(--color-border-2);
-        border-radius: var(--radius-base);
+        background: rgba(0, 0, 0, 0.2);
+        border: 1px solid rgba(255, 255, 255, 0.05);
+        border-radius: 0.5rem;
         padding: 1.1rem;
         margin-bottom: 1.2rem;
         display: flex;
@@ -591,7 +569,7 @@
         font-size: 0.58rem;
         font-weight: 700;
         text-transform: uppercase;
-        color: var(--color-text-dim);
+        color: rgba(255, 255, 255, 0.4);
         display: block;
       }
       .ag-sum-val {
@@ -601,22 +579,27 @@
       }
       .ag-sum-sub {
         font-size: 0.6rem;
-        color: var(--color-text-mute);
+        color: rgba(255, 255, 255, 0.3);
         display: block;
       }
       .ag-sum-total {
         font-size: 1.35rem;
         font-weight: 800;
-        color: var(--color-gold);
+        color: #d4af37;
         line-height: 1;
         white-space: nowrap;
       }
       .ag-sum-due {
         font-size: 0.58rem;
-        color: var(--color-text-mute);
+        color: rgba(255, 255, 255, 0.3);
         text-decoration: line-through;
         margin-top: 0.2rem;
       }
+      .ag-sum-right {
+        text-align: right;
+        flex-shrink: 0;
+      }
+
       @media (max-width: 360px) {
         .ag-sum-val {
           font-size: 0.82rem;
@@ -636,18 +619,19 @@
       .ag-terms-row input {
         margin-top: 0.22rem;
         flex-shrink: 0;
-        accent-color: var(--color-gold);
+        accent-color: #d4af37;
         width: 16px;
         height: 16px;
       }
       .ag-terms-txt {
         font-size: 0.68rem;
-        color: var(--color-text-dim);
+        color: rgba(255, 255, 255, 0.4);
         line-height: 1.5;
       }
       .ag-terms-txt a {
-        color: var(--color-gold);
+        color: #d4af37;
         text-decoration: underline;
+        cursor: pointer;
       }
 
       /* ── Secure Footer ── */
@@ -657,7 +641,7 @@
         align-items: center;
         justify-content: center;
         gap: 0.7rem;
-        color: var(--color-text-faint);
+        color: rgba(255, 255, 255, 0.2);
         font-size: 0.58rem;
         font-weight: 700;
         text-transform: uppercase;
@@ -667,7 +651,7 @@
       .ag-secure-line {
         height: 1px;
         width: 18px;
-        background: var(--color-border);
+        background: rgba(255, 255, 255, 0.1);
       }
     </style>
   </head>
@@ -675,18 +659,7 @@
     <div class="ag-backdrop">
       <main class="ag-modal">
         <button class="ag-close" id="xBtn" aria-label="Close">
-          <svg
-            width="15"
-            height="15"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2.5"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-          >
-            <path d="M6 18L18 6M6 6l12 12" />
-          </svg>
+          <i class="fa-solid fa-xmark"></i>
         </button>
 
         <!-- Header -->
@@ -707,8 +680,8 @@
           </nav>
         </header>
 
-        <!-- Step 1 -->
-        <div id="panel1" class="ag-panel is-active">
+        <!-- Panel 1 -->
+        <div id="panel1" class="ag-panel active">
           <form class="px-4 pt-4 pb-4" id="form1" novalidate>
             <div class="mb-3">
               <label class="ag-label" for="cname">Company Name</label>
@@ -765,22 +738,11 @@
           </form>
         </div>
 
-        <!-- Step 2 -->
-        <div id="panel2" class="ag-panel--scroll">
+        <!-- Panel 2 -->
+        <div id="panel2" class="ag-panel-scroll">
           <div class="px-4 text-center">
             <button class="ag-back" id="backBtn" type="button">
-              <svg
-                width="11"
-                height="11"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2.8"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              >
-                <path d="M15 19l-7-7 7-7" />
-              </svg>
+              <i class="fa-solid fa-chevron-left"></i>
               Go Back to Step 1
             </button>
           </div>
@@ -789,6 +751,7 @@
             <div class="ag-sec-title">
               Select Your Plan <span class="ag-dim">Price / Mo</span>
             </div>
+
             <div class="ag-plan-grid">
               <label class="ag-plan is-selected">
                 <input
@@ -831,6 +794,7 @@
             </div>
 
             <div class="ag-sec-title">Payment Details</div>
+
             <div class="ag-card-wrap">
               <input
                 class="ag-input"
@@ -843,6 +807,7 @@
               />
               <button class="ag-autofill" type="button">Autofill</button>
             </div>
+
             <div class="row no-gutters mb-4" style="gap: 0.75rem">
               <div class="col">
                 <input
@@ -874,7 +839,7 @@
                 <div class="ag-sum-val" id="sumPlan">$97 Starter Plan</div>
                 <span class="ag-sum-sub">Your trial ends in 14 days</span>
               </div>
-              <div class="text-right flex-shrink-0">
+              <div class="ag-sum-right">
                 <div class="ag-sum-total">$0.00</div>
                 <div class="ag-sum-due" id="sumDue">DUE TODAY: $97.00</div>
               </div>
@@ -883,8 +848,8 @@
             <div class="ag-terms-row">
               <input type="checkbox" id="terms" />
               <label class="ag-terms-txt" for="terms">
-                I agree to the Terms of Service and Privacy Policy of 10 Ways.
-                <a href="#">Privacy Policy</a>.
+                I agree to the <a href="#">Terms of Service</a> and
+                <a href="#">Privacy Policy</a> of 10 Ways.
               </label>
             </div>
 
@@ -895,7 +860,7 @@
 
             <div class="ag-secure">
               <div class="ag-secure-line"></div>
-              <span>Encrypted • Secure • Private</span>
+              <span>Encrypted &bull; Secure &bull; Private</span>
               <div class="ag-secure-line"></div>
             </div>
           </form>
@@ -917,34 +882,32 @@
             "https://cdn.jsdelivr.net/npm/intl-tel-input@19.5.7/build/js/utils.js",
         });
 
-        /* Step navigation */
+        /* Step nav */
         function goStep(n) {
-          const toStep2 = n === 2;
-          $("#panel1").toggleClass("is-active", !toStep2);
-          $("#panel2").toggleClass("is-active", toStep2);
+          const s2 = n === 2;
+          $("#panel1").toggleClass("active", !s2);
+          $("#panel2").toggleClass("active", s2);
           $("#tab1")
-            .toggleClass("is-active", !toStep2)
-            .toggleClass("is-done", toStep2)
+            .toggleClass("is-active", !s2)
+            .toggleClass("is-done", s2)
             .toggleClass("is-idle", false);
           $("#tab2")
-            .toggleClass("is-active", toStep2)
-            .toggleClass("is-idle", !toStep2)
+            .toggleClass("is-active", s2)
+            .toggleClass("is-idle", !s2)
             .toggleClass("is-done", false);
-          $("#arrow")
-            .toggleClass("at-1", !toStep2)
-            .toggleClass("at-2", toStep2);
-          if (toStep2) $("#panel2").scrollTop(0);
+          $("#arrow").toggleClass("at-1", !s2).toggleClass("at-2", s2);
+          if (s2) $("#panel2").scrollTop(0);
         }
 
         /* Step 1 validation */
         function checkS1() {
-          const valid =
+          const ok =
             $("#cname").val().trim() &&
             $("#fname").val().trim() &&
             /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test($("#email").val()) &&
             $(phoneEl).val().trim() &&
             iti.isValidNumber();
-          $("#s1Btn").prop("disabled", !valid).toggleClass("is-ready", !!valid);
+          $("#s1Btn").prop("disabled", !ok).toggleClass("is-ready", !!ok);
         }
         $("#cname, #fname, #email").on("input", checkS1);
         $(phoneEl).on("input keyup", checkS1);
@@ -979,9 +942,9 @@
 
         /* Step 2 validation */
         function checkS2() {
-          const valid =
+          const ok =
             $("#terms").is(":checked") && $("#cardNum").val().length >= 12;
-          $("#s2Btn").prop("disabled", !valid).toggleClass("is-ready", valid);
+          $("#s2Btn").prop("disabled", !ok).toggleClass("is-ready", ok);
         }
         $("#terms, #cardNum").on("change input", checkS2);
 
@@ -993,7 +956,7 @@
         /* Close */
         $("#xBtn").on("click", () => $(".ag-backdrop").fadeOut(300));
 
-        /* Input formatters */
+        /* Formatters */
         $("#cardNum").on("input", function () {
           let v = $(this).val().replace(/\D/g, "").slice(0, 16);
           v = v.match(/.{1,4}/g)?.join(" ") || v;

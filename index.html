@@ -1,17 +1,13 @@
 <!doctype html>
-
-<html class="dark" lang="en">
+<html class="cn-theme" lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-    <!-- Bootstrap 4.6.0 for Modals and Grid functionality as requested -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
       rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+      crossorigin="anonymous"
     />
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
     <link
       href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@300;400;500;600;700;800&amp;display=swap"
       rel="stylesheet"
@@ -20,1863 +16,3163 @@
       href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
       rel="stylesheet"
     />
-    <script id="tailwind-config">
-      tailwind.config = {
-        darkMode: "class",
-        theme: {
-          extend: {
-            colors: {
-              "tertiary-fixed-dim": "#dfc29f",
-              "surface-tint": "#e9c349",
-              primary: "#f2ca50",
-              "surface-variant": "#353534",
-              surface: "#131313",
-              "surface-bright": "#393939",
-              "on-surface-variant": "#d0c5af",
-              "inverse-primary": "#735c00",
-              "primary-fixed-dim": "#e9c349",
-              "on-tertiary-fixed-variant": "#574329",
-              "on-error": "#690005",
-              "on-primary": "#3c2f00",
-              background: "#131313",
-              tertiary: "#e7c9a6",
-              "surface-container-low": "#1c1b1b",
-              "on-primary-container": "#554300",
-              "on-background": "#e5e2e1",
-              "error-container": "#93000a",
-              "tertiary-fixed": "#fcdeba",
-              "on-secondary-container": "#c5b79f",
-              "on-secondary-fixed-variant": "#4f4533",
-              "on-surface": "#e5e2e1",
-              "surface-dim": "#131313",
-              "primary-container": "#d4af37",
-              "on-tertiary-fixed": "#281903",
-              "secondary-container": "#524835",
-              "surface-container-high": "#2a2a2a",
-              "on-tertiary-container": "#554127",
-              "outline-variant": "#4d4635",
-              "inverse-surface": "#e5e2e1",
-              "secondary-fixed-dim": "#d3c5ad",
-              "on-error-container": "#ffdad6",
-              "primary-fixed": "#ffe088",
-              outline: "#99907c",
-              "on-secondary": "#382f1e",
-              "surface-container": "#201f1f",
-              "secondary-fixed": "#f0e0c8",
-              "on-primary-fixed-variant": "#574500",
-              "surface-container-lowest": "#0e0e0e",
-              "on-primary-fixed": "#241a00",
-              "tertiary-container": "#caae8c",
-              "surface-container-highest": "#353534",
-              secondary: "#d3c5ad",
-              "on-secondary-fixed": "#221b0b",
-              error: "#ffb4ab",
-              "inverse-on-surface": "#313030",
-              "on-tertiary": "#3f2d15",
-            },
-            borderRadius: {
-              DEFAULT: "0.25rem",
-              lg: "0.5rem",
-              xl: "0.75rem",
-              full: "9999px",
-            },
-            spacing: {
-              "margin-mobile": "16px",
-              "container-max": "1280px",
-              "margin-desktop": "40px",
-              gutter: "24px",
-              base: "8px",
-            },
-            fontFamily: {
-              "body-md": ["Hanken Grotesk"],
-              "label-md": ["Hanken Grotesk"],
-              "label-sm": ["Hanken Grotesk"],
-              "headline-md": ["Hanken Grotesk"],
-              "display-lg-mobile": ["Hanken Grotesk"],
-              "headline-sm": ["Hanken Grotesk"],
-              "display-lg": ["Hanken Grotesk"],
-              "body-lg": ["Hanken Grotesk"],
-            },
-            fontSize: {
-              "body-md": ["16px", { lineHeight: "24px", fontWeight: "400" }],
-              "label-md": [
-                "14px",
-                {
-                  lineHeight: "20px",
-                  letterSpacing: "0.01em",
-                  fontWeight: "500",
-                },
-              ],
-              "label-sm": [
-                "12px",
-                {
-                  lineHeight: "16px",
-                  letterSpacing: "0.05em",
-                  fontWeight: "600",
-                },
-              ],
-              "headline-md": [
-                "24px",
-                { lineHeight: "32px", fontWeight: "600" },
-              ],
-              "display-lg-mobile": [
-                "32px",
-                {
-                  lineHeight: "40px",
-                  letterSpacing: "-0.02em",
-                  fontWeight: "700",
-                },
-              ],
-              "headline-sm": [
-                "20px",
-                { lineHeight: "28px", fontWeight: "600" },
-              ],
-              "display-lg": [
-                "48px",
-                {
-                  lineHeight: "56px",
-                  letterSpacing: "-0.02em",
-                  fontWeight: "700",
-                },
-              ],
-              "body-lg": ["18px", { lineHeight: "28px", fontWeight: "400" }],
-            },
-          },
-        },
-      };
-    </script>
-    <style>
-      body {
-        background-color: #131313;
-        color: #e5e2e1;
+    <style id="cn-embedded-theme">
+      html.cn-theme {
+        scroll-behavior: smooth;
       }
-      .material-symbols-outlined {
+
+      .cn-scroll-anchor {
+        scroll-margin-top: 5.5rem;
+      }
+
+      html.cn-theme,
+      html.cn-theme body {
+        background: #131313;
+      }
+
+      html.cn-theme body {
+        font-family:
+          "Hanken Grotesk",
+          system-ui,
+          -apple-system,
+          BlinkMacSystemFont,
+          "Segoe UI",
+          sans-serif;
+        background-color: #131313 !important;
+        color: #e5e2e1 !important;
+        -webkit-font-smoothing: antialiased;
+      }
+
+      html.cn-theme body::selection {
+        background: #f2ca50;
+        color: #3c2f00;
+      }
+
+      .cn-layout-max {
+        width: 100%;
+        max-width: 1280px;
+        margin-left: auto;
+        margin-right: auto;
+        padding-left: 40px;
+        padding-right: 40px;
+      }
+
+      @media (max-width: 767.98px) {
+        .cn-layout-max {
+          padding-left: 16px;
+          padding-right: 16px;
+        }
+      }
+
+      .cn-icon {
+        font-family: "Material Symbols Outlined", sans-serif;
         font-variation-settings:
           "FILL" 0,
           "wght" 300,
           "GRAD" 0,
           "opsz" 24;
+        font-style: normal;
+        line-height: 1;
+        display: inline-block;
+        vertical-align: middle;
       }
-      .brushed-gold-icon {
+
+      .cn-icon-gold {
         background: linear-gradient(135deg, #f2ca50 0%, #8b7355 100%);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
+        background-clip: text;
       }
-      .card-inner-glow {
+
+      .cn-surface-sheen {
         box-shadow: inset 0 1px 0 0 rgba(242, 202, 80, 0.1);
       }
-      .hero-glow {
+
+      .cn-hero-glow-bg {
         background: radial-gradient(
           circle at 50% 50%,
           rgba(242, 202, 80, 0.08) 0%,
           transparent 70%
         );
       }
-      .comparison-gradient {
+
+      .cn-gradient-fade {
         background: linear-gradient(
           to bottom,
           rgba(242, 202, 80, 0.05) 0%,
           transparent 100%
         );
       }
-      .sticky-cta-btn {
-        position: fixed;
-        top: 14px;
-        right: 180px;
-        z-index: 60;
+
+      .cn-hero-texture {
+        background-image: url("https://www.transparenttextures.com/patterns/carbon-fibre.png");
       }
-      /* Overriding Bootstrap default styles to match theme */
-      .modal-content {
+
+      .cn-font-display {
+        font-family: "Hanken Grotesk", system-ui, sans-serif;
+      }
+
+      .cn-text-display {
+        font-size: 48px;
+        line-height: 56px;
+        letter-spacing: -0.02em;
+        font-weight: 700;
+      }
+
+      .cn-text-display-sm {
+        font-size: 32px;
+        line-height: 40px;
+        letter-spacing: -0.02em;
+        font-weight: 700;
+      }
+
+      @media (min-width: 768px) {
+        .cn-text-display-md-up {
+          font-size: 48px;
+          line-height: 56px;
+          letter-spacing: -0.02em;
+          font-weight: 700;
+        }
+      }
+
+      .cn-text-heading-md {
+        font-size: 24px;
+        line-height: 32px;
+        font-weight: 600;
+      }
+
+      .cn-text-heading-sm {
+        font-size: 20px;
+        line-height: 28px;
+        font-weight: 600;
+      }
+
+      .cn-text-lead-size {
+        font-size: 18px;
+        line-height: 28px;
+        font-weight: 400;
+      }
+
+      .cn-text-body {
+        font-size: 16px;
+        line-height: 24px;
+        font-weight: 400;
+      }
+
+      .cn-text-label {
+        font-size: 14px;
+        line-height: 20px;
+        letter-spacing: 0.01em;
+        font-weight: 500;
+      }
+
+      .cn-text-caption {
+        font-size: 12px;
+        line-height: 16px;
+        letter-spacing: 0.05em;
+        font-weight: 600;
+      }
+
+      .cn-text-gold {
+        color: #f2ca50 !important;
+      }
+
+      .cn-text-on-primary {
+        color: #3c2f00 !important;
+      }
+
+      .cn-text-on-primary-fixed {
+        color: #241a00 !important;
+      }
+
+      .cn-text-on-background {
+        color: #e5e2e1 !important;
+      }
+
+      .cn-text-on-surface {
+        color: #e5e2e1 !important;
+      }
+
+      .cn-text-muted {
+        color: #d0c5af !important;
+      }
+
+      .cn-text-muted-soft {
+        color: rgba(208, 197, 175, 0.8);
+      }
+
+      .cn-text-muted-faint {
+        color: rgba(208, 197, 175, 0.6);
+      }
+
+      .cn-text-error {
+        color: #ffb4ab !important;
+      }
+
+      .cn-text-gold-soft {
+        color: rgba(242, 202, 80, 0.7);
+      }
+
+      .cn-brand {
+        font-family: "Hanken Grotesk", system-ui, sans-serif;
+        font-weight: 700;
+        color: #f2ca50 !important;
+        letter-spacing: -0.025em;
+        font-size: 20px;
+        line-height: 28px;
+      }
+
+      @media (min-width: 768px) {
+        .cn-brand {
+          font-size: 48px;
+          line-height: 56px;
+          letter-spacing: -0.02em;
+        }
+      }
+
+      .cn-title-hero {
+        font-family: "Hanken Grotesk", system-ui, sans-serif;
+        font-size: 32px;
+        line-height: 40px;
+        letter-spacing: -0.02em;
+        font-weight: 700;
+        color: #f2ca50 !important;
+        filter: drop-shadow(0 1px 1px rgba(0, 0, 0, 0.25));
+        margin-bottom: 1.5rem;
+      }
+
+      @media (min-width: 768px) {
+        .cn-title-hero {
+          font-size: 48px;
+          line-height: 56px;
+        }
+      }
+
+      .cn-title-section {
+        font-family: "Hanken Grotesk", system-ui, sans-serif;
+        font-size: 48px;
+        line-height: 56px;
+        letter-spacing: -0.02em;
+        font-weight: 700;
+        color: #f2ca50 !important;
+        margin-bottom: 1.5rem;
+      }
+
+      .cn-quote-title {
+        font-size: 24px;
+        line-height: 32px;
+        font-weight: 600;
+        color: #f2ca50 !important;
+        margin-bottom: 1.5rem;
+        font-style: italic;
+      }
+
+      .cn-heading {
+        font-size: 20px;
+        line-height: 28px;
+        font-weight: 600;
+        color: #f2ca50 !important;
+        margin-bottom: 0.5rem;
+      }
+
+      .cn-heading-tier {
+        font-size: 24px;
+        line-height: 32px;
+        font-weight: 600;
+        color: #f2ca50 !important;
+        margin-bottom: 0.5rem;
+      }
+
+      .cn-prose-lead {
+        font-size: 18px;
+        line-height: 1.625;
+        font-weight: 400;
+        color: #d0c5af !important;
+      }
+
+      .cn-prose-lead.cn-prose-lead--hero {
+        margin-bottom: 2.5rem;
+      }
+
+      /* Matches former inline price sizing (Bootstrap has no exact utility) */
+      .cn-text-price-display {
+        font-size: 2.25rem;
+        line-height: 1.2;
+      }
+
+      .cn-card-summary {
+        font-size: 16px;
+        line-height: 24px;
+        font-weight: 400;
+        color: rgba(208, 197, 175, 0.8);
+        margin-bottom: 1.5rem;
+      }
+
+      .cn-footer-brand {
+        font-size: 20px;
+        line-height: 28px;
+        font-weight: 600;
+        color: #f2ca50 !important;
+      }
+
+      .cn-heading.cn-heading-plain {
+        margin-bottom: 0 !important;
+      }
+
+      .cn-modal-title {
+        font-family: "Hanken Grotesk", system-ui, sans-serif;
+        font-size: 24px;
+        line-height: 32px;
+        font-weight: 600;
+        color: #f2ca50 !important;
+        margin-bottom: 1.5rem;
+      }
+
+      /* Surfaces */
+      .cn-bg-page {
+        background-color: #131313 !important;
+      }
+
+      .cn-bg-surface {
+        background-color: #131313 !important;
+      }
+
+      .cn-bg-surface-low {
+        background-color: #1c1b1b !important;
+      }
+
+      .cn-bg-surface-high {
+        background-color: #2a2a2a !important;
+      }
+
+      .cn-bg-surface-darkest {
+        background-color: #0e0e0e !important;
+      }
+
+      .cn-bg-primary {
+        background-color: #f2ca50 !important;
+      }
+
+      .cn-bg-modal-overlay {
+        background-color: rgba(19, 19, 19, 0.8);
+        backdrop-filter: blur(4px);
+      }
+
+      /* Borders */
+      .cn-border-faint {
+        border: 1px solid rgba(77, 70, 53, 0.1);
+      }
+
+      .cn-border-footer-top {
+        border-top: 1px solid rgba(77, 70, 53, 0.15);
+      }
+
+      .cn-border-soft {
+        border-color: rgba(77, 70, 53, 0.2);
+      }
+
+      .cn-border-medium {
+        border-color: rgba(77, 70, 53, 0.3);
+      }
+
+      .cn-border-y-soft {
+        border-top: 1px solid rgba(77, 70, 53, 0.1);
+        border-bottom: 1px solid rgba(77, 70, 53, 0.1);
+      }
+
+      .cn-border-y-strong {
+        border-top: 1px solid rgba(77, 70, 53, 0.2);
+        border-bottom: 1px solid rgba(77, 70, 53, 0.2);
+      }
+
+      .cn-border-bottom-soft {
+        border-bottom: 1px solid rgba(77, 70, 53, 0.2);
+      }
+
+      .cn-border-top-soft {
+        border-top: 1px solid rgba(77, 70, 53, 0.2);
+      }
+
+      .cn-border-top-gold {
+        border-top: 1px solid rgba(242, 202, 80, 0.2);
+      }
+
+      .cn-border-gold-soft {
+        border: 1px solid rgba(242, 202, 80, 0.2);
+      }
+
+      .cn-border-gold-medium {
+        border: 2px solid rgba(242, 202, 80, 0.3);
+      }
+
+      .cn-border-gold-bold {
+        border: 2px solid rgba(242, 202, 80, 0.4);
+      }
+
+      .cn-border-gold-solid {
+        border: 2px solid #f2ca50;
+      }
+
+      .cn-border-avatar {
+        border: 1px solid rgba(153, 144, 124, 0.3);
+      }
+
+      .cn-radius-lg {
+        border-radius: 0.5rem !important;
+      }
+
+      .cn-radius-xl {
+        border-radius: 0.75rem !important;
+      }
+
+      .cn-radius-pill {
+        border-radius: 9999px;
+      }
+
+      .cn-pad-y-sm {
+        padding-top: 0.4rem;
+        padding-bottom: 0.4rem;
+      }
+
+      .cn-pad-y-lg {
+        padding-top: 1.25rem;
+        padding-bottom: 1.25rem;
+      }
+
+      .cn-pad-x-button {
+        padding-left: 2.5rem;
+        padding-right: 2.5rem;
+      }
+
+      .cn-pad-x-wide {
+        padding-left: 3rem;
+        padding-right: 3rem;
+      }
+
+      .cn-pad-x-hero {
+        padding-left: 4rem;
+        padding-right: 4rem;
+      }
+
+      .cn-pad-section {
+        padding-top: 4rem;
+        padding-bottom: 4rem;
+      }
+
+      .cn-pad-section-tall {
+        padding-top: 5rem;
+        padding-bottom: 5rem;
+      }
+
+      .cn-pad-section-xl {
+        padding-top: 6rem;
+        padding-bottom: 6rem;
+      }
+
+      .cn-pad-hero {
+        padding-top: 6rem;
+        padding-bottom: 6rem;
+      }
+
+      .cn-margin-below {
+        margin-bottom: 1.5rem;
+      }
+
+      .cn-margin-below-medium {
+        margin-bottom: 2rem;
+      }
+
+      .cn-margin-below-large {
+        margin-bottom: 2.5rem;
+      }
+
+      .cn-margin-below-section {
+        margin-bottom: 4rem;
+      }
+
+      .cn-margin-below-xl {
+        margin-bottom: 5rem;
+      }
+
+      .cn-margin-top-large {
+        margin-top: 4rem;
+      }
+
+      .cn-margin-top-section {
+        margin-top: 6rem;
+      }
+
+      .cn-measure-narrow {
+        max-width: 42rem;
+      }
+
+      .cn-measure-medium {
+        max-width: 48rem;
+      }
+
+      .cn-measure-wide {
+        max-width: 56rem;
+      }
+
+      .cn-measure-modal {
+        max-width: 42rem;
+      }
+
+      .cn-site-header {
+        position: sticky;
+        top: 0;
+        z-index: 50;
+        background-color: #131313;
+        border-bottom: 1px solid rgba(77, 70, 53, 0.2);
+      }
+
+      .cn-nav-link {
+        color: #f2ca50 !important;
+        font-weight: 500;
+        text-decoration: none !important;
+        transition:
+          color 0.3s ease,
+          border-color 0.3s ease;
+        border-bottom: 2px solid transparent;
+        padding-bottom: 0.25rem;
+      }
+
+      .cn-nav-link:hover {
+        color: #fcf0a8 !important;
+      }
+
+      .cn-nav-link-active {
+        color: #f2ca50 !important;
+        font-weight: 700;
+        border-bottom-color: #f2ca50;
+      }
+
+      .cn-nav-row {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+      }
+
+      .cn-nav-row > a + a {
+        margin-left: 24px;
+      }
+
+      .cn-hero-buttons {
+        gap: 8px;
+      }
+
+      @media (min-width: 576px) {
+        .cn-hero-buttons {
+          flex-direction: row !important;
+          justify-content: center;
+          gap: 24px;
+        }
+      }
+
+      .cn-avatar {
+        width: 2.5rem;
+        height: 2.5rem;
+        border-radius: 9999px;
+        object-fit: cover;
+      }
+
+      .cn-btn {
+        display: inline-block;
+        font-family: inherit;
+        text-align: center;
+        vertical-align: middle;
+        user-select: none;
+        border: 1px solid transparent;
+        transition: all 0.15s ease;
+        cursor: pointer;
+      }
+
+      .cn-btn:focus {
+        outline: 0;
+      }
+
+      .cn-btn-primary {
+        background-color: #f2ca50;
+        color: #3c2f00 !important;
+        font-weight: 700;
+        border-radius: 0.5rem;
+      }
+
+      .cn-btn-primary:hover {
+        filter: brightness(1.1);
+        color: #3c2f00 !important;
+        text-decoration: none;
+      }
+
+      .cn-btn-primary:active {
+        transform: scale(0.95);
+      }
+
+      .cn-btn-primary.cn-btn-glow-sm {
+        box-shadow:
+          0 10px 15px -3px rgba(242, 202, 80, 0.2),
+          0 4px 6px -4px rgba(242, 202, 80, 0.15);
+      }
+
+      .cn-btn-primary.cn-btn-glow-md {
+        box-shadow:
+          0 20px 25px -5px rgba(242, 202, 80, 0.25),
+          0 8px 10px -6px rgba(242, 202, 80, 0.2);
+      }
+
+      .cn-btn-primary.cn-btn-glow-lg {
+        box-shadow:
+          0 25px 50px -12px rgba(242, 202, 80, 0.25),
+          0 10px 15px -3px rgba(0, 0, 0, 0.2);
+      }
+
+      .cn-btn-outline {
+        background-color: #2a2a2a;
+        color: #f2ca50 !important;
+        border: 1px solid rgba(242, 202, 80, 0.4);
+        font-weight: 700;
+        border-radius: 0.5rem;
+      }
+
+      .cn-btn-outline:hover {
+        background-color: rgba(242, 202, 80, 0.05);
+        color: #f2ca50 !important;
+        text-decoration: none;
+      }
+
+      .cn-btn-outline.cn-btn-outline-fill-hover:hover {
+        background-color: #f2ca50;
+        color: #3c2f00 !important;
+      }
+
+      .cn-btn-outline:active {
+        transform: scale(0.95);
+      }
+
+      .cn-icon-sm {
+        font-size: 1rem;
+        width: 1em;
+        height: 1em;
+      }
+
+      .cn-icon-md {
+        font-size: 1.5rem;
+      }
+
+      .cn-icon-lg {
+        font-size: 2.25rem;
+      }
+
+      .cn-icon-xl {
+        font-size: 3.75rem;
+      }
+
+      .cn-card-agent {
+        position: relative;
         background-color: #1c1b1b;
+        border: 2px solid rgba(242, 202, 80, 0.4);
+        border-radius: 0.75rem;
+        padding: 24px;
+        display: flex;
+        flex-direction: column;
+        min-height: 100%;
+        transition:
+          border-color 0.3s ease,
+          box-shadow 0.3s ease;
+      }
+
+      .cn-agent-badge {
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+        width: 1.5rem;
+        height: 1.5rem;
+        border-radius: 9999px;
         border: 1px solid rgba(242, 202, 80, 0.3);
-        color: #e5e2e1;
-        box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
-      }
-      .modal-header {
-        border-bottom: 1px solid rgba(242, 202, 80, 0.1);
-      }
-      .modal-footer {
-        border-top: 1px solid rgba(242, 202, 80, 0.1);
-      }
-      .close {
+        background: rgba(242, 202, 80, 0.1);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 12px;
+        line-height: 16px;
+        letter-spacing: 0.05em;
+        font-weight: 600;
         color: #f2ca50;
-        text-shadow: none;
-        opacity: 0.8;
       }
-      .close:hover {
-        color: #f2ca50;
-        opacity: 1;
-      }
-      .agent-card-desc {
+
+      .cn-agent-card-desc {
+        font-size: 16px;
+        line-height: 24px;
+        font-weight: 400;
+        color: rgba(208, 197, 175, 0.8);
+        margin-bottom: 1.5rem;
         display: -webkit-box;
         -webkit-line-clamp: 4;
         -webkit-box-orient: vertical;
         overflow: hidden;
-        min-height: 96px; /* Approx 4 lines of body-md */
+        min-height: 96px;
       }
-      @media (max-width: 1024px) {
-        .sticky-cta-btn {
-          display: none;
+
+      .cn-agents-hero-img {
+        border-radius: 0.75rem;
+        overflow: hidden;
+        border: 1px solid rgba(242, 202, 80, 0.2);
+        box-shadow: 0 25px 50px -12px rgba(242, 202, 80, 0.1);
+      }
+
+      .cn-agents-hero-img img {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+        display: block;
+      }
+
+      .cn-card-agent:hover {
+        border-color: #f2ca50;
+      }
+
+      .cn-pricing-card {
+        background-color: #1c1b1b;
+        border-radius: 0.75rem;
+        padding: 24px;
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+      }
+
+      .cn-pricing-border-soft {
+        border: 2px solid rgba(242, 202, 80, 0.3);
+      }
+
+      .cn-pricing-featured {
+        border: 2px solid #f2ca50;
+        position: relative;
+        z-index: 10;
+        transform: scale(1.05);
+        box-shadow:
+          0 25px 50px -12px rgba(242, 202, 80, 0.2),
+          0 10px 15px -3px rgba(242, 202, 80, 0.15);
+      }
+
+      .cn-badge-popular {
+        position: absolute;
+        top: -1rem;
+        left: 50%;
+        transform: translateX(-50%);
+        background: #f2ca50;
+        color: #3c2f00;
+        padding: 0.25rem 1rem;
+        border-radius: 9999px;
+        font-size: 12px;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        white-space: nowrap;
+      }
+
+      .cn-price-row {
+        display: flex;
+        align-items: baseline;
+        gap: 0.25rem;
+      }
+
+      .cn-checklist {
+        list-style: none;
+        padding-left: 0;
+        margin: 0 0 2.5rem;
+      }
+
+      .cn-checklist li {
+        display: flex;
+        align-items: flex-start;
+        gap: 0.5rem;
+        margin-bottom: 1rem;
+        color: #d0c5af;
+      }
+
+      .cn-checklist li:last-child {
+        margin-bottom: 0;
+      }
+
+      .cn-module-line {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        color: #d0c5af;
+        font-size: 18px;
+        line-height: 22px;
+        font-weight: 400;
+      }
+
+      .cn-module-line > .cn-icon {
+        font-size: 1.6rem;
+        width: 1.4rem;
+        height: 1.4rem;
+        flex-shrink: 0;
+      }
+
+      .cn-row-modules.cn-row-tight > [class*="col-"] {
+        margin-bottom: 1.8rem !important;
+      }
+
+      /* xc-* = enterprise compare table (short names; no Bootstrap in selectors) */
+      .xc-box {
+        background-color: #1c1b1b;
+        border: 1px solid rgba(77, 70, 53, 0.2);
+        border-radius: 0.75rem;
+        overflow: hidden;
+        box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.45);
+      }
+
+      .xc-hd {
+        background-color: #2a2a2a;
+        border-bottom: 1px solid rgba(77, 70, 53, 0.3);
+        padding: 1.5rem 2rem;
+      }
+
+      .xc-rw {
+        padding: 1.25rem 2rem;
+        align-items: center;
+        transition: background-color 0.15s ease;
+      }
+
+      .xc-rw:hover {
+        background-color: rgba(57, 57, 57, 0.05);
+      }
+
+      .xc-rw + .xc-rw {
+        border-top: 1px solid rgba(77, 70, 53, 0.1);
+      }
+
+      .xc-ft {
+        background-color: #2a2a2a;
+        padding: 2rem;
+        border-top: 1px solid rgba(242, 202, 80, 0.2);
+      }
+
+      .xc-scr {
+        width: 100%;
+      }
+
+      .cn-faq-section {
+        background-color: #000000;
+      }
+
+      .cn-faq-section .cn-faq-intro {
+        color: #f2ca50 !important;
+      }
+
+      .cn-faq-stack {
+        max-width: 48rem;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .cn-faq-item {
+        background-color: #141414;
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        border-radius: 12px;
+        margin-bottom: 0.75rem;
+        overflow: hidden;
+        transition:
+          border-color 0.2s ease,
+          box-shadow 0.2s ease;
+      }
+
+      .cn-faq-item:last-child {
+        margin-bottom: 0;
+      }
+
+      .cn-faq-item:hover {
+        border-color: rgba(255, 255, 255, 0.12);
+      }
+
+      .cn-faq-trigger {
+        width: 100%;
+        background: transparent;
+        border: 0;
+        padding: 1.125rem 1.25rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 1rem;
+        text-align: left;
+        cursor: pointer;
+      }
+
+      .cn-faq-trigger:focus {
+        outline: none;
+      }
+
+      .cn-faq-trigger .cn-heading,
+      .cn-faq-trigger h3 {
+        color: #e8e6e4 !important;
+        font-weight: 600;
+        font-size: 1rem;
+        line-height: 1.45;
+      }
+
+      @media (min-width: 768px) {
+        .cn-faq-trigger .cn-heading,
+        .cn-faq-trigger h3 {
+          font-size: 1.0625rem;
         }
       }
-      /* Utility overrides to keep Bootstrap from clashing with Tailwind layout */
-      .container-fluid {
-        padding-left: 0;
-        padding-right: 0;
+
+      .cn-faq-trigger .faq-icon {
+        flex-shrink: 0;
+        font-size: 1.5rem;
+        width: 1.5rem;
+        height: 1.5rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: transform 0.3s ease;
+      }
+
+      .cn-faq-panel {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease-in-out;
+      }
+
+      .cn-faq-answer {
+        margin: 0;
+        padding: 0 1.25rem 1.125rem;
+        color: rgba(208, 197, 175, 0.85);
+        font-size: 0.9375rem;
+        line-height: 1.55;
+      }
+
+      .cn-modal-root {
+        position: fixed;
+        inset: 0;
+        z-index: 100;
+        padding: 16px;
+      }
+
+      .cn-modal-panel {
+        position: relative;
+        background-color: #0e0e0e;
+        border: 2px solid rgba(242, 202, 80, 0.3);
+        border-radius: 0.75rem;
+        padding: 24px;
+        width: 100%;
+        max-width: 500px;
+        margin: auto;
+        box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.45);
+      }
+
+      .cn-modal-close {
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+        background: none;
+        border: 0;
+        padding: 0;
+        color: #d0c5af;
+        cursor: pointer;
+        line-height: 1;
+      }
+
+      .cn-modal-close:hover {
+        color: #f2ca50;
+      }
+
+      .cn-footer-link {
+        color: #d0c5af;
+        text-decoration: none !important;
+        font-size: 12px;
+        line-height: 16px;
+        letter-spacing: 0.05em;
+        font-weight: 600;
+        transition: color 0.2s ease;
+      }
+
+      .cn-footer-link:hover {
+        color: #e7c9a6;
+      }
+
+      .cn-row-tight {
+        margin-left: calc(24px / -2);
+        margin-right: calc(24px / -2);
+      }
+
+      .cn-row-tight > div {
+        padding-left: calc(24px / 2);
+        padding-right: calc(24px / 2);
+      }
+
+      .cn-text-shadow-title {
+        filter: drop-shadow(0 1px 1px rgba(0, 0, 0, 0.25));
+      }
+
+      .cn-tracking-tight {
+        letter-spacing: -0.025em;
+      }
+
+      .cn-tracking-widest {
+        letter-spacing: 0.1em;
+      }
+
+      .cn-tracking-wide {
+        letter-spacing: 0.05em;
+      }
+
+      .cn-leading-relaxed {
+        line-height: 1.625;
+      }
+
+      .cn-leading-tight {
+        line-height: 1.25;
+      }
+
+      .cn-italic {
+        font-style: italic;
+      }
+
+      .cn-uppercase {
+        text-transform: uppercase;
+      }
+
+      .cn-opacity-muted {
+        opacity: 0.1;
+      }
+
+      .cn-z-raised {
+        z-index: 10;
+      }
+
+      .cn-absolute-fill {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+      }
+
+      .cn-pointer-none {
+        pointer-events: none;
+      }
+
+      .cn-agent-modal-copy {
+        max-width: 36rem;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .cn-agent-modal-para {
+        font-size: 16px;
+        line-height: 26px;
+        text-align: center;
+      }
+
+      .cn-card-agent .cn-btn.cn-btn-primary.cn-btn-card {
+        width: 100%;
+        padding-top: 0.75rem;
+        padding-bottom: 0.75rem;
+        border-radius: 0.5rem !important;
+        color: #241a00 !important;
+        font-size: 14px;
+        line-height: 20px;
+        letter-spacing: 0.01em;
+        font-weight: 700;
+        margin-top: auto;
+      }
+
+      @media (max-width: 767.98px) {
+        html.cn-theme,
+        html.cn-theme body {
+          overflow-x: hidden;
+        }
+
+        .cn-title-section {
+          font-size: 28px;
+          line-height: 34px;
+          letter-spacing: -0.02em;
+        }
+
+        .cn-quote-title {
+          font-size: 20px;
+          line-height: 28px;
+        }
+
+        .cn-prose-lead {
+          font-size: 16px;
+          line-height: 26px;
+        }
+
+        .cn-pad-hero {
+          padding-top: 3rem;
+          padding-bottom: 3rem;
+        }
+
+        .cn-pad-section {
+          padding-top: 2.5rem;
+          padding-bottom: 2.5rem;
+        }
+
+        .cn-pad-section-tall {
+          padding-top: 3rem;
+          padding-bottom: 3rem;
+        }
+
+        .cn-pad-section-xl {
+          padding-top: 3rem;
+          padding-bottom: 3rem;
+        }
+
+        .cn-margin-top-section {
+          margin-top: 3rem;
+        }
+
+        .cn-margin-below-section {
+          margin-bottom: 2.5rem;
+        }
+
+        .cn-margin-below-xl {
+          margin-bottom: 3rem;
+        }
+
+        .cn-pad-x-hero {
+          padding-left: 1.25rem;
+          padding-right: 1.25rem;
+        }
+
+        .cn-pad-x-wide {
+          padding-left: 1.25rem;
+          padding-right: 1.25rem;
+        }
+
+        .cn-pad-x-button {
+          padding-left: 1.25rem;
+          padding-right: 1.25rem;
+        }
+
+        .cn-site-header .cn-layout-max > .d-flex:first-child {
+          row-gap: 0.5rem;
+        }
+
+        .cn-site-header .cn-brand {
+          min-width: 0;
+        }
+
+        .cn-btn.cn-text-heading-sm {
+          font-size: 16px;
+          line-height: 22px;
+          white-space: normal;
+        }
+
+        .cn-pricing-featured {
+          transform: none;
+          box-shadow:
+            0 20px 40px -12px rgba(242, 202, 80, 0.18),
+            0 8px 10px -6px rgba(242, 202, 80, 0.12);
+        }
+
+        .cn-pricing-card {
+          padding: 16px;
+        }
+
+        .cn-card-agent {
+          padding: 16px;
+        }
+
+        .xc-hd {
+          padding: 1rem 1rem;
+        }
+
+        .xc-rw {
+          padding: 1rem 1rem;
+        }
+
+        .xc-ft {
+          padding: 1.25rem 1rem;
+        }
+
+        .cn-row-tight {
+          margin-left: -8px;
+          margin-right: -8px;
+        }
+
+        .cn-row-tight > div {
+          padding-left: 8px;
+          padding-right: 8px;
+        }
+
+        .cn-module-line {
+          align-items: flex-start;
+          font-size: 16px;
+          line-height: 22px;
+        }
+
+        .xc-rw .cn-text-body {
+          min-width: 0;
+          word-break: break-word;
+        }
+
+        .xc-sec .cn-layout-max {
+          padding-left: 1.25rem;
+          padding-right: 1.25rem;
+        }
+
+        .xc-sec .xc-hd,
+        .xc-sec .xc-rw,
+        .xc-sec .xc-ft {
+          padding-left: 0;
+          padding-right: 0;
+        }
+
+        .xc-sec .cn-margin-below-xl {
+          padding-left: 0;
+          padding-right: 0;
+        }
+
+        .xc-sec .cn-title-section,
+        .xc-sec .cn-prose-lead {
+          margin-left: auto;
+          margin-right: auto;
+          max-width: 100%;
+        }
+
+        .xc-sec .xc-hd {
+          text-align: center;
+        }
+
+        .xc-sec .xc-hd > .xc-col {
+          text-align: center !important;
+        }
+
+        .xc-sec .xc-hd .xc-c3 {
+          margin-top: 0.5rem;
+        }
+
+        .xc-sec .xc-rw > .xc-c5 {
+          align-items: flex-start !important;
+        }
+
+        .xc-sec .xc-rw > .xc-c4 {
+          justify-content: flex-start !important;
+          text-align: left;
+          padding-left: 2.75rem;
+          padding-right: 0;
+        }
+
+        .xc-sec .xc-rw > .xc-c3 {
+          text-align: left !important;
+          padding-left: 2.75rem;
+          padding-right: 0;
+        }
+
+        .xc-sec .xc-ft .xc-c5 {
+          text-align: left;
+        }
+
+        .xc-sec .xc-ft .xc-c4,
+        .xc-sec .xc-ft .xc-c3 {
+          text-align: left !important;
+        }
+
+        .cn-faq-section .cn-layout-max {
+          padding-left: 1.25rem;
+          padding-right: 1.25rem;
+        }
+
+        .cn-modules-additional-section .cn-layout-max {
+          padding-left: 1.25rem;
+          padding-right: 1.25rem;
+        }
+
+        .cn-modal-panel {
+          max-height: calc(100vh - 32px);
+          overflow-y: auto;
+        }
+
+        .cn-mobile-nav .cn-nav-link {
+          display: block;
+          padding: 0.5rem 0;
+          border-bottom: 1px solid rgba(77, 70, 53, 0.15);
+        }
+
+        .cn-mobile-nav .cn-nav-link:last-child {
+          border-bottom: 0;
+        }
+
+        /* Compare table: desktop-style 3 columns on mobile + horizontal scroll */
+        .xc-sec .xc-scr {
+          overflow-x: auto;
+          -webkit-overflow-scrolling: touch;
+          overscroll-behavior-x: contain;
+        }
+
+        .xc-sec .xc-scr .xc-box {
+          min-width: 720px;
+        }
+
+        .xc-sec .xc-scr .xc-gr {
+          flex-wrap: nowrap !important;
+        }
+
+        .xc-sec .xc-scr .xc-gr > .xc-c5 {
+          flex: 0 0 41.666667% !important;
+          max-width: 41.666667% !important;
+          width: 41.666667% !important;
+        }
+
+        .xc-sec .xc-scr .xc-gr > .xc-c4 {
+          flex: 0 0 33.333333% !important;
+          max-width: 33.333333% !important;
+          width: 33.333333% !important;
+        }
+
+        .xc-sec .xc-scr .xc-gr > .xc-c3 {
+          flex: 0 0 25% !important;
+          max-width: 25% !important;
+          width: 25% !important;
+        }
+
+        .xc-sec .xc-scr .xc-hd,
+        .xc-sec .xc-scr .xc-rw,
+        .xc-sec .xc-scr .xc-ft {
+          padding-left: 1rem !important;
+          padding-right: 1rem !important;
+        }
+
+        .xc-sec .xc-scr .xc-hd {
+          text-align: left;
+        }
+
+        .xc-sec .xc-scr .xc-hd > .xc-col {
+          text-align: inherit !important;
+        }
+
+        .xc-sec .xc-scr .xc-hd > .xc-c5 {
+          text-align: left !important;
+        }
+
+        .xc-sec .xc-scr .xc-hd > .xc-c4 {
+          text-align: left !important;
+        }
+
+        .xc-sec .xc-scr .xc-hd > .xc-c3 {
+          text-align: center !important;
+          margin-top: 0 !important;
+        }
+
+        .xc-sec .xc-scr .xc-rw > .xc-col {
+          margin-bottom: 0 !important;
+        }
+
+        .xc-sec .xc-scr .xc-rw > .xc-c4 {
+          justify-content: center !important;
+          text-align: center !important;
+          padding-left: 0.5rem !important;
+          padding-right: 0.5rem !important;
+        }
+
+        .xc-sec .xc-scr .xc-rw > .xc-c3 {
+          text-align: center !important;
+          padding-left: 0.5rem !important;
+          padding-right: 0.5rem !important;
+        }
+
+        .xc-sec .xc-scr .xc-ft .xc-gr > .xc-col {
+          margin-bottom: 0 !important;
+        }
+
+        .xc-sec .xc-scr .xc-ft .xc-c5 {
+          text-align: left;
+        }
+
+        .xc-sec .xc-scr .xc-ft .xc-c4,
+        .xc-sec .xc-scr .xc-ft .xc-c3 {
+          text-align: center !important;
+        }
       }
     </style>
+    <title>10ways.ai</title>
   </head>
-  <body
-    class="bg-background text-on-background font-body-md selection:bg-primary selection:text-on-primary"
-  >
-    <!-- Sticky Top CTA Button -->
-    <div class="sticky-cta-btn">
-      <button
-        class="bg-primary text-on-primary px-6 py-2 rounded-lg font-label-md text-label-md font-bold shadow-lg shadow-primary/30 hover:brightness-110 active:scale-95 transition-all"
-      >
-        Start Free Trial
-      </button>
-    </div>
-    <!-- TopNavBar -->
-    <header
-      class="bg-surface sticky top-0 z-50 border-b border-outline-variant/20"
-    >
-      <div
-        class="flex justify-between items-center w-full px-margin-desktop py-base max-w-container-max mx-auto"
-      >
+  <body>
+    <header class="cn-site-header">
+      <div class="cn-layout-max">
         <div
-          class="font-display-lg text-headline-md sm:text-display-lg font-bold text-primary tracking-tight"
+          class="d-flex justify-content-between align-items-center py-2 flex-nowrap"
         >
-          Cognitive Nexus
+          <div class="cn-brand mr-2 flex-shrink-0">10ways.ai</div>
+          <div class="d-flex align-items-center flex-shrink-0">
+            <nav class="cn-nav-row d-none d-md-flex flex-shrink-0 mr-3">
+              <a class="cn-nav-link cn-text-label" href="#ai-agents"
+                >AI Agents</a
+              >
+              <a class="cn-nav-link cn-text-label" href="#ai-tools">AI Tools</a>
+              <a class="cn-nav-link cn-text-label" href="#pricing">Pricing</a>
+              <a class="cn-nav-link cn-text-label" href="#faq">FAQ</a>
+            </nav>
+
+            <div class="d-flex d-md-none align-items-center flex-shrink-0">
+              <button
+                type="button"
+                class="cn-btn cn-btn-outline cn-text-label px-2 cn-pad-y-sm flex-shrink-0"
+                data-toggle="collapse"
+                data-target="#cnMobileNav"
+                aria-controls="cnMobileNav"
+                aria-expanded="false"
+                aria-label="Open menu"
+              >
+                <span class="cn-icon cn-icon-md cn-text-gold">menu</span>
+              </button>
+            </div>
+          </div>
         </div>
-        <nav class="hidden md:flex gap-gutter items-center">
-          <a
-            class="text-primary font-bold border-b-2 border-primary pb-1 font-label-md text-label-md transition-colors duration-300"
-            href="#"
-            >Agents</a
-          >
-          <a
-            class="text-on-surface-variant font-medium font-label-md text-label-md hover:text-primary-fixed-dim transition-colors duration-300"
-            href="#"
-            >Strategy</a
-          >
-          <a
-            class="text-on-surface-variant font-medium font-label-md text-label-md hover:text-primary-fixed-dim transition-colors duration-300"
-            href="#"
-            >Operations</a
-          >
-          <a
-            class="text-on-surface-variant font-medium font-label-md text-label-md hover:text-primary-fixed-dim transition-colors duration-300"
-            href="#"
-            >Intelligence</a
-          >
-        </nav>
-        <div class="flex items-center gap-base">
-          <button
-            class="bg-primary text-on-primary px-gutter py-2 rounded-lg font-label-md text-label-md font-bold cursor-pointer active:opacity-80 transition-all"
-          >
-            Executive Portal
-          </button>
-          <img
-            alt="Executive User Profile"
-            class="w-10 h-10 rounded-full border border-outline/30"
-            src="https://lh3.googleusercontent.com/aida-public/AB6AXuDt14VmCDIiRFvf8LDi29v4JbeP8Ex01fGjWGdSbuBqlULGDULyC4Ycwm7p0FxWcO6n_LyW8gpPP8JzPr5evYeocfOe26HJZFugHpeqkdcMHC1PS3hYMMT5uAIS__9d0K85PyKLmVfz20DZYWldC8FgithXR4_NVoLBPPUabMhMth5kgS2qMmBREe13GsW_2OmqDY1M06RW1pBmhBU11Qi5bmqaKxPcqCRdok14jAik8FCvgJu0GXKPXve0OGNCH2tv6dyXD_Zh2x8"
-          />
+        <div
+          id="cnMobileNav"
+          class="collapse cn-mobile-nav d-md-none cn-border-top-soft mt-0 pt-2"
+        >
+          <nav class="d-flex flex-column">
+            <a class="cn-nav-link cn-text-label" href="#ai-agents">AI Agents</a>
+            <a class="cn-nav-link cn-text-label" href="#ai-tools">AI Tools</a>
+            <a class="cn-nav-link cn-text-label" href="#pricing">Pricing</a>
+            <a class="cn-nav-link cn-text-label" href="#faq">FAQ</a>
+          </nav>
         </div>
       </div>
     </header>
-    <main class="max-w-container-max mx-auto">
-      <!-- Hero Section -->
+
+    <main>
       <section
-        class="relative py-24 px-margin-desktop overflow-hidden hero-glow"
+        class="position-relative cn-pad-hero overflow-hidden cn-hero-glow-bg"
       >
         <div
-          class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-10 pointer-events-none"
+          class="cn-absolute-fill cn-hero-texture cn-opacity-muted cn-pointer-none"
         ></div>
-        <div class="max-w-4xl mx-auto text-center relative z-10">
-          <h1
-            class="font-display-lg text-display-lg-mobile md:text-display-lg mb-6 text-primary drop-shadow-sm"
-          >
-            Sell AI Agents Under Your Brand In Minutes
-          </h1>
-          <p
-            class="font-body-lg text-body-lg text-on-surface-variant leading-relaxed mb-10 max-w-2xl mx-auto"
-          >
-            Launch a fully white-label AI business and start charging clients
-            monthly without developers, coding, or building software yourself.
-          </p>
-          <div
-            class="flex flex-col sm:flex-row justify-center gap-base sm:gap-gutter"
-          >
-            <button
-              class="bg-primary text-on-primary px-10 py-4 rounded-lg font-headline-sm text-headline-sm font-bold hover:brightness-110 active:scale-95 transition-all shadow-lg shadow-primary/20"
+        <div class="cn-layout-max text-center position-relative cn-z-raised">
+          <div class="mx-auto cn-measure-wide">
+            <h1 class="cn-title-hero">
+              Sell AI Agents Under Your Brand In Minutes
+            </h1>
+            <p
+              class="cn-prose-lead cn-prose-lead--hero mx-auto cn-measure-narrow"
             >
-              Start Your Free Trial
-            </button>
-            <button
-              class="bg-surface-container-high border border-primary/40 text-primary px-10 py-4 rounded-lg font-headline-sm text-headline-sm font-bold hover:bg-primary/5 transition-all active:scale-95"
-            >
-              Book a Demo
-            </button>
+              Launch a fully white-label AI business and start charging clients
+              monthly without developers, coding, or building software yourself.
+            </p>
+            <div class="d-flex flex-column cn-hero-buttons">
+              <button
+                type="button"
+                class="cn-btn cn-btn-primary cn-text-heading-sm cn-pad-x-button py-3 cn-btn-glow-sm cn-open-modules-modal"
+              >
+                Start Your Free Trial
+              </button>
+            </div>
           </div>
         </div>
       </section>
-      <!-- Our AI Agents & Tools Section (16-Agent Grid) -->
-      <section class="py-16 px-margin-desktop">
-        <div class="mb-16 text-center max-w-3xl mx-auto">
-          <div
-            class="mb-10 rounded-xl overflow-hidden border border-primary/20 shadow-2xl shadow-primary/10"
-          >
-            <img
-              alt="AI Agent Modules"
-              class="w-full h-auto object-cover"
-              src="https://lh3.googleusercontent.com/aida-public/AB6AXuCDp8yBLQ7h3RO87MMei8GPYN5tTl9z9gU3VobACreFy-nq6wIGb4RZuGTYwmof6y8qlemozZT_LUGuB2mNsFYtd2ciu__PowCcDsVZjb2aDPXKFy5UC75l-Wr6L-aanV4RyggmRJ0bhII_V2bq9mUXWFm7vURec4N8ueoYEpaXpbLS1O0pbZRFdiq0aEpMWo5EkQRsI0Nselge0_6WybZDIfjXwf1_HEH2M2qygM_Pv74zC4P9TSdlXL-FDTx-15kVcOTog6GyOiM"
-            />
-          </div>
-          <h2 class="font-display-lg text-display-lg mb-6 text-primary">
-            Our AI Agents &amp; Tools
-          </h2>
-          <p
-            class="font-body-lg text-body-lg text-on-surface-variant leading-relaxed"
-          >
+
+      <section
+        class="cn-pad-section cn-layout-max cn-scroll-anchor"
+        id="ai-agents"
+      >
+        <div
+          class="cn-margin-below-section text-center mx-auto cn-measure-medium"
+        >
+          <h2 class="cn-title-section">Our AI Agents &amp; Tools</h2>
+          <p class="cn-prose-lead">
             High-performance cognitive agents engineered for scale. From voice
             automation to multi-channel CRM integration, our toolkit optimizes
             every touchpoint.
           </p>
         </div>
-        <div class="container-fluid">
-          <div class="row">
-            <!-- 1. AI Missed Call Text-Back -->
-            <div class="col-12 col-md-6 col-lg-3 mb-4">
-              <div
-                class="bg-surface-container-low border-2 border-primary/40 p-gutter rounded-xl flex flex-col h-full hover:border-primary transition-all duration-300 card-inner-glow relative"
-              >
-                <div
-                  class="absolute top-4 right-4 w-6 h-6 rounded-full border border-primary/30 bg-primary/10 flex items-center justify-center text-label-sm font-bold text-primary"
+        <div class="row cn-row-tight">
+          <div class="col-12 col-md-6 col-lg-3 mb-4">
+            <div class="cn-card-agent cn-surface-sheen">
+              <div class="cn-agent-badge">1</div>
+              <div class="mb-2">
+                <span class="cn-icon cn-icon-lg cn-icon-gold"
+                  >phone_missed</span
                 >
-                  1
-                </div>
-                <div class="mb-base">
-                  <span
-                    class="material-symbols-outlined text-4xl brushed-gold-icon"
-                    >phone_missed</span
-                  >
-                </div>
-                <h3 class="font-headline-sm text-headline-sm text-primary mb-2">
-                  AI Missed Call Text-Back
-                </h3>
-                <p
-                  class="font-body-md text-on-surface-variant/80 mb-6 agent-card-desc"
-                >
-                  Instantly text-backs missed callers with an AI conversational
-                  helper to save lost business by qualifying interest
-                  immediately.
-                </p>
-                <button
-                  class="w-full bg-primary text-on-primary-fixed font-label-md font-bold py-3 rounded hover:brightness-110 transition-all mt-auto"
-                  data-target="#agentModal1"
-                  data-toggle="modal"
-                >
-                  Learn More
-                </button>
               </div>
+              <h3 class="cn-heading">AI Missed Call Text-Back</h3>
+              <p class="cn-agent-card-desc">
+                Instantly text-backs missed callers with an AI conversational
+                helper to save lost business by qualifying interest immediately.
+              </p>
+              <button type="button" class="cn-btn cn-btn-primary cn-btn-card">
+                Learn More
+              </button>
             </div>
-            <!-- 2. AI 24/7 Phone Receptionist -->
-            <div class="col-12 col-md-6 col-lg-3 mb-4">
-              <div
-                class="bg-surface-container-low border-2 border-primary/40 p-gutter rounded-xl flex flex-col h-full hover:border-primary transition-all duration-300 card-inner-glow relative"
-              >
-                <div
-                  class="absolute top-4 right-4 w-6 h-6 rounded-full border border-primary/30 bg-primary/10 flex items-center justify-center text-label-sm font-bold text-primary"
+          </div>
+          <div class="col-12 col-md-6 col-lg-3 mb-4">
+            <div class="cn-card-agent cn-surface-sheen">
+              <div class="cn-agent-badge">2</div>
+              <div class="mb-2">
+                <span class="cn-icon cn-icon-lg cn-icon-gold"
+                  >support_agent</span
                 >
-                  2
-                </div>
-                <div class="mb-base">
-                  <span
-                    class="material-symbols-outlined text-4xl brushed-gold-icon"
-                    >support_agent</span
-                  >
-                </div>
-                <h3 class="font-headline-sm text-headline-sm text-primary mb-2">
-                  AI 24/7 Phone Receptionist
-                </h3>
-                <p
-                  class="font-body-md text-on-surface-variant/80 mb-6 agent-card-desc"
-                >
-                  An automated receptionist that answers FAQs, routes calls, and
-                  handles customer service 24/7 with human-like precision and
-                  warmth.
-                </p>
-                <button
-                  class="w-full bg-primary text-on-primary-fixed font-label-md font-bold py-3 rounded hover:brightness-110 transition-all mt-auto"
-                  data-target="#agentModal2"
-                  data-toggle="modal"
-                >
-                  Learn More
-                </button>
               </div>
+              <h3 class="cn-heading">AI 24/7 Phone Receptionist</h3>
+              <p class="cn-agent-card-desc">
+                An automated receptionist that answers FAQs, routes calls, and
+                handles customer service 24/7 with human-like precision and
+                warmth.
+              </p>
+              <button type="button" class="cn-btn cn-btn-primary cn-btn-card">
+                Learn More
+              </button>
             </div>
-            <!-- 3. AI Instant Speed-to-Lead -->
-            <div class="col-12 col-md-6 col-lg-3 mb-4">
-              <div
-                class="bg-surface-container-low border-2 border-primary/40 p-gutter rounded-xl flex flex-col h-full hover:border-primary transition-all duration-300 card-inner-glow relative"
-              >
-                <div
-                  class="absolute top-4 right-4 w-6 h-6 rounded-full border border-primary/30 bg-primary/10 flex items-center justify-center text-label-sm font-bold text-primary"
-                >
-                  3
-                </div>
-                <div class="mb-base">
-                  <span
-                    class="material-symbols-outlined text-4xl brushed-gold-icon"
-                    >bolt</span
-                  >
-                </div>
-                <h3 class="font-headline-sm text-headline-sm text-primary mb-2">
-                  AI Instant Speed-to-Lead
-                </h3>
-                <p
-                  class="font-body-md text-on-surface-variant/80 mb-6 agent-card-desc"
-                >
-                  Instantly calls new leads the second they submit a form,
-                  automatically bridging them to your live sales team for
-                  maximum conversion rates.
-                </p>
-                <button
-                  class="w-full bg-primary text-on-primary-fixed font-label-md font-bold py-3 rounded hover:brightness-110 transition-all mt-auto"
-                  data-target="#agentModal3"
-                  data-toggle="modal"
-                >
-                  Learn More
-                </button>
+          </div>
+          <div class="col-12 col-md-6 col-lg-3 mb-4">
+            <div class="cn-card-agent cn-surface-sheen">
+              <div class="cn-agent-badge">3</div>
+              <div class="mb-2">
+                <span class="cn-icon cn-icon-lg cn-icon-gold">bolt</span>
               </div>
+              <h3 class="cn-heading">AI Instant Speed-to-Lead</h3>
+              <p class="cn-agent-card-desc">
+                Instantly calls new leads the second they submit a form,
+                automatically bridging them to your live sales team for maximum
+                conversion rates.
+              </p>
+              <button type="button" class="cn-btn cn-btn-primary cn-btn-card">
+                Learn More
+              </button>
             </div>
-            <!-- 4. AI Appointment Booking -->
-            <div class="col-12 col-md-6 col-lg-3 mb-4">
-              <div
-                class="bg-surface-container-low border-2 border-primary/40 p-gutter rounded-xl flex flex-col h-full hover:border-primary transition-all duration-300 card-inner-glow relative"
-              >
-                <div
-                  class="absolute top-4 right-4 w-6 h-6 rounded-full border border-primary/30 bg-primary/10 flex items-center justify-center text-label-sm font-bold text-primary"
+          </div>
+          <div class="col-12 col-md-6 col-lg-3 mb-4">
+            <div class="cn-card-agent cn-surface-sheen">
+              <div class="cn-agent-badge">4</div>
+              <div class="mb-2">
+                <span class="cn-icon cn-icon-lg cn-icon-gold"
+                  >calendar_month</span
                 >
-                  4
-                </div>
-                <div class="mb-base">
-                  <span
-                    class="material-symbols-outlined text-4xl brushed-gold-icon"
-                    >calendar_month</span
-                  >
-                </div>
-                <h3 class="font-headline-sm text-headline-sm text-primary mb-2">
-                  AI Appointment Booking
-                </h3>
-                <p
-                  class="font-body-md text-on-surface-variant/80 mb-6 agent-card-desc"
-                >
-                  A voice assistant that checks calendar availability,
-                  negotiates times, and books appointments live on the call
-                  directly into your calendar.
-                </p>
-                <button
-                  class="w-full bg-primary text-on-primary-fixed font-label-md font-bold py-3 rounded hover:brightness-110 transition-all mt-auto"
-                  data-target="#agentModal4"
-                  data-toggle="modal"
-                >
-                  Learn More
-                </button>
               </div>
+              <h3 class="cn-heading">AI Appointment Booking</h3>
+              <p class="cn-agent-card-desc">
+                A voice assistant that checks calendar availability, negotiates
+                times, and books appointments live on the call directly into
+                your calendar.
+              </p>
+              <button type="button" class="cn-btn cn-btn-primary cn-btn-card">
+                Learn More
+              </button>
             </div>
-            <!-- 5. AI 24/7 Website Chat -->
-            <div class="col-12 col-md-6 col-lg-3 mb-4">
-              <div
-                class="bg-surface-container-low border-2 border-primary/40 p-gutter rounded-xl flex flex-col h-full hover:border-primary transition-all duration-300 card-inner-glow relative"
-              >
-                <div
-                  class="absolute top-4 right-4 w-6 h-6 rounded-full border border-primary/30 bg-primary/10 flex items-center justify-center text-label-sm font-bold text-primary"
-                >
-                  5
-                </div>
-                <div class="mb-base">
-                  <span
-                    class="material-symbols-outlined text-4xl brushed-gold-icon"
-                    >chat</span
-                  >
-                </div>
-                <h3 class="font-headline-sm text-headline-sm text-primary mb-2">
-                  AI 24/7 Website Chat
-                </h3>
-                <p
-                  class="font-body-md text-on-surface-variant/80 mb-6 agent-card-desc"
-                >
-                  An interactive on-site widget that chats with visitors,
-                  answers complex questions, and captures lead info
-                  round-the-clock without delays.
-                </p>
-                <button
-                  class="w-full bg-primary text-on-primary-fixed font-label-md font-bold py-3 rounded hover:brightness-110 transition-all mt-auto"
-                  data-target="#agentModal5"
-                  data-toggle="modal"
-                >
-                  Learn More
-                </button>
+          </div>
+          <div class="col-12 col-md-6 col-lg-3 mb-4">
+            <div class="cn-card-agent cn-surface-sheen">
+              <div class="cn-agent-badge">5</div>
+              <div class="mb-2">
+                <span class="cn-icon cn-icon-lg cn-icon-gold">chat</span>
               </div>
+              <h3 class="cn-heading">AI 24/7 Website Chat</h3>
+              <p class="cn-agent-card-desc">
+                An interactive on-site widget that chats with visitors, answers
+                complex questions, and captures lead info round-the-clock
+                without delays.
+              </p>
+              <button type="button" class="cn-btn cn-btn-primary cn-btn-card">
+                Learn More
+              </button>
             </div>
-            <!-- 6. AI Database Reactivation -->
-            <div class="col-12 col-md-6 col-lg-3 mb-4">
-              <div
-                class="bg-surface-container-low border-2 border-primary/40 p-gutter rounded-xl flex flex-col h-full hover:border-primary transition-all duration-300 card-inner-glow relative"
-              >
-                <div
-                  class="absolute top-4 right-4 w-6 h-6 rounded-full border border-primary/30 bg-primary/10 flex items-center justify-center text-label-sm font-bold text-primary"
-                >
-                  6
-                </div>
-                <div class="mb-base">
-                  <span
-                    class="material-symbols-outlined text-4xl brushed-gold-icon"
-                    >database</span
-                  >
-                </div>
-                <h3 class="font-headline-sm text-headline-sm text-primary mb-2">
-                  AI Database Reactivation
-                </h3>
-                <p
-                  class="font-body-md text-on-surface-variant/80 mb-6 agent-card-desc"
-                >
-                  Autonomously text-blasts or calls old cold databases to
-                  uncover hidden revenue and book missed opportunities from your
-                  past prospects.
-                </p>
-                <button
-                  class="w-full bg-primary text-on-primary-fixed font-label-md font-bold py-3 rounded hover:brightness-110 transition-all mt-auto"
-                  data-target="#agentModal6"
-                  data-toggle="modal"
-                >
-                  Learn More
-                </button>
+          </div>
+          <div class="col-12 col-md-6 col-lg-3 mb-4">
+            <div class="cn-card-agent cn-surface-sheen">
+              <div class="cn-agent-badge">6</div>
+              <div class="mb-2">
+                <span class="cn-icon cn-icon-lg cn-icon-gold">database</span>
               </div>
+              <h3 class="cn-heading">AI Database Reactivation</h3>
+              <p class="cn-agent-card-desc">
+                Autonomously text-blasts or calls old cold databases to uncover
+                hidden revenue and book missed opportunities from your past
+                prospects.
+              </p>
+              <button type="button" class="cn-btn cn-btn-primary cn-btn-card">
+                Learn More
+              </button>
             </div>
-            <!-- 7. AI Omnichannel Messaging -->
-            <div class="col-12 col-md-6 col-lg-3 mb-4">
-              <div
-                class="bg-surface-container-low border-2 border-primary/40 p-gutter rounded-xl flex flex-col h-full hover:border-primary transition-all duration-300 card-inner-glow relative"
-              >
-                <div
-                  class="absolute top-4 right-4 w-6 h-6 rounded-full border border-primary/30 bg-primary/10 flex items-center justify-center text-label-sm font-bold text-primary"
-                >
-                  7
-                </div>
-                <div class="mb-base">
-                  <span
-                    class="material-symbols-outlined text-4xl brushed-gold-icon"
-                    >hub</span
-                  >
-                </div>
-                <h3 class="font-headline-sm text-headline-sm text-primary mb-2">
-                  AI Omnichannel Messaging
-                </h3>
-                <p
-                  class="font-body-md text-on-surface-variant/80 mb-6 agent-card-desc"
-                >
-                  A central agent that synchronizes messaging across SMS, Email,
-                  Facebook, Instagram, and WhatsApp for a unified customer
-                  experience.
-                </p>
-                <button
-                  class="w-full bg-primary text-on-primary-fixed font-label-md font-bold py-3 rounded hover:brightness-110 transition-all mt-auto"
-                  data-target="#agentModal7"
-                  data-toggle="modal"
-                >
-                  Learn More
-                </button>
+          </div>
+          <div class="col-12 col-md-6 col-lg-3 mb-4">
+            <div class="cn-card-agent cn-surface-sheen">
+              <div class="cn-agent-badge">7</div>
+              <div class="mb-2">
+                <span class="cn-icon cn-icon-lg cn-icon-gold">hub</span>
               </div>
+              <h3 class="cn-heading">AI Omnichannel Messaging</h3>
+              <p class="cn-agent-card-desc">
+                A central agent that synchronizes messaging across SMS, Email,
+                Facebook, Instagram, and WhatsApp for a unified customer
+                experience.
+              </p>
+              <button type="button" class="cn-btn cn-btn-primary cn-btn-card">
+                Learn More
+              </button>
             </div>
-            <!-- 8. AI Lead Qualifier -->
-            <div class="col-12 col-md-6 col-lg-3 mb-4">
-              <div
-                class="bg-surface-container-low border-2 border-primary/40 p-gutter rounded-xl flex flex-col h-full hover:border-primary transition-all duration-300 card-inner-glow relative"
-              >
-                <div
-                  class="absolute top-4 right-4 w-6 h-6 rounded-full border border-primary/30 bg-primary/10 flex items-center justify-center text-label-sm font-bold text-primary"
+          </div>
+          <div class="col-12 col-md-6 col-lg-3 mb-4">
+            <div class="cn-card-agent cn-surface-sheen">
+              <div class="cn-agent-badge">8</div>
+              <div class="mb-2">
+                <span class="cn-icon cn-icon-lg cn-icon-gold"
+                  >verified_user</span
                 >
-                  8
-                </div>
-                <div class="mb-base">
-                  <span
-                    class="material-symbols-outlined text-4xl brushed-gold-icon"
-                    >verified_user</span
-                  >
-                </div>
-                <h3 class="font-headline-sm text-headline-sm text-primary mb-2">
-                  AI Lead Qualifier
-                </h3>
-                <p
-                  class="font-body-md text-on-surface-variant/80 mb-6 agent-card-desc"
-                >
-                  Autonomously calls or texts new leads to ask pre-qualification
-                  questions and score them before a human ever speaks to them.
-                </p>
-                <button
-                  class="w-full bg-primary text-on-primary-fixed font-label-md font-bold py-3 rounded hover:brightness-110 transition-all mt-auto"
-                  data-target="#agentModal8"
-                  data-toggle="modal"
-                >
-                  Learn More
-                </button>
               </div>
+              <h3 class="cn-heading">AI Lead Qualifier</h3>
+              <p class="cn-agent-card-desc">
+                Autonomously calls or texts new leads to ask pre-qualification
+                questions and score them before a human ever speaks to them.
+              </p>
+              <button type="button" class="cn-btn cn-btn-primary cn-btn-card">
+                Learn More
+              </button>
             </div>
-            <!-- 9. AI Reviews -->
-            <div class="col-12 col-md-6 col-lg-3 mb-4">
-              <div
-                class="bg-surface-container-low border-2 border-primary/40 p-gutter rounded-xl flex flex-col h-full hover:border-primary transition-all duration-300 card-inner-glow relative"
-              >
-                <div
-                  class="absolute top-4 right-4 w-6 h-6 rounded-full border border-primary/30 bg-primary/10 flex items-center justify-center text-label-sm font-bold text-primary"
-                >
-                  9
-                </div>
-                <div class="mb-base">
-                  <span
-                    class="material-symbols-outlined text-4xl brushed-gold-icon"
-                    >star</span
-                  >
-                </div>
-                <h3 class="font-headline-sm text-headline-sm text-primary mb-2">
-                  AI Reviews
-                </h3>
-                <p
-                  class="font-body-md text-on-surface-variant/80 mb-6 agent-card-desc"
-                >
-                  An intelligent dashboard that monitors feedback, crafts smart
-                  replies, and boosts search rankings by requesting positive
-                  reviews automatically.
-                </p>
-                <button
-                  class="w-full bg-primary text-on-primary-fixed font-label-md font-bold py-3 rounded hover:brightness-110 transition-all mt-auto"
-                  data-target="#agentModal9"
-                  data-toggle="modal"
-                >
-                  Learn More
-                </button>
+          </div>
+          <div class="col-12 col-md-6 col-lg-3 mb-4">
+            <div class="cn-card-agent cn-surface-sheen">
+              <div class="cn-agent-badge">9</div>
+              <div class="mb-2">
+                <span class="cn-icon cn-icon-lg cn-icon-gold">star</span>
               </div>
+              <h3 class="cn-heading">AI Reviews</h3>
+              <p class="cn-agent-card-desc">
+                An intelligent dashboard that monitors feedback, crafts smart
+                replies, and boosts search rankings by requesting positive
+                reviews automatically.
+              </p>
+              <button type="button" class="cn-btn cn-btn-primary cn-btn-card">
+                Learn More
+              </button>
             </div>
-            <!-- 10. AI Social Media Posts -->
-            <div class="col-12 col-md-6 col-lg-3 mb-4">
-              <div
-                class="bg-surface-container-low border-2 border-primary/40 p-gutter rounded-xl flex flex-col h-full hover:border-primary transition-all duration-300 card-inner-glow relative"
-              >
-                <div
-                  class="absolute top-4 right-4 w-6 h-6 rounded-full border border-primary/30 bg-primary/10 flex items-center justify-center text-label-sm font-bold text-primary"
-                >
-                  10
-                </div>
-                <div class="mb-base">
-                  <span
-                    class="material-symbols-outlined text-4xl brushed-gold-icon"
-                    >share</span
-                  >
-                </div>
-                <h3 class="font-headline-sm text-headline-sm text-primary mb-2">
-                  AI Social Media Posts
-                </h3>
-                <p
-                  class="font-body-md text-on-surface-variant/80 mb-6 agent-card-desc"
-                >
-                  An on-demand content tool that drafts high-converting social
-                  copy and eye-catching graphics tailored to your brand's unique
-                  voice.
-                </p>
-                <button
-                  class="w-full bg-primary text-on-primary-fixed font-label-md font-bold py-3 rounded hover:brightness-110 transition-all mt-auto"
-                  data-target="#agentModal10"
-                  data-toggle="modal"
-                >
-                  Learn More
-                </button>
+          </div>
+          <div class="col-12 col-md-6 col-lg-3 mb-4">
+            <div class="cn-card-agent cn-surface-sheen">
+              <div class="cn-agent-badge">10</div>
+              <div class="mb-2">
+                <span class="cn-icon cn-icon-lg cn-icon-gold">share</span>
               </div>
+              <h3 class="cn-heading">AI Social Media Posts</h3>
+              <p class="cn-agent-card-desc">
+                An on-demand content tool that drafts high-converting social
+                copy and eye-catching graphics tailored to your brand's unique
+                voice.
+              </p>
+              <button type="button" class="cn-btn cn-btn-primary cn-btn-card">
+                Learn More
+              </button>
             </div>
-            <!-- 11. AI Cold Caller -->
-            <div class="col-12 col-md-6 col-lg-3 mb-4">
-              <div
-                class="bg-surface-container-low border-2 border-primary/40 p-gutter rounded-xl flex flex-col h-full hover:border-primary transition-all duration-300 card-inner-glow relative"
-              >
-                <div
-                  class="absolute top-4 right-4 w-6 h-6 rounded-full border border-primary/30 bg-primary/10 flex items-center justify-center text-label-sm font-bold text-primary"
-                >
-                  11
-                </div>
-                <div class="mb-base">
-                  <span
-                    class="material-symbols-outlined text-4xl brushed-gold-icon"
-                    >call</span
-                  >
-                </div>
-                <h3 class="font-headline-sm text-headline-sm text-primary mb-2">
-                  AI Cold Caller
-                </h3>
-                <p
-                  class="font-body-md text-on-surface-variant/80 mb-6 agent-card-desc"
-                >
-                  A conversational campaign agent that systematically calls
-                  through dynamic target lists for cold or warm outreach and
-                  appointment setting.
-                </p>
-                <button
-                  class="w-full bg-primary text-on-primary-fixed font-label-md font-bold py-3 rounded hover:brightness-110 transition-all mt-auto"
-                  data-target="#agentModal11"
-                  data-toggle="modal"
-                >
-                  Learn More
-                </button>
+          </div>
+          <div class="col-12 col-md-6 col-lg-3 mb-4">
+            <div class="cn-card-agent cn-surface-sheen">
+              <div class="cn-agent-badge">11</div>
+              <div class="mb-2">
+                <span class="cn-icon cn-icon-lg cn-icon-gold">call</span>
               </div>
+              <h3 class="cn-heading">AI Cold Caller</h3>
+              <p class="cn-agent-card-desc">
+                A conversational campaign agent that systematically calls
+                through dynamic target lists for cold or warm outreach and
+                appointment setting.
+              </p>
+              <button type="button" class="cn-btn cn-btn-primary cn-btn-card">
+                Learn More
+              </button>
             </div>
-            <!-- 12. AI Social Media Scheduling -->
-            <div class="col-12 col-md-6 col-lg-3 mb-4">
-              <div
-                class="bg-surface-container-low border-2 border-primary/40 p-gutter rounded-xl flex flex-col h-full hover:border-primary transition-all duration-300 card-inner-glow relative"
-              >
-                <div
-                  class="absolute top-4 right-4 w-6 h-6 rounded-full border border-primary/30 bg-primary/10 flex items-center justify-center text-label-sm font-bold text-primary"
-                >
-                  12
-                </div>
-                <div class="mb-base">
-                  <span
-                    class="material-symbols-outlined text-4xl brushed-gold-icon"
-                    >schedule</span
-                  >
-                </div>
-                <h3 class="font-headline-sm text-headline-sm text-primary mb-2">
-                  AI Social Media Scheduling
-                </h3>
-                <p
-                  class="font-body-md text-on-surface-variant/80 mb-6 agent-card-desc"
-                >
-                  Automatically schedules and publishes your AI-generated social
-                  media content across all platforms at peak engagement times.
-                </p>
-                <button
-                  class="w-full bg-primary text-on-primary-fixed font-label-md font-bold py-3 rounded hover:brightness-110 transition-all mt-auto"
-                  data-target="#agentModal12"
-                  data-toggle="modal"
-                >
-                  Learn More
-                </button>
+          </div>
+          <div class="col-12 col-md-6 col-lg-3 mb-4">
+            <div class="cn-card-agent cn-surface-sheen">
+              <div class="cn-agent-badge">12</div>
+              <div class="mb-2">
+                <span class="cn-icon cn-icon-lg cn-icon-gold">schedule</span>
               </div>
+              <h3 class="cn-heading">AI Social Media Scheduling</h3>
+              <p class="cn-agent-card-desc">
+                Automatically schedules and publishes your AI-generated social
+                media content across all platforms at peak engagement times.
+              </p>
+              <button type="button" class="cn-btn cn-btn-primary cn-btn-card">
+                Learn More
+              </button>
             </div>
-            <!-- 13. AI 60-Second Website Builder -->
-            <div class="col-12 col-md-6 col-lg-3 mb-4">
-              <div
-                class="bg-surface-container-low border-2 border-primary/40 p-gutter rounded-xl flex flex-col h-full hover:border-primary transition-all duration-300 card-inner-glow relative"
-              >
-                <div
-                  class="absolute top-4 right-4 w-6 h-6 rounded-full border border-primary/30 bg-primary/10 flex items-center justify-center text-label-sm font-bold text-primary"
-                >
-                  13
-                </div>
-                <div class="mb-base">
-                  <span
-                    class="material-symbols-outlined text-4xl brushed-gold-icon"
-                    >web</span
-                  >
-                </div>
-                <h3 class="font-headline-sm text-headline-sm text-primary mb-2">
-                  AI 60-Second Website Builder
-                </h3>
-                <p
-                  class="font-body-md text-on-surface-variant/80 mb-6 agent-card-desc"
-                >
-                  A high-speed prompt-to-design platform that builds fully
-                  functional, conversion-optimized websites in less than a
-                  minute.
-                </p>
-                <button
-                  class="w-full bg-primary text-on-primary-fixed font-label-md font-bold py-3 rounded hover:brightness-110 transition-all mt-auto"
-                  data-target="#agentModal13"
-                  data-toggle="modal"
-                >
-                  Learn More
-                </button>
+          </div>
+          <div class="col-12 col-md-6 col-lg-3 mb-4">
+            <div class="cn-card-agent cn-surface-sheen">
+              <div class="cn-agent-badge">13</div>
+              <div class="mb-2">
+                <span class="cn-icon cn-icon-lg cn-icon-gold">web</span>
               </div>
+              <h3 class="cn-heading">AI 60-Second Website Builder</h3>
+              <p class="cn-agent-card-desc">
+                A high-speed prompt-to-design platform that builds fully
+                functional, conversion-optimized websites in less than a minute.
+              </p>
+              <button type="button" class="cn-btn cn-btn-primary cn-btn-card">
+                Learn More
+              </button>
             </div>
-            <!-- 14. AI SEO Report -->
-            <div class="col-12 col-md-6 col-lg-3 mb-4">
-              <div
-                class="bg-surface-container-low border-2 border-primary/40 p-gutter rounded-xl flex flex-col h-full hover:border-primary transition-all duration-300 card-inner-glow relative"
-              >
-                <div
-                  class="absolute top-4 right-4 w-6 h-6 rounded-full border border-primary/30 bg-primary/10 flex items-center justify-center text-label-sm font-bold text-primary"
-                >
-                  14
-                </div>
-                <div class="mb-base">
-                  <span
-                    class="material-symbols-outlined text-4xl brushed-gold-icon"
-                    >search</span
-                  >
-                </div>
-                <h3 class="font-headline-sm text-headline-sm text-primary mb-2">
-                  AI SEO Report
-                </h3>
-                <p
-                  class="font-body-md text-on-surface-variant/80 mb-6 agent-card-desc"
-                >
-                  An autonomous crawler that scans websites, diagnoses critical
-                  SEO issues, and builds actionable optimization blueprints
-                  instantly.
-                </p>
-                <button
-                  class="w-full bg-primary text-on-primary-fixed font-label-md font-bold py-3 rounded hover:brightness-110 transition-all mt-auto"
-                  data-target="#agentModal14"
-                  data-toggle="modal"
-                >
-                  Learn More
-                </button>
+          </div>
+          <div class="col-12 col-md-6 col-lg-3 mb-4">
+            <div class="cn-card-agent cn-surface-sheen">
+              <div class="cn-agent-badge">14</div>
+              <div class="mb-2">
+                <span class="cn-icon cn-icon-lg cn-icon-gold">search</span>
               </div>
+              <h3 class="cn-heading">AI SEO Report</h3>
+              <p class="cn-agent-card-desc">
+                An autonomous crawler that scans websites, diagnoses critical
+                SEO issues, and builds actionable optimization blueprints
+                instantly.
+              </p>
+              <button type="button" class="cn-btn cn-btn-primary cn-btn-card">
+                Learn More
+              </button>
             </div>
-            <!-- 15. AI Video Generator -->
-            <div class="col-12 col-md-6 col-lg-3 mb-4">
-              <div
-                class="bg-surface-container-low border-2 border-primary/40 p-gutter rounded-xl flex flex-col h-full hover:border-primary transition-all duration-300 card-inner-glow relative"
-              >
-                <div
-                  class="absolute top-4 right-4 w-6 h-6 rounded-full border border-primary/30 bg-primary/10 flex items-center justify-center text-label-sm font-bold text-primary"
+          </div>
+          <div class="col-12 col-md-6 col-lg-3 mb-4">
+            <div class="cn-card-agent cn-surface-sheen">
+              <div class="cn-agent-badge">15</div>
+              <div class="mb-2">
+                <span class="cn-icon cn-icon-lg cn-icon-gold"
+                  >video_library</span
                 >
-                  15
-                </div>
-                <div class="mb-base">
-                  <span
-                    class="material-symbols-outlined text-4xl brushed-gold-icon"
-                    >video_library</span
-                  >
-                </div>
-                <h3 class="font-headline-sm text-headline-sm text-primary mb-2">
-                  AI Video Generator
-                </h3>
-                <p
-                  class="font-body-md text-on-surface-variant/80 mb-6 agent-card-desc"
-                >
-                  A script-to-screen agent that generates engaging marketing
-                  videos, renders visuals, and adds voiceovers automatically for
-                  social ads.
-                </p>
-                <button
-                  class="w-full bg-primary text-on-primary-fixed font-label-md font-bold py-3 rounded hover:brightness-110 transition-all mt-auto"
-                  data-target="#agentModal15"
-                  data-toggle="modal"
-                >
-                  Learn More
-                </button>
               </div>
+              <h3 class="cn-heading">AI Video Generator</h3>
+              <p class="cn-agent-card-desc">
+                A script-to-screen agent that generates engaging marketing
+                videos, renders visuals, and adds voiceovers automatically for
+                social ads.
+              </p>
+              <button type="button" class="cn-btn cn-btn-primary cn-btn-card">
+                Learn More
+              </button>
             </div>
-            <!-- 16. AI Phone Order Taker -->
-            <div class="col-12 col-md-6 col-lg-3 mb-4">
-              <div
-                class="bg-surface-container-low border-2 border-primary/40 p-gutter rounded-xl flex flex-col h-full hover:border-primary transition-all duration-300 card-inner-glow relative"
-              >
-                <div
-                  class="absolute top-4 right-4 w-6 h-6 rounded-full border border-primary/30 bg-primary/10 flex items-center justify-center text-label-sm font-bold text-primary"
-                >
-                  16
-                </div>
-                <div class="mb-base">
-                  <span
-                    class="material-symbols-outlined text-4xl brushed-gold-icon"
-                    >restaurant</span
-                  >
-                </div>
-                <h3 class="font-headline-sm text-headline-sm text-primary mb-2">
-                  AI Phone Order Taker
-                </h3>
-                <p
-                  class="font-body-md text-on-surface-variant/80 mb-6 agent-card-desc"
-                >
-                  A consumer-facing voice agent that answers hungry customers,
-                  takes detailed food orders, and sends them directly to the
-                  kitchen.
-                </p>
-                <button
-                  class="w-full bg-primary text-on-primary-fixed font-label-md font-bold py-3 rounded hover:brightness-110 transition-all mt-auto"
-                  data-target="#agentModal16"
-                  data-toggle="modal"
-                >
-                  Learn More
-                </button>
+          </div>
+          <div class="col-12 col-md-6 col-lg-3 mb-4">
+            <div class="cn-card-agent cn-surface-sheen">
+              <div class="cn-agent-badge">16</div>
+              <div class="mb-2">
+                <span class="cn-icon cn-icon-lg cn-icon-gold">restaurant</span>
               </div>
+              <h3 class="cn-heading">AI Phone Order Taker</h3>
+              <p class="cn-agent-card-desc">
+                A consumer-facing voice agent that answers hungry customers,
+                takes detailed food orders, and sends them directly to the
+                kitchen.
+              </p>
+              <button type="button" class="cn-btn cn-btn-primary cn-btn-card">
+                Learn More
+              </button>
             </div>
           </div>
         </div>
       </section>
-      <!-- Modal Template for Agents (Repeated for each agent) -->
-      <!-- Modal 1 -->
-      <div
-        aria-hidden="true"
-        class="modal fade"
-        id="agentModal1"
-        role="dialog"
-        tabindex="-1"
-      >
-        <div
-          class="modal-dialog modal-dialog-centered"
-          role="document"
-          style="max-width: 500px"
-        >
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title font-headline-sm text-primary">
-                AI Missed Call Text-Back
-              </h5>
-              <button
-                aria-label="Close"
-                class="close"
-                data-dismiss="modal"
-                type="button"
-              >
-                <span aria-hidden="true">×</span>
-              </button>
-            </div>
-            <div class="modal-body font-body-md text-on-surface-variant">
-              Instantly text-backs missed callers with an AI conversational
-              helper to save lost business by qualifying interest immediately.
-              This agent ensures no lead falls through the cracks even when your
-              team is busy.
-            </div>
-            <div class="modal-footer">
-              <button
-                class="bg-primary text-on-primary px-6 py-3 rounded-lg font-bold w-full hover:brightness-110 transition-all"
-                type="button"
-              >
-                Start Your 14-Day Free Trial
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- Modals for 2-16 would follow same pattern with full descriptions. For brevity of code block, they are implied but 1 serves as functional reference -->
-      <!-- Adding a few more full modals for critical interactivity demo -->
-      <div
-        aria-hidden="true"
-        class="modal fade"
-        id="agentModal2"
-        role="dialog"
-        tabindex="-1"
-      >
-        <div
-          class="modal-dialog modal-dialog-centered"
-          role="document"
-          style="max-width: 500px"
-        >
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title font-headline-sm text-primary">
-                AI 24/7 Phone Receptionist
-              </h5>
-              <button
-                aria-label="Close"
-                class="close"
-                data-dismiss="modal"
-                type="button"
-              >
-                <span aria-hidden="true">×</span>
-              </button>
-            </div>
-            <div class="modal-body font-body-md text-on-surface-variant">
-              An automated receptionist that answers FAQs, routes calls, and
-              handles customer service 24/7 with human-like precision and
-              warmth. It can handle multiple calls simultaneously, ensuring your
-              business is always open.
-            </div>
-            <div class="modal-footer">
-              <button
-                class="bg-primary text-on-primary px-6 py-3 rounded-lg font-bold w-full hover:brightness-110 transition-all"
-                type="button"
-              >
-                Start Your 14-Day Free Trial
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- (Repeat similar logic for 3-16 in actual implementation) -->
-      <!-- Placeholder generic modal for 3-16 to ensure 'Learn More' works in preview -->
-      <script>
-        $(document).ready(function () {
-          // Simplified trigger for demonstration if modals 3-16 are not hardcoded
-          $('[data-target^="#agentModal"]').on("click", function () {
-            var targetId = $(this).data("target");
-            if ($(targetId).length == 0) {
-              // Fallback or dynamic content injection logic
-            }
-          });
-        });
-      </script>
-      <!-- End Agent Grid Section -->
-      <!-- Additional Software Modules Section -->
-      <section class="py-24 px-margin-desktop bg-surface-container-lowest">
-        <div class="max-w-4xl mx-auto text-center mb-16">
-          <h2 class="font-display-lg text-display-lg text-primary mb-6">
-            Additional Software Modules
-          </h2>
-          <div
-            class="mb-10 rounded-xl overflow-hidden border border-primary/20 shadow-2xl shadow-primary/10 max-w-2xl mx-auto"
-          >
-            <img
-              alt="AI Agent Modules"
-              class="w-full h-auto object-cover"
-              src="https://lh3.googleusercontent.com/aida-public/AB6AXuCDp8yBLQ7h3RO87MMei8GPYN5tTl9z9gU3VobACreFy-nq6wIGb4RZuGTYwmof6y8qlemozZT_LUGuB2mNsFYtd2ciu__PowCcDsVZjb2aDPXKFy5UC75l-Wr6L-aanV4RyggmRJ0bhII_V2bq9mUXWFm7vURec4N8ueoYEpaXpbLS1O0pbZRFdiq0aEpMWo5EkQRsI0Nselge0_6WybZDIfjXwf1_HEH2M2qygM_Pv74zC4P9TSdlXL-FDTx-15kVcOTog6GyOiM"
-            />
-          </div>
-        </div>
-        <div
-          class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-gutter gap-y-6 max-w-6xl mx-auto"
-        >
-          <div
-            class="flex items-center gap-2 text-on-surface-variant font-body-md"
-          >
-            <span class="material-symbols-outlined text-primary text-body-md"
-              >check_circle</span
-            >Workflow Automations
-          </div>
-          <div
-            class="flex items-center gap-2 text-on-surface-variant font-body-md"
-          >
-            <span class="material-symbols-outlined text-primary text-body-md"
-              >check_circle</span
-            >Unlimited Sales Funnels
-          </div>
-          <div
-            class="flex items-center gap-2 text-on-surface-variant font-body-md"
-          >
-            <span class="material-symbols-outlined text-primary text-body-md"
-              >check_circle</span
-            >Webinar Funnels
-          </div>
-          <div
-            class="flex items-center gap-2 text-on-surface-variant font-body-md"
-          >
-            <span class="material-symbols-outlined text-primary text-body-md"
-              >check_circle</span
-            >Sales Pipelines
-          </div>
-          <div
-            class="flex items-center gap-2 text-on-surface-variant font-body-md"
-          >
-            <span class="material-symbols-outlined text-primary text-body-md"
-              >check_circle</span
-            >Prospecting Tool
-          </div>
-          <div
-            class="flex items-center gap-2 text-on-surface-variant font-body-md"
-          >
-            <span class="material-symbols-outlined text-primary text-body-md"
-              >check_circle</span
-            >Email Marketing
-          </div>
-          <div
-            class="flex items-center gap-2 text-on-surface-variant font-body-md"
-          >
-            <span class="material-symbols-outlined text-primary text-body-md"
-              >check_circle</span
-            >SMS Marketing
-          </div>
-          <div
-            class="flex items-center gap-2 text-on-surface-variant font-body-md"
-          >
-            <span class="material-symbols-outlined text-primary text-body-md"
-              >check_circle</span
-            >Websites
-          </div>
-          <div
-            class="flex items-center gap-2 text-on-surface-variant font-body-md"
-          >
-            <span class="material-symbols-outlined text-primary text-body-md"
-              >check_circle</span
-            >Ecommerce Websites
-          </div>
-          <div
-            class="flex items-center gap-2 text-on-surface-variant font-body-md"
-          >
-            <span class="material-symbols-outlined text-primary text-body-md"
-              >check_circle</span
-            >Landing Pages
-          </div>
-          <div
-            class="flex items-center gap-2 text-on-surface-variant font-body-md"
-          >
-            <span class="material-symbols-outlined text-primary text-body-md"
-              >check_circle</span
-            >Project Management
-          </div>
-          <div
-            class="flex items-center gap-2 text-on-surface-variant font-body-md"
-          >
-            <span class="material-symbols-outlined text-primary text-body-md"
-              >check_circle</span
-            >Invoicing
-          </div>
-          <div
-            class="flex items-center gap-2 text-on-surface-variant font-body-md"
-          >
-            <span class="material-symbols-outlined text-primary text-body-md"
-              >check_circle</span
-            >Courses &amp; Memberships
-          </div>
-          <div
-            class="flex items-center gap-2 text-on-surface-variant font-body-md"
-          >
-            <span class="material-symbols-outlined text-primary text-body-md"
-              >check_circle</span
-            >Reputation Management
-          </div>
-          <div
-            class="flex items-center gap-2 text-on-surface-variant font-body-md"
-          >
-            <span class="material-symbols-outlined text-primary text-body-md"
-              >check_circle</span
-            >Document Signing
-          </div>
-          <div
-            class="flex items-center gap-2 text-on-surface-variant font-body-md"
-          >
-            <span class="material-symbols-outlined text-primary text-body-md"
-              >check_circle</span
-            >Affiliate Management
-          </div>
-        </div>
-      </section>
-      <!-- The Enterprise Shift Section -->
-      <section
-        class="py-24 px-margin-desktop bg-surface-container-lowest border-y border-outline-variant/20"
-      >
-        <div class="max-w-container-max mx-auto">
-          <div class="text-center mb-16">
-            <h2 class="font-display-lg text-display-lg text-primary mb-6">
-              The Enterprise Shift: Replace Fragmented SaaS with Unified
-              Intelligence
+      <section class="cn-layout-max">
+        <div class="cn-pad-section cn-bg-surface-darkest cn-border-y-soft">
+          <div class="mx-auto text-center cn-measure-wide px-4">
+            <h2 class="cn-quote-title">
+              Empower your operations with the world's most advanced AI fleet.
             </h2>
-            <p
-              class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto"
-            >
-              Consolidate your tech stack into a single, intelligent ecosystem.
-              Stop paying for disconnected tools and start scaling with unified
-              AI.
-            </p>
-          </div>
-          <div class="grid grid-cols-1 lg:grid-cols-2 gap-gutter items-center">
-            <div
-              class="rounded-xl overflow-hidden border border-primary/30 shadow-2xl"
-            >
-              <img
-                alt="Enterprise Dashboard"
-                class="w-full h-auto"
-                src="https://lh3.googleusercontent.com/aida-public/AB6AXuBly8IIM9HsDG-zupwewyaQ1U21pFxczstljlpQKuc52NLe3kv2KrYFonWkYLNfncz2HAtPmtC3r24gppvTTfMAzZ-PNgG6ZxDbQ1C2Miy2X_b4CY3zrp-bLLwkPFI200PnGeCejIuzu57UdwOt7yHvpJ-HtKNYNfbMBkXFf4BdJeO0dsN95bJSfRGFZ64KZ6zm45VBNkvwTRqR7VNpffDznOLD3L5pxAl19_KyWHtZ4-abINSXuM9cmsbuhThX0H2RUNFGsdAGdDM"
-              />
-            </div>
-            <div class="space-y-gutter">
-              <div
-                class="bg-surface-container-low p-gutter rounded-xl border border-outline-variant/20 card-inner-glow"
-              >
-                <h3 class="font-headline-sm text-primary mb-gutter">
-                  Legacy Tools Replaced
-                </h3>
-                <ul class="space-y-4">
-                  <li
-                    class="flex items-center gap-base text-on-surface-variant"
-                  >
-                    <span class="material-symbols-outlined text-error"
-                      >cancel</span
-                    ><span class="font-bold">Calendly</span> (Scheduling &amp;
-                    Appointments)
-                  </li>
-                  <li
-                    class="flex items-center gap-base text-on-surface-variant"
-                  >
-                    <span class="material-symbols-outlined text-error"
-                      >cancel</span
-                    ><span class="font-bold">Zendesk</span> (Customer Support
-                    &amp; Helpdesk)
-                  </li>
-                  <li
-                    class="flex items-center gap-base text-on-surface-variant"
-                  >
-                    <span class="material-symbols-outlined text-error"
-                      >cancel</span
-                    ><span class="font-bold">Mailchimp</span> (Email Marketing
-                    &amp; Automation)
-                  </li>
-                  <li
-                    class="flex items-center gap-base text-on-surface-variant"
-                  >
-                    <span class="material-symbols-outlined text-error"
-                      >cancel</span
-                    ><span class="font-bold">HubSpot</span> (CRM &amp; Sales
-                    Pipeline)
-                  </li>
-                  <li
-                    class="flex items-center gap-base text-on-surface-variant"
-                  >
-                    <span class="material-symbols-outlined text-error"
-                      >cancel</span
-                    ><span class="font-bold">Intercom</span> (Website Chat &amp;
-                    Engagement)
-                  </li>
-                  <li
-                    class="flex items-center gap-base text-on-surface-variant"
-                  >
-                    <span class="material-symbols-outlined text-primary"
-                      >add_circle</span
-                    ><span class="italic"
-                      >And 35+ more specialized modules...</span
-                    >
-                  </li>
-                </ul>
-              </div>
-              <div class="text-center lg:text-left">
-                <button
-                  class="bg-primary text-on-primary px-10 py-4 rounded-lg font-headline-sm font-bold hover:brightness-110 transition-all"
-                >
-                  Unify Your Stack Now
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-      <!-- Comparison Table -->
-      <section
-        class="py-24 px-margin-desktop bg-surface-container-lowest overflow-hidden relative"
-      >
-        <div
-          class="absolute inset-0 comparison-gradient pointer-events-none"
-        ></div>
-        <div class="max-w-container-max mx-auto relative z-10">
-          <div class="text-center mb-20">
-            <h2 class="font-display-lg text-display-lg text-primary mb-6">
-              Compare the Architecture
-            </h2>
-            <p
-              class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto"
-            >
-              Discover why market leaders are migrating from fragmented legacy
-              stacks to our unified executive platform.
-            </p>
-          </div>
-          <div
-            class="bg-surface-container-low border border-outline-variant/20 rounded-xl overflow-hidden shadow-2xl card-inner-glow"
-          >
-            <div
-              class="grid grid-cols-12 bg-surface-container-high border-b border-outline-variant/30 py-6 px-8"
-            >
-              <div
-                class="col-span-5 text-label-md text-on-surface font-bold uppercase tracking-widest"
-              >
-                CAPABILITIES &amp; FEATURES
-              </div>
-              <div
-                class="col-span-4 text-label-md text-on-surface font-bold uppercase tracking-widest text-center"
-              >
-                LEGACY SAAS FRAGMENTS
-              </div>
-              <div
-                class="col-span-3 text-label-md text-primary font-bold uppercase tracking-widest text-right"
-              >
-                10 WAYS PLATFORM
-              </div>
-            </div>
-            <div class="divide-y divide-outline-variant/10">
-              <!-- Row: CRM -->
-              <div
-                class="grid grid-cols-12 py-5 px-8 items-center hover:bg-surface-bright/5 transition-colors group"
-              >
-                <div class="col-span-5 flex items-center gap-4">
-                  <span class="material-symbols-outlined text-primary text-2xl"
-                    >groups</span
-                  >
-                  <span class="text-body-md font-medium text-on-surface"
-                    >CRM &amp; Pipeline Management</span
-                  >
-                </div>
-                <div class="col-span-4 text-center">
-                  <span class="text-label-sm text-on-surface-variant/60 italic"
-                    >Salesforce, HubSpot</span
-                  >
-                </div>
-                <div class="col-span-3 text-right">
-                  <span class="material-symbols-outlined text-primary font-bold"
-                    >check_circle</span
-                  >
-                </div>
-              </div>
-              <!-- Row: Funnels -->
-              <div
-                class="grid grid-cols-12 py-5 px-8 items-center hover:bg-surface-bright/5 transition-colors group"
-              >
-                <div class="col-span-5 flex items-center gap-4">
-                  <span class="material-symbols-outlined text-primary text-2xl"
-                    >filter_alt</span
-                  >
-                  <span class="text-body-md font-medium text-on-surface"
-                    >Unlimited Sales Funnels</span
-                  >
-                </div>
-                <div class="col-span-4 text-center">
-                  <span class="text-label-sm text-on-surface-variant/60 italic"
-                    >ClickFunnels, Leadpages</span
-                  >
-                </div>
-                <div class="col-span-3 text-right">
-                  <span class="material-symbols-outlined text-primary font-bold"
-                    >check_circle</span
-                  >
-                </div>
-              </div>
-              <!-- Row: Website -->
-              <div
-                class="grid grid-cols-12 py-5 px-8 items-center hover:bg-surface-bright/5 transition-colors group"
-              >
-                <div class="col-span-5 flex items-center gap-4">
-                  <span class="material-symbols-outlined text-primary text-2xl"
-                    >language</span
-                  >
-                  <span class="text-body-md font-medium text-on-surface"
-                    >Website Builder</span
-                  >
-                </div>
-                <div class="col-span-4 text-center">
-                  <span class="text-label-sm text-on-surface-variant/60 italic"
-                    >WordPress, Wix, Squarespace</span
-                  >
-                </div>
-                <div class="col-span-3 text-right">
-                  <span class="material-symbols-outlined text-primary font-bold"
-                    >check_circle</span
-                  >
-                </div>
-              </div>
-              <!-- Row: Email -->
-              <div
-                class="grid grid-cols-12 py-5 px-8 items-center hover:bg-surface-bright/5 transition-colors group"
-              >
-                <div class="col-span-5 flex items-center gap-4">
-                  <span class="material-symbols-outlined text-primary text-2xl"
-                    >mail</span
-                  >
-                  <span class="text-body-md font-medium text-on-surface"
-                    >Email Marketing</span
-                  >
-                </div>
-                <div class="col-span-4 text-center">
-                  <span class="text-label-sm text-on-surface-variant/60 italic"
-                    >Mailchimp, ActiveCampaign</span
-                  >
-                </div>
-                <div class="col-span-3 text-right">
-                  <span class="material-symbols-outlined text-primary font-bold"
-                    >check_circle</span
-                  >
-                </div>
-              </div>
-              <!-- Row: Booking -->
-              <div
-                class="grid grid-cols-12 py-5 px-8 items-center hover:bg-surface-bright/5 transition-colors group"
-              >
-                <div class="col-span-5 flex items-center gap-4">
-                  <span class="material-symbols-outlined text-primary text-2xl"
-                    >calendar_today</span
-                  >
-                  <span class="text-body-md font-medium text-on-surface"
-                    >Booking &amp; Appointments</span
-                  >
-                </div>
-                <div class="col-span-4 text-center">
-                  <span class="text-label-sm text-on-surface-variant/60 italic"
-                    >Calendly, Acuity</span
-                  >
-                </div>
-                <div class="col-span-3 text-right">
-                  <span class="material-symbols-outlined text-primary font-bold"
-                    >check_circle</span
-                  >
-                </div>
-              </div>
-              <!-- Row: Workflows -->
-              <div
-                class="grid grid-cols-12 py-5 px-8 items-center hover:bg-surface-bright/5 transition-colors group"
-              >
-                <div class="col-span-5 flex items-center gap-4">
-                  <span class="material-symbols-outlined text-primary text-2xl"
-                    >account_tree</span
-                  >
-                  <span class="text-body-md font-medium text-on-surface"
-                    >Workflow Automation</span
-                  >
-                </div>
-                <div class="col-span-4 text-center">
-                  <span class="text-label-sm text-on-surface-variant/60 italic"
-                    >Zapier, Make</span
-                  >
-                </div>
-                <div class="col-span-3 text-right">
-                  <span class="material-symbols-outlined text-primary font-bold"
-                    >check_circle</span
-                  >
-                </div>
-              </div>
-              <!-- Row: Document Signing -->
-              <div
-                class="grid grid-cols-12 py-5 px-8 items-center hover:bg-surface-bright/5 transition-colors group"
-              >
-                <div class="col-span-5 flex items-center gap-4">
-                  <span class="material-symbols-outlined text-primary text-2xl"
-                    >history_edu</span
-                  >
-                  <span class="text-body-md font-medium text-on-surface"
-                    >Document Signing</span
-                  >
-                </div>
-                <div class="col-span-4 text-center">
-                  <span class="text-label-sm text-on-surface-variant/60 italic"
-                    >DocuSign, PandaDoc</span
-                  >
-                </div>
-                <div class="col-span-3 text-right">
-                  <span class="material-symbols-outlined text-primary font-bold"
-                    >check_circle</span
-                  >
-                </div>
-              </div>
-            </div>
-            <div
-              class="bg-surface-container-high py-8 px-8 border-t border-primary/20"
-            >
-              <div class="grid grid-cols-12 items-center">
-                <div class="col-span-5">
-                  <div class="text-headline-sm text-on-surface">
-                    Estimated Monthly Investment
-                  </div>
-                </div>
-                <div class="col-span-4 text-center">
-                  <div class="text-headline-sm text-error font-bold">
-                    $1,400+
-                    <span
-                      class="text-label-sm font-normal text-on-surface-variant"
-                      >/mo</span
-                    >
-                  </div>
-                </div>
-                <div class="col-span-3 text-right">
-                  <div class="text-headline-md text-primary font-bold">
-                    $97
-                    <span class="text-label-sm font-normal text-primary/70"
-                      >/mo</span
-                    >
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="mt-16 text-center">
             <button
-              class="bg-primary text-on-primary px-12 py-5 rounded-lg font-headline-sm font-bold hover:brightness-110 active:scale-95 transition-all shadow-xl shadow-primary/40"
+              type="button"
+              class="cn-btn cn-btn-primary cn-pad-x-wide cn-pad-y-lg cn-text-heading-sm cn-btn-glow-md"
             >
-              Start Your Free Trial
+              Deploy Your Fleet
             </button>
           </div>
         </div>
       </section>
-      <!-- Executive Pricing Plans Section -->
-      <section class="py-24 px-margin-desktop bg-background">
-        <div class="max-w-container-max mx-auto">
-          <div class="text-center mb-16">
-            <h2 class="font-display-lg text-display-lg text-primary mb-6">
-              Executive Pricing Plans
-            </h2>
-            <p
-              class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto"
+
+      <section
+        id="ai-tools"
+        class="cn-modules-additional-section cn-scroll-anchor cn-margin-top-section cn-pad-section"
+      >
+        <div class="cn-layout-max">
+          <h2 class="cn-title-section text-center cn-margin-below-section">
+            Additional Software Modules
+          </h2>
+          <div class="text-center cn-margin-below-section mt-2">
+            <button
+              type="button"
+              class="cn-btn cn-btn-outline cn-btn-outline-fill-hover cn-text-label px-4 cn-pad-y-sm d-inline-flex align-items-center cn-open-modules-modal"
+              id="open-modules-modal"
             >
-              Select the tier that aligns with your enterprise scale and growth
-              objectives.
+              <span class="cn-icon cn-text-gold mr-2">info</span>View Module
+              Details
+            </button>
+          </div>
+          <div class="row cn-row-tight cn-row-modules cn-margin-below-section">
+            <div class="col-12 col-md-6 col-lg-3 mb-2">
+              <div class="cn-module-line">
+                <span class="cn-icon cn-text-gold cn-icon-sm">check_circle</span
+                >Workflow Automations
+              </div>
+            </div>
+            <div class="col-12 col-md-6 col-lg-3 mb-2">
+              <div class="cn-module-line">
+                <span class="cn-icon cn-text-gold cn-icon-sm">check_circle</span
+                >Unlimited Sales Funnels
+              </div>
+            </div>
+            <div class="col-12 col-md-6 col-lg-3 mb-2">
+              <div class="cn-module-line">
+                <span class="cn-icon cn-text-gold cn-icon-sm">check_circle</span
+                >Webinar Funnels
+              </div>
+            </div>
+            <div class="col-12 col-md-6 col-lg-3 mb-2">
+              <div class="cn-module-line">
+                <span class="cn-icon cn-text-gold cn-icon-sm">check_circle</span
+                >Sales Pipelines
+              </div>
+            </div>
+            <div class="col-12 col-md-6 col-lg-3 mb-2">
+              <div class="cn-module-line">
+                <span class="cn-icon cn-text-gold cn-icon-sm">check_circle</span
+                >Prospecting Tool
+              </div>
+            </div>
+            <div class="col-12 col-md-6 col-lg-3 mb-2">
+              <div class="cn-module-line">
+                <span class="cn-icon cn-text-gold cn-icon-sm">check_circle</span
+                >Email Marketing
+              </div>
+            </div>
+            <div class="col-12 col-md-6 col-lg-3 mb-2">
+              <div class="cn-module-line">
+                <span class="cn-icon cn-text-gold cn-icon-sm">check_circle</span
+                >SMS Marketing
+              </div>
+            </div>
+            <div class="col-12 col-md-6 col-lg-3 mb-2">
+              <div class="cn-module-line">
+                <span class="cn-icon cn-text-gold cn-icon-sm">check_circle</span
+                >Websites
+              </div>
+            </div>
+            <div class="col-12 col-md-6 col-lg-3 mb-2">
+              <div class="cn-module-line">
+                <span class="cn-icon cn-text-gold cn-icon-sm">check_circle</span
+                >Ecommerce Websites
+              </div>
+            </div>
+            <div class="col-12 col-md-6 col-lg-3 mb-2">
+              <div class="cn-module-line">
+                <span class="cn-icon cn-text-gold cn-icon-sm">check_circle</span
+                >Takeaway Websites
+              </div>
+            </div>
+            <div class="col-12 col-md-6 col-lg-3 mb-2">
+              <div class="cn-module-line">
+                <span class="cn-icon cn-text-gold cn-icon-sm">check_circle</span
+                >Landing Pages
+              </div>
+            </div>
+            <div class="col-12 col-md-6 col-lg-3 mb-2">
+              <div class="cn-module-line">
+                <span class="cn-icon cn-text-gold cn-icon-sm">check_circle</span
+                >Epos Software
+              </div>
+            </div>
+            <div class="col-12 col-md-6 col-lg-3 mb-2">
+              <div class="cn-module-line">
+                <span class="cn-icon cn-text-gold cn-icon-sm">check_circle</span
+                >Accountancy
+              </div>
+            </div>
+            <div class="col-12 col-md-6 col-lg-3 mb-2">
+              <div class="cn-module-line">
+                <span class="cn-icon cn-text-gold cn-icon-sm">check_circle</span
+                >Invoicing
+              </div>
+            </div>
+            <div class="col-12 col-md-6 col-lg-3 mb-2">
+              <div class="cn-module-line">
+                <span class="cn-icon cn-text-gold cn-icon-sm">check_circle</span
+                >Payroll
+              </div>
+            </div>
+            <div class="col-12 col-md-6 col-lg-3 mb-2">
+              <div class="cn-module-line">
+                <span class="cn-icon cn-text-gold cn-icon-sm">check_circle</span
+                >Expenses
+              </div>
+            </div>
+            <div class="col-12 col-md-6 col-lg-3 mb-2">
+              <div class="cn-module-line">
+                <span class="cn-icon cn-text-gold cn-icon-sm">check_circle</span
+                >Project Management
+              </div>
+            </div>
+            <div class="col-12 col-md-6 col-lg-3 mb-2">
+              <div class="cn-module-line">
+                <span class="cn-icon cn-text-gold cn-icon-sm">check_circle</span
+                >Appointment Reminders
+              </div>
+            </div>
+            <div class="col-12 col-md-6 col-lg-3 mb-2">
+              <div class="cn-module-line">
+                <span class="cn-icon cn-text-gold cn-icon-sm">check_circle</span
+                >Booking System
+              </div>
+            </div>
+            <div class="col-12 col-md-6 col-lg-3 mb-2">
+              <div class="cn-module-line">
+                <span class="cn-icon cn-text-gold cn-icon-sm">check_circle</span
+                >Booking Calendars
+              </div>
+            </div>
+            <div class="col-12 col-md-6 col-lg-3 mb-2">
+              <div class="cn-module-line">
+                <span class="cn-icon cn-text-gold cn-icon-sm">check_circle</span
+                >Meeting Calendar
+              </div>
+            </div>
+            <div class="col-12 col-md-6 col-lg-3 mb-2">
+              <div class="cn-module-line">
+                <span class="cn-icon cn-text-gold cn-icon-sm">check_circle</span
+                >Forms, Surveys Quizzes
+              </div>
+            </div>
+            <div class="col-12 col-md-6 col-lg-3 mb-2">
+              <div class="cn-module-line">
+                <span class="cn-icon cn-text-gold cn-icon-sm">check_circle</span
+                >Call Tracking
+              </div>
+            </div>
+            <div class="col-12 col-md-6 col-lg-3 mb-2">
+              <div class="cn-module-line">
+                <span class="cn-icon cn-text-gold cn-icon-sm">check_circle</span
+                >Affiliate Manager
+              </div>
+            </div>
+            <div class="col-12 col-md-6 col-lg-3 mb-2">
+              <div class="cn-module-line">
+                <span class="cn-icon cn-text-gold cn-icon-sm">check_circle</span
+                >Smart Lists / Segmentation
+              </div>
+            </div>
+            <div class="col-12 col-md-6 col-lg-3 mb-2">
+              <div class="cn-module-line">
+                <span class="cn-icon cn-text-gold cn-icon-sm">check_circle</span
+                >Loyalty Programs
+              </div>
+            </div>
+            <div class="col-12 col-md-6 col-lg-3 mb-2">
+              <div class="cn-module-line">
+                <span class="cn-icon cn-text-gold cn-icon-sm">check_circle</span
+                >Property Management
+              </div>
+            </div>
+            <div class="col-12 col-md-6 col-lg-3 mb-2">
+              <div class="cn-module-line">
+                <span class="cn-icon cn-text-gold cn-icon-sm">check_circle</span
+                >Rental Software
+              </div>
+            </div>
+            <div class="col-12 col-md-6 col-lg-3 mb-2">
+              <div class="cn-module-line">
+                <span class="cn-icon cn-text-gold cn-icon-sm">check_circle</span
+                >Hire Software
+              </div>
+            </div>
+            <div class="col-12 col-md-6 col-lg-3 mb-2">
+              <div class="cn-module-line">
+                <span class="cn-icon cn-text-gold cn-icon-sm">check_circle</span
+                >Inventory Management
+              </div>
+            </div>
+            <div class="col-12 col-md-6 col-lg-3 mb-2">
+              <div class="cn-module-line">
+                <span class="cn-icon cn-text-gold cn-icon-sm">check_circle</span
+                >Staff Management
+              </div>
+            </div>
+            <div class="col-12 col-md-6 col-lg-3 mb-2">
+              <div class="cn-module-line">
+                <span class="cn-icon cn-text-gold cn-icon-sm">check_circle</span
+                >School Management Software
+              </div>
+            </div>
+            <div class="col-12 col-md-6 col-lg-3 mb-2">
+              <div class="cn-module-line">
+                <span class="cn-icon cn-text-gold cn-icon-sm">check_circle</span
+                >Salon Software
+              </div>
+            </div>
+            <div class="col-12 col-md-6 col-lg-3 mb-2">
+              <div class="cn-module-line">
+                <span class="cn-icon cn-text-gold cn-icon-sm">check_circle</span
+                >Restaurant Table Software
+              </div>
+            </div>
+            <div class="col-12 col-md-6 col-lg-3 mb-2">
+              <div class="cn-module-line">
+                <span class="cn-icon cn-text-gold cn-icon-sm">check_circle</span
+                >Chef Screen
+              </div>
+            </div>
+            <div class="col-12 col-md-6 col-lg-3 mb-2">
+              <div class="cn-module-line">
+                <span class="cn-icon cn-text-gold cn-icon-sm">check_circle</span
+                >Delivery Driver Management
+              </div>
+            </div>
+            <div class="col-12 col-md-6 col-lg-3 mb-2">
+              <div class="cn-module-line">
+                <span class="cn-icon cn-text-gold cn-icon-sm">check_circle</span
+                >Barcode Software
+              </div>
+            </div>
+            <div class="col-12 col-md-6 col-lg-3 mb-2">
+              <div class="cn-module-line">
+                <span class="cn-icon cn-text-gold cn-icon-sm">check_circle</span
+                >Digital Signage
+              </div>
+            </div>
+            <div class="col-12 col-md-6 col-lg-3 mb-2">
+              <div class="cn-module-line">
+                <span class="cn-icon cn-text-gold cn-icon-sm">check_circle</span
+                >E-Sign
+              </div>
+            </div>
+            <div class="col-12 col-md-6 col-lg-3 mb-2">
+              <div class="cn-module-line">
+                <span class="cn-icon cn-text-gold cn-icon-sm">check_circle</span
+                >Discounts &amp; Offers
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section
+        class="xc-sec cn-pad-section-xl cn-border-y-strong cn-bg-surface-darkest position-relative overflow-hidden"
+      >
+        <div class="cn-absolute-fill cn-gradient-fade cn-pointer-none"></div>
+        <div class="cn-layout-max position-relative cn-z-raised">
+          <div class="text-center cn-margin-below-xl">
+            <h2 class="cn-title-section">
+              Replace Fragmented SaaS with 10 Ways.ai
+            </h2>
+            <p class="cn-prose-lead mx-auto cn-measure-narrow">
+              Consolidate your entire tech stack into the 10 Ways unified
+              intelligence platform. Eliminate expensive, disconnected tools and
+              scale with an integrated AI ecosystem.
             </p>
           </div>
-          <div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
-            <!-- Starter Plan -->
-            <div
-              class="bg-surface-container-low border-2 border-primary/30 p-gutter rounded-xl flex flex-col card-inner-glow"
+          <div class="xc-scr">
+            <div class="xc-box cn-surface-sheen">
+              <div class="row xc-hd xc-gr mx-0 align-items-center">
+                <div
+                  class="xc-col xc-c5 col-12 col-md-5 cn-text-label cn-text-on-surface font-weight-bold cn-uppercase cn-tracking-widest"
+                >
+                  Features
+                </div>
+                <div
+                  class="xc-col xc-c4 col-12 col-md-4 cn-text-label cn-text-on-surface font-weight-bold cn-uppercase cn-tracking-widest text-center"
+                >
+                  Legacy SaaS Fragments
+                </div>
+                <div
+                  class="xc-col xc-c3 col-12 col-md-3 cn-text-label cn-text-gold font-weight-bold cn-uppercase cn-tracking-widest text-center"
+                >
+                  10 Ways Platform
+                </div>
+              </div>
+              <div>
+                <div class="row xc-rw xc-gr mx-0">
+                  <div
+                    class="xc-col xc-c5 col-12 col-md-5 d-flex align-items-center mb-2 mb-md-0"
+                  >
+                    <span
+                      class="cn-text-body font-weight-medium cn-text-on-surface"
+                      >CRM &amp; Pipeline Management</span
+                    >
+                  </div>
+                  <div
+                    class="xc-col xc-c4 col-12 col-md-4 d-flex justify-content-center mb-2 mb-md-0"
+                  >
+                    <span class="cn-text-caption cn-text-gold"
+                      >Salesforce, HubSpot</span
+                    >
+                  </div>
+                  <div class="xc-col xc-c3 col-12 col-md-3 text-center">
+                    <span class="cn-icon cn-text-gold font-weight-bold"
+                      >check_circle</span
+                    >
+                  </div>
+                </div>
+                <div class="row xc-rw xc-gr mx-0">
+                  <div
+                    class="xc-col xc-c5 col-12 col-md-5 d-flex align-items-center mb-2 mb-md-0"
+                  >
+                    <span
+                      class="cn-text-body font-weight-medium cn-text-on-surface"
+                      >Unlimited Sales Funnels</span
+                    >
+                  </div>
+                  <div
+                    class="xc-col xc-c4 col-12 col-md-4 d-flex justify-content-center mb-2 mb-md-0"
+                  >
+                    <span class="cn-text-caption cn-text-gold"
+                      >ClickFunnels, Leadpages</span
+                    >
+                  </div>
+                  <div class="xc-col xc-c3 col-12 col-md-3 text-center">
+                    <span class="cn-icon cn-text-gold font-weight-bold"
+                      >check_circle</span
+                    >
+                  </div>
+                </div>
+                <div class="row xc-rw xc-gr mx-0">
+                  <div
+                    class="xc-col xc-c5 col-12 col-md-5 d-flex align-items-center mb-2 mb-md-0"
+                  >
+                    <span
+                      class="cn-text-body font-weight-medium cn-text-on-surface"
+                      >Website Builder</span
+                    >
+                  </div>
+                  <div
+                    class="xc-col xc-c4 col-12 col-md-4 d-flex justify-content-center mb-2 mb-md-0"
+                  >
+                    <span class="cn-text-caption cn-text-gold"
+                      >WordPress, Wix, Squarespace</span
+                    >
+                  </div>
+                  <div class="xc-col xc-c3 col-12 col-md-3 text-center">
+                    <span class="cn-icon cn-text-gold font-weight-bold"
+                      >check_circle</span
+                    >
+                  </div>
+                </div>
+                <div class="row xc-rw xc-gr mx-0">
+                  <div
+                    class="xc-col xc-c5 col-12 col-md-5 d-flex align-items-center mb-2 mb-md-0"
+                  >
+                    <span
+                      class="cn-text-body font-weight-medium cn-text-on-surface"
+                      >Surveys &amp; Forms</span
+                    >
+                  </div>
+                  <div
+                    class="xc-col xc-c4 col-12 col-md-4 d-flex justify-content-center mb-2 mb-md-0"
+                  >
+                    <span class="cn-text-caption cn-text-gold"
+                      >Typeform, SurveyMonkey</span
+                    >
+                  </div>
+                  <div class="xc-col xc-c3 col-12 col-md-3 text-center">
+                    <span class="cn-icon cn-text-gold font-weight-bold"
+                      >check_circle</span
+                    >
+                  </div>
+                </div>
+                <div class="row xc-rw xc-gr mx-0">
+                  <div
+                    class="xc-col xc-c5 col-12 col-md-5 d-flex align-items-center mb-2 mb-md-0"
+                  >
+                    <span
+                      class="cn-text-body font-weight-medium cn-text-on-surface"
+                      >Email Marketing</span
+                    >
+                  </div>
+                  <div
+                    class="xc-col xc-c4 col-12 col-md-4 d-flex justify-content-center mb-2 mb-md-0"
+                  >
+                    <span class="cn-text-caption cn-text-gold"
+                      >Mailchimp, ActiveCampaign</span
+                    >
+                  </div>
+                  <div class="xc-col xc-c3 col-12 col-md-3 text-center">
+                    <span class="cn-icon cn-text-gold font-weight-bold"
+                      >check_circle</span
+                    >
+                  </div>
+                </div>
+                <div class="row xc-rw xc-gr mx-0">
+                  <div
+                    class="xc-col xc-c5 col-12 col-md-5 d-flex align-items-center mb-2 mb-md-0"
+                  >
+                    <span
+                      class="cn-text-body font-weight-medium cn-text-on-surface"
+                      >2-Way SMS Marketing</span
+                    >
+                  </div>
+                  <div
+                    class="xc-col xc-c4 col-12 col-md-4 d-flex justify-content-center mb-2 mb-md-0"
+                  >
+                    <span class="cn-text-caption cn-text-gold"
+                      >Twilio, Podium</span
+                    >
+                  </div>
+                  <div class="xc-col xc-c3 col-12 col-md-3 text-center">
+                    <span class="cn-icon cn-text-gold font-weight-bold"
+                      >check_circle</span
+                    >
+                  </div>
+                </div>
+                <div class="row xc-rw xc-gr mx-0">
+                  <div
+                    class="xc-col xc-c5 col-12 col-md-5 d-flex align-items-center mb-2 mb-md-0"
+                  >
+                    <span
+                      class="cn-text-body font-weight-medium cn-text-on-surface"
+                      >Booking &amp; Appointments</span
+                    >
+                  </div>
+                  <div
+                    class="xc-col xc-c4 col-12 col-md-4 d-flex justify-content-center mb-2 mb-md-0"
+                  >
+                    <span class="cn-text-caption cn-text-gold"
+                      >Calendly, Acuity</span
+                    >
+                  </div>
+                  <div class="xc-col xc-c3 col-12 col-md-3 text-center">
+                    <span class="cn-icon cn-text-gold font-weight-bold"
+                      >check_circle</span
+                    >
+                  </div>
+                </div>
+                <div class="row xc-rw xc-gr mx-0">
+                  <div
+                    class="xc-col xc-c5 col-12 col-md-5 d-flex align-items-center mb-2 mb-md-0"
+                  >
+                    <span
+                      class="cn-text-body font-weight-medium cn-text-on-surface"
+                      >Workflow Automation</span
+                    >
+                  </div>
+                  <div
+                    class="xc-col xc-c4 col-12 col-md-4 d-flex justify-content-center mb-2 mb-md-0"
+                  >
+                    <span class="cn-text-caption cn-text-gold"
+                      >Zapier, Make</span
+                    >
+                  </div>
+                  <div class="xc-col xc-c3 col-12 col-md-3 text-center">
+                    <span class="cn-icon cn-text-gold font-weight-bold"
+                      >check_circle</span
+                    >
+                  </div>
+                </div>
+                <div class="row xc-rw xc-gr mx-0">
+                  <div
+                    class="xc-col xc-c5 col-12 col-md-5 d-flex align-items-center mb-2 mb-md-0"
+                  >
+                    <span
+                      class="cn-text-body font-weight-medium cn-text-on-surface"
+                      >Courses &amp; Membership</span
+                    >
+                  </div>
+                  <div
+                    class="xc-col xc-c4 col-12 col-md-4 d-flex justify-content-center mb-2 mb-md-0"
+                  >
+                    <span class="cn-text-caption cn-text-gold"
+                      >Kajabi, Teachable</span
+                    >
+                  </div>
+                  <div class="xc-col xc-c3 col-12 col-md-3 text-center">
+                    <span class="cn-icon cn-text-gold font-weight-bold"
+                      >check_circle</span
+                    >
+                  </div>
+                </div>
+                <div class="row xc-rw xc-gr mx-0">
+                  <div
+                    class="xc-col xc-c5 col-12 col-md-5 d-flex align-items-center mb-2 mb-md-0"
+                  >
+                    <span
+                      class="cn-text-body font-weight-medium cn-text-on-surface"
+                      >Reputation Management</span
+                    >
+                  </div>
+                  <div
+                    class="xc-col xc-c4 col-12 col-md-4 d-flex justify-content-center mb-2 mb-md-0"
+                  >
+                    <span class="cn-text-caption cn-text-gold"
+                      >BirdEye, Yotpo</span
+                    >
+                  </div>
+                  <div class="xc-col xc-c3 col-12 col-md-3 text-center">
+                    <span class="cn-icon cn-text-gold font-weight-bold"
+                      >check_circle</span
+                    >
+                  </div>
+                </div>
+                <div class="row xc-rw xc-gr mx-0">
+                  <div
+                    class="xc-col xc-c5 col-12 col-md-5 d-flex align-items-center mb-2 mb-md-0"
+                  >
+                    <span
+                      class="cn-text-body font-weight-medium cn-text-on-surface"
+                      >Document Signing</span
+                    >
+                  </div>
+                  <div
+                    class="xc-col xc-c4 col-12 col-md-4 d-flex justify-content-center mb-2 mb-md-0"
+                  >
+                    <span class="cn-text-caption cn-text-gold"
+                      >DocuSign, PandaDoc</span
+                    >
+                  </div>
+                  <div class="xc-col xc-c3 col-12 col-md-3 text-center">
+                    <span class="cn-icon cn-text-gold font-weight-bold"
+                      >check_circle</span
+                    >
+                  </div>
+                </div>
+              </div>
+              <div class="xc-ft">
+                <div class="row xc-gr align-items-center mx-0">
+                  <div class="xc-col xc-c5 col-12 col-md-5 mb-3 mb-md-0">
+                    <div class="cn-text-heading-sm cn-text-on-surface">
+                      Estimated Monthly Investment
+                    </div>
+                  </div>
+                  <div
+                    class="xc-col xc-c4 col-12 col-md-4 text-center mb-3 mb-md-0"
+                  >
+                    <div
+                      class="cn-text-heading-sm cn-text-error font-weight-bold"
+                    >
+                      $1,400+
+                      <span
+                        class="cn-text-caption font-weight-normal cn-text-muted"
+                        >/mo</span
+                      >
+                    </div>
+                  </div>
+                  <div class="xc-col xc-c3 col-12 col-md-3 text-center">
+                    <div
+                      class="cn-text-heading-md cn-text-gold font-weight-bold"
+                    >
+                      $97
+                      <span
+                        class="cn-text-caption font-weight-normal cn-text-gold-soft"
+                        >/mo</span
+                      >
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="cn-margin-top-large text-center">
+            <button
+              type="button"
+              class="cn-btn cn-btn-primary cn-pad-x-wide cn-pad-y-lg cn-text-heading-sm cn-btn-glow-md"
             >
-              <div class="mb-8">
-                <h3 class="font-headline-md text-primary mb-2">Starter</h3>
-                <div class="flex items-baseline gap-1 mb-4">
-                  <span class="text-4xl font-bold text-on-background">$97</span>
-                  <span class="text-on-surface-variant">/mo</span>
+              Consolidate Your Stack with 10 Ways Now
+            </button>
+            <p class="mt-4 cn-text-label cn-text-muted cn-italic">
+              Join 500+ enterprises who unified their intelligence this year.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section
+        class="cn-pad-section-xl cn-bg-page cn-layout-max cn-scroll-anchor"
+        id="pricing"
+      >
+        <div class="text-center cn-margin-below-section">
+          <h2 class="cn-title-section">Executive Pricing Plans</h2>
+          <p class="cn-prose-lead mx-auto cn-measure-narrow">
+            Select the tier that aligns with your enterprise scale and growth
+            objectives.
+          </p>
+        </div>
+        <div class="row cn-row-tight align-items-stretch">
+          <div class="col-12 col-md-4 mb-5 mb-md-0 d-flex">
+            <div
+              class="cn-pricing-card cn-pricing-border-soft cn-surface-sheen w-100"
+            >
+              <div class="cn-margin-below-medium">
+                <h3 class="cn-heading-tier">Starter</h3>
+                <div class="cn-price-row mb-3">
+                  <span
+                    class="cn-text-price-display font-weight-bold cn-text-on-background"
+                    >$97</span
+                  ><span class="cn-text-muted">/mo</span>
                 </div>
                 <p
-                  class="text-label-sm text-primary font-bold uppercase tracking-wider"
+                  class="cn-text-caption cn-text-gold font-weight-bold cn-uppercase cn-tracking-wide"
                 >
                   Internal License Only
                 </p>
               </div>
-              <ul class="space-y-4 mb-10 flex-grow">
-                <li
-                  class="flex items-start gap-2 text-on-surface-variant font-body-md"
-                >
-                  <span
-                    class="material-symbols-outlined text-primary text-body-md"
+              <ul class="cn-checklist flex-grow-1">
+                <li>
+                  <span class="cn-icon cn-text-gold cn-icon-sm"
                     >check_circle</span
                   >Access 1 Sub-Account
                 </li>
-                <li
-                  class="flex items-start gap-2 text-on-surface-variant font-body-md"
-                >
-                  <span
-                    class="material-symbols-outlined text-primary text-body-md"
+                <li>
+                  <span class="cn-icon cn-text-gold cn-icon-sm"
                     >check_circle</span
                   >Create 3 AI Agents
                 </li>
-                <li
-                  class="flex items-start gap-2 text-on-surface-variant font-body-md"
-                >
-                  <span
-                    class="material-symbols-outlined text-primary text-body-md"
+                <li>
+                  <span class="cn-icon cn-text-gold cn-icon-sm"
                     >check_circle</span
                   >Unlimited Leads
                 </li>
-                <li
-                  class="flex items-start gap-2 text-on-surface-variant font-body-md"
-                >
-                  <span
-                    class="material-symbols-outlined text-primary text-body-md"
+                <li>
+                  <span class="cn-icon cn-text-gold cn-icon-sm"
                     >check_circle</span
                   >AI Conversational Booking
                 </li>
-                <li
-                  class="flex items-start gap-2 text-on-surface-variant font-body-md"
-                >
-                  <span
-                    class="material-symbols-outlined text-primary text-body-md"
+                <li>
+                  <span class="cn-icon cn-text-gold cn-icon-sm"
                     >check_circle</span
                   >Access to 20 AI agents
                 </li>
-                <li
-                  class="flex items-start gap-2 text-on-surface-variant font-body-md"
-                >
-                  <span
-                    class="material-symbols-outlined text-primary text-body-md"
+                <li>
+                  <span class="cn-icon cn-text-gold cn-icon-sm"
                     >check_circle</span
                   >Automated Follow Ups
                 </li>
-                <li
-                  class="flex items-start gap-2 text-on-surface-variant font-body-md"
-                >
-                  <span
-                    class="material-symbols-outlined text-primary text-body-md"
+                <li>
+                  <span class="cn-icon cn-text-gold cn-icon-sm"
                     >check_circle</span
                   >Knowledge Base
                 </li>
               </ul>
-              <div class="pt-6 border-t border-outline-variant/20">
-                <p class="text-label-md text-on-surface-variant mb-6">
-                  Add-on: <span class="text-primary font-bold">$67</span> Per
-                  Subaccount
-                </p>
+              <div class="cn-border-top-soft pt-4 mt-auto">
                 <button
-                  class="w-full bg-surface-container-high border border-primary/40 text-primary py-3 rounded-lg font-bold hover:bg-primary hover:text-on-primary transition-all"
-                >
-                  Get Started
-                </button>
-              </div>
-            </div>
-            <!-- Unlimited Plan -->
-            <div
-              class="bg-surface-container-low border-2 border-primary p-gutter rounded-xl flex flex-col card-inner-glow relative scale-105 z-10 shadow-2xl shadow-primary/20"
-            >
-              <div
-                class="absolute -top-4 left-1/2 -translate-x-1/2 bg-primary text-on-primary px-4 py-1 rounded-full text-label-sm font-bold uppercase tracking-widest"
-              >
-                Most Popular
-              </div>
-              <div class="mb-8">
-                <h3 class="font-headline-md text-primary mb-2">Unlimited</h3>
-                <div class="flex items-baseline gap-1 mb-4">
-                  <span class="text-4xl font-bold text-on-background"
-                    >$297</span
-                  >
-                  <span class="text-on-surface-variant">/mo</span>
-                </div>
-                <p
-                  class="text-label-sm text-primary font-bold uppercase tracking-wider"
-                >
-                  Everything in Starter, plus:
-                </p>
-              </div>
-              <ul class="space-y-4 mb-10 flex-grow">
-                <li
-                  class="flex items-start gap-2 text-on-surface-variant font-body-md"
-                >
-                  <span
-                    class="material-symbols-outlined text-primary text-body-md"
-                    >check_circle</span
-                  >10 Sub-Accounts
-                </li>
-                <li
-                  class="flex items-start gap-2 text-on-surface-variant font-body-md"
-                >
-                  <span
-                    class="material-symbols-outlined text-primary text-body-md"
-                    >check_circle</span
-                  >10 AI Agents per Sub-Account
-                </li>
-                <li
-                  class="flex items-start gap-2 text-on-surface-variant font-body-md"
-                >
-                  <span
-                    class="material-symbols-outlined text-primary text-body-md"
-                    >check_circle</span
-                  >Voicenotes &amp; Analytics
-                </li>
-                <li
-                  class="flex items-start gap-2 text-on-surface-variant font-body-md"
-                >
-                  <span
-                    class="material-symbols-outlined text-primary text-body-md"
-                    >check_circle</span
-                  >24/7 Executive Support
-                </li>
-                <li
-                  class="flex items-start gap-2 text-on-surface-variant font-body-md"
-                >
-                  <span
-                    class="material-symbols-outlined text-primary text-body-md"
-                    >check_circle</span
-                  >Campaign Split Testing
-                </li>
-                <li
-                  class="flex items-start gap-2 text-on-surface-variant font-body-md"
-                >
-                  <span
-                    class="material-symbols-outlined text-primary text-body-md"
-                    >check_circle</span
-                  >Lead Dashboard &amp; Test Env
-                </li>
-                <li
-                  class="flex items-start gap-2 text-on-surface-variant font-body-md"
-                >
-                  <span
-                    class="material-symbols-outlined text-primary text-body-md"
-                    >check_circle</span
-                  >Unlimited Leads
-                </li>
-              </ul>
-              <div class="pt-6 border-t border-outline-variant/20">
-                <p class="text-label-md text-on-surface-variant mb-6">
-                  Add-on: <span class="text-primary font-bold">$29</span> Per
-                  Subaccount
-                </p>
-                <button
-                  class="w-full bg-primary text-on-primary py-4 rounded-lg font-bold hover:brightness-110 transition-all shadow-lg shadow-primary/30"
+                  type="button"
+                  class="cn-btn cn-btn-outline cn-btn-outline-fill-hover w-100 cn-pad-y-sm font-weight-bold cn-radius-lg cn-open-modules-modal"
                 >
                   Start 14-Day Free Trial
                 </button>
               </div>
             </div>
-            <!-- SaaS Plan -->
+          </div>
+          <div class="col-12 col-md-4 mb-5 mb-md-0 d-flex">
             <div
-              class="bg-surface-container-low border-2 border-primary/30 p-gutter rounded-xl flex flex-col card-inner-glow"
+              class="cn-pricing-card cn-pricing-featured cn-surface-sheen w-100"
             >
-              <div class="mb-8">
-                <h3 class="font-headline-md text-primary mb-2">SaaS Plan</h3>
-                <div class="flex items-baseline gap-1 mb-4">
-                  <span class="text-4xl font-bold text-on-background"
-                    >$497</span
-                  >
-                  <span class="text-on-surface-variant">/mo</span>
+              <span class="cn-badge-popular">Most Popular</span>
+              <div class="cn-margin-below-medium mt-2">
+                <h3 class="cn-heading-tier">Unlimited</h3>
+                <div class="cn-price-row mb-3">
+                  <span
+                    class="cn-text-price-display font-weight-bold cn-text-on-background"
+                    >$297</span
+                  ><span class="cn-text-muted">/mo</span>
                 </div>
-                <p class="text-label-sm text-on-surface-variant leading-tight">
+                <p
+                  class="cn-text-caption cn-text-gold font-weight-bold cn-uppercase cn-tracking-wide"
+                >
+                  Everything in Starter, plus:
+                </p>
+              </div>
+              <ul class="cn-checklist flex-grow-1">
+                <li>
+                  <span class="cn-icon cn-text-gold cn-icon-sm"
+                    >check_circle</span
+                  >10 Sub-Accounts
+                </li>
+                <li>
+                  <span class="cn-icon cn-text-gold cn-icon-sm"
+                    >check_circle</span
+                  >10 AI Agents per Sub-Account
+                </li>
+                <li>
+                  <span class="cn-icon cn-text-gold cn-icon-sm"
+                    >check_circle</span
+                  >Voicenotes &amp; Analytics
+                </li>
+                <li>
+                  <span class="cn-icon cn-text-gold cn-icon-sm"
+                    >check_circle</span
+                  >24/7 Executive Support
+                </li>
+                <li>
+                  <span class="cn-icon cn-text-gold cn-icon-sm"
+                    >check_circle</span
+                  >Campaign Split Testing
+                </li>
+                <li>
+                  <span class="cn-icon cn-text-gold cn-icon-sm"
+                    >check_circle</span
+                  >Lead Dashboard &amp; Test Env
+                </li>
+                <li>
+                  <span class="cn-icon cn-text-gold cn-icon-sm"
+                    >check_circle</span
+                  >Unlimited Leads
+                </li>
+              </ul>
+              <div class="cn-border-top-soft pt-4 mt-auto">
+                <button
+                  type="button"
+                  class="cn-btn cn-btn-primary w-100 py-3 font-weight-bold cn-radius-lg cn-btn-glow-sm cn-open-modules-modal"
+                >
+                  Start 14-Day Free Trial
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-md-4 d-flex">
+            <div
+              class="cn-pricing-card cn-pricing-border-soft cn-surface-sheen w-100"
+            >
+              <div class="cn-margin-below-medium">
+                <h3 class="cn-heading-tier">SaaS Plan</h3>
+                <div class="cn-price-row mb-3">
+                  <span
+                    class="cn-text-price-display font-weight-bold cn-text-on-background"
+                    >$497</span
+                  ><span class="cn-text-muted">/mo</span>
+                </div>
+                <p class="cn-text-caption cn-text-muted cn-leading-tight">
                   Everything You Need To Start Generating Recurring SaaS
                   Revenue.
                 </p>
               </div>
-              <ul class="space-y-4 mb-10 flex-grow">
-                <li
-                  class="flex items-start gap-2 text-on-surface-variant font-body-md"
-                >
-                  <span
-                    class="material-symbols-outlined text-primary text-body-md"
+              <ul class="cn-checklist flex-grow-1">
+                <li>
+                  <span class="cn-icon cn-text-gold cn-icon-sm"
                     >check_circle</span
                   >Everything In Unlimited
                 </li>
-                <li
-                  class="flex items-start gap-2 text-on-surface-variant font-body-md"
-                >
-                  <span
-                    class="material-symbols-outlined text-primary text-body-md"
+                <li>
+                  <span class="cn-icon cn-text-gold cn-icon-sm"
                     >check_circle</span
                   >SaaS Mode - Auto Creation
                 </li>
-                <li
-                  class="flex items-start gap-2 text-on-surface-variant font-body-md"
-                >
-                  <span
-                    class="material-symbols-outlined text-primary text-body-md"
+                <li>
+                  <span class="cn-icon cn-text-gold cn-icon-sm"
                     >check_circle</span
                   >Rebilling with Custom Markup
                 </li>
-                <li
-                  class="flex items-start gap-2 text-on-surface-variant font-body-md"
-                >
-                  <span
-                    class="material-symbols-outlined text-primary text-body-md"
+                <li>
+                  <span class="cn-icon cn-text-gold cn-icon-sm"
                     >check_circle</span
                   >Conversation AI Rebilling
                 </li>
-                <li
-                  class="flex items-start gap-2 text-on-surface-variant font-body-md"
-                >
-                  <span
-                    class="material-symbols-outlined text-primary text-body-md"
+                <li>
+                  <span class="cn-icon cn-text-gold cn-icon-sm"
                     >check_circle</span
                   >White-label Capabilities
                 </li>
               </ul>
-              <div class="pt-6 border-t border-outline-variant/20"></div>
+              <div class="cn-border-top-soft pt-4 mt-auto">
+                <button
+                  type="button"
+                  class="cn-btn cn-btn-outline cn-btn-outline-fill-hover w-100 cn-pad-y-sm font-weight-bold cn-radius-lg cn-open-modules-modal"
+                >
+                  Start 14-Day Free Trial
+                </button>
+              </div>
             </div>
           </div>
         </div>
       </section>
-      <!-- FAQ Section -->
+
       <section
-        class="py-24 px-margin-desktop bg-surface-container-lowest border-t border-outline-variant/20"
+        class="cn-faq-section cn-pad-section-xl cn-scroll-anchor"
+        id="faq"
       >
-        <div class="max-w-4xl mx-auto">
-          <div class="text-center mb-16">
-            <h2 class="font-display-lg text-display-lg text-primary mb-6">
-              Frequently Asked Questions
-            </h2>
-            <p class="font-body-lg text-body-lg text-on-surface-variant">
+        <div class="cn-layout-max">
+          <div class="text-center cn-margin-below-large">
+            <h2 class="cn-title-section mb-3">FAQ</h2>
+            <p class="cn-prose-lead mx-auto cn-measure-medium">
               Everything you need to know about launching your white-label AI
               agency.
             </p>
           </div>
-          <div class="space-y-4">
-            <!-- FAQ Item 1 -->
-            <div
-              class="bg-surface-container-low border border-outline-variant/20 rounded-xl overflow-hidden card-inner-glow"
-            >
-              <button
-                class="w-full flex items-center justify-between p-6 text-left group"
-                onclick="
-                  this.nextElementSibling.classList.toggle('hidden');
-                  this.querySelector('.toggle-icon').textContent =
-                    this.nextElementSibling.classList.contains('hidden')
-                      ? 'add'
-                      : 'remove';
-                "
-              >
-                <span
-                  class="font-headline-sm text-on-surface group-hover:text-primary transition-colors"
-                  >What exactly is a "White-Label" AI Agent business?</span
-                >
-                <span class="material-symbols-outlined text-primary toggle-icon"
-                  >add</span
-                >
+          <div class="cn-faq-stack">
+            <div class="cn-faq-item">
+              <button type="button" class="cn-faq-trigger faq-trigger">
+                <h3 class="cn-heading cn-heading-plain mb-0">
+                  How does the 14-day free trial work?
+                </h3>
+                <span class="cn-icon cn-text-gold faq-icon">add</span>
               </button>
-              <div
-                class="hidden px-6 pb-6 text-on-surface-variant font-body-md border-t border-outline-variant/10 pt-4"
-              >
-                A white-label AI business allows you to sell advanced AI agents
-                and automation software under your own brand. You use our
-                high-performance infrastructure, but the client sees your logo,
-                your domain, and your pricing. You keep 100% of the profit.
+              <div class="cn-faq-panel faq-content">
+                <p class="cn-faq-answer">
+                  You get full access to all AI agents and modules for 14 days.
+                  No credit card is required to start. Experience the full power
+                  of 10ways.ai with zero commitment.
+                </p>
               </div>
             </div>
-            <!-- FAQ Item 2 -->
-            <div
-              class="bg-surface-container-low border border-outline-variant/20 rounded-xl overflow-hidden card-inner-glow"
-            >
-              <button
-                class="w-full flex items-center justify-between p-6 text-left group"
-                onclick="
-                  this.nextElementSibling.classList.toggle('hidden');
-                  this.querySelector('.toggle-icon').textContent =
-                    this.nextElementSibling.classList.contains('hidden')
-                      ? 'add'
-                      : 'remove';
-                "
-              >
-                <span
-                  class="font-headline-sm text-on-surface group-hover:text-primary transition-colors"
-                  >Do I need coding or technical skills to start?</span
-                >
-                <span class="material-symbols-outlined text-primary toggle-icon"
-                  >add</span
-                >
+            <div class="cn-faq-item">
+              <button type="button" class="cn-faq-trigger faq-trigger">
+                <h3 class="cn-heading cn-heading-plain mb-0">
+                  Can these agents integrate with my existing CRM?
+                </h3>
+                <span class="cn-icon cn-text-gold faq-icon">add</span>
               </button>
-              <div
-                class="hidden px-6 pb-6 text-on-surface-variant font-body-md border-t border-outline-variant/10 pt-4"
-              >
-                No. Our platform is designed for "SaaS-Plus" entrepreneurs. We
-                provide pre-built "Snapshots" (industry-specific templates) and
-                a drag-and-drop workflow builder. You focus on strategy and
-                client relationships; we handle the complex engineering.
+              <div class="cn-faq-panel faq-content">
+                <p class="cn-faq-answer">
+                  Yes, 10ways.ai is designed for seamless enterprise integration
+                  with major CRMs like Salesforce, HubSpot, and various legacy
+                  systems via our robust API layer.
+                </p>
               </div>
             </div>
-            <!-- (FAQ content continues similar to Screen 50...) -->
-            <div
-              class="bg-surface-container-low border border-outline-variant/20 rounded-xl overflow-hidden card-inner-glow"
-            >
-              <button
-                class="w-full flex items-center justify-between p-6 text-left group"
-                onclick="
-                  this.nextElementSibling.classList.toggle('hidden');
-                  this.querySelector('.toggle-icon').textContent =
-                    this.nextElementSibling.classList.contains('hidden')
-                      ? 'add'
-                      : 'remove';
-                "
-              >
-                <span
-                  class="font-headline-sm text-on-surface group-hover:text-primary transition-colors"
-                  >How long does it take to deploy an agent for a client?</span
-                >
-                <span class="material-symbols-outlined text-primary toggle-icon"
-                  >add</span
-                >
+            <div class="cn-faq-item">
+              <button type="button" class="cn-faq-trigger faq-trigger">
+                <h3 class="cn-heading cn-heading-plain mb-0">
+                  Is my data secure?
+                </h3>
+                <span class="cn-icon cn-text-gold faq-icon">add</span>
               </button>
-              <div
-                class="hidden px-6 pb-6 text-on-surface-variant font-body-md border-t border-outline-variant/10 pt-4"
-              >
-                With our pre-configured Snapshots, you can have a
-                high-functioning agent live for a client in under 48 hours.
+              <div class="cn-faq-panel faq-content">
+                <p class="cn-faq-answer">
+                  Absolutely. We utilize enterprise-grade encryption and
+                  quantum-resistant security protocols to protect your
+                  proprietary intelligence. Your data is never used to train
+                  public models.
+                </p>
+              </div>
+            </div>
+            <div class="cn-faq-item">
+              <button type="button" class="cn-faq-trigger faq-trigger">
+                <h3 class="cn-heading cn-heading-plain mb-0">
+                  Do I need technical skills to deploy these agents?
+                </h3>
+                <span class="cn-icon cn-text-gold faq-icon">add</span>
+              </button>
+              <div class="cn-faq-panel faq-content">
+                <p class="cn-faq-answer">
+                  No, our platform is designed for rapid, low-code deployment.
+                  Our intuitive interface allows your team to activate and
+                  configure agents in minutes without writing a single line of
+                  code.
+                </p>
+              </div>
+            </div>
+            <div class="cn-faq-item">
+              <button type="button" class="cn-faq-trigger faq-trigger">
+                <h3 class="cn-heading cn-heading-plain mb-0">
+                  What happens when my trial ends?
+                </h3>
+                <span class="cn-icon cn-text-gold faq-icon">add</span>
+              </button>
+              <div class="cn-faq-panel faq-content">
+                <p class="cn-faq-answer">
+                  You can choose a plan that fits your agency or pause until you
+                  are ready. Your configuration is saved, and upgrading takes
+                  only a few clicks—no rebuild required.
+                </p>
+              </div>
+            </div>
+            <div class="cn-faq-item">
+              <button type="button" class="cn-faq-trigger faq-trigger">
+                <h3 class="cn-heading cn-heading-plain mb-0">
+                  Can I use my own branding and domain?
+                </h3>
+                <span class="cn-icon cn-text-gold faq-icon">add</span>
+              </button>
+              <div class="cn-faq-panel faq-content">
+                <p class="cn-faq-answer">
+                  Yes. 10ways.ai is built for white-label delivery—your logo,
+                  colors, client-facing URLs, and communications can all reflect
+                  your agency brand.
+                </p>
+              </div>
+            </div>
+            <div class="cn-faq-item">
+              <button type="button" class="cn-faq-trigger faq-trigger">
+                <h3 class="cn-heading cn-heading-plain mb-0">
+                  How does billing work for my clients?
+                </h3>
+                <span class="cn-icon cn-text-gold faq-icon">add</span>
+              </button>
+              <div class="cn-faq-panel faq-content">
+                <p class="cn-faq-answer">
+                  You set retail pricing and packaging. The platform supports
+                  recurring subscriptions and usage-based add-ons so you can
+                  mirror how you already sell services.
+                </p>
+              </div>
+            </div>
+            <div class="cn-faq-item">
+              <button type="button" class="cn-faq-trigger faq-trigger">
+                <h3 class="cn-heading cn-heading-plain mb-0">
+                  Is there a limit on agents or seats?
+                </h3>
+                <span class="cn-icon cn-text-gold faq-icon">add</span>
+              </button>
+              <div class="cn-faq-panel faq-content">
+                <p class="cn-faq-answer">
+                  Limits depend on your plan tier. Higher tiers include more
+                  concurrent agents, expanded storage, and priority throughput
+                  for high-volume campaigns.
+                </p>
+              </div>
+            </div>
+            <div class="cn-faq-item">
+              <button type="button" class="cn-faq-trigger faq-trigger">
+                <h3 class="cn-heading cn-heading-plain mb-0">
+                  Do you offer onboarding or launch support?
+                </h3>
+                <span class="cn-icon cn-text-gold faq-icon">add</span>
+              </button>
+              <div class="cn-faq-panel faq-content">
+                <p class="cn-faq-answer">
+                  Yes. Executive onboarding covers account setup, first-agent
+                  launch, and best practices for positioning and pricing with
+                  your clients.
+                </p>
+              </div>
+            </div>
+            <div class="cn-faq-item">
+              <button type="button" class="cn-faq-trigger faq-trigger">
+                <h3 class="cn-heading cn-heading-plain mb-0">
+                  Can I resell at my own price?
+                </h3>
+                <span class="cn-icon cn-text-gold faq-icon">add</span>
+              </button>
+              <div class="cn-faq-panel faq-content">
+                <p class="cn-faq-answer">
+                  You control your margins. Reseller and SaaS-style plans
+                  include tools to apply custom markup and invoice your
+                  customers directly.
+                </p>
+              </div>
+            </div>
+            <div class="cn-faq-item">
+              <button type="button" class="cn-faq-trigger faq-trigger">
+                <h3 class="cn-heading cn-heading-plain mb-0">
+                  Is there an API for custom workflows?
+                </h3>
+                <span class="cn-icon cn-text-gold faq-icon">add</span>
+              </button>
+              <div class="cn-faq-panel faq-content">
+                <p class="cn-faq-answer">
+                  Yes. REST hooks and webhooks let you connect internal tools,
+                  data warehouses, and proprietary stacks without compromising
+                  the no-code experience for day-to-day users.
+                </p>
+              </div>
+            </div>
+            <div class="cn-faq-item">
+              <button type="button" class="cn-faq-trigger faq-trigger">
+                <h3 class="cn-heading cn-heading-plain mb-0">
+                  Where is my data hosted?
+                </h3>
+                <span class="cn-icon cn-text-gold faq-icon">add</span>
+              </button>
+              <div class="cn-faq-panel faq-content">
+                <p class="cn-faq-answer">
+                  Production workloads run in SOC 2–aligned regions with
+                  redundancy and encryption in transit and at rest. Enterprise
+                  customers can discuss dedicated deployment options.
+                </p>
               </div>
             </div>
           </div>
         </div>
       </section>
-      <!-- Footer -->
-      <footer
-        class="bg-surface py-16 px-margin-desktop border-t border-outline-variant/20"
+
+      <section class="cn-pad-section-tall cn-bg-surface-low cn-border-y-strong">
+        <div class="mx-auto text-center cn-measure-wide cn-layout-max">
+          <h2 class="cn-title-hero">Unlock Your Agency's Full Potential</h2>
+          <p
+            class="cn-prose-lead cn-prose-lead--hero mx-auto cn-measure-narrow"
+          >
+            Join the exclusive circle of executives scaling their AI business to
+            7 figures and beyond. No code. No hassle. Just results.
+          </p>
+          <button
+            type="button"
+            class="cn-btn cn-btn-primary cn-pad-x-hero py-4 cn-text-heading-sm cn-btn-glow-lg cn-open-modules-modal"
+          >
+            Start Your 14-Day Free Trial
+          </button>
+        </div>
+      </section>
+    </main>
+
+    <footer class="cn-bg-surface-darkest cn-border-footer-top">
+      <div
+        class="cn-layout-max d-flex flex-column flex-md-row justify-content-between align-items-center py-4"
       >
         <div
-          class="max-w-container-max mx-auto flex flex-col md:flex-row justify-between items-center gap-gutter"
+          class="d-flex flex-column align-items-center align-items-md-start mb-3 mb-md-0"
         >
-          <div class="font-display-lg text-headline-md text-primary font-bold">
-            Cognitive Nexus
-          </div>
-          <div class="flex gap-gutter text-on-surface-variant font-label-md">
-            <a class="hover:text-primary transition-colors" href="#"
-              >Privacy Policy</a
-            >
-            <a class="hover:text-primary transition-colors" href="#"
-              >Terms of Service</a
-            >
-            <a class="hover:text-primary transition-colors" href="#"
-              >Contact Support</a
-            >
-          </div>
-          <div class="text-on-surface-variant/60 text-label-sm">
-            © 2024 Cognitive Nexus. All rights reserved.
-          </div>
+          <div class="cn-footer-brand">10ways.ai</div>
         </div>
-      </footer>
-    </main>
+        <div class="d-flex flex-wrap justify-content-center">
+          <a class="cn-footer-link mr-3 mb-2 mb-md-0" href="#"
+            >Privacy Policy</a
+          >
+          <a class="cn-footer-link mr-3 mb-2 mb-md-0" href="#"
+            >Terms of Service</a
+          >
+        </div>
+      </div>
+    </footer>
+
+    <div
+      id="agent-modal"
+      class="cn-modal-root cn-bg-modal-overlay d-none align-items-center justify-content-center overflow-auto p-3"
+    >
+      <div class="cn-modal-panel cn-surface-sheen p-4">
+        <button
+          type="button"
+          class="cn-modal-close"
+          id="close-agent-modal"
+          aria-label="Close"
+        >
+          <span class="cn-icon cn-icon-md">close</span>
+        </button>
+        <div class="text-center">
+          <div class="mb-4">
+            <span
+              id="agent-modal-icon"
+              class="cn-icon cn-icon-xl cn-icon-gold"
+            ></span>
+            <h2 id="agent-modal-title" class="cn-modal-title"></h2>
+          </div>
+          <div id="agent-modal-copy" class="cn-agent-modal-copy text-left mb-4">
+            <p
+              id="agent-modal-p1"
+              class="cn-prose-lead cn-agent-modal-para mb-3"
+            ></p>
+            <p
+              id="agent-modal-p2"
+              class="cn-prose-lead cn-agent-modal-para mb-3"
+            ></p>
+            <p
+              id="agent-modal-p3"
+              class="cn-prose-lead cn-agent-modal-para mb-0"
+            ></p>
+          </div>
+          <button
+            type="button"
+            class="cn-btn cn-btn-primary w-100 p-4 cn-radius-lg cn-text-heading-sm cn-btn-glow-sm"
+          >
+            Start Your 14-Day Free Trial
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div
+      id="modules-modal"
+      class="cn-modal-root cn-bg-modal-overlay d-none align-items-center justify-content-center overflow-auto p-3"
+    >
+      <div class="cn-modal-panel cn-surface-sheen p-4">
+        <button
+          type="button"
+          class="cn-modal-close"
+          id="close-modules-modal"
+          aria-label="Close"
+        >
+          <span class="cn-icon cn-icon-md">close</span>
+        </button>
+        <div class="text-center">
+          <div class="mb-4">
+            <span class="cn-icon cn-icon-xl cn-icon-gold">apps</span>
+          </div>
+          <h2 class="cn-modal-title">Comprehensive Module Suite</h2>
+          <p class="cn-prose-lead mb-4">
+            Our platform includes 40+ specialized software modules designed to
+            handle everything from CRM and sales funnels to automated payroll
+            and restaurant management. Each module is fully integrated into the
+            10ways.ai ecosystem.
+          </p>
+          <button
+            type="button"
+            class="cn-btn cn-btn-primary w-100 p-4 cn-radius-lg cn-text-heading-sm cn-btn-glow-sm cn-open-modules-modal"
+          >
+            Start Your 14-Day Free Trial
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <script type="application/json" id="cn-agent-modal-data">
+      {
+        "AI Missed Call Text-Back": {
+          "p1": "Every missed call is money walking straight to your competitor. The moment a call goes unanswered, this AI fires off a friendly text and strikes up a real conversation - answering questions, handling objections, and keeping the lead warm before they cool off.",
+          "p2": "Instead of losing that customer forever, you recover the sale before they dial the next business on Google. It works around the clock, never forgets to follow up, and turns your biggest silent leak into booked jobs and recovered revenue.",
+          "p3": "For any business that lives off inbound calls, this is the fastest win there is. It plugs the hole you didn't know was draining you - and pays for itself almost immediately."
+        },
+        "AI 24/7 Phone Receptionist": {
+          "p1": "Stop losing customers to voicemail and hold music. This AI receptionist answers every call instantly, around the clock, handling FAQs, routing callers, and delivering warm, professional service that sounds genuinely human.",
+          "p2": "Crucially, it doesn't just answer - it books appointments live on the call, checking your calendar and locking in the slot before the customer hangs up. No missed calls, no after-hours gaps, no wages for extra staff.",
+          "p3": "Whether it's 2pm or 2am, every caller gets a helpful response and a reason to stay. Your phone line stops being a cost and starts working as a 24-hour booking machine."
+        },
+        "AI Instant Speed-to-Lead": {
+          "p1": "Leads go cold in minutes - and the first business to call almost always wins. This AI calls every new lead the second they submit a form, while their interest is still red-hot.",
+          "p2": "From there it either bridges them straight to your sales team or books the appointment itself, live on the call. No delays, no leads slipping through the cracks, no competitor getting there first.",
+          "p3": "By striking instantly, it dramatically lifts your connection and conversion rates and turns form fills into booked calls automatically. If you're paying for leads, this makes sure you actually cash in on every single one."
+        },
+        "AI Appointment Booking": {
+          "p1": "A diary full of appointments, booked without you lifting a finger. This voice assistant checks your calendar in real time, negotiates a time that suits the customer, and confirms the booking live on the call.",
+          "p2": "No back-and-forth, no callbacks, no email tag. It strips out every ounce of scheduling friction, so customers lock in their slot the moment they're motivated, instead of drifting off and forgetting.",
+          "p3": "The result is a fuller diary, fewer no-shows, and hours of admin time handed back to your team. It quietly fills your calendar day and night while you focus on the actual work."
+        },
+        "AI 24/7 Website Chat": {
+          "p1": "Most website visitors leave without ever telling you they were there. This chat widget engages them the instant they land, answers their questions, captures their details, and books appointments straight into your calendar.",
+          "p2": "It guides people toward a decision while their interest is high, so no enquiry slips away unanswered and no visitor leaves empty-handed. Anonymous browsers become booked customers, round the clock.",
+          "p3": "Working 24/7 without breaks, it converts the traffic you're already paying for into real, actionable leads and confirmed bookings - squeezing far more revenue out of every click that hits your site."
+        },
+        "AI Database Reactivation": {
+          "p1": "There's a goldmine of revenue sitting dead in your CRM right now. This AI autonomously texts and calls your old, cold leads and lapsed customers, sparks genuine conversations, and books appointments from contacts you'd written off completely.",
+          "p2": "It turns a forgotten list into fresh, paying business - often surfacing serious revenue from data you already own, at almost zero cost. No ad spend, no new lead gen, just hidden opportunities reawakened and dropped into your calendar.",
+          "p3": "For most businesses, this is the fastest way to generate booked appointments and cash from assets they didn't even realise they were sitting on. Pure profit, hiding in plain sight."
+        },
+        "AI Omnichannel Messaging": {
+          "p1": "Your customers message everywhere - and expect instant replies on all of it. This AI handles two-way conversations across SMS, email, Facebook, Instagram, and WhatsApp from one place.",
+          "p2": "It answers questions, captures leads, and books appointments straight into your calendar on whichever channel they prefer. No more juggling inboxes, no slow replies, no leads going cold while you're asleep.",
+          "p3": "It keeps every conversation alive and consistent, round the clock, moving people from message to booked appointment without your team lifting a finger. One tireless agent, every channel covered, every message answered the moment it lands."
+        },
+        "AI Lead Qualifier": {
+          "p1": "Stop wasting your sales team's time on tyre-kickers. This AI calls every new lead, asks your qualifying questions, scores them, and books the genuinely hot ones straight onto your team's calendar - all before a human says a word.",
+          "p2": "Time-wasters get filtered out, ready-to-buy prospects get fast-tracked, and your closers spend their energy only where it actually converts. The result is a sharper pipeline and noticeably higher close rates.",
+          "p3": "It does the heavy lifting up front so your people only ever talk to leads worth talking to. Your team stops chasing and starts closing."
+        },
+        "AI Reviews": {
+          "p1": "Your online reputation decides whether customers choose you or scroll right past. This intelligent dashboard monitors every piece of incoming feedback, crafts smart, on-brand replies in seconds, and actively boosts your search rankings.",
+          "p2": "By responding fast and professionally to every review, it builds the trust that turns searchers into customers and lifts you above competitors in local results. More five-star visibility, more credibility, more clicks - all managed automatically.",
+          "p3": "In a world where buyers check reviews before they buy, this keeps your reputation working as your hardest-selling, always-on salesperson. It earns trust while you sleep."
+        },
+        "AI Social Media Posts": {
+          "p1": "Consistent, scroll-stopping content - without the creative headache. Just give it a prompt and this AI drafts high-converting copy and designs eye-catching graphics tailored to your brand in seconds.",
+          "p2": "No more blank-page paralysis, no expensive agency retainers, no posting drought. It hands you ready-to-publish content that grabs attention and drives real engagement, keeping your brand visible and magnetic across every channel.",
+          "p3": "Whenever inspiration runs dry, it delivers fresh, on-brand material instantly - keeping your feed active and your audience hooked while you get on with running the business."
+        },
+        "AI Cold Caller": {
+          "p1": "Outreach at a scale no human team could match. This conversational AI works systematically through your target lists, holding natural cold and warm conversations and delivering your pitch flawlessly every single time.",
+          "p2": "It books interested prospects straight into your calendar, never tires, never gets nervous, and never skips a call. It powers through lists and generates booked opportunities far faster and cheaper than a room full of reps.",
+          "p3": "For businesses that live on outbound, it turns prospecting from a grind into a predictable, always-on appointment engine — one that fills your diary on autopilot."
+        },
+        "AI Social Media Scheduling": {
+          "p1": "Show up everywhere, effortlessly. This AI automatically schedules and publishes your posts across every platform at the exact times your audience is most active, keeping your brand consistently visible without you lifting a finger.",
+          "p2": "No more forgetting to post, no more scrambling for content at the last minute, no more dead patches in your feed. It queues everything up to go live at peak engagement, so you stay relevant and top-of-mind.",
+          "p3": "Set it once and let your presence build automatically. The daily grind of posting runs itself in the background while you focus on the business."
+        },
+        "AI 60-Second Website Builder": {
+          "p1": "A professional, high-converting website in less time than it takes to make a coffee. Just describe what you need, and this AI builds a fully functional, conversion-optimised site or landing page in under 60 seconds - complete with structure, copy, and design.",
+          "p2": "No developers, no designers, no weeks of waiting and ballooning costs. You get a polished, ready-to-launch web presence almost instantly, built to turn visitors into enquiries from day one.",
+          "p3": "Perfect for getting online fast or spinning up campaign pages on demand, it puts a credible, selling website within everyone's reach. Launch in minutes, not months."
+        },
+        "AI SEO Report": {
+          "p1": "Know exactly why you're not ranking — and precisely how to fix it. This autonomous crawler scans your website, diagnoses every SEO issue, and builds a clear, actionable optimisation blueprint.",
+          "p2": "No jargon, no guesswork, no need for an expensive in-house expert. It pinpoints the technical faults, content gaps, and ranking opportunities holding you back, then hands you a straightforward roadmap to climb the search results.",
+          "p3": "For any business that wants to be found on Google, it turns invisible SEO problems into a simple, prioritised plan of attack. You stop guessing and start ranking."
+        },
+        "AI Video Generator": {
+          "p1": "Eye-catching marketing videos, without the cameras, crews, or editing software. This AI turns your script or idea into polished, ready-to-share video content in minutes — rendering professional visuals that stop the scroll and sell your message.",
+          "p2": "No production costs, no steep learning curve, no waiting on freelancers. Ideal for ads, social media, and promotions, it lets you pump out engaging video whenever you need it, as often as you need it.",
+          "p3": "Video is what gets attention online — and this makes producing it effortless and affordable. More reach, more engagement, a fraction of the usual cost."
+        },
+        "AI Phone Order Taker": {
+          "p1": "Never lose a hungry customer to a busy line again. This voice agent answers every caller, takes detailed food orders with perfect accuracy, captures every modification and special request, and sends it straight to your kitchen.",
+          "p2": "No hold times, no missed orders, no mistakes from a frazzled team at peak rush. It handles high call volumes effortlessly, so your staff stay focused on prep and service while orders flow in smoothly.",
+          "p3": "For takeaways and restaurants, it means more orders captured, fewer errors, and a faster, smoother service when it matters most. Every call answered, every order banked."
+        }
+      }
+    </script>
+
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      document.querySelectorAll(".cn-card-agent").forEach(function (card) {
+        card.addEventListener("mouseenter", function () {
+          var icon = card.querySelector(".cn-icon");
+          if (icon) {
+            icon.style.transition =
+              "transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275)";
+            icon.style.transform = "scale(1.1) rotate(5deg)";
+          }
+        });
+        card.addEventListener("mouseleave", function () {
+          var icon = card.querySelector(".cn-icon");
+          if (icon) {
+            icon.style.transform = "scale(1) rotate(0deg)";
+          }
+        });
+      });
+      (function () {
+        var modal = document.getElementById("modules-modal");
+        var openBtns = document.querySelectorAll(".cn-open-modules-modal");
+        var closeBtn = document.getElementById("close-modules-modal");
+        function toggleModal(show) {
+          if (!modal) return;
+          if (show) {
+            modal.classList.remove("d-none");
+            modal.classList.add("d-flex");
+            document.body.style.overflow = "hidden";
+          } else {
+            modal.classList.add("d-none");
+            modal.classList.remove("d-flex");
+            document.body.style.overflow = "";
+          }
+        }
+        if (closeBtn && modal) {
+          openBtns.forEach(function (btn) {
+            btn.addEventListener("click", function () {
+              toggleModal(true);
+            });
+          });
+          closeBtn.addEventListener("click", function () {
+            toggleModal(false);
+          });
+          modal.addEventListener("click", function (e) {
+            if (e.target === modal) toggleModal(false);
+          });
+        }
+      })();
+      (function () {
+        var modal = document.getElementById("agent-modal");
+        var closeBtn = document.getElementById("close-agent-modal");
+        var dataEl = document.getElementById("cn-agent-modal-data");
+        var agentData = {};
+        if (dataEl) {
+          try {
+            agentData = JSON.parse(dataEl.textContent);
+          } catch (err) {
+            agentData = {};
+          }
+        }
+        var iconEl = document.getElementById("agent-modal-icon");
+        var titleEl = document.getElementById("agent-modal-title");
+        var p1El = document.getElementById("agent-modal-p1");
+        var p2El = document.getElementById("agent-modal-p2");
+        var p3El = document.getElementById("agent-modal-p3");
+        function toggleAgentModal(show) {
+          if (!modal) return;
+          if (show) {
+            modal.classList.remove("d-none");
+            modal.classList.add("d-flex");
+            document.body.style.overflow = "hidden";
+          } else {
+            modal.classList.add("d-none");
+            modal.classList.remove("d-flex");
+            document.body.style.overflow = "";
+          }
+        }
+        document
+          .querySelectorAll(".cn-card-agent .cn-btn-card")
+          .forEach(function (btn) {
+            btn.addEventListener("click", function () {
+              var card = btn.closest(".cn-card-agent");
+              if (!card) return;
+              var icon = card.querySelector(".cn-icon-gold");
+              var heading = card.querySelector(".cn-heading");
+              var title = heading ? heading.textContent.trim() : "";
+              var detail = agentData[title];
+              if (iconEl && icon) iconEl.textContent = icon.textContent.trim();
+              if (titleEl && heading) titleEl.textContent = title;
+              if (detail) {
+                if (p1El) p1El.textContent = detail.p1;
+                if (p2El) p2El.textContent = detail.p2;
+                if (p3El) p3El.textContent = detail.p3;
+              } else {
+                var summary =
+                  card.querySelector(".cn-agent-card-desc") ||
+                  card.querySelector(".cn-card-summary");
+                if (p1El && summary)
+                  p1El.textContent = summary.textContent.trim();
+                if (p2El) p2El.textContent = "";
+                if (p3El) p3El.textContent = "";
+              }
+              toggleAgentModal(true);
+            });
+          });
+        if (closeBtn && modal) {
+          closeBtn.addEventListener("click", function () {
+            toggleAgentModal(false);
+          });
+          modal.addEventListener("click", function (e) {
+            if (e.target === modal) toggleAgentModal(false);
+          });
+        }
+      })();
+      (function () {
+        var sectionIds = ["ai-agents", "ai-tools", "pricing", "faq"];
+        var navLinks = document.querySelectorAll(
+          'header.cn-site-header a.cn-nav-link[href^="#"]',
+        );
+        function syncNavActive() {
+          var header = document.querySelector(".cn-site-header");
+          var headerH = header ? header.offsetHeight : 72;
+          var y = window.scrollY + headerH + 12;
+          var activeId = null;
+          var i;
+          for (i = 0; i < sectionIds.length; i++) {
+            var el = document.getElementById(sectionIds[i]);
+            if (!el) continue;
+            var docTop = el.getBoundingClientRect().top + window.scrollY;
+            if (docTop <= y) activeId = sectionIds[i];
+          }
+          navLinks.forEach(function (a) {
+            var href = a.getAttribute("href");
+            if (!href || href.charAt(0) !== "#") return;
+            var id = href.slice(1);
+            a.classList.toggle("cn-nav-link-active", id === activeId);
+          });
+        }
+        window.addEventListener("scroll", syncNavActive, { passive: true });
+        window.addEventListener("resize", syncNavActive);
+        window.addEventListener("hashchange", syncNavActive);
+        document.addEventListener("DOMContentLoaded", syncNavActive);
+        syncNavActive();
+      })();
+      /* Mobile menu: close drawer then scroll — Bootstrap collapse on <a> was blocking hash navigation */
+      (function () {
+        var mobileNav = document.getElementById("cnMobileNav");
+        if (!mobileNav || typeof jQuery === "undefined") return;
+        var $nav = jQuery("#cnMobileNav");
+        mobileNav
+          .querySelectorAll("nav a.cn-nav-link[href^='#']")
+          .forEach(function (anchor) {
+            anchor.addEventListener("click", function (e) {
+              var href = anchor.getAttribute("href");
+              if (!href || href.length < 2 || href.charAt(0) !== "#") return;
+              var targetEl = document.getElementById(href.slice(1));
+              if (!targetEl) return;
+              e.preventDefault();
+              function go() {
+                targetEl.scrollIntoView({ behavior: "smooth", block: "start" });
+                if (window.history && window.history.replaceState) {
+                  window.history.replaceState(null, "", href);
+                }
+                window.dispatchEvent(new Event("hashchange"));
+              }
+              if ($nav.hasClass("show")) {
+                $nav.one("hidden.bs.collapse", go);
+                $nav.collapse("hide");
+              } else {
+                go();
+              }
+            });
+          });
+      })();
+      document.querySelectorAll(".faq-trigger").forEach(function (trigger) {
+        trigger.addEventListener("click", function () {
+          var content = trigger.nextElementSibling;
+          var icon = trigger.querySelector(".faq-icon");
+          var isOpen =
+            content.style.maxHeight !== "0px" && content.style.maxHeight !== "";
+          document.querySelectorAll(".faq-content").forEach(function (c) {
+            c.style.maxHeight = "0px";
+          });
+          document.querySelectorAll(".faq-icon").forEach(function (i) {
+            i.textContent = "add";
+          });
+          if (!isOpen) {
+            content.style.maxHeight = content.scrollHeight + "px";
+            icon.textContent = "remove";
+          } else {
+            content.style.maxHeight = "0px";
+            icon.textContent = "add";
+          }
+        });
+      });
+    </script>
   </body>
 </html>

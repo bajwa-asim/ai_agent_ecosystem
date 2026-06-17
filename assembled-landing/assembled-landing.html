@@ -9,27 +9,22 @@
       crossorigin="anonymous"
     />
     <link
-      href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@300;400;500;600;700;800&amp;display=swap"
+      href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@300;400;500;600;700;800&display=swap"
       rel="stylesheet"
     />
     <link
-      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
       rel="stylesheet"
     />
     <style id="cn-embedded-theme">
+      /* ── Base ── */
       html.cn-theme {
         scroll-behavior: smooth;
       }
-
-      .cn-scroll-anchor {
-        scroll-margin-top: 5.5rem;
-      }
-
       html.cn-theme,
       html.cn-theme body {
         background: #131313;
       }
-
       html.cn-theme body {
         font-family:
           "Hanken Grotesk",
@@ -42,12 +37,12 @@
         color: #e5e2e1 !important;
         -webkit-font-smoothing: antialiased;
       }
-
       html.cn-theme body::selection {
         background: #f2ca50;
         color: #3c2f00;
       }
 
+      /* ── Layout ── */
       .cn-layout-max {
         width: 100%;
         max-width: 1280px;
@@ -56,14 +51,33 @@
         padding-left: 40px;
         padding-right: 40px;
       }
-
-      @media (max-width: 767.98px) {
-        .cn-layout-max {
-          padding-left: 16px;
-          padding-right: 16px;
-        }
+      .cn-scroll-anchor {
+        scroll-margin-top: 5.5rem;
+      }
+      .cn-absolute-fill {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+      }
+      .cn-pointer-none {
+        pointer-events: none;
+      }
+      .cn-z-raised {
+        z-index: 10;
+      }
+      .cn-measure-narrow {
+        max-width: 42rem;
+      }
+      .cn-measure-medium {
+        max-width: 48rem;
+      }
+      .cn-measure-wide {
+        max-width: 56rem;
       }
 
+      /* ── Icon ── */
       .cn-icon {
         font-family: "Material Symbols Outlined", sans-serif;
         font-variation-settings:
@@ -76,18 +90,31 @@
         display: inline-block;
         vertical-align: middle;
       }
-
       .cn-icon-gold {
         background: linear-gradient(135deg, #f2ca50 0%, #8b7355 100%);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
         background-clip: text;
       }
+      .cn-icon-sm {
+        font-size: 1rem;
+        width: 1em;
+        height: 1em;
+      }
+      .cn-icon-md {
+        font-size: 1.5rem;
+      }
+      .cn-icon-lg {
+        font-size: 2.25rem;
+      }
+      .cn-icon-xl {
+        font-size: 3.75rem;
+      }
 
+      /* ── Decoration ── */
       .cn-surface-sheen {
         box-shadow: inset 0 1px 0 0 rgba(242, 202, 80, 0.1);
       }
-
       .cn-hero-glow-bg {
         background: radial-gradient(
           circle at 50% 50%,
@@ -95,7 +122,6 @@
           transparent 70%
         );
       }
-
       .cn-gradient-fade {
         background: linear-gradient(
           to bottom,
@@ -103,116 +129,70 @@
           transparent 100%
         );
       }
-
       .cn-hero-texture {
         background-image: url("https://www.transparenttextures.com/patterns/carbon-fibre.png");
       }
-
-      .cn-font-display {
-        font-family: "Hanken Grotesk", system-ui, sans-serif;
+      .cn-opacity-muted {
+        opacity: 0.1;
       }
 
-      .cn-text-display {
-        font-size: 48px;
-        line-height: 56px;
-        letter-spacing: -0.02em;
-        font-weight: 700;
-      }
-
-      .cn-text-display-sm {
-        font-size: 32px;
-        line-height: 40px;
-        letter-spacing: -0.02em;
-        font-weight: 700;
-      }
-
-      @media (min-width: 768px) {
-        .cn-text-display-md-up {
-          font-size: 48px;
-          line-height: 56px;
-          letter-spacing: -0.02em;
-          font-weight: 700;
-        }
-      }
-
+      /* ── Typography ── */
       .cn-text-heading-md {
         font-size: 24px;
         line-height: 32px;
         font-weight: 600;
       }
-
       .cn-text-heading-sm {
         font-size: 20px;
         line-height: 28px;
         font-weight: 600;
       }
-
-      .cn-text-lead-size {
-        font-size: 18px;
-        line-height: 28px;
-        font-weight: 400;
-      }
-
       .cn-text-body {
         font-size: 16px;
         line-height: 24px;
         font-weight: 400;
       }
-
       .cn-text-label {
         font-size: 14px;
         line-height: 20px;
         letter-spacing: 0.01em;
         font-weight: 500;
       }
-
       .cn-text-caption {
         font-size: 12px;
         line-height: 16px;
         letter-spacing: 0.05em;
         font-weight: 600;
       }
+      .cn-text-price-display {
+        font-size: 2.25rem;
+        line-height: 1.2;
+      }
 
+      /* ── Colour tokens ── */
       .cn-text-gold {
         color: #f2ca50 !important;
       }
-
-      .cn-text-on-primary {
-        color: #3c2f00 !important;
-      }
-
-      .cn-text-on-primary-fixed {
-        color: #241a00 !important;
-      }
-
       .cn-text-on-background {
         color: #e5e2e1 !important;
       }
-
       .cn-text-on-surface {
         color: #e5e2e1 !important;
       }
-
       .cn-text-muted {
         color: #d0c5af !important;
       }
-
       .cn-text-muted-soft {
         color: rgba(208, 197, 175, 0.8);
       }
-
-      .cn-text-muted-faint {
-        color: rgba(208, 197, 175, 0.6);
-      }
-
       .cn-text-error {
         color: #ffb4ab !important;
       }
-
       .cn-text-gold-soft {
         color: rgba(242, 202, 80, 0.7);
       }
 
+      /* ── Brand / display headings ── */
       .cn-brand {
         font-family: "Hanken Grotesk", system-ui, sans-serif;
         font-weight: 700;
@@ -221,15 +201,6 @@
         font-size: 20px;
         line-height: 28px;
       }
-
-      @media (min-width: 768px) {
-        .cn-brand {
-          font-size: 48px;
-          line-height: 56px;
-          letter-spacing: -0.02em;
-        }
-      }
-
       .cn-title-hero {
         font-family: "Hanken Grotesk", system-ui, sans-serif;
         font-size: 32px;
@@ -240,14 +211,6 @@
         filter: drop-shadow(0 1px 1px rgba(0, 0, 0, 0.25));
         margin-bottom: 1.5rem;
       }
-
-      @media (min-width: 768px) {
-        .cn-title-hero {
-          font-size: 48px;
-          line-height: 56px;
-        }
-      }
-
       .cn-title-section {
         font-family: "Hanken Grotesk", system-ui, sans-serif;
         font-size: 48px;
@@ -257,7 +220,6 @@
         color: #f2ca50 !important;
         margin-bottom: 1.5rem;
       }
-
       .cn-quote-title {
         font-size: 24px;
         line-height: 32px;
@@ -266,7 +228,6 @@
         margin-bottom: 1.5rem;
         font-style: italic;
       }
-
       .cn-heading {
         font-size: 20px;
         line-height: 28px;
@@ -274,7 +235,6 @@
         color: #f2ca50 !important;
         margin-bottom: 0.5rem;
       }
-
       .cn-heading-tier {
         font-size: 24px;
         line-height: 32px;
@@ -282,43 +242,18 @@
         color: #f2ca50 !important;
         margin-bottom: 0.5rem;
       }
-
+      .cn-heading-plain {
+        margin-bottom: 0 !important;
+      }
       .cn-prose-lead {
         font-size: 18px;
         line-height: 1.625;
         font-weight: 400;
         color: #d0c5af !important;
       }
-
-      .cn-prose-lead.cn-prose-lead--hero {
+      .cn-prose-lead--hero {
         margin-bottom: 2.5rem;
       }
-
-      /* Matches former inline price sizing (Bootstrap has no exact utility) */
-      .cn-text-price-display {
-        font-size: 2.25rem;
-        line-height: 1.2;
-      }
-
-      .cn-card-summary {
-        font-size: 16px;
-        line-height: 24px;
-        font-weight: 400;
-        color: rgba(208, 197, 175, 0.8);
-        margin-bottom: 1.5rem;
-      }
-
-      .cn-footer-brand {
-        font-size: 20px;
-        line-height: 28px;
-        font-weight: 600;
-        color: #f2ca50 !important;
-      }
-
-      .cn-heading.cn-heading-plain {
-        margin-bottom: 0 !important;
-      }
-
       .cn-modal-title {
         font-family: "Hanken Grotesk", system-ui, sans-serif;
         font-size: 24px;
@@ -327,197 +262,123 @@
         color: #f2ca50 !important;
         margin-bottom: 1.5rem;
       }
+      .cn-footer-brand {
+        font-size: 20px;
+        line-height: 28px;
+        font-weight: 600;
+        color: #f2ca50 !important;
+      }
 
-      /* Surfaces */
+      /* ── Text utilities ── */
+      .cn-italic {
+        font-style: italic;
+      }
+      .cn-uppercase {
+        text-transform: uppercase;
+      }
+      .cn-tracking-wide {
+        letter-spacing: 0.05em;
+      }
+      .cn-tracking-widest {
+        letter-spacing: 0.1em;
+      }
+      .cn-leading-relaxed {
+        line-height: 1.625;
+      }
+      .cn-leading-tight {
+        line-height: 1.25;
+      }
+      .cn-text-shadow-title {
+        filter: drop-shadow(0 1px 1px rgba(0, 0, 0, 0.25));
+      }
+
+      /* ── Surfaces ── */
       .cn-bg-page {
         background-color: #131313 !important;
       }
-
-      .cn-bg-surface {
-        background-color: #131313 !important;
-      }
-
       .cn-bg-surface-low {
         background-color: #1c1b1b !important;
       }
-
-      .cn-bg-surface-high {
-        background-color: #2a2a2a !important;
-      }
-
       .cn-bg-surface-darkest {
         background-color: #0e0e0e !important;
       }
-
-      .cn-bg-primary {
-        background-color: #f2ca50 !important;
-      }
-
       .cn-bg-modal-overlay {
         background-color: rgba(19, 19, 19, 0.8);
         backdrop-filter: blur(4px);
       }
 
-      /* Borders */
-      .cn-border-faint {
-        border: 1px solid rgba(77, 70, 53, 0.1);
-      }
-
+      /* ── Borders ── */
       .cn-border-footer-top {
         border-top: 1px solid rgba(77, 70, 53, 0.15);
       }
-
-      .cn-border-soft {
-        border-color: rgba(77, 70, 53, 0.2);
-      }
-
-      .cn-border-medium {
-        border-color: rgba(77, 70, 53, 0.3);
-      }
-
       .cn-border-y-soft {
         border-top: 1px solid rgba(77, 70, 53, 0.1);
         border-bottom: 1px solid rgba(77, 70, 53, 0.1);
       }
-
       .cn-border-y-strong {
         border-top: 1px solid rgba(77, 70, 53, 0.2);
         border-bottom: 1px solid rgba(77, 70, 53, 0.2);
       }
-
-      .cn-border-bottom-soft {
-        border-bottom: 1px solid rgba(77, 70, 53, 0.2);
-      }
-
       .cn-border-top-soft {
         border-top: 1px solid rgba(77, 70, 53, 0.2);
       }
 
-      .cn-border-top-gold {
-        border-top: 1px solid rgba(242, 202, 80, 0.2);
-      }
-
-      .cn-border-gold-soft {
-        border: 1px solid rgba(242, 202, 80, 0.2);
-      }
-
-      .cn-border-gold-medium {
-        border: 2px solid rgba(242, 202, 80, 0.3);
-      }
-
-      .cn-border-gold-bold {
-        border: 2px solid rgba(242, 202, 80, 0.4);
-      }
-
-      .cn-border-gold-solid {
-        border: 2px solid #f2ca50;
-      }
-
-      .cn-border-avatar {
-        border: 1px solid rgba(153, 144, 124, 0.3);
-      }
-
-      .cn-radius-lg {
-        border-radius: 0.5rem !important;
-      }
-
-      .cn-radius-xl {
-        border-radius: 0.75rem !important;
-      }
-
-      .cn-radius-pill {
-        border-radius: 9999px;
-      }
-
+      /* ── Spacing ── */
       .cn-pad-y-sm {
         padding-top: 0.4rem;
         padding-bottom: 0.4rem;
       }
-
       .cn-pad-y-lg {
         padding-top: 1.25rem;
         padding-bottom: 1.25rem;
       }
-
       .cn-pad-x-button {
         padding-left: 2.5rem;
         padding-right: 2.5rem;
       }
-
       .cn-pad-x-wide {
         padding-left: 3rem;
         padding-right: 3rem;
       }
-
       .cn-pad-x-hero {
         padding-left: 4rem;
         padding-right: 4rem;
       }
-
       .cn-pad-section {
         padding-top: 4rem;
         padding-bottom: 4rem;
       }
-
       .cn-pad-section-tall {
         padding-top: 5rem;
         padding-bottom: 5rem;
       }
-
       .cn-pad-section-xl {
         padding-top: 6rem;
         padding-bottom: 6rem;
       }
-
       .cn-pad-hero {
         padding-top: 6rem;
         padding-bottom: 6rem;
       }
-
-      .cn-margin-below {
-        margin-bottom: 1.5rem;
-      }
-
-      .cn-margin-below-medium {
-        margin-bottom: 2rem;
-      }
-
       .cn-margin-below-large {
         margin-bottom: 2.5rem;
       }
-
       .cn-margin-below-section {
         margin-bottom: 4rem;
       }
-
-      .cn-margin-below-xl {
-        margin-bottom: 5rem;
-      }
-
       .cn-margin-top-large {
         margin-top: 4rem;
       }
-
       .cn-margin-top-section {
         margin-top: 6rem;
       }
 
-      .cn-measure-narrow {
-        max-width: 42rem;
+      /* ── Radius ── */
+      .cn-radius-lg {
+        border-radius: 0.5rem !important;
       }
 
-      .cn-measure-medium {
-        max-width: 48rem;
-      }
-
-      .cn-measure-wide {
-        max-width: 56rem;
-      }
-
-      .cn-measure-modal {
-        max-width: 42rem;
-      }
-
+      /* ── Header / Nav ── */
       .cn-site-header {
         position: sticky;
         top: 0;
@@ -525,7 +386,6 @@
         background-color: #131313;
         border-bottom: 1px solid rgba(77, 70, 53, 0.2);
       }
-
       .cn-nav-link {
         color: #f2ca50 !important;
         font-weight: 500;
@@ -536,46 +396,32 @@
         border-bottom: 2px solid transparent;
         padding-bottom: 0.25rem;
       }
-
       .cn-nav-link:hover {
         color: #fcf0a8 !important;
       }
-
       .cn-nav-link-active {
         color: #f2ca50 !important;
         font-weight: 700;
         border-bottom-color: #f2ca50;
       }
-
       .cn-nav-row {
         display: flex;
         align-items: center;
         flex-wrap: wrap;
       }
-
       .cn-nav-row > a + a {
         margin-left: 24px;
       }
-
-      .cn-hero-buttons {
-        gap: 8px;
+      .cn-mobile-nav .cn-nav-link {
+        display: block;
+        padding: 0.5rem 0;
+        border-bottom: 1px solid rgba(77, 70, 53, 0.15);
+      }
+      .cn-mobile-nav .cn-nav-link:last-child {
+        border-bottom: 0;
       }
 
-      @media (min-width: 576px) {
-        .cn-hero-buttons {
-          flex-direction: row !important;
-          justify-content: center;
-          gap: 24px;
-        }
-      }
-
-      .cn-avatar {
-        width: 2.5rem;
-        height: 2.5rem;
-        border-radius: 9999px;
-        object-fit: cover;
-      }
-
+      /* ── Buttons ── */
       .cn-btn {
         display: inline-block;
         font-family: inherit;
@@ -586,46 +432,38 @@
         transition: all 0.15s ease;
         cursor: pointer;
       }
-
       .cn-btn:focus {
         outline: 0;
       }
-
       .cn-btn-primary {
         background-color: #f2ca50;
         color: #3c2f00 !important;
         font-weight: 700;
         border-radius: 0.5rem;
       }
-
       .cn-btn-primary:hover {
         filter: brightness(1.1);
         color: #3c2f00 !important;
         text-decoration: none;
       }
-
       .cn-btn-primary:active {
         transform: scale(0.95);
       }
-
-      .cn-btn-primary.cn-btn-glow-sm {
+      .cn-btn-glow-sm {
         box-shadow:
           0 10px 15px -3px rgba(242, 202, 80, 0.2),
           0 4px 6px -4px rgba(242, 202, 80, 0.15);
       }
-
-      .cn-btn-primary.cn-btn-glow-md {
+      .cn-btn-glow-md {
         box-shadow:
           0 20px 25px -5px rgba(242, 202, 80, 0.25),
           0 8px 10px -6px rgba(242, 202, 80, 0.2);
       }
-
-      .cn-btn-primary.cn-btn-glow-lg {
+      .cn-btn-glow-lg {
         box-shadow:
           0 25px 50px -12px rgba(242, 202, 80, 0.25),
           0 10px 15px -3px rgba(0, 0, 0, 0.2);
       }
-
       .cn-btn-outline {
         background-color: #2a2a2a;
         color: #f2ca50 !important;
@@ -633,40 +471,25 @@
         font-weight: 700;
         border-radius: 0.5rem;
       }
-
       .cn-btn-outline:hover {
         background-color: rgba(242, 202, 80, 0.05);
         color: #f2ca50 !important;
         text-decoration: none;
       }
-
-      .cn-btn-outline.cn-btn-outline-fill-hover:hover {
+      .cn-btn-outline-fill-hover:hover {
         background-color: #f2ca50;
         color: #3c2f00 !important;
       }
-
       .cn-btn-outline:active {
         transform: scale(0.95);
       }
 
-      .cn-icon-sm {
-        font-size: 1rem;
-        width: 1em;
-        height: 1em;
+      /* ── Hero buttons ── */
+      .cn-hero-buttons {
+        gap: 8px;
       }
 
-      .cn-icon-md {
-        font-size: 1.5rem;
-      }
-
-      .cn-icon-lg {
-        font-size: 2.25rem;
-      }
-
-      .cn-icon-xl {
-        font-size: 3.75rem;
-      }
-
+      /* ── Agent cards ── */
       .cn-card-agent {
         position: relative;
         background-color: #1c1b1b;
@@ -680,7 +503,14 @@
           border-color 0.3s ease,
           box-shadow 0.3s ease;
       }
-
+      .cn-card-agent:hover {
+        border-color: #f2ca50;
+      }
+      /* Prevent button hover from brightening on card hover */
+      .cn-card-agent .cn-btn.cn-btn-primary.cn-btn-card:hover {
+        filter: none;
+        background-color: #e8be40;
+      }
       .cn-agent-badge {
         position: absolute;
         top: 1rem;
@@ -699,7 +529,6 @@
         font-weight: 600;
         color: #f2ca50;
       }
-
       .cn-agent-card-desc {
         font-size: 16px;
         line-height: 24px;
@@ -712,25 +541,20 @@
         overflow: hidden;
         min-height: 96px;
       }
-
-      .cn-agents-hero-img {
-        border-radius: 0.75rem;
-        overflow: hidden;
-        border: 1px solid rgba(242, 202, 80, 0.2);
-        box-shadow: 0 25px 50px -12px rgba(242, 202, 80, 0.1);
-      }
-
-      .cn-agents-hero-img img {
+      .cn-card-agent .cn-btn.cn-btn-primary.cn-btn-card {
         width: 100%;
-        height: auto;
-        object-fit: cover;
-        display: block;
+        padding-top: 0.75rem;
+        padding-bottom: 0.75rem;
+        border-radius: 0.5rem !important;
+        color: #241a00 !important;
+        font-size: 14px;
+        line-height: 20px;
+        letter-spacing: 0.01em;
+        font-weight: 700;
+        margin-top: auto;
       }
 
-      .cn-card-agent:hover {
-        border-color: #f2ca50;
-      }
-
+      /* ── Pricing cards ── */
       .cn-pricing-card {
         background-color: #1c1b1b;
         border-radius: 0.75rem;
@@ -739,11 +563,13 @@
         flex-direction: column;
         height: 100%;
       }
-
+      .cn-pricing-card .cn-border-top-soft.pt-4 {
+        padding-top: 1.5rem !important;
+        margin-top: 1.5rem;
+      }
       .cn-pricing-border-soft {
         border: 2px solid rgba(242, 202, 80, 0.3);
       }
-
       .cn-pricing-featured {
         border: 2px solid #f2ca50;
         position: relative;
@@ -753,7 +579,6 @@
           0 25px 50px -12px rgba(242, 202, 80, 0.2),
           0 10px 15px -3px rgba(242, 202, 80, 0.15);
       }
-
       .cn-badge-popular {
         position: absolute;
         top: -1rem;
@@ -769,31 +594,28 @@
         letter-spacing: 0.1em;
         white-space: nowrap;
       }
-
       .cn-price-row {
         display: flex;
         align-items: baseline;
         gap: 0.25rem;
       }
-
       .cn-checklist {
         list-style: none;
         padding-left: 0;
-        margin: 0 0 2.5rem;
+        margin: 0;
       }
-
       .cn-checklist li {
         display: flex;
         align-items: flex-start;
         gap: 0.5rem;
-        margin-bottom: 1rem;
+        margin-bottom: 0.85rem;
         color: #d0c5af;
       }
-
       .cn-checklist li:last-child {
         margin-bottom: 0;
       }
 
+      /* ── Modules grid ── */
       .cn-module-line {
         display: flex;
         align-items: center;
@@ -803,71 +625,68 @@
         line-height: 22px;
         font-weight: 400;
       }
-
       .cn-module-line > .cn-icon {
         font-size: 1.6rem;
         width: 1.4rem;
         height: 1.4rem;
         flex-shrink: 0;
       }
-
       .cn-row-modules.cn-row-tight > [class*="col-"] {
         margin-bottom: 1.8rem !important;
       }
 
-      /* xc-* = enterprise compare table (short names; no Bootstrap in selectors) */
-      .xc-box {
+      /* ── Row tight (custom gutter) ── */
+      .cn-row-tight {
+        margin-left: calc(24px / -2);
+        margin-right: calc(24px / -2);
+      }
+      .cn-row-tight > div {
+        padding-left: calc(24px / 2);
+        padding-right: calc(24px / 2);
+      }
+
+      /* ── Compare table ── */
+      .cn-compare-table {
         background-color: #1c1b1b;
         border: 1px solid rgba(77, 70, 53, 0.2);
         border-radius: 0.75rem;
         overflow: hidden;
         box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.45);
       }
-
-      .xc-hd {
+      .cn-compare-header {
         background-color: #2a2a2a;
         border-bottom: 1px solid rgba(77, 70, 53, 0.3);
         padding: 1.5rem 2rem;
       }
-
-      .xc-rw {
+      .cn-compare-row {
         padding: 1.25rem 2rem;
         align-items: center;
         transition: background-color 0.15s ease;
       }
-
-      .xc-rw:hover {
+      .cn-compare-row:hover {
         background-color: rgba(57, 57, 57, 0.05);
       }
-
-      .xc-rw + .xc-rw {
+      .cn-compare-row + .cn-compare-row {
         border-top: 1px solid rgba(77, 70, 53, 0.1);
       }
-
-      .xc-ft {
+      .cn-compare-footer {
         background-color: #2a2a2a;
         padding: 2rem;
         border-top: 1px solid rgba(242, 202, 80, 0.2);
       }
-
-      .xc-scr {
+      .cn-compare-scroll {
         width: 100%;
       }
 
+      /* ── FAQ ── */
       .cn-faq-section {
         background-color: #000000;
       }
-
-      .cn-faq-section .cn-faq-intro {
-        color: #f2ca50 !important;
-      }
-
       .cn-faq-stack {
         max-width: 48rem;
         margin-left: auto;
         margin-right: auto;
       }
-
       .cn-faq-item {
         background-color: #141414;
         border: 1px solid rgba(255, 255, 255, 0.08);
@@ -878,15 +697,12 @@
           border-color 0.2s ease,
           box-shadow 0.2s ease;
       }
-
       .cn-faq-item:last-child {
         margin-bottom: 0;
       }
-
       .cn-faq-item:hover {
         border-color: rgba(255, 255, 255, 0.12);
       }
-
       .cn-faq-trigger {
         width: 100%;
         background: transparent;
@@ -899,11 +715,9 @@
         text-align: left;
         cursor: pointer;
       }
-
       .cn-faq-trigger:focus {
         outline: none;
       }
-
       .cn-faq-trigger .cn-heading,
       .cn-faq-trigger h3 {
         color: #e8e6e4 !important;
@@ -911,14 +725,6 @@
         font-size: 1rem;
         line-height: 1.45;
       }
-
-      @media (min-width: 768px) {
-        .cn-faq-trigger .cn-heading,
-        .cn-faq-trigger h3 {
-          font-size: 1.0625rem;
-        }
-      }
-
       .cn-faq-trigger .faq-icon {
         flex-shrink: 0;
         font-size: 1.5rem;
@@ -929,13 +735,11 @@
         justify-content: center;
         transition: transform 0.3s ease;
       }
-
       .cn-faq-panel {
         max-height: 0;
         overflow: hidden;
         transition: max-height 0.3s ease-in-out;
       }
-
       .cn-faq-answer {
         margin: 0;
         padding: 0 1.25rem 1.125rem;
@@ -944,13 +748,13 @@
         line-height: 1.55;
       }
 
+      /* ── Modals ── */
       .cn-modal-root {
         position: fixed;
         inset: 0;
         z-index: 100;
         padding: 16px;
       }
-
       .cn-modal-panel {
         position: relative;
         background-color: #0e0e0e;
@@ -962,7 +766,6 @@
         margin: auto;
         box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.45);
       }
-
       .cn-modal-close {
         position: absolute;
         top: 1rem;
@@ -974,11 +777,21 @@
         cursor: pointer;
         line-height: 1;
       }
-
       .cn-modal-close:hover {
         color: #f2ca50;
       }
+      .cn-agent-modal-copy {
+        max-width: 36rem;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      .cn-agent-modal-para {
+        font-size: 16px;
+        line-height: 26px;
+        text-align: center;
+      }
 
+      /* ── Footer ── */
       .cn-footer-link {
         color: #d0c5af;
         text-decoration: none !important;
@@ -988,96 +801,34 @@
         font-weight: 600;
         transition: color 0.2s ease;
       }
-
       .cn-footer-link:hover {
         color: #e7c9a6;
       }
 
-      .cn-row-tight {
-        margin-left: calc(24px / -2);
-        margin-right: calc(24px / -2);
+      /* ════════════════════════════════════
+         Responsive overrides
+      ════════════════════════════════════ */
+      @media (min-width: 576px) {
+        .cn-hero-buttons {
+          flex-direction: row !important;
+          justify-content: center;
+          gap: 24px;
+        }
       }
-
-      .cn-row-tight > div {
-        padding-left: calc(24px / 2);
-        padding-right: calc(24px / 2);
-      }
-
-      .cn-text-shadow-title {
-        filter: drop-shadow(0 1px 1px rgba(0, 0, 0, 0.25));
-      }
-
-      .cn-tracking-tight {
-        letter-spacing: -0.025em;
-      }
-
-      .cn-tracking-widest {
-        letter-spacing: 0.1em;
-      }
-
-      .cn-tracking-wide {
-        letter-spacing: 0.05em;
-      }
-
-      .cn-leading-relaxed {
-        line-height: 1.625;
-      }
-
-      .cn-leading-tight {
-        line-height: 1.25;
-      }
-
-      .cn-italic {
-        font-style: italic;
-      }
-
-      .cn-uppercase {
-        text-transform: uppercase;
-      }
-
-      .cn-opacity-muted {
-        opacity: 0.1;
-      }
-
-      .cn-z-raised {
-        z-index: 10;
-      }
-
-      .cn-absolute-fill {
-        position: absolute;
-        top: 0;
-        right: 0;
-        bottom: 0;
-        left: 0;
-      }
-
-      .cn-pointer-none {
-        pointer-events: none;
-      }
-
-      .cn-agent-modal-copy {
-        max-width: 36rem;
-        margin-left: auto;
-        margin-right: auto;
-      }
-
-      .cn-agent-modal-para {
-        font-size: 16px;
-        line-height: 26px;
-        text-align: center;
-      }
-
-      .cn-card-agent .cn-btn.cn-btn-primary.cn-btn-card {
-        width: 100%;
-        padding-top: 0.75rem;
-        padding-bottom: 0.75rem;
-        border-radius: 0.5rem !important;
-        color: #241a00 !important;
-        font-size: 14px;
-        line-height: 20px;
-        letter-spacing: 0.01em;
-        font-weight: 700;
-        margin-top: auto;
+      @media (min-width: 768px) {
+        .cn-brand {
+          font-size: 48px;
+          line-height: 56px;
+          letter-spacing: -0.02em;
+        }
+        .cn-title-hero {
+          font-size: 48px;
+          line-height: 56px;
+        }
+        .cn-faq-trigger .cn-heading,
+        .cn-faq-trigger h3 {
+          font-size: 1.0625rem;
+        }
       }
 
       @media (max-width: 767.98px) {
@@ -1086,17 +837,20 @@
           overflow-x: hidden;
         }
 
+        .cn-layout-max {
+          padding-left: 16px;
+          padding-right: 16px;
+        }
+
         .cn-title-section {
           font-size: 28px;
           line-height: 34px;
           letter-spacing: -0.02em;
         }
-
         .cn-quote-title {
           font-size: 20px;
           line-height: 28px;
         }
-
         .cn-prose-lead {
           font-size: 16px;
           line-height: 26px;
@@ -1106,44 +860,35 @@
           padding-top: 3rem;
           padding-bottom: 3rem;
         }
-
         .cn-pad-section {
           padding-top: 2.5rem;
           padding-bottom: 2.5rem;
         }
-
         .cn-pad-section-tall {
           padding-top: 3rem;
           padding-bottom: 3rem;
         }
-
         .cn-pad-section-xl {
           padding-top: 3rem;
           padding-bottom: 3rem;
         }
-
         .cn-margin-top-section {
           margin-top: 3rem;
         }
-
         .cn-margin-below-section {
           margin-bottom: 2.5rem;
         }
-
-        .cn-margin-below-xl {
-          margin-bottom: 3rem;
+        .cn-margin-below-large {
+          margin-bottom: 1.5rem;
         }
-
         .cn-pad-x-hero {
           padding-left: 1.25rem;
           padding-right: 1.25rem;
         }
-
         .cn-pad-x-wide {
           padding-left: 1.25rem;
           padding-right: 1.25rem;
         }
-
         .cn-pad-x-button {
           padding-left: 1.25rem;
           padding-right: 1.25rem;
@@ -1152,7 +897,6 @@
         .cn-site-header .cn-layout-max > .d-flex:first-child {
           row-gap: 0.5rem;
         }
-
         .cn-site-header .cn-brand {
           min-width: 0;
         }
@@ -1169,24 +913,20 @@
             0 20px 40px -12px rgba(242, 202, 80, 0.18),
             0 8px 10px -6px rgba(242, 202, 80, 0.12);
         }
-
         .cn-pricing-card {
           padding: 16px;
         }
-
         .cn-card-agent {
           padding: 16px;
         }
 
-        .xc-hd {
-          padding: 1rem 1rem;
+        .cn-compare-header {
+          padding: 1rem;
         }
-
-        .xc-rw {
-          padding: 1rem 1rem;
+        .cn-compare-row {
+          padding: 1rem;
         }
-
-        .xc-ft {
+        .cn-compare-footer {
           padding: 1.25rem 1rem;
         }
 
@@ -1194,7 +934,6 @@
           margin-left: -8px;
           margin-right: -8px;
         }
-
         .cn-row-tight > div {
           padding-left: 8px;
           padding-right: 8px;
@@ -1206,70 +945,59 @@
           line-height: 22px;
         }
 
-        .xc-rw .cn-text-body {
+        .cn-compare-row .cn-text-body {
           min-width: 0;
           word-break: break-word;
         }
 
-        .xc-sec .cn-layout-max {
+        .cn-compare-section .cn-layout-max {
           padding-left: 1.25rem;
           padding-right: 1.25rem;
         }
-
-        .xc-sec .xc-hd,
-        .xc-sec .xc-rw,
-        .xc-sec .xc-ft {
+        .cn-compare-section .cn-compare-header,
+        .cn-compare-section .cn-compare-row,
+        .cn-compare-section .cn-compare-footer {
           padding-left: 0;
           padding-right: 0;
         }
-
-        .xc-sec .cn-margin-below-xl {
+        .cn-compare-section .cn-margin-below-xl {
           padding-left: 0;
           padding-right: 0;
         }
-
-        .xc-sec .cn-title-section,
-        .xc-sec .cn-prose-lead {
+        .cn-compare-section .cn-title-section,
+        .cn-compare-section .cn-prose-lead {
           margin-left: auto;
           margin-right: auto;
           max-width: 100%;
         }
-
-        .xc-sec .xc-hd {
+        .cn-compare-section .cn-compare-header {
           text-align: center;
         }
-
-        .xc-sec .xc-hd > .xc-col {
+        .cn-compare-section .cn-compare-header > .cn-compare-col {
           text-align: center !important;
         }
-
-        .xc-sec .xc-hd .xc-c3 {
+        .cn-compare-section .cn-compare-header .cn-compare-col--platform {
           margin-top: 0.5rem;
         }
-
-        .xc-sec .xc-rw > .xc-c5 {
+        .cn-compare-section .cn-compare-row > .cn-compare-col--feature {
           align-items: flex-start !important;
         }
-
-        .xc-sec .xc-rw > .xc-c4 {
+        .cn-compare-section .cn-compare-row > .cn-compare-col--legacy {
           justify-content: flex-start !important;
           text-align: left;
           padding-left: 2.75rem;
           padding-right: 0;
         }
-
-        .xc-sec .xc-rw > .xc-c3 {
+        .cn-compare-section .cn-compare-row > .cn-compare-col--platform {
           text-align: left !important;
           padding-left: 2.75rem;
           padding-right: 0;
         }
-
-        .xc-sec .xc-ft .xc-c5 {
+        .cn-compare-section .cn-compare-footer .cn-compare-col--feature {
           text-align: left;
         }
-
-        .xc-sec .xc-ft .xc-c4,
-        .xc-sec .xc-ft .xc-c3 {
+        .cn-compare-section .cn-compare-footer .cn-compare-col--legacy,
+        .cn-compare-section .cn-compare-footer .cn-compare-col--platform {
           text-align: left !important;
         }
 
@@ -1277,7 +1005,6 @@
           padding-left: 1.25rem;
           padding-right: 1.25rem;
         }
-
         .cn-modules-additional-section .cn-layout-max {
           padding-left: 1.25rem;
           padding-right: 1.25rem;
@@ -1288,104 +1015,113 @@
           overflow-y: auto;
         }
 
-        .cn-mobile-nav .cn-nav-link {
-          display: block;
-          padding: 0.5rem 0;
-          border-bottom: 1px solid rgba(77, 70, 53, 0.15);
-        }
-
-        .cn-mobile-nav .cn-nav-link:last-child {
-          border-bottom: 0;
-        }
-
-        /* Compare table: desktop-style 3 columns on mobile + horizontal scroll */
-        .xc-sec .xc-scr {
+        /* Compare table: horizontal scroll on mobile */
+        .cn-compare-section .cn-compare-scroll {
           overflow-x: auto;
           -webkit-overflow-scrolling: touch;
           overscroll-behavior-x: contain;
         }
-
-        .xc-sec .xc-scr .xc-box {
+        .cn-compare-section .cn-compare-scroll .cn-compare-table {
           min-width: 720px;
         }
-
-        .xc-sec .xc-scr .xc-gr {
+        .cn-compare-section .cn-compare-scroll .cn-compare-grid {
           flex-wrap: nowrap !important;
         }
-
-        .xc-sec .xc-scr .xc-gr > .xc-c5 {
+        .cn-compare-section
+          .cn-compare-scroll
+          .cn-compare-grid
+          > .cn-compare-col--feature {
           flex: 0 0 41.666667% !important;
           max-width: 41.666667% !important;
           width: 41.666667% !important;
         }
-
-        .xc-sec .xc-scr .xc-gr > .xc-c4 {
+        .cn-compare-section
+          .cn-compare-scroll
+          .cn-compare-grid
+          > .cn-compare-col--legacy {
           flex: 0 0 33.333333% !important;
           max-width: 33.333333% !important;
           width: 33.333333% !important;
         }
-
-        .xc-sec .xc-scr .xc-gr > .xc-c3 {
+        .cn-compare-section
+          .cn-compare-scroll
+          .cn-compare-grid
+          > .cn-compare-col--platform {
           flex: 0 0 25% !important;
           max-width: 25% !important;
           width: 25% !important;
         }
-
-        .xc-sec .xc-scr .xc-hd,
-        .xc-sec .xc-scr .xc-rw,
-        .xc-sec .xc-scr .xc-ft {
+        .cn-compare-section .cn-compare-scroll .cn-compare-header,
+        .cn-compare-section .cn-compare-scroll .cn-compare-row,
+        .cn-compare-section .cn-compare-scroll .cn-compare-footer {
           padding-left: 1rem !important;
           padding-right: 1rem !important;
         }
 
-        .xc-sec .xc-scr .xc-hd {
-          text-align: left;
-        }
-
-        .xc-sec .xc-scr .xc-hd > .xc-col {
+        .cn-compare-section
+          .cn-compare-scroll
+          .cn-compare-header
+          > .cn-compare-col {
           text-align: inherit !important;
         }
-
-        .xc-sec .xc-scr .xc-hd > .xc-c5 {
+        .cn-compare-section
+          .cn-compare-scroll
+          .cn-compare-header
+          > .cn-compare-col--feature {
           text-align: left !important;
         }
 
-        .xc-sec .xc-scr .xc-hd > .xc-c4 {
-          text-align: left !important;
-        }
-
-        .xc-sec .xc-scr .xc-hd > .xc-c3 {
+        .cn-compare-section
+          .cn-compare-scroll
+          .cn-compare-header
+          > .cn-compare-col--platform {
           text-align: center !important;
           margin-top: 0 !important;
         }
-
-        .xc-sec .xc-scr .xc-rw > .xc-col {
+        .cn-compare-section
+          .cn-compare-scroll
+          .cn-compare-row
+          > .cn-compare-col {
           margin-bottom: 0 !important;
         }
-
-        .xc-sec .xc-scr .xc-rw > .xc-c4 {
+        .cn-compare-section
+          .cn-compare-scroll
+          .cn-compare-row
+          > .cn-compare-col--legacy {
           justify-content: center !important;
           text-align: center !important;
           padding-left: 0.5rem !important;
           padding-right: 0.5rem !important;
         }
-
-        .xc-sec .xc-scr .xc-rw > .xc-c3 {
+        .cn-compare-section
+          .cn-compare-scroll
+          .cn-compare-row
+          > .cn-compare-col--platform {
           text-align: center !important;
           padding-left: 0.5rem !important;
           padding-right: 0.5rem !important;
         }
-
-        .xc-sec .xc-scr .xc-ft .xc-gr > .xc-col {
+        .cn-compare-section
+          .cn-compare-scroll
+          .cn-compare-footer
+          .cn-compare-grid
+          > .cn-compare-col {
           margin-bottom: 0 !important;
         }
-
-        .xc-sec .xc-scr .xc-ft .xc-c5 {
+        .cn-compare-section
+          .cn-compare-scroll
+          .cn-compare-footer
+          .cn-compare-col--feature {
           text-align: left;
         }
-
-        .xc-sec .xc-scr .xc-ft .xc-c4,
-        .xc-sec .xc-scr .xc-ft .xc-c3 {
+        .cn-compare-section
+          .cn-compare-scroll
+          .cn-compare-footer
+          .cn-compare-col--legacy,
+        .cn-compare-section
+          .cn-compare-scroll
+          .cn-compare-footer
+          .cn-compare-col--platform {
           text-align: center !important;
         }
       }
@@ -1408,7 +1144,6 @@
               <a class="cn-nav-link cn-text-label" href="#pricing">Pricing</a>
               <a class="cn-nav-link cn-text-label" href="#faq">FAQ</a>
             </nav>
-
             <div class="d-flex d-md-none align-items-center flex-shrink-0">
               <button
                 type="button"
@@ -1439,6 +1174,7 @@
     </header>
 
     <main>
+      <!-- ── Hero ── -->
       <section
         class="position-relative cn-pad-hero overflow-hidden cn-hero-glow-bg"
       >
@@ -1468,6 +1204,7 @@
         </div>
       </section>
 
+      <!-- ── AI Agents ── -->
       <section
         class="cn-pad-section cn-layout-max cn-scroll-anchor"
         id="ai-agents"
@@ -1501,6 +1238,7 @@
               </button>
             </div>
           </div>
+
           <div class="col-12 col-md-6 col-lg-3 mb-4">
             <div class="cn-card-agent cn-surface-sheen">
               <div class="cn-agent-badge">2</div>
@@ -1520,6 +1258,7 @@
               </button>
             </div>
           </div>
+
           <div class="col-12 col-md-6 col-lg-3 mb-4">
             <div class="cn-card-agent cn-surface-sheen">
               <div class="cn-agent-badge">3</div>
@@ -1537,6 +1276,7 @@
               </button>
             </div>
           </div>
+
           <div class="col-12 col-md-6 col-lg-3 mb-4">
             <div class="cn-card-agent cn-surface-sheen">
               <div class="cn-agent-badge">4</div>
@@ -1556,6 +1296,7 @@
               </button>
             </div>
           </div>
+
           <div class="col-12 col-md-6 col-lg-3 mb-4">
             <div class="cn-card-agent cn-surface-sheen">
               <div class="cn-agent-badge">5</div>
@@ -1573,6 +1314,7 @@
               </button>
             </div>
           </div>
+
           <div class="col-12 col-md-6 col-lg-3 mb-4">
             <div class="cn-card-agent cn-surface-sheen">
               <div class="cn-agent-badge">6</div>
@@ -1590,6 +1332,7 @@
               </button>
             </div>
           </div>
+
           <div class="col-12 col-md-6 col-lg-3 mb-4">
             <div class="cn-card-agent cn-surface-sheen">
               <div class="cn-agent-badge">7</div>
@@ -1607,6 +1350,7 @@
               </button>
             </div>
           </div>
+
           <div class="col-12 col-md-6 col-lg-3 mb-4">
             <div class="cn-card-agent cn-surface-sheen">
               <div class="cn-agent-badge">8</div>
@@ -1625,6 +1369,7 @@
               </button>
             </div>
           </div>
+
           <div class="col-12 col-md-6 col-lg-3 mb-4">
             <div class="cn-card-agent cn-surface-sheen">
               <div class="cn-agent-badge">9</div>
@@ -1642,6 +1387,7 @@
               </button>
             </div>
           </div>
+
           <div class="col-12 col-md-6 col-lg-3 mb-4">
             <div class="cn-card-agent cn-surface-sheen">
               <div class="cn-agent-badge">10</div>
@@ -1659,6 +1405,7 @@
               </button>
             </div>
           </div>
+
           <div class="col-12 col-md-6 col-lg-3 mb-4">
             <div class="cn-card-agent cn-surface-sheen">
               <div class="cn-agent-badge">11</div>
@@ -1676,6 +1423,7 @@
               </button>
             </div>
           </div>
+
           <div class="col-12 col-md-6 col-lg-3 mb-4">
             <div class="cn-card-agent cn-surface-sheen">
               <div class="cn-agent-badge">12</div>
@@ -1692,6 +1440,7 @@
               </button>
             </div>
           </div>
+
           <div class="col-12 col-md-6 col-lg-3 mb-4">
             <div class="cn-card-agent cn-surface-sheen">
               <div class="cn-agent-badge">13</div>
@@ -1708,6 +1457,7 @@
               </button>
             </div>
           </div>
+
           <div class="col-12 col-md-6 col-lg-3 mb-4">
             <div class="cn-card-agent cn-surface-sheen">
               <div class="cn-agent-badge">14</div>
@@ -1725,6 +1475,7 @@
               </button>
             </div>
           </div>
+
           <div class="col-12 col-md-6 col-lg-3 mb-4">
             <div class="cn-card-agent cn-surface-sheen">
               <div class="cn-agent-badge">15</div>
@@ -1744,6 +1495,7 @@
               </button>
             </div>
           </div>
+
           <div class="col-12 col-md-6 col-lg-3 mb-4">
             <div class="cn-card-agent cn-surface-sheen">
               <div class="cn-agent-badge">16</div>
@@ -1763,6 +1515,8 @@
           </div>
         </div>
       </section>
+
+      <!-- ── Mid CTA ── -->
       <section class="cn-layout-max">
         <div class="cn-pad-section cn-bg-surface-darkest cn-border-y-soft">
           <div class="mx-auto text-center cn-measure-wide px-4">
@@ -1779,6 +1533,7 @@
         </div>
       </section>
 
+      <!-- ── Additional Modules ── -->
       <section
         id="ai-tools"
         class="cn-modules-additional-section cn-scroll-anchor cn-margin-top-section cn-pad-section"
@@ -2042,12 +1797,13 @@
         </div>
       </section>
 
+      <!-- ── Compare Table ── -->
       <section
-        class="xc-sec cn-pad-section-xl cn-border-y-strong cn-bg-surface-darkest position-relative overflow-hidden"
+        class="cn-compare-section cn-pad-section-xl cn-border-y-strong cn-bg-surface-darkest position-relative overflow-hidden"
       >
         <div class="cn-absolute-fill cn-gradient-fade cn-pointer-none"></div>
         <div class="cn-layout-max position-relative cn-z-raised">
-          <div class="text-center cn-margin-below-xl">
+          <div class="text-center cn-margin-below-section">
             <h2 class="cn-title-section">
               Replace Fragmented SaaS with 10 Ways.ai
             </h2>
@@ -2057,29 +1813,31 @@
               scale with an integrated AI ecosystem.
             </p>
           </div>
-          <div class="xc-scr">
-            <div class="xc-box cn-surface-sheen">
-              <div class="row xc-hd xc-gr mx-0 align-items-center">
+          <div class="cn-compare-scroll">
+            <div class="cn-compare-table cn-surface-sheen">
+              <div
+                class="row cn-compare-header cn-compare-grid mx-0 align-items-center"
+              >
                 <div
-                  class="xc-col xc-c5 col-12 col-md-5 cn-text-label cn-text-on-surface font-weight-bold cn-uppercase cn-tracking-widest"
+                  class="cn-compare-col cn-compare-col--feature col-12 col-md-5 cn-text-label cn-text-on-surface font-weight-bold cn-uppercase cn-tracking-widest"
                 >
                   Features
                 </div>
                 <div
-                  class="xc-col xc-c4 col-12 col-md-4 cn-text-label cn-text-on-surface font-weight-bold cn-uppercase cn-tracking-widest text-center"
+                  class="cn-compare-col cn-compare-col--legacy col-12 col-md-4 cn-text-label cn-text-on-surface font-weight-bold cn-uppercase cn-tracking-widest text-center"
                 >
                   Legacy SaaS Fragments
                 </div>
                 <div
-                  class="xc-col xc-c3 col-12 col-md-3 cn-text-label cn-text-gold font-weight-bold cn-uppercase cn-tracking-widest text-center"
+                  class="cn-compare-col cn-compare-col--platform col-12 col-md-3 cn-text-label cn-text-gold font-weight-bold cn-uppercase cn-tracking-widest text-center"
                 >
                   10 Ways Platform
                 </div>
               </div>
               <div>
-                <div class="row xc-rw xc-gr mx-0">
+                <div class="row cn-compare-row cn-compare-grid mx-0">
                   <div
-                    class="xc-col xc-c5 col-12 col-md-5 d-flex align-items-center mb-2 mb-md-0"
+                    class="cn-compare-col cn-compare-col--feature col-12 col-md-5 d-flex align-items-center mb-2 mb-md-0"
                   >
                     <span
                       class="cn-text-body font-weight-medium cn-text-on-surface"
@@ -2087,21 +1845,23 @@
                     >
                   </div>
                   <div
-                    class="xc-col xc-c4 col-12 col-md-4 d-flex justify-content-center mb-2 mb-md-0"
+                    class="cn-compare-col cn-compare-col--legacy col-12 col-md-4 d-flex justify-content-center mb-2 mb-md-0"
                   >
                     <span class="cn-text-caption cn-text-gold"
                       >Salesforce, HubSpot</span
                     >
                   </div>
-                  <div class="xc-col xc-c3 col-12 col-md-3 text-center">
+                  <div
+                    class="cn-compare-col cn-compare-col--platform col-12 col-md-3 text-center"
+                  >
                     <span class="cn-icon cn-text-gold font-weight-bold"
                       >check_circle</span
                     >
                   </div>
                 </div>
-                <div class="row xc-rw xc-gr mx-0">
+                <div class="row cn-compare-row cn-compare-grid mx-0">
                   <div
-                    class="xc-col xc-c5 col-12 col-md-5 d-flex align-items-center mb-2 mb-md-0"
+                    class="cn-compare-col cn-compare-col--feature col-12 col-md-5 d-flex align-items-center mb-2 mb-md-0"
                   >
                     <span
                       class="cn-text-body font-weight-medium cn-text-on-surface"
@@ -2109,21 +1869,23 @@
                     >
                   </div>
                   <div
-                    class="xc-col xc-c4 col-12 col-md-4 d-flex justify-content-center mb-2 mb-md-0"
+                    class="cn-compare-col cn-compare-col--legacy col-12 col-md-4 d-flex justify-content-center mb-2 mb-md-0"
                   >
                     <span class="cn-text-caption cn-text-gold"
                       >ClickFunnels, Leadpages</span
                     >
                   </div>
-                  <div class="xc-col xc-c3 col-12 col-md-3 text-center">
+                  <div
+                    class="cn-compare-col cn-compare-col--platform col-12 col-md-3 text-center"
+                  >
                     <span class="cn-icon cn-text-gold font-weight-bold"
                       >check_circle</span
                     >
                   </div>
                 </div>
-                <div class="row xc-rw xc-gr mx-0">
+                <div class="row cn-compare-row cn-compare-grid mx-0">
                   <div
-                    class="xc-col xc-c5 col-12 col-md-5 d-flex align-items-center mb-2 mb-md-0"
+                    class="cn-compare-col cn-compare-col--feature col-12 col-md-5 d-flex align-items-center mb-2 mb-md-0"
                   >
                     <span
                       class="cn-text-body font-weight-medium cn-text-on-surface"
@@ -2131,21 +1893,23 @@
                     >
                   </div>
                   <div
-                    class="xc-col xc-c4 col-12 col-md-4 d-flex justify-content-center mb-2 mb-md-0"
+                    class="cn-compare-col cn-compare-col--legacy col-12 col-md-4 d-flex justify-content-center mb-2 mb-md-0"
                   >
                     <span class="cn-text-caption cn-text-gold"
                       >WordPress, Wix, Squarespace</span
                     >
                   </div>
-                  <div class="xc-col xc-c3 col-12 col-md-3 text-center">
+                  <div
+                    class="cn-compare-col cn-compare-col--platform col-12 col-md-3 text-center"
+                  >
                     <span class="cn-icon cn-text-gold font-weight-bold"
                       >check_circle</span
                     >
                   </div>
                 </div>
-                <div class="row xc-rw xc-gr mx-0">
+                <div class="row cn-compare-row cn-compare-grid mx-0">
                   <div
-                    class="xc-col xc-c5 col-12 col-md-5 d-flex align-items-center mb-2 mb-md-0"
+                    class="cn-compare-col cn-compare-col--feature col-12 col-md-5 d-flex align-items-center mb-2 mb-md-0"
                   >
                     <span
                       class="cn-text-body font-weight-medium cn-text-on-surface"
@@ -2153,21 +1917,23 @@
                     >
                   </div>
                   <div
-                    class="xc-col xc-c4 col-12 col-md-4 d-flex justify-content-center mb-2 mb-md-0"
+                    class="cn-compare-col cn-compare-col--legacy col-12 col-md-4 d-flex justify-content-center mb-2 mb-md-0"
                   >
                     <span class="cn-text-caption cn-text-gold"
                       >Typeform, SurveyMonkey</span
                     >
                   </div>
-                  <div class="xc-col xc-c3 col-12 col-md-3 text-center">
+                  <div
+                    class="cn-compare-col cn-compare-col--platform col-12 col-md-3 text-center"
+                  >
                     <span class="cn-icon cn-text-gold font-weight-bold"
                       >check_circle</span
                     >
                   </div>
                 </div>
-                <div class="row xc-rw xc-gr mx-0">
+                <div class="row cn-compare-row cn-compare-grid mx-0">
                   <div
-                    class="xc-col xc-c5 col-12 col-md-5 d-flex align-items-center mb-2 mb-md-0"
+                    class="cn-compare-col cn-compare-col--feature col-12 col-md-5 d-flex align-items-center mb-2 mb-md-0"
                   >
                     <span
                       class="cn-text-body font-weight-medium cn-text-on-surface"
@@ -2175,21 +1941,23 @@
                     >
                   </div>
                   <div
-                    class="xc-col xc-c4 col-12 col-md-4 d-flex justify-content-center mb-2 mb-md-0"
+                    class="cn-compare-col cn-compare-col--legacy col-12 col-md-4 d-flex justify-content-center mb-2 mb-md-0"
                   >
                     <span class="cn-text-caption cn-text-gold"
                       >Mailchimp, ActiveCampaign</span
                     >
                   </div>
-                  <div class="xc-col xc-c3 col-12 col-md-3 text-center">
+                  <div
+                    class="cn-compare-col cn-compare-col--platform col-12 col-md-3 text-center"
+                  >
                     <span class="cn-icon cn-text-gold font-weight-bold"
                       >check_circle</span
                     >
                   </div>
                 </div>
-                <div class="row xc-rw xc-gr mx-0">
+                <div class="row cn-compare-row cn-compare-grid mx-0">
                   <div
-                    class="xc-col xc-c5 col-12 col-md-5 d-flex align-items-center mb-2 mb-md-0"
+                    class="cn-compare-col cn-compare-col--feature col-12 col-md-5 d-flex align-items-center mb-2 mb-md-0"
                   >
                     <span
                       class="cn-text-body font-weight-medium cn-text-on-surface"
@@ -2197,21 +1965,23 @@
                     >
                   </div>
                   <div
-                    class="xc-col xc-c4 col-12 col-md-4 d-flex justify-content-center mb-2 mb-md-0"
+                    class="cn-compare-col cn-compare-col--legacy col-12 col-md-4 d-flex justify-content-center mb-2 mb-md-0"
                   >
                     <span class="cn-text-caption cn-text-gold"
                       >Twilio, Podium</span
                     >
                   </div>
-                  <div class="xc-col xc-c3 col-12 col-md-3 text-center">
+                  <div
+                    class="cn-compare-col cn-compare-col--platform col-12 col-md-3 text-center"
+                  >
                     <span class="cn-icon cn-text-gold font-weight-bold"
                       >check_circle</span
                     >
                   </div>
                 </div>
-                <div class="row xc-rw xc-gr mx-0">
+                <div class="row cn-compare-row cn-compare-grid mx-0">
                   <div
-                    class="xc-col xc-c5 col-12 col-md-5 d-flex align-items-center mb-2 mb-md-0"
+                    class="cn-compare-col cn-compare-col--feature col-12 col-md-5 d-flex align-items-center mb-2 mb-md-0"
                   >
                     <span
                       class="cn-text-body font-weight-medium cn-text-on-surface"
@@ -2219,21 +1989,23 @@
                     >
                   </div>
                   <div
-                    class="xc-col xc-c4 col-12 col-md-4 d-flex justify-content-center mb-2 mb-md-0"
+                    class="cn-compare-col cn-compare-col--legacy col-12 col-md-4 d-flex justify-content-center mb-2 mb-md-0"
                   >
                     <span class="cn-text-caption cn-text-gold"
                       >Calendly, Acuity</span
                     >
                   </div>
-                  <div class="xc-col xc-c3 col-12 col-md-3 text-center">
+                  <div
+                    class="cn-compare-col cn-compare-col--platform col-12 col-md-3 text-center"
+                  >
                     <span class="cn-icon cn-text-gold font-weight-bold"
                       >check_circle</span
                     >
                   </div>
                 </div>
-                <div class="row xc-rw xc-gr mx-0">
+                <div class="row cn-compare-row cn-compare-grid mx-0">
                   <div
-                    class="xc-col xc-c5 col-12 col-md-5 d-flex align-items-center mb-2 mb-md-0"
+                    class="cn-compare-col cn-compare-col--feature col-12 col-md-5 d-flex align-items-center mb-2 mb-md-0"
                   >
                     <span
                       class="cn-text-body font-weight-medium cn-text-on-surface"
@@ -2241,21 +2013,23 @@
                     >
                   </div>
                   <div
-                    class="xc-col xc-c4 col-12 col-md-4 d-flex justify-content-center mb-2 mb-md-0"
+                    class="cn-compare-col cn-compare-col--legacy col-12 col-md-4 d-flex justify-content-center mb-2 mb-md-0"
                   >
                     <span class="cn-text-caption cn-text-gold"
                       >Zapier, Make</span
                     >
                   </div>
-                  <div class="xc-col xc-c3 col-12 col-md-3 text-center">
+                  <div
+                    class="cn-compare-col cn-compare-col--platform col-12 col-md-3 text-center"
+                  >
                     <span class="cn-icon cn-text-gold font-weight-bold"
                       >check_circle</span
                     >
                   </div>
                 </div>
-                <div class="row xc-rw xc-gr mx-0">
+                <div class="row cn-compare-row cn-compare-grid mx-0">
                   <div
-                    class="xc-col xc-c5 col-12 col-md-5 d-flex align-items-center mb-2 mb-md-0"
+                    class="cn-compare-col cn-compare-col--feature col-12 col-md-5 d-flex align-items-center mb-2 mb-md-0"
                   >
                     <span
                       class="cn-text-body font-weight-medium cn-text-on-surface"
@@ -2263,21 +2037,23 @@
                     >
                   </div>
                   <div
-                    class="xc-col xc-c4 col-12 col-md-4 d-flex justify-content-center mb-2 mb-md-0"
+                    class="cn-compare-col cn-compare-col--legacy col-12 col-md-4 d-flex justify-content-center mb-2 mb-md-0"
                   >
                     <span class="cn-text-caption cn-text-gold"
                       >Kajabi, Teachable</span
                     >
                   </div>
-                  <div class="xc-col xc-c3 col-12 col-md-3 text-center">
+                  <div
+                    class="cn-compare-col cn-compare-col--platform col-12 col-md-3 text-center"
+                  >
                     <span class="cn-icon cn-text-gold font-weight-bold"
                       >check_circle</span
                     >
                   </div>
                 </div>
-                <div class="row xc-rw xc-gr mx-0">
+                <div class="row cn-compare-row cn-compare-grid mx-0">
                   <div
-                    class="xc-col xc-c5 col-12 col-md-5 d-flex align-items-center mb-2 mb-md-0"
+                    class="cn-compare-col cn-compare-col--feature col-12 col-md-5 d-flex align-items-center mb-2 mb-md-0"
                   >
                     <span
                       class="cn-text-body font-weight-medium cn-text-on-surface"
@@ -2285,21 +2061,23 @@
                     >
                   </div>
                   <div
-                    class="xc-col xc-c4 col-12 col-md-4 d-flex justify-content-center mb-2 mb-md-0"
+                    class="cn-compare-col cn-compare-col--legacy col-12 col-md-4 d-flex justify-content-center mb-2 mb-md-0"
                   >
                     <span class="cn-text-caption cn-text-gold"
                       >BirdEye, Yotpo</span
                     >
                   </div>
-                  <div class="xc-col xc-c3 col-12 col-md-3 text-center">
+                  <div
+                    class="cn-compare-col cn-compare-col--platform col-12 col-md-3 text-center"
+                  >
                     <span class="cn-icon cn-text-gold font-weight-bold"
                       >check_circle</span
                     >
                   </div>
                 </div>
-                <div class="row xc-rw xc-gr mx-0">
+                <div class="row cn-compare-row cn-compare-grid mx-0">
                   <div
-                    class="xc-col xc-c5 col-12 col-md-5 d-flex align-items-center mb-2 mb-md-0"
+                    class="cn-compare-col cn-compare-col--feature col-12 col-md-5 d-flex align-items-center mb-2 mb-md-0"
                   >
                     <span
                       class="cn-text-body font-weight-medium cn-text-on-surface"
@@ -2307,28 +2085,32 @@
                     >
                   </div>
                   <div
-                    class="xc-col xc-c4 col-12 col-md-4 d-flex justify-content-center mb-2 mb-md-0"
+                    class="cn-compare-col cn-compare-col--legacy col-12 col-md-4 d-flex justify-content-center mb-2 mb-md-0"
                   >
                     <span class="cn-text-caption cn-text-gold"
                       >DocuSign, PandaDoc</span
                     >
                   </div>
-                  <div class="xc-col xc-c3 col-12 col-md-3 text-center">
+                  <div
+                    class="cn-compare-col cn-compare-col--platform col-12 col-md-3 text-center"
+                  >
                     <span class="cn-icon cn-text-gold font-weight-bold"
                       >check_circle</span
                     >
                   </div>
                 </div>
               </div>
-              <div class="xc-ft">
-                <div class="row xc-gr align-items-center mx-0">
-                  <div class="xc-col xc-c5 col-12 col-md-5 mb-3 mb-md-0">
+              <div class="cn-compare-footer">
+                <div class="row cn-compare-grid align-items-center mx-0">
+                  <div
+                    class="cn-compare-col cn-compare-col--feature col-12 col-md-5 mb-3 mb-md-0"
+                  >
                     <div class="cn-text-heading-sm cn-text-on-surface">
                       Estimated Monthly Investment
                     </div>
                   </div>
                   <div
-                    class="xc-col xc-c4 col-12 col-md-4 text-center mb-3 mb-md-0"
+                    class="cn-compare-col cn-compare-col--legacy col-12 col-md-4 text-center mb-3 mb-md-0"
                   >
                     <div
                       class="cn-text-heading-sm cn-text-error font-weight-bold"
@@ -2340,7 +2122,9 @@
                       >
                     </div>
                   </div>
-                  <div class="xc-col xc-c3 col-12 col-md-3 text-center">
+                  <div
+                    class="cn-compare-col cn-compare-col--platform col-12 col-md-3 text-center"
+                  >
                     <div
                       class="cn-text-heading-md cn-text-gold font-weight-bold"
                     >
@@ -2369,6 +2153,7 @@
         </div>
       </section>
 
+      <!-- ── Pricing ── -->
       <section
         class="cn-pad-section-xl cn-bg-page cn-layout-max cn-scroll-anchor"
         id="pricing"
@@ -2381,11 +2166,12 @@
           </p>
         </div>
         <div class="row cn-row-tight align-items-stretch">
+          <!-- Starter -->
           <div class="col-12 col-md-4 mb-5 mb-md-0 d-flex">
             <div
               class="cn-pricing-card cn-pricing-border-soft cn-surface-sheen w-100"
             >
-              <div class="cn-margin-below-medium">
+              <div class="mb-4">
                 <h3 class="cn-heading-tier">Starter</h3>
                 <div class="cn-price-row mb-3">
                   <span
@@ -2446,12 +2232,14 @@
               </div>
             </div>
           </div>
+
+          <!-- Unlimited (featured) -->
           <div class="col-12 col-md-4 mb-5 mb-md-0 d-flex">
             <div
               class="cn-pricing-card cn-pricing-featured cn-surface-sheen w-100"
             >
               <span class="cn-badge-popular">Most Popular</span>
-              <div class="cn-margin-below-medium mt-2">
+              <div class="mt-2 mb-4">
                 <h3 class="cn-heading-tier">Unlimited</h3>
                 <div class="cn-price-row mb-3">
                   <span
@@ -2512,11 +2300,13 @@
               </div>
             </div>
           </div>
+
+          <!-- SaaS -->
           <div class="col-12 col-md-4 d-flex">
             <div
               class="cn-pricing-card cn-pricing-border-soft cn-surface-sheen w-100"
             >
-              <div class="cn-margin-below-medium">
+              <div class="mb-4">
                 <h3 class="cn-heading-tier">SaaS Plan</h3>
                 <div class="cn-price-row mb-3">
                   <span
@@ -2569,6 +2359,7 @@
         </div>
       </section>
 
+      <!-- ── FAQ ── -->
       <section
         class="cn-faq-section cn-pad-section-xl cn-scroll-anchor"
         id="faq"
@@ -2597,6 +2388,7 @@
                 </p>
               </div>
             </div>
+
             <div class="cn-faq-item">
               <button type="button" class="cn-faq-trigger faq-trigger">
                 <h3 class="cn-heading cn-heading-plain mb-0">
@@ -2612,6 +2404,7 @@
                 </p>
               </div>
             </div>
+
             <div class="cn-faq-item">
               <button type="button" class="cn-faq-trigger faq-trigger">
                 <h3 class="cn-heading cn-heading-plain mb-0">
@@ -2628,6 +2421,7 @@
                 </p>
               </div>
             </div>
+
             <div class="cn-faq-item">
               <button type="button" class="cn-faq-trigger faq-trigger">
                 <h3 class="cn-heading cn-heading-plain mb-0">
@@ -2644,6 +2438,7 @@
                 </p>
               </div>
             </div>
+
             <div class="cn-faq-item">
               <button type="button" class="cn-faq-trigger faq-trigger">
                 <h3 class="cn-heading cn-heading-plain mb-0">
@@ -2659,6 +2454,7 @@
                 </p>
               </div>
             </div>
+
             <div class="cn-faq-item">
               <button type="button" class="cn-faq-trigger faq-trigger">
                 <h3 class="cn-heading cn-heading-plain mb-0">
@@ -2674,6 +2470,7 @@
                 </p>
               </div>
             </div>
+
             <div class="cn-faq-item">
               <button type="button" class="cn-faq-trigger faq-trigger">
                 <h3 class="cn-heading cn-heading-plain mb-0">
@@ -2689,6 +2486,7 @@
                 </p>
               </div>
             </div>
+
             <div class="cn-faq-item">
               <button type="button" class="cn-faq-trigger faq-trigger">
                 <h3 class="cn-heading cn-heading-plain mb-0">
@@ -2704,6 +2502,7 @@
                 </p>
               </div>
             </div>
+
             <div class="cn-faq-item">
               <button type="button" class="cn-faq-trigger faq-trigger">
                 <h3 class="cn-heading cn-heading-plain mb-0">
@@ -2719,6 +2518,7 @@
                 </p>
               </div>
             </div>
+
             <div class="cn-faq-item">
               <button type="button" class="cn-faq-trigger faq-trigger">
                 <h3 class="cn-heading cn-heading-plain mb-0">
@@ -2734,6 +2534,7 @@
                 </p>
               </div>
             </div>
+
             <div class="cn-faq-item">
               <button type="button" class="cn-faq-trigger faq-trigger">
                 <h3 class="cn-heading cn-heading-plain mb-0">
@@ -2749,6 +2550,7 @@
                 </p>
               </div>
             </div>
+
             <div class="cn-faq-item">
               <button type="button" class="cn-faq-trigger faq-trigger">
                 <h3 class="cn-heading cn-heading-plain mb-0">
@@ -2768,6 +2570,7 @@
         </div>
       </section>
 
+      <!-- ── Bottom CTA ── -->
       <section class="cn-pad-section-tall cn-bg-surface-low cn-border-y-strong">
         <div class="mx-auto text-center cn-measure-wide cn-layout-max">
           <h2 class="cn-title-hero">Unlock Your Agency's Full Potential</h2>
@@ -2807,6 +2610,7 @@
       </div>
     </footer>
 
+    <!-- ── Agent detail modal ── -->
     <div
       id="agent-modal"
       class="cn-modal-root cn-bg-modal-overlay d-none align-items-center justify-content-center overflow-auto p-3"
@@ -2852,6 +2656,7 @@
       </div>
     </div>
 
+    <!-- ── Modules modal ── -->
     <div
       id="modules-modal"
       class="cn-modal-root cn-bg-modal-overlay d-none align-items-center justify-content-center overflow-auto p-3"
@@ -2886,6 +2691,7 @@
       </div>
     </div>
 
+    <!-- ── Agent modal data ── -->
     <script type="application/json" id="cn-agent-modal-data">
       {
         "AI Missed Call Text-Back": {
@@ -2980,6 +2786,7 @@
       crossorigin="anonymous"
     ></script>
     <script>
+      /* Icon hover animation on agent cards */
       document.querySelectorAll(".cn-card-agent").forEach(function (card) {
         card.addEventListener("mouseenter", function () {
           var icon = card.querySelector(".cn-icon");
@@ -2996,6 +2803,8 @@
           }
         });
       });
+
+      /* Modules modal */
       (function () {
         var modal = document.getElementById("modules-modal");
         var openBtns = document.querySelectorAll(".cn-open-modules-modal");
@@ -3026,6 +2835,8 @@
           });
         }
       })();
+
+      /* Agent detail modal */
       (function () {
         var modal = document.getElementById("agent-modal");
         var closeBtn = document.getElementById("close-agent-modal");
@@ -3034,9 +2845,7 @@
         if (dataEl) {
           try {
             agentData = JSON.parse(dataEl.textContent);
-          } catch (err) {
-            agentData = {};
-          }
+          } catch (e) {}
         }
         var iconEl = document.getElementById("agent-modal-icon");
         var titleEl = document.getElementById("agent-modal-title");
@@ -3072,9 +2881,7 @@
                 if (p2El) p2El.textContent = detail.p2;
                 if (p3El) p3El.textContent = detail.p3;
               } else {
-                var summary =
-                  card.querySelector(".cn-agent-card-desc") ||
-                  card.querySelector(".cn-card-summary");
+                var summary = card.querySelector(".cn-agent-card-desc");
                 if (p1El && summary)
                   p1El.textContent = summary.textContent.trim();
                 if (p2El) p2El.textContent = "";
@@ -3092,27 +2899,26 @@
           });
         }
       })();
+
+      /* Active nav highlight on scroll */
       (function () {
         var sectionIds = ["ai-agents", "ai-tools", "pricing", "faq"];
         var navLinks = document.querySelectorAll(
-          'header.cn-site-header a.cn-nav-link[href^="#"]',
+          "header.cn-site-header a.cn-nav-link[href^='#']",
         );
         function syncNavActive() {
           var header = document.querySelector(".cn-site-header");
           var headerH = header ? header.offsetHeight : 72;
           var y = window.scrollY + headerH + 12;
           var activeId = null;
-          var i;
-          for (i = 0; i < sectionIds.length; i++) {
+          for (var i = 0; i < sectionIds.length; i++) {
             var el = document.getElementById(sectionIds[i]);
             if (!el) continue;
-            var docTop = el.getBoundingClientRect().top + window.scrollY;
-            if (docTop <= y) activeId = sectionIds[i];
+            if (el.getBoundingClientRect().top + window.scrollY <= y)
+              activeId = sectionIds[i];
           }
           navLinks.forEach(function (a) {
-            var href = a.getAttribute("href");
-            if (!href || href.charAt(0) !== "#") return;
-            var id = href.slice(1);
+            var id = a.getAttribute("href").slice(1);
             a.classList.toggle("cn-nav-link-active", id === activeId);
           });
         }
@@ -3122,7 +2928,8 @@
         document.addEventListener("DOMContentLoaded", syncNavActive);
         syncNavActive();
       })();
-      /* Mobile menu: close drawer then scroll — Bootstrap collapse on <a> was blocking hash navigation */
+
+      /* Mobile nav: close drawer before scrolling to anchor */
       (function () {
         var mobileNav = document.getElementById("cnMobileNav");
         if (!mobileNav || typeof jQuery === "undefined") return;
@@ -3132,15 +2939,14 @@
           .forEach(function (anchor) {
             anchor.addEventListener("click", function (e) {
               var href = anchor.getAttribute("href");
-              if (!href || href.length < 2 || href.charAt(0) !== "#") return;
+              if (!href || href.length < 2) return;
               var targetEl = document.getElementById(href.slice(1));
               if (!targetEl) return;
               e.preventDefault();
               function go() {
                 targetEl.scrollIntoView({ behavior: "smooth", block: "start" });
-                if (window.history && window.history.replaceState) {
+                if (window.history && window.history.replaceState)
                   window.history.replaceState(null, "", href);
-                }
                 window.dispatchEvent(new Event("hashchange"));
               }
               if ($nav.hasClass("show")) {
@@ -3152,6 +2958,8 @@
             });
           });
       })();
+
+      /* FAQ accordion */
       document.querySelectorAll(".faq-trigger").forEach(function (trigger) {
         trigger.addEventListener("click", function () {
           var content = trigger.nextElementSibling;
@@ -3167,9 +2975,6 @@
           if (!isOpen) {
             content.style.maxHeight = content.scrollHeight + "px";
             icon.textContent = "remove";
-          } else {
-            content.style.maxHeight = "0px";
-            icon.textContent = "add";
           }
         });
       });
