@@ -766,6 +766,11 @@
         margin: auto;
         box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.45);
       }
+      .cn-modal-panel.cn-onb-wrap {
+        background: #1a1a1a;
+        border: 1px solid rgba(212, 175, 55, 0.3);
+        box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.5);
+      }
       .cn-modal-close {
         position: absolute;
         top: 1rem;
@@ -789,6 +794,466 @@
         font-size: 16px;
         line-height: 26px;
         text-align: center;
+      }
+      .cn-onb-wrap {
+        max-height: 92vh;
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+      }
+      .cn-onb-head {
+        text-align: center;
+        padding-top: 1.25rem;
+      }
+      .cn-onb-title {
+        font-size: 1.65rem;
+        letter-spacing: -0.02em;
+        line-height: 1.2;
+        font-weight: 700;
+        color: #fff;
+        margin-bottom: 1.4rem;
+        white-space: nowrap;
+      }
+      @media (max-width: 400px) {
+        .cn-onb-title {
+          font-size: 1.35rem;
+          white-space: normal;
+          margin-bottom: 1.1rem;
+        }
+      }
+      .cn-onb-gold {
+        color: #f2ca50;
+      }
+      .cn-onb-steps {
+        display: flex;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        position: relative;
+        margin-bottom: 1rem;
+      }
+      .cn-onb-step {
+        flex: 1;
+        text-align: center;
+        padding-bottom: 0.85rem;
+      }
+      .cn-onb-step.is-active {
+        color: #f2ca50;
+        border-bottom: 2px solid #f2ca50;
+      }
+      .cn-onb-step.is-done {
+        color: #f2ca50;
+        opacity: 0.65;
+      }
+      .cn-onb-step.is-idle {
+        color: rgba(255, 255, 255, 0.4);
+      }
+      .cn-onb-step-label {
+        display: block;
+        font-size: 0.72rem;
+        font-weight: 700;
+        letter-spacing: 0.09em;
+        text-transform: uppercase;
+      }
+      .cn-onb-step-desc {
+        font-size: 0.68rem;
+      }
+      .cn-onb-arrow {
+        position: absolute;
+        bottom: -1px;
+        width: 0;
+        height: 0;
+        border-left: 6px solid transparent;
+        border-right: 6px solid transparent;
+        border-bottom: 6px solid #f2ca50;
+        transition: left 0.3s ease;
+      }
+      .cn-onb-arrow.at-1 {
+        left: 25%;
+        transform: translateX(-50%);
+      }
+      .cn-onb-arrow.at-2 {
+        left: 75%;
+        transform: translateX(-50%);
+      }
+      .cn-onb-panel {
+        display: none;
+      }
+      .cn-onb-panel.active {
+        display: block;
+      }
+      .cn-onb-input {
+        width: 100%;
+        background: rgba(0, 0, 0, 0.4);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 0.5rem;
+        color: #fff;
+        padding: 0.72rem 1rem;
+        outline: none;
+        font-size: max(0.88rem, 16px);
+        transition: all 0.25s;
+      }
+      .cn-onb-input:focus {
+        box-shadow: 0 0 0 2px rgba(212, 175, 55, 0.4);
+        border-color: #d4af37;
+        background: rgba(0, 0, 0, 0.55);
+      }
+      .cn-onb-input::placeholder {
+        color: rgba(255, 255, 255, 0.22);
+      }
+      .cn-onb-label {
+        display: block;
+        font-size: 0.68rem;
+        font-weight: 600;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+        color: rgba(212, 175, 55, 0.8);
+        margin-bottom: 0.3rem;
+      }
+      .cn-onb-btn {
+        width: 100%;
+        border: none;
+        border-radius: 0.5rem;
+        background: rgba(212, 175, 55, 0.35);
+        color: #000;
+        font-weight: 900;
+        padding: 0.95rem 1rem;
+        text-transform: uppercase;
+        letter-spacing: 0.15em;
+        font-size: 0.88rem;
+        cursor: not-allowed;
+        opacity: 0.5;
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 0.2rem;
+        min-height: 52px;
+      }
+      .cn-onb-btn.is-ready {
+        background: #d4af37;
+        opacity: 1;
+        cursor: pointer;
+        box-shadow: 0 0 22px rgba(212, 175, 55, 0.38);
+      }
+      .cn-onb-back {
+        border: 0;
+        background: none;
+        color: rgba(255, 255, 255, 0.55);
+        font-size: 0.72rem;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        margin-bottom: 0.9rem;
+      }
+      .cn-onb-back:hover {
+        color: #f2ca50;
+      }
+      .cn-onb-note {
+        margin-top: 0.7rem;
+        margin-bottom: 0;
+        color: rgba(255, 255, 255, 0.42);
+        font-size: 0.64rem;
+        line-height: 1.45;
+        text-align: center;
+      }
+      .cn-onb-plan-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 0.5rem;
+      }
+      .cn-onb-plan {
+        position: relative;
+        border: 1px solid rgba(255, 255, 255, 0.16);
+        border-radius: 0.5rem;
+        padding: 0.7rem 0.55rem 1.8rem;
+        cursor: pointer;
+      }
+      .cn-onb-plan.is-selected {
+        border-color: #f2ca50;
+        background: rgba(242, 202, 80, 0.08);
+      }
+      .cn-onb-plan-name {
+        display: block;
+        font-size: 0.6rem;
+        text-transform: uppercase;
+        color: rgba(255, 255, 255, 0.55);
+      }
+      .cn-onb-plan-price {
+        display: block;
+        font-size: 1.1rem;
+        color: #fff;
+        font-weight: 700;
+      }
+      .cn-onb-plan-info {
+        font-size: 0.56rem;
+        color: rgba(255, 255, 255, 0.45);
+        line-height: 1.35;
+        margin: 0.2rem 0 0;
+      }
+      .cn-onb-summary {
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        border-radius: 0.5rem;
+        padding: 0.9rem;
+        margin-bottom: 1rem;
+        background: rgba(0, 0, 0, 0.22);
+      }
+      .cn-onb-summary-title {
+        font-size: 0.6rem;
+        text-transform: uppercase;
+        color: rgba(255, 255, 255, 0.45);
+      }
+      .cn-onb-summary-value {
+        color: #fff;
+        font-weight: 700;
+      }
+      .cn-onb-summary-due {
+        color: rgba(255, 255, 255, 0.42);
+        font-size: 0.62rem;
+      }
+      .cn-onb-wrap {
+        max-width: 500px;
+        max-height: 92vh;
+        padding: 1.75rem 1.5rem 1.5rem;
+      }
+      .cn-onb-close {
+        width: 2rem;
+        height: 2rem;
+        border-radius: 9999px;
+        background: rgba(255, 255, 255, 0.06);
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .cn-onb-close .cn-icon {
+        font-size: 1.1rem;
+      }
+      .cn-onb-head {
+        padding-right: 2rem;
+      }
+      .cn-onb-title {
+        margin-bottom: 1.35rem;
+      }
+      .cn-onb-panel.active {
+        display: block;
+      }
+      .cn-onb-panel-scroll {
+        display: none;
+        flex: 1 1 auto;
+        overflow-y: auto;
+        overflow-x: hidden;
+        padding-right: 0.2rem;
+        scrollbar-width: thin;
+        scrollbar-color: rgba(242, 202, 80, 0.45) transparent;
+      }
+      .cn-onb-panel-scroll.active {
+        display: block;
+      }
+      .cn-onb-panel-scroll::-webkit-scrollbar {
+        width: 4px;
+      }
+      .cn-onb-panel-scroll::-webkit-scrollbar-thumb {
+        background: rgba(242, 202, 80, 0.45);
+        border-radius: 2px;
+      }
+      .cn-onb-back-wrap {
+        text-align: center;
+      }
+      .cn-onb-back {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.2rem;
+        margin: 0.4rem auto 0.9rem;
+      }
+      .cn-onb-form-pad {
+        padding: 0 0.25rem 0.4rem;
+      }
+      .cn-onb-plan {
+        background: rgba(0, 0, 0, 0.2);
+        min-height: 136px;
+      }
+      .cn-onb-radio {
+        position: absolute;
+        bottom: 0.6rem;
+        right: 0.6rem;
+        width: 14px;
+        height: 14px;
+        border-radius: 50%;
+        border: 1px solid rgba(255, 255, 255, 0.25);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .cn-onb-radio-dot {
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        background: #f2ca50;
+        display: none;
+      }
+      .cn-onb-plan.is-selected .cn-onb-radio {
+        border-color: #f2ca50;
+      }
+      .cn-onb-plan.is-selected .cn-onb-radio-dot {
+        display: block;
+      }
+      .cn-onb-input-row {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 0.75rem;
+        margin-bottom: 1rem;
+      }
+      .cn-onb-autofill-wrap {
+        position: relative;
+      }
+      .cn-onb-autofill {
+        position: absolute;
+        right: 0.5rem;
+        top: 50%;
+        transform: translateY(-50%);
+        background: rgba(16, 185, 129, 0.12);
+        border: 1px solid rgba(16, 185, 129, 0.32);
+        color: #10b981;
+        border-radius: 0.25rem;
+        padding: 0.22rem 0.45rem;
+        font-size: 0.58rem;
+        font-weight: 800;
+        text-transform: uppercase;
+      }
+      .cn-onb-summary {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 0.75rem;
+      }
+      .cn-onb-summary-right {
+        text-align: right;
+      }
+      .cn-onb-summary-total {
+        color: #f2ca50;
+        font-size: 2rem;
+        line-height: 1;
+        font-weight: 800;
+      }
+      .cn-onb-summary-due {
+        text-decoration: line-through;
+      }
+      .cn-onb-terms {
+        display: flex;
+        gap: 0.6rem;
+        align-items: flex-start;
+        margin-bottom: 1rem;
+      }
+      .cn-onb-terms input {
+        margin-top: 0.22rem;
+        width: 16px;
+        height: 16px;
+      }
+      .cn-onb-terms-text {
+        font-size: 0.68rem;
+        color: rgba(255, 255, 255, 0.42);
+      }
+      .cn-onb-terms-text a {
+        color: #f2ca50;
+        text-decoration: underline;
+      }
+      .cn-onb-wrap .iti {
+        width: 100%;
+      }
+      .cn-onb-wrap .iti input#cn-onb-phone {
+        width: 100% !important;
+        background: rgba(0, 0, 0, 0.4) !important;
+        border: 1px solid rgba(255, 255, 255, 0.1) !important;
+        border-radius: 0.5rem !important;
+        color: #fff !important;
+        padding: 0.72rem 1rem 0.72rem 5.4rem !important;
+        font-size: 0.92rem !important;
+        outline: none !important;
+      }
+      .cn-onb-wrap .iti input#cn-onb-phone:focus {
+        box-shadow: 0 0 0 2px rgba(242, 202, 80, 0.35) !important;
+        border-color: #f2ca50 !important;
+        background: rgba(0, 0, 0, 0.55) !important;
+      }
+      .cn-onb-wrap .iti input#cn-onb-phone::placeholder {
+        color: rgba(255, 255, 255, 0.3);
+      }
+      .cn-onb-wrap .iti__flag-container {
+        height: 100%;
+      }
+      .cn-onb-wrap .iti__selected-flag {
+        background: rgba(0, 0, 0, 0.55) !important;
+        border-right: 1px solid rgba(255, 255, 255, 0.1) !important;
+        border-radius: 0.5rem 0 0 0.5rem !important;
+        padding: 0 0.55rem !important;
+        height: 100%;
+      }
+      .cn-onb-wrap .iti__selected-flag:hover,
+      .cn-onb-wrap .iti__selected-flag:focus {
+        background: rgba(242, 202, 80, 0.1) !important;
+      }
+      .cn-onb-wrap .iti__selected-dial-code {
+        color: #fff !important;
+      }
+      .cn-onb-wrap .iti__arrow {
+        border-top-color: rgba(255, 255, 255, 0.5) !important;
+      }
+      .cn-onb-wrap .iti__arrow--up {
+        border-bottom-color: #f2ca50 !important;
+      }
+      .cn-onb-wrap .iti__dropdown-content {
+        background: #141414 !important;
+        border: 1px solid rgba(242, 202, 80, 0.28) !important;
+        border-radius: 0.5rem !important;
+        box-shadow: 0 10px 36px rgba(0, 0, 0, 0.75) !important;
+        z-index: 9999 !important;
+      }
+      .cn-onb-wrap .iti__search-input {
+        background: rgba(0, 0, 0, 0.65) !important;
+        border: none !important;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
+        color: #fff !important;
+      }
+      .cn-onb-wrap .iti__search-input::placeholder {
+        color: rgba(255, 255, 255, 0.35) !important;
+      }
+      .cn-onb-wrap .iti__country-list {
+        background: transparent !important;
+      }
+      .cn-onb-wrap .iti__country {
+        color: #ddd !important;
+      }
+      .cn-onb-wrap .iti__dial-code {
+        color: rgba(242, 202, 80, 0.78) !important;
+      }
+      .cn-onb-wrap .iti__country:hover {
+        background: rgba(242, 202, 80, 0.1) !important;
+      }
+      .cn-onb-wrap .iti__country--highlight {
+        background: rgba(242, 202, 80, 0.15) !important;
+      }
+      .cn-onb-btn {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 0.2rem;
+        min-height: 52px;
+      }
+      .cn-onb-btn-sub {
+        font-size: 0.54rem;
+        font-weight: 700;
+        opacity: 0.72;
+        letter-spacing: 0.16em;
+      }
+      .cn-onb-secure {
+        margin-top: 1rem;
+        color: rgba(255, 255, 255, 0.2);
+        text-align: center;
+        font-size: 0.6rem;
+        font-weight: 700;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
       }
 
       /* ── Footer ── */
@@ -1126,6 +1591,10 @@
         }
       }
     </style>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/intl-tel-input@19.5.7/build/css/intlTelInput.css"
+    />
     <title>10ways.ai</title>
   </head>
   <body>
@@ -2648,7 +3117,7 @@
           </div>
           <button
             type="button"
-            class="cn-btn cn-btn-primary w-100 p-4 cn-radius-lg cn-text-heading-sm cn-btn-glow-sm"
+            class="cn-btn cn-btn-primary w-100 p-4 cn-radius-lg cn-text-heading-sm cn-btn-glow-sm cn-open-modules-modal"
           >
             Start Your 14-Day Free Trial
           </button>
@@ -2661,32 +3130,177 @@
       id="modules-modal"
       class="cn-modal-root cn-bg-modal-overlay d-none align-items-center justify-content-center overflow-auto p-3"
     >
-      <div class="cn-modal-panel cn-surface-sheen p-4">
+      <div class="cn-modal-panel cn-surface-sheen p-4 cn-onb-wrap">
         <button
           type="button"
-          class="cn-modal-close"
+          class="cn-modal-close cn-onb-close"
           id="close-modules-modal"
           aria-label="Close"
         >
           <span class="cn-icon cn-icon-md">close</span>
         </button>
-        <div class="text-center">
-          <div class="mb-4">
-            <span class="cn-icon cn-icon-xl cn-icon-gold">apps</span>
+        <div class="cn-onb-head">
+          <h2 class="cn-onb-title">
+            Start Your <span class="cn-onb-gold">14 Day</span> Free Trial Today!
+          </h2>
+          <nav class="cn-onb-steps">
+            <div class="cn-onb-step is-active" id="cn-onb-tab1">
+              <span class="cn-onb-step-label">Step 1</span>
+              <span class="cn-onb-step-desc">Tell Us About Your Business</span>
+            </div>
+            <div class="cn-onb-step is-idle" id="cn-onb-tab2">
+              <span class="cn-onb-step-label">Step 2</span>
+              <span class="cn-onb-step-desc">Trial Details</span>
+            </div>
+            <div class="cn-onb-arrow at-1" id="cn-onb-arrow"></div>
+          </nav>
+        </div>
+
+        <div id="cn-onb-panel1" class="cn-onb-panel active">
+          <form id="cn-onb-form1" class="pt-2" novalidate>
+            <div class="mb-3">
+              <label class="cn-onb-label" for="cn-onb-company">Company Name</label>
+              <input
+                class="cn-onb-input"
+                id="cn-onb-company"
+                type="text"
+                placeholder="e.g. Aurelian Enterprises"
+                required
+              />
+            </div>
+            <div class="mb-3">
+              <label class="cn-onb-label" for="cn-onb-name">Full Name</label>
+              <input
+                class="cn-onb-input"
+                id="cn-onb-name"
+                type="text"
+                placeholder="Johnathan Doe"
+                required
+              />
+            </div>
+            <div class="mb-3">
+              <label class="cn-onb-label" for="cn-onb-email">Email Address</label>
+              <input
+                class="cn-onb-input"
+                id="cn-onb-email"
+                type="email"
+                placeholder="john@executive.com"
+                required
+              />
+            </div>
+            <div class="mb-3">
+              <label class="cn-onb-label" for="cn-onb-phone">Phone Number</label>
+              <input
+                class="cn-onb-input"
+                id="cn-onb-phone"
+                type="tel"
+                placeholder="+44 000 000 0000"
+                required
+              />
+            </div>
+            <button id="cn-onb-s1-btn" class="cn-onb-btn" type="submit" disabled>
+              Go To Step #2
+            </button>
+            <p class="cn-onb-note">
+              Receive executive updates, industry news, and bespoke offers via
+              encrypted email and secure text.
+            </p>
+          </form>
+        </div>
+
+        <div id="cn-onb-panel2" class="cn-onb-panel-scroll">
+          <div class="cn-onb-back-wrap">
+            <button class="cn-onb-back" type="button" id="cn-onb-back-btn">
+              <span class="cn-icon cn-icon-sm">chevron_left</span>
+              Go Back to Step 1
+            </button>
           </div>
-          <h2 class="cn-modal-title">Comprehensive Module Suite</h2>
-          <p class="cn-prose-lead mb-4">
-            Our platform includes 40+ specialized software modules designed to
-            handle everything from CRM and sales funnels to automated payroll
-            and restaurant management. Each module is fully integrated into the
-            10ways.ai ecosystem.
-          </p>
-          <button
-            type="button"
-            class="cn-btn cn-btn-primary w-100 p-4 cn-radius-lg cn-text-heading-sm cn-btn-glow-sm cn-open-modules-modal"
-          >
-            Start Your 14-Day Free Trial
-          </button>
+          <form id="cn-onb-form2" class="cn-onb-form-pad" novalidate>
+            <div class="mb-3">
+              <label class="cn-onb-label d-flex justify-content-between align-items-center">
+                <span>Select Your Plan</span>
+                <span class="cn-onb-step-desc">Price / Mo</span>
+              </label>
+              <div class="cn-onb-plan-grid">
+                <label class="cn-onb-plan is-selected">
+                  <input class="d-none" type="radio" name="cn-onb-plan" value="starter" checked />
+                  <span class="cn-onb-plan-name">Starter</span>
+                  <span class="cn-onb-plan-price">$97</span>
+                  <p class="cn-onb-plan-info">14 Day Trial then $97/mo. Perfect for individuals.</p>
+                  <div class="cn-onb-radio"><div class="cn-onb-radio-dot"></div></div>
+                </label>
+                <label class="cn-onb-plan">
+                  <input class="d-none" type="radio" name="cn-onb-plan" value="unlimited" />
+                  <span class="cn-onb-plan-name">Unlimited</span>
+                  <span class="cn-onb-plan-price">$297</span>
+                  <p class="cn-onb-plan-info">14 Day Trial then $297/mo. For growing teams.</p>
+                  <div class="cn-onb-radio"><div class="cn-onb-radio-dot"></div></div>
+                </label>
+                <label class="cn-onb-plan">
+                  <input class="d-none" type="radio" name="cn-onb-plan" value="pro" />
+                  <span class="cn-onb-plan-name">Pro</span>
+                  <span class="cn-onb-plan-price">$497</span>
+                  <p class="cn-onb-plan-info">14 Day Trial then $497/mo. Enterprise scaling.</p>
+                  <div class="cn-onb-radio"><div class="cn-onb-radio-dot"></div></div>
+                </label>
+              </div>
+            </div>
+            <div class="mb-3">
+              <label class="cn-onb-label" for="cn-onb-card">Payment Details</label>
+              <div class="cn-onb-autofill-wrap">
+                <input
+                  class="cn-onb-input"
+                  id="cn-onb-card"
+                  type="text"
+                  inputmode="numeric"
+                  placeholder="Card number (XXXX XXXX XXXX XXXX)"
+                  required
+                />
+                <button type="button" class="cn-onb-autofill">Autofill</button>
+              </div>
+            </div>
+            <div class="cn-onb-input-row">
+              <input
+                class="cn-onb-input"
+                id="cn-onb-expiry"
+                type="text"
+                inputmode="numeric"
+                placeholder="MM / YY"
+                required
+              />
+              <input
+                class="cn-onb-input"
+                id="cn-onb-cvc"
+                type="text"
+                inputmode="numeric"
+                placeholder="CVC"
+                required
+              />
+            </div>
+            <div class="cn-onb-summary">
+              <div>
+                <div class="cn-onb-summary-title">Active Subscription</div>
+                <div class="cn-onb-summary-value" id="cn-onb-summary-plan">$97 Starter Plan</div>
+                <div class="cn-onb-step-desc">Your trial ends in 14 days</div>
+              </div>
+              <div class="cn-onb-summary-right">
+                <div class="cn-onb-summary-total">$0.00</div>
+                <div class="cn-onb-summary-due" id="cn-onb-summary-due">DUE TODAY: $97.00</div>
+              </div>
+            </div>
+            <div class="cn-onb-terms">
+              <input id="cn-onb-terms" type="checkbox" />
+              <label for="cn-onb-terms" class="cn-onb-terms-text mb-0">
+                I agree to the <a href="#">Terms of Service</a> and
+                <a href="#">Privacy Policy</a> of 10 Ways.
+              </label>
+            </div>
+            <button id="cn-onb-s2-btn" class="cn-onb-btn" type="submit" disabled>
+              <span>Start Free Trial</span>
+              <span class="cn-onb-btn-sub">No Commitment. Cancel Anytime.</span>
+            </button>
+            <div class="cn-onb-secure">Encrypted • Secure • Private</div>
+          </form>
         </div>
       </div>
     </div>
@@ -2781,6 +3395,7 @@
       src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
       crossorigin="anonymous"
     ></script>
+    <script src="https://cdn.jsdelivr.net/npm/intl-tel-input@19.5.7/build/js/intlTelInput.min.js"></script>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"
       crossorigin="anonymous"
@@ -2809,18 +3424,190 @@
         var modal = document.getElementById("modules-modal");
         var openBtns = document.querySelectorAll(".cn-open-modules-modal");
         var closeBtn = document.getElementById("close-modules-modal");
+        var panel1 = document.getElementById("cn-onb-panel1");
+        var panel2 = document.getElementById("cn-onb-panel2");
+        var tab1 = document.getElementById("cn-onb-tab1");
+        var tab2 = document.getElementById("cn-onb-tab2");
+        var arrow = document.getElementById("cn-onb-arrow");
+        var form1 = document.getElementById("cn-onb-form1");
+        var form2 = document.getElementById("cn-onb-form2");
+        var s1Btn = document.getElementById("cn-onb-s1-btn");
+        var s2Btn = document.getElementById("cn-onb-s2-btn");
+        var backBtn = document.getElementById("cn-onb-back-btn");
+        var companyEl = document.getElementById("cn-onb-company");
+        var nameEl = document.getElementById("cn-onb-name");
+        var emailEl = document.getElementById("cn-onb-email");
+        var phoneEl = document.getElementById("cn-onb-phone");
+        var phoneIti = null;
+        var cardEl = document.getElementById("cn-onb-card");
+        var expiryEl = document.getElementById("cn-onb-expiry");
+        var cvcEl = document.getElementById("cn-onb-cvc");
+        var termsEl = document.getElementById("cn-onb-terms");
+        var autofillBtn = modal
+          ? modal.querySelector(".cn-onb-autofill")
+          : null;
+        var summaryPlan = document.getElementById("cn-onb-summary-plan");
+        var summaryDue = document.getElementById("cn-onb-summary-due");
+        var planRadios = document.querySelectorAll('input[name="cn-onb-plan"]');
         function toggleModal(show) {
           if (!modal) return;
           if (show) {
             modal.classList.remove("d-none");
             modal.classList.add("d-flex");
             document.body.style.overflow = "hidden";
+            if (phoneEl && window.intlTelInput && !phoneIti) {
+              try {
+                phoneIti = window.intlTelInput(phoneEl, {
+                  initialCountry: "gb",
+                  separateDialCode: true,
+                  showSelectedDialCode: true,
+                  utilsScript:
+                    "https://cdn.jsdelivr.net/npm/intl-tel-input@19.5.7/build/js/utils.js",
+                });
+              } catch (e) {}
+            }
+            goStep(1);
           } else {
             modal.classList.add("d-none");
             modal.classList.remove("d-flex");
             document.body.style.overflow = "";
           }
         }
+        function goStep(stepNo) {
+          var isStep2 = stepNo === 2;
+          if (panel1) panel1.classList.toggle("active", !isStep2);
+          if (panel2) panel2.classList.toggle("active", isStep2);
+          if (tab1) {
+            tab1.classList.toggle("is-active", !isStep2);
+            tab1.classList.toggle("is-done", isStep2);
+            tab1.classList.toggle("is-idle", false);
+          }
+          if (tab2) {
+            tab2.classList.toggle("is-active", isStep2);
+            tab2.classList.toggle("is-idle", !isStep2);
+            tab2.classList.toggle("is-done", false);
+          }
+          if (arrow) {
+            arrow.classList.toggle("at-1", !isStep2);
+            arrow.classList.toggle("at-2", isStep2);
+          }
+        }
+        function checkStep1() {
+          var validEmail = emailEl ? /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailEl.value.trim()) : false;
+          var phoneOk = false;
+          if (phoneEl) {
+            if (window.intlTelInput && phoneIti) {
+              try {
+                phoneOk = phoneIti.isValidNumber();
+              } catch (e) {
+                phoneOk = !!phoneEl.value.trim();
+              }
+            } else {
+              phoneOk = !!phoneEl.value.trim();
+            }
+          }
+          var ok =
+            companyEl &&
+            nameEl &&
+            companyEl.value.trim() &&
+            nameEl.value.trim() &&
+            validEmail &&
+            phoneOk;
+          if (s1Btn) {
+            s1Btn.disabled = !ok;
+            s1Btn.classList.toggle("is-ready", !!ok);
+          }
+          return !!ok;
+        }
+        function checkStep2() {
+          var hasCard = !!(cardEl && cardEl.value.replace(/\s/g, "").length >= 12);
+          var hasExpiry = !!(expiryEl && expiryEl.value.replace(/\s/g, "").length >= 4);
+          var hasCvc = !!(cvcEl && cvcEl.value.replace(/\s/g, "").length >= 3);
+          var ok = !!(termsEl && termsEl.checked && hasCard && hasExpiry && hasCvc);
+          if (s2Btn) {
+            s2Btn.disabled = !ok;
+            s2Btn.classList.toggle("is-ready", ok);
+          }
+          return ok;
+        }
+        if (cardEl) {
+          cardEl.addEventListener("input", function () {
+            var digits = cardEl.value.replace(/\D/g, "").slice(0, 16);
+            cardEl.value = digits.match(/.{1,4}/g)?.join(" ") || digits;
+            checkStep2();
+          });
+        }
+        if (expiryEl) {
+          expiryEl.addEventListener("input", function () {
+            var digits = expiryEl.value.replace(/\D/g, "").slice(0, 4);
+            if (digits.length >= 3) {
+              expiryEl.value = digits.slice(0, 2) + " / " + digits.slice(2);
+            } else {
+              expiryEl.value = digits;
+            }
+            checkStep2();
+          });
+        }
+        if (cvcEl) {
+          cvcEl.addEventListener("input", function () {
+            cvcEl.value = cvcEl.value.replace(/\D/g, "").slice(0, 4);
+            checkStep2();
+          });
+        }
+        if (autofillBtn && cardEl && expiryEl && cvcEl) {
+          autofillBtn.addEventListener("click", function () {
+            cardEl.value = "4242 4242 4242 4242";
+            expiryEl.value = "12 / 30";
+            cvcEl.value = "123";
+            checkStep2();
+          });
+        }
+        if (form1) {
+          [companyEl, nameEl, emailEl, phoneEl].forEach(function (el) {
+            if (el) el.addEventListener("input", checkStep1);
+          });
+          form1.addEventListener("submit", function (e) {
+            e.preventDefault();
+            if (!checkStep1()) return;
+            goStep(2);
+          });
+        }
+        if (backBtn) {
+          backBtn.addEventListener("click", function () {
+            goStep(1);
+          });
+        }
+        if (termsEl) termsEl.addEventListener("change", checkStep2);
+        if (cardEl) cardEl.addEventListener("input", checkStep2);
+        if (expiryEl) expiryEl.addEventListener("input", checkStep2);
+        if (cvcEl) cvcEl.addEventListener("input", checkStep2);
+        if (form2) {
+          form2.addEventListener("submit", function (e) {
+            e.preventDefault();
+            if (!checkStep2()) return;
+            alert("Activating your 14-day free trial...");
+            toggleModal(false);
+          });
+        }
+        var plans = {
+          starter: { text: "$97 Starter Plan", due: "DUE TODAY: $97.00" },
+          unlimited: { text: "$297 Unlimited Plan", due: "DUE TODAY: $297.00" },
+          pro: { text: "$497 Pro Plan", due: "DUE TODAY: $497.00" },
+        };
+        planRadios.forEach(function (radio) {
+          radio.addEventListener("change", function () {
+            document.querySelectorAll(".cn-onb-plan").forEach(function (card) {
+              card.classList.remove("is-selected");
+            });
+            var planCard = radio.closest(".cn-onb-plan");
+            if (planCard) planCard.classList.add("is-selected");
+            var selected = plans[radio.value];
+            if (selected) {
+              if (summaryPlan) summaryPlan.textContent = selected.text;
+              if (summaryDue) summaryDue.textContent = selected.due;
+            }
+          });
+        });
         if (closeBtn && modal) {
           openBtns.forEach(function (btn) {
             btn.addEventListener("click", function () {
