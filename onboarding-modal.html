@@ -13,21 +13,46 @@
       href="https://cdn.jsdelivr.net/npm/intl-tel-input@19.5.7/build/css/intlTelInput.css"
     />
     <style>
+      /* ── Design Tokens ── */
       :root {
-        --gold: #d4af37;
-        --black: #0a0a0a;
-        --graphite: #1a1a1a;
+        --color-gold: #d4af37;
+        --color-gold-dim: rgba(212, 175, 55, 0.8);
+        --color-gold-glow: rgba(212, 175, 55, 0.38);
+        --color-gold-subtle: rgba(212, 175, 55, 0.06);
+        --color-gold-border: rgba(212, 175, 55, 0.3);
+        --color-gold-bg: rgba(212, 175, 55, 0.1);
+        --color-gold-faded: rgba(212, 175, 55, 0.35);
+
+        --color-black: #0a0a0a;
+        --color-graphite: #1a1a1a;
+        --color-surface: rgba(0, 0, 0, 0.4);
+        --color-surface-2: rgba(0, 0, 0, 0.2);
+
+        --color-border: rgba(255, 255, 255, 0.1);
+        --color-border-2: rgba(255, 255, 255, 0.05);
+        --color-text-dim: rgba(255, 255, 255, 0.4);
+        --color-text-mute: rgba(255, 255, 255, 0.3);
+        --color-text-faint: rgba(255, 255, 255, 0.2);
+
+        --color-green: #10b981;
+        --color-green-bg: rgba(16, 185, 129, 0.12);
+        --color-green-border: rgba(16, 185, 129, 0.3);
+        --color-green-hover: rgba(16, 185, 129, 0.22);
+
+        --radius-base: 0.5rem;
+        --radius-lg: 0.75rem;
       }
+
+      /* ── Reset (only what Bootstrap doesn't cover) ── */
       *,
       *::before,
       *::after {
         box-sizing: border-box;
-        margin: 0;
-        padding: 0;
       }
 
+      /* ── Body / Layout ── */
       body {
-        background: var(--black);
+        background: var(--color-black);
         color: #fff;
         min-height: 100vh;
         display: flex;
@@ -38,7 +63,7 @@
       }
 
       /* ── Backdrop ── */
-      .backdrop {
+      .ag-backdrop {
         position: fixed;
         inset: 0;
         background: rgba(0, 0, 0, 0.85);
@@ -50,11 +75,11 @@
         z-index: 100;
       }
 
-      /* ── Modal shell ── */
-      .modal-box {
-        background: var(--graphite);
-        border: 1px solid rgba(212, 175, 55, 0.3);
-        border-radius: 0.75rem;
+      /* ── Modal ── */
+      .ag-modal {
+        background: var(--color-graphite);
+        border: 1px solid var(--color-gold-border);
+        border-radius: var(--radius-lg);
         box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.5);
         width: 100%;
         max-width: 500px;
@@ -64,22 +89,15 @@
         overflow: hidden;
         position: relative;
       }
-
-      /* Mobile: centered with side breathing room */
       @media (max-width: 540px) {
-        .backdrop {
-          padding: 1rem;
-          align-items: center;
-        }
-        .modal-box {
+        .ag-modal {
           max-width: 100%;
           max-height: 94vh;
-          border-radius: 0.75rem;
         }
       }
 
-      /* ── Close btn ── */
-      .btn-x {
+      /* ── Close Button ── */
+      .ag-close {
         position: absolute;
         top: 0.9rem;
         right: 0.9rem;
@@ -96,110 +114,107 @@
         transition: all 0.25s;
         z-index: 20;
       }
-      .btn-x:hover {
-        color: var(--gold);
-        background: rgba(212, 175, 55, 0.1);
-        border-color: rgba(212, 175, 55, 0.3);
+      .ag-close:hover {
+        color: var(--color-gold);
+        background: var(--color-gold-bg);
+        border-color: var(--color-gold-border);
       }
 
-      /* ── Fixed header ── */
-      .modal-head {
+      /* ── Modal Header ── */
+      .ag-header {
         flex-shrink: 0;
         padding: 1.75rem 3.25rem 0 2rem;
         text-align: center;
       }
-      @media (max-width: 400px) {
-        .modal-head {
-          padding: 1.5rem 3rem 0 1.5rem;
-        }
-      }
-
-      .modal-title {
+      .ag-title {
         font-size: 1.65rem;
         font-weight: 700;
         letter-spacing: -0.02em;
         line-height: 1.2;
         margin-bottom: 1.4rem;
       }
+      .ag-gold {
+        color: var(--color-gold);
+      }
       @media (max-width: 400px) {
-        .modal-title {
+        .ag-header {
+          padding: 1.5rem 3rem 0 1.5rem;
+        }
+        .ag-title {
           font-size: 1.35rem;
           margin-bottom: 1.1rem;
         }
       }
-      .gold {
-        color: var(--gold);
-      }
 
-      /* ── Step nav ── */
-      .step-nav {
+      /* ── Step Nav ── */
+      .ag-steps {
         display: flex;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        border-bottom: 1px solid var(--color-border);
         position: relative;
       }
-      .step-tab {
+      .ag-step {
         flex: 1;
         padding-bottom: 0.9rem;
         text-align: center;
       }
-      .step-tab.active {
-        color: var(--gold);
-        border-bottom: 2px solid var(--gold);
+      .ag-step.is-active {
+        color: var(--color-gold);
+        border-bottom: 2px solid var(--color-gold);
       }
-      .step-tab.done {
-        color: var(--gold);
+      .ag-step.is-done {
+        color: var(--color-gold);
         opacity: 0.6;
       }
-      .step-tab.idle {
-        color: rgba(255, 255, 255, 0.3);
+      .ag-step.is-idle {
+        color: var(--color-text-dim);
       }
-      .step-tab .lbl {
+      .ag-step-label {
         display: block;
         font-size: 0.72rem;
         font-weight: 700;
         text-transform: uppercase;
         letter-spacing: 0.1em;
       }
-      .step-tab .desc {
+      .ag-step-desc {
         font-size: 0.68rem;
       }
       @media (max-width: 360px) {
-        .step-tab .lbl {
+        .ag-step-label {
           font-size: 0.62rem;
         }
-        .step-tab .desc {
+        .ag-step-desc {
           font-size: 0.6rem;
         }
       }
-      .step-arrow {
+      .ag-step-arrow {
         position: absolute;
         bottom: -1px;
         width: 0;
         height: 0;
         border-left: 6px solid transparent;
         border-right: 6px solid transparent;
-        border-bottom: 6px solid var(--gold);
+        border-bottom: 6px solid var(--color-gold);
         transition: left 0.4s ease;
       }
-      .step-arrow.s1 {
+      .ag-step-arrow.at-1 {
         left: 25%;
         transform: translateX(-50%);
       }
-      .step-arrow.s2 {
+      .ag-step-arrow.at-2 {
         left: 75%;
         transform: translateX(-50%);
       }
 
       /* ── Panels ── */
-      #panel1 {
+      .ag-panel {
         display: none;
         flex-shrink: 0;
       }
-      #panel1.active {
+      .ag-panel.is-active {
         display: block;
       }
 
-      #panel2 {
+      .ag-panel--scroll {
         display: none;
         flex: 1 1 auto;
         overflow-y: auto;
@@ -208,62 +223,56 @@
         scrollbar-color: rgba(212, 175, 55, 0.4) transparent;
         -webkit-overflow-scrolling: touch;
       }
-      #panel2::-webkit-scrollbar {
+      .ag-panel--scroll::-webkit-scrollbar {
         width: 4px;
       }
-      #panel2::-webkit-scrollbar-thumb {
+      .ag-panel--scroll::-webkit-scrollbar-thumb {
         background: rgba(212, 175, 55, 0.4);
         border-radius: 2px;
       }
-      #panel2.active {
+      .ag-panel--scroll.is-active {
         display: block;
       }
 
-      /* ── Inputs ── */
-      .fgroup {
-        margin-bottom: 0.9rem;
-      }
-      .flabel {
+      /* ── Form Inputs ── */
+      .ag-label {
         display: block;
         font-size: 0.68rem;
         font-weight: 600;
         text-transform: uppercase;
-        color: rgba(212, 175, 55, 0.8);
+        color: var(--color-gold-dim);
         letter-spacing: 0.05em;
         margin-bottom: 0.3rem;
       }
-      .inp {
+      .ag-input {
         width: 100%;
-        background: rgba(0, 0, 0, 0.4);
-        border: 1px solid rgba(255, 255, 255, 0.1);
-        border-radius: 0.5rem;
+        background: var(--color-surface);
+        border: 1px solid var(--color-border);
+        border-radius: var(--radius-base);
         color: #fff;
         padding: 0.72rem 1rem;
-        font-size: 0.88rem;
+        font-size: max(0.88rem, 16px);
         transition: all 0.25s;
         outline: none;
-        /* prevent iOS zoom on focus */
-        font-size: max(0.88rem, 16px);
       }
-      .inp:focus {
+      .ag-input:focus {
         box-shadow: 0 0 0 2px rgba(212, 175, 55, 0.4);
-        border-color: var(--gold);
+        border-color: var(--color-gold);
         background: rgba(0, 0, 0, 0.55);
       }
-      .inp::placeholder {
+      .ag-input::placeholder {
         color: rgba(255, 255, 255, 0.22);
       }
 
-      /* ── intl-tel-input ── */
+      /* ── intl-tel-input theme ── */
       .iti {
         width: 100%;
       }
-
       .iti input#phone {
-        width: 100%;
-        background: rgba(0, 0, 0, 0.4) !important;
-        border: 1px solid rgba(255, 255, 255, 0.1) !important;
-        border-radius: 0.5rem !important;
+        width: 100% !important;
+        background: var(--color-surface) !important;
+        border: 1px solid var(--color-border) !important;
+        border-radius: var(--radius-base) !important;
         color: #fff !important;
         padding: 0.72rem 1rem 0.72rem 5.4rem !important;
         font-size: max(0.88rem, 16px) !important;
@@ -272,26 +281,25 @@
       }
       .iti input#phone:focus {
         box-shadow: 0 0 0 2px rgba(212, 175, 55, 0.4) !important;
-        border-color: var(--gold) !important;
+        border-color: var(--color-gold) !important;
         background: rgba(0, 0, 0, 0.55) !important;
       }
       .iti input#phone::placeholder {
         color: rgba(255, 255, 255, 0.22);
       }
-
       .iti__flag-container {
         height: 100%;
       }
       .iti__selected-flag {
         background: rgba(0, 0, 0, 0.55) !important;
-        border-right: 1px solid rgba(255, 255, 255, 0.1) !important;
-        border-radius: 0.5rem 0 0 0.5rem !important;
+        border-right: 1px solid var(--color-border) !important;
+        border-radius: var(--radius-base) 0 0 var(--radius-base) !important;
         padding: 0 0.55rem !important;
         height: 100%;
       }
       .iti__selected-flag:hover,
       .iti__selected-flag:focus {
-        background: rgba(212, 175, 55, 0.1) !important;
+        background: var(--color-gold-bg) !important;
       }
       .iti__selected-dial-code {
         color: #fff !important;
@@ -301,13 +309,12 @@
         border-top-color: rgba(255, 255, 255, 0.5) !important;
       }
       .iti__arrow--up {
-        border-bottom-color: var(--gold) !important;
+        border-bottom-color: var(--color-gold) !important;
       }
-
       .iti__dropdown-content {
         background: #141414 !important;
         border: 1px solid rgba(212, 175, 55, 0.25) !important;
-        border-radius: 0.5rem !important;
+        border-radius: var(--radius-base) !important;
         box-shadow: 0 10px 36px rgba(0, 0, 0, 0.7) !important;
         z-index: 9999 !important;
       }
@@ -342,7 +349,7 @@
         font-size: 0.78rem !important;
       }
       .iti__country:hover {
-        background: rgba(212, 175, 55, 0.1) !important;
+        background: var(--color-gold-bg) !important;
       }
       .iti__country--highlight {
         background: rgba(212, 175, 55, 0.15) !important;
@@ -352,15 +359,15 @@
         margin: 0.2rem 0 !important;
       }
 
-      /* ── Gold button ── */
-      .btn-gold {
+      /* ── Gold CTA Button ── */
+      .ag-btn {
         width: 100%;
-        background: rgba(212, 175, 55, 0.35);
+        background: var(--color-gold-faded);
         color: #000;
         font-weight: 900;
         padding: 0.95rem 1rem;
         border: none;
-        border-radius: 0.5rem;
+        border-radius: var(--radius-base);
         text-transform: uppercase;
         letter-spacing: 0.15em;
         font-size: 0.88rem;
@@ -372,42 +379,41 @@
         align-items: center;
         justify-content: center;
         gap: 0.2rem;
-        /* big tap target on mobile */
         min-height: 52px;
         touch-action: manipulation;
       }
-      .btn-gold.on {
-        background: var(--gold);
+      .ag-btn.is-ready {
+        background: var(--color-gold);
         opacity: 1;
         cursor: pointer;
-        box-shadow: 0 0 22px rgba(212, 175, 55, 0.38);
+        box-shadow: 0 0 22px var(--color-gold-glow);
       }
-      .btn-gold.on:hover {
+      .ag-btn.is-ready:hover {
         transform: scale(1.01);
       }
-      .btn-gold.on:active {
+      .ag-btn.is-ready:active {
         transform: scale(0.99);
       }
-      .btn-sub {
+      .ag-btn-sub {
         font-size: 0.54rem;
         font-weight: 700;
         opacity: 0.7;
       }
 
-      .foot-note {
+      .ag-footnote {
         margin-top: 0.75rem;
         font-size: 0.62rem;
-        color: rgba(255, 255, 255, 0.35);
+        color: var(--color-text-dim);
         line-height: 1.5;
         font-style: italic;
         text-align: center;
       }
 
-      /* ── Step 2 ── */
-      .back-btn {
+      /* ── Step 2: Back Button ── */
+      .ag-back {
         background: none;
         border: none;
-        color: rgba(255, 255, 255, 0.4);
+        color: var(--color-text-dim);
         font-size: 0.63rem;
         font-weight: 700;
         text-transform: uppercase;
@@ -422,43 +428,45 @@
         touch-action: manipulation;
         min-height: 36px;
       }
-      .back-btn:hover {
-        color: var(--gold);
+      .ag-back:hover {
+        color: var(--color-gold);
       }
 
-      .sec-title {
+      /* ── Section Title ── */
+      .ag-sec-title {
         font-size: 0.68rem;
         font-weight: 700;
         text-transform: uppercase;
-        color: var(--gold);
+        color: var(--color-gold);
         letter-spacing: 0.15em;
         margin-bottom: 0.8rem;
         display: flex;
         justify-content: space-between;
         align-items: center;
       }
-      .sec-title .dim {
-        color: rgba(255, 255, 255, 0.3);
+      .ag-sec-title .ag-dim {
+        color: var(--color-text-mute);
         font-weight: 400;
         letter-spacing: 0.05em;
       }
 
-      /* Plans grid — 3 cols desktop, stays 3 on mobile but smaller */
-      .plan-grid {
+      /* ── Plan Cards ── */
+      .ag-plan-grid {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         gap: 0.65rem;
         margin-bottom: 1.4rem;
       }
       @media (max-width: 360px) {
-        .plan-grid {
+        .ag-plan-grid {
           gap: 0.45rem;
         }
       }
-      .plan-card {
-        background: rgba(0, 0, 0, 0.3);
-        border: 1px solid rgba(255, 255, 255, 0.1);
-        border-radius: 0.5rem;
+
+      .ag-plan {
+        background: var(--color-surface-2);
+        border: 1px solid var(--color-border);
+        border-radius: var(--radius-base);
         padding: 0.85rem 0.65rem 2rem;
         cursor: pointer;
         transition: all 0.25s;
@@ -467,49 +475,51 @@
         touch-action: manipulation;
       }
       @media (max-width: 400px) {
-        .plan-card {
+        .ag-plan {
           padding: 0.7rem 0.5rem 2rem;
         }
       }
-      .plan-card:hover {
+      .ag-plan:hover {
         border-color: rgba(212, 175, 55, 0.5);
       }
-      .plan-card.sel {
-        border-color: var(--gold);
-        background: rgba(212, 175, 55, 0.06);
+      .ag-plan.is-selected {
+        border-color: var(--color-gold);
+        background: var(--color-gold-subtle);
       }
-      .plan-name {
+
+      .ag-plan-name {
         display: block;
         font-size: 0.6rem;
         font-weight: 700;
         text-transform: uppercase;
-        color: rgba(255, 255, 255, 0.5);
+        color: var(--color-text-dim);
         margin-bottom: 0.2rem;
       }
-      .plan-price {
+      .ag-plan-price {
         display: block;
         font-size: 1.15rem;
         font-weight: 700;
         color: #fff;
         margin-bottom: 0.35rem;
       }
-      .plan-info {
+      .ag-plan-info {
         font-size: 0.57rem;
-        color: rgba(255, 255, 255, 0.4);
+        color: var(--color-text-dim);
         line-height: 1.3;
       }
       @media (max-width: 380px) {
-        .plan-price {
+        .ag-plan-price {
           font-size: 1rem;
         }
-        .plan-name {
+        .ag-plan-name {
           font-size: 0.55rem;
         }
-        .plan-info {
+        .ag-plan-info {
           font-size: 0.52rem;
         }
       }
-      .radio-ring {
+
+      .ag-radio {
         position: absolute;
         bottom: 0.65rem;
         right: 0.65rem;
@@ -521,35 +531,36 @@
         align-items: center;
         justify-content: center;
       }
-      .sel .radio-ring {
-        border-color: var(--gold);
+      .is-selected .ag-radio {
+        border-color: var(--color-gold);
       }
-      .radio-dot {
+      .ag-radio-dot {
         width: 6px;
         height: 6px;
-        background: var(--gold);
+        background: var(--color-gold);
         border-radius: 50%;
         display: none;
       }
-      .sel .radio-dot {
+      .is-selected .ag-radio-dot {
         display: block;
       }
 
-      .card-wrap {
+      /* ── Card Number Wrap ── */
+      .ag-card-wrap {
         position: relative;
         margin-bottom: 0.85rem;
       }
-      .card-wrap .inp {
+      .ag-card-wrap .ag-input {
         padding-right: 5.2rem;
       }
-      .autofill-btn {
+      .ag-autofill {
         position: absolute;
         right: 0.55rem;
         top: 50%;
         transform: translateY(-50%);
-        background: rgba(16, 185, 129, 0.12);
-        border: 1px solid rgba(16, 185, 129, 0.3);
-        color: #10b981;
+        background: var(--color-green-bg);
+        border: 1px solid var(--color-green-border);
+        color: var(--color-green);
         font-size: 0.58rem;
         font-weight: 800;
         padding: 0.22rem 0.45rem;
@@ -560,21 +571,15 @@
         transition: background 0.2s;
         touch-action: manipulation;
       }
-      .autofill-btn:hover {
-        background: rgba(16, 185, 129, 0.22);
+      .ag-autofill:hover {
+        background: var(--color-green-hover);
       }
 
-      .two-col {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 0.75rem;
-        margin-bottom: 1.1rem;
-      }
-
-      .summary {
-        background: rgba(0, 0, 0, 0.2);
-        border: 1px solid rgba(255, 255, 255, 0.05);
-        border-radius: 0.5rem;
+      /* ── Order Summary ── */
+      .ag-summary {
+        background: var(--color-surface-2);
+        border: 1px solid var(--color-border-2);
+        border-radius: var(--radius-base);
         padding: 1.1rem;
         margin-bottom: 1.2rem;
         display: flex;
@@ -582,116 +587,94 @@
         align-items: center;
         gap: 0.75rem;
       }
-      .sum-lbl {
+      .ag-sum-label {
         font-size: 0.58rem;
         font-weight: 700;
         text-transform: uppercase;
-        color: rgba(255, 255, 255, 0.4);
+        color: var(--color-text-dim);
         display: block;
       }
-      .sum-val {
+      .ag-sum-val {
         font-weight: 700;
         font-size: 0.92rem;
         color: #fff;
       }
-      .sum-sub {
+      .ag-sum-sub {
         font-size: 0.6rem;
-        color: rgba(255, 255, 255, 0.3);
+        color: var(--color-text-mute);
         display: block;
       }
-      .sum-tot {
+      .ag-sum-total {
         font-size: 1.35rem;
         font-weight: 800;
-        color: var(--gold);
+        color: var(--color-gold);
         line-height: 1;
         white-space: nowrap;
       }
-      .sum-due {
+      .ag-sum-due {
         font-size: 0.58rem;
-        color: rgba(255, 255, 255, 0.3);
+        color: var(--color-text-mute);
         text-decoration: line-through;
         margin-top: 0.2rem;
       }
       @media (max-width: 360px) {
-        .sum-val {
+        .ag-sum-val {
           font-size: 0.82rem;
         }
-        .sum-tot {
+        .ag-sum-total {
           font-size: 1.15rem;
         }
       }
 
-      .terms-row {
+      /* ── Terms ── */
+      .ag-terms-row {
         display: flex;
         gap: 0.65rem;
         margin-bottom: 1.2rem;
         align-items: flex-start;
       }
-      .terms-row input {
+      .ag-terms-row input {
         margin-top: 0.22rem;
         flex-shrink: 0;
-        accent-color: var(--gold);
+        accent-color: var(--color-gold);
         width: 16px;
         height: 16px;
       }
-      .terms-txt {
+      .ag-terms-txt {
         font-size: 0.68rem;
-        color: rgba(255, 255, 255, 0.4);
+        color: var(--color-text-dim);
         line-height: 1.5;
       }
-      .terms-txt a {
-        color: var(--gold);
+      .ag-terms-txt a {
+        color: var(--color-gold);
         text-decoration: underline;
       }
 
-      .sec-foot {
+      /* ── Secure Footer ── */
+      .ag-secure {
         margin-top: 1rem;
         display: flex;
         align-items: center;
         justify-content: center;
         gap: 0.7rem;
-        color: rgba(255, 255, 255, 0.2);
+        color: var(--color-text-faint);
         font-size: 0.58rem;
         font-weight: 700;
         text-transform: uppercase;
         letter-spacing: 0.1em;
         padding-bottom: 0.5rem;
       }
-      .sec-foot .ln {
+      .ag-secure-line {
         height: 1px;
         width: 18px;
-        background: rgba(255, 255, 255, 0.1);
-      }
-
-      /* paddings */
-      .pad1 {
-        padding: 1.5rem 2rem 1.75rem;
-      }
-      .pad2 {
-        padding: 1.1rem 2rem 2.25rem;
-      }
-      .pad-back {
-        padding: 0 2rem;
-        text-align: center;
-      }
-
-      @media (max-width: 400px) {
-        .pad1 {
-          padding: 1.25rem 1.25rem 1.5rem;
-        }
-        .pad2 {
-          padding: 1rem 1.25rem 2rem;
-        }
-        .pad-back {
-          padding: 0 1.25rem;
-        }
+        background: var(--color-border);
       }
     </style>
   </head>
   <body>
-    <div class="backdrop">
-      <main class="modal-box">
-        <button class="btn-x" id="xBtn" aria-label="Close">
+    <div class="ag-backdrop">
+      <main class="ag-modal">
+        <button class="ag-close" id="xBtn" aria-label="Close">
           <svg
             width="15"
             height="15"
@@ -706,31 +689,31 @@
           </svg>
         </button>
 
-        <!-- Fixed Header -->
-        <header class="modal-head">
-          <h1 class="modal-title">
-            Start Your <span class="gold">14 Day</span> Free Trial Today!
+        <!-- Header -->
+        <header class="ag-header">
+          <h1 class="ag-title">
+            Start Your <span class="ag-gold">14 Day</span> Free Trial Today!
           </h1>
-          <nav class="step-nav">
-            <div class="step-tab active" id="tab1">
-              <span class="lbl">Step 1</span>
-              <span class="desc">Tell Us About Your Business</span>
+          <nav class="ag-steps">
+            <div class="ag-step is-active" id="tab1">
+              <span class="ag-step-label">Step 1</span>
+              <span class="ag-step-desc">Tell Us About Your Business</span>
             </div>
-            <div class="step-tab idle" id="tab2">
-              <span class="lbl">Step 2</span>
-              <span class="desc">Trial Details</span>
+            <div class="ag-step is-idle" id="tab2">
+              <span class="ag-step-label">Step 2</span>
+              <span class="ag-step-desc">Trial Details</span>
             </div>
-            <div class="step-arrow s1" id="arrow"></div>
+            <div class="ag-step-arrow at-1" id="arrow"></div>
           </nav>
         </header>
 
-        <!-- STEP 1 -->
-        <div id="panel1" class="active">
-          <form class="pad1" id="form1" novalidate>
-            <div class="fgroup">
-              <label class="flabel" for="cname">Company Name</label>
+        <!-- Step 1 -->
+        <div id="panel1" class="ag-panel is-active">
+          <form class="px-4 pt-4 pb-4" id="form1" novalidate>
+            <div class="mb-3">
+              <label class="ag-label" for="cname">Company Name</label>
               <input
-                class="inp"
+                class="ag-input"
                 id="cname"
                 type="text"
                 placeholder="e.g. Aurelian Enterprises"
@@ -738,11 +721,10 @@
                 autocomplete="organization"
               />
             </div>
-
-            <div class="fgroup">
-              <label class="flabel" for="fname">Full Name</label>
+            <div class="mb-3">
+              <label class="ag-label" for="fname">Full Name</label>
               <input
-                class="inp"
+                class="ag-input"
                 id="fname"
                 type="text"
                 placeholder="Johnathan Doe"
@@ -750,11 +732,10 @@
                 autocomplete="name"
               />
             </div>
-
-            <div class="fgroup">
-              <label class="flabel" for="email">Email Address</label>
+            <div class="mb-3">
+              <label class="ag-label" for="email">Email Address</label>
               <input
-                class="inp"
+                class="ag-input"
                 id="email"
                 type="email"
                 placeholder="john@executive.com"
@@ -762,9 +743,8 @@
                 autocomplete="email"
               />
             </div>
-
-            <div class="fgroup">
-              <label class="flabel" for="phone">Phone Number</label>
+            <div class="mb-3">
+              <label class="ag-label" for="phone">Phone Number</label>
               <input
                 id="phone"
                 type="tel"
@@ -773,12 +753,11 @@
                 autocomplete="tel"
               />
             </div>
-
-            <div style="margin-top: 0.9rem">
-              <button class="btn-gold" id="s1Btn" type="submit" disabled>
+            <div class="mt-3">
+              <button class="ag-btn" id="s1Btn" type="submit" disabled>
                 Go To Step #2
               </button>
-              <p class="foot-note">
+              <p class="ag-footnote">
                 Receive exclusive executive updates, industry news, and bespoke
                 offers via encrypted email and secure text.
               </p>
@@ -786,10 +765,10 @@
           </form>
         </div>
 
-        <!-- STEP 2 -->
-        <div id="panel2">
-          <div class="pad-back">
-            <button class="back-btn" id="backBtn" type="button">
+        <!-- Step 2 -->
+        <div id="panel2" class="ag-panel--scroll">
+          <div class="px-4 text-center">
+            <button class="ag-back" id="backBtn" type="button">
               <svg
                 width="11"
                 height="11"
@@ -806,12 +785,12 @@
             </button>
           </div>
 
-          <form class="pad2" id="form2" novalidate>
-            <div class="sec-title">
-              Select Your Plan <span class="dim">Price / Mo</span>
+          <form class="px-4 pt-3 pb-5" id="form2" novalidate>
+            <div class="ag-sec-title">
+              Select Your Plan <span class="ag-dim">Price / Mo</span>
             </div>
-            <div class="plan-grid">
-              <label class="plan-card sel">
+            <div class="ag-plan-grid">
+              <label class="ag-plan is-selected">
                 <input
                   class="d-none"
                   type="radio"
@@ -819,42 +798,42 @@
                   value="starter"
                   checked
                 />
-                <span class="plan-name">Starter</span>
-                <span class="plan-price">$97</span>
-                <p class="plan-info">
+                <span class="ag-plan-name">Starter</span>
+                <span class="ag-plan-price">$97</span>
+                <p class="ag-plan-info">
                   14 Day Trial then $97/mo. Perfect for individuals.
                 </p>
-                <div class="radio-ring"><div class="radio-dot"></div></div>
+                <div class="ag-radio"><div class="ag-radio-dot"></div></div>
               </label>
-              <label class="plan-card">
+              <label class="ag-plan">
                 <input
                   class="d-none"
                   type="radio"
                   name="plan"
                   value="unlimited"
                 />
-                <span class="plan-name">Unlimited</span>
-                <span class="plan-price">$297</span>
-                <p class="plan-info">
+                <span class="ag-plan-name">Unlimited</span>
+                <span class="ag-plan-price">$297</span>
+                <p class="ag-plan-info">
                   14 Day Trial then $297/mo. For growing teams.
                 </p>
-                <div class="radio-ring"><div class="radio-dot"></div></div>
+                <div class="ag-radio"><div class="ag-radio-dot"></div></div>
               </label>
-              <label class="plan-card">
+              <label class="ag-plan">
                 <input class="d-none" type="radio" name="plan" value="pro" />
-                <span class="plan-name">Pro</span>
-                <span class="plan-price">$497</span>
-                <p class="plan-info">
+                <span class="ag-plan-name">Pro</span>
+                <span class="ag-plan-price">$497</span>
+                <p class="ag-plan-info">
                   14 Day Trial then $497/mo. Enterprise scaling.
                 </p>
-                <div class="radio-ring"><div class="radio-dot"></div></div>
+                <div class="ag-radio"><div class="ag-radio-dot"></div></div>
               </label>
             </div>
 
-            <div class="sec-title">Payment Details</div>
-            <div class="card-wrap">
+            <div class="ag-sec-title">Payment Details</div>
+            <div class="ag-card-wrap">
               <input
-                class="inp"
+                class="ag-input"
                 id="cardNum"
                 type="text"
                 inputmode="numeric"
@@ -862,58 +841,62 @@
                 required
                 autocomplete="cc-number"
               />
-              <button class="autofill-btn" type="button">Autofill</button>
+              <button class="ag-autofill" type="button">Autofill</button>
             </div>
-            <div class="two-col">
-              <input
-                class="inp"
-                id="expiry"
-                type="text"
-                inputmode="numeric"
-                placeholder="MM / YY"
-                required
-                autocomplete="cc-exp"
-              />
-              <input
-                class="inp"
-                id="cvc"
-                type="text"
-                inputmode="numeric"
-                placeholder="CVC"
-                required
-                autocomplete="cc-csc"
-              />
+            <div class="row no-gutters mb-4" style="gap: 0.75rem">
+              <div class="col">
+                <input
+                  class="ag-input"
+                  id="expiry"
+                  type="text"
+                  inputmode="numeric"
+                  placeholder="MM / YY"
+                  required
+                  autocomplete="cc-exp"
+                />
+              </div>
+              <div class="col">
+                <input
+                  class="ag-input"
+                  id="cvc"
+                  type="text"
+                  inputmode="numeric"
+                  placeholder="CVC"
+                  required
+                  autocomplete="cc-csc"
+                />
+              </div>
             </div>
 
-            <div class="summary">
+            <div class="ag-summary">
               <div>
-                <span class="sum-lbl">Active Subscription</span>
-                <div class="sum-val" id="sumPlan">$97 Starter Plan</div>
-                <span class="sum-sub">Your trial ends in 14 days</span>
+                <span class="ag-sum-label">Active Subscription</span>
+                <div class="ag-sum-val" id="sumPlan">$97 Starter Plan</div>
+                <span class="ag-sum-sub">Your trial ends in 14 days</span>
               </div>
-              <div style="text-align: right; flex-shrink: 0">
-                <div class="sum-tot">$0.00</div>
-                <div class="sum-due" id="sumDue">DUE TODAY: $97.00</div>
+              <div class="text-right flex-shrink-0">
+                <div class="ag-sum-total">$0.00</div>
+                <div class="ag-sum-due" id="sumDue">DUE TODAY: $97.00</div>
               </div>
             </div>
 
-            <div class="terms-row">
+            <div class="ag-terms-row">
               <input type="checkbox" id="terms" />
-              <label class="terms-txt" for="terms">
+              <label class="ag-terms-txt" for="terms">
                 I agree to the Terms of Service and Privacy Policy of 10 Ways.
                 <a href="#">Privacy Policy</a>.
               </label>
             </div>
 
-            <button class="btn-gold" id="s2Btn" type="submit" disabled>
+            <button class="ag-btn" id="s2Btn" type="submit" disabled>
               <span>Start Free Trial</span>
-              <span class="btn-sub">No commitment, cancel anytime.</span>
+              <span class="ag-btn-sub">No commitment, cancel anytime.</span>
             </button>
 
-            <div class="sec-foot">
-              <div class="ln"></div>
+            <div class="ag-secure">
+              <div class="ag-secure-line"></div>
               <span>Encrypted • Secure • Private</span>
-              <div class="ln"></div>
+              <div class="ag-secure-line"></div>
             </div>
           </form>
         </div>
@@ -934,33 +917,34 @@
             "https://cdn.jsdelivr.net/npm/intl-tel-input@19.5.7/build/js/utils.js",
         });
 
-        /* Navigation */
+        /* Step navigation */
         function goStep(n) {
-          if (n === 1) {
-            $("#panel1").addClass("active");
-            $("#panel2").removeClass("active");
-            $("#tab1").removeClass("done idle").addClass("active");
-            $("#tab2").removeClass("active done").addClass("idle");
-            $("#arrow").removeClass("s2").addClass("s1");
-          } else {
-            $("#panel1").removeClass("active");
-            $("#panel2").addClass("active");
-            $("#tab1").removeClass("active idle").addClass("done");
-            $("#tab2").removeClass("idle done").addClass("active");
-            $("#arrow").removeClass("s1").addClass("s2");
-            $("#panel2").scrollTop(0);
-          }
+          const toStep2 = n === 2;
+          $("#panel1").toggleClass("is-active", !toStep2);
+          $("#panel2").toggleClass("is-active", toStep2);
+          $("#tab1")
+            .toggleClass("is-active", !toStep2)
+            .toggleClass("is-done", toStep2)
+            .toggleClass("is-idle", false);
+          $("#tab2")
+            .toggleClass("is-active", toStep2)
+            .toggleClass("is-idle", !toStep2)
+            .toggleClass("is-done", false);
+          $("#arrow")
+            .toggleClass("at-1", !toStep2)
+            .toggleClass("at-2", toStep2);
+          if (toStep2) $("#panel2").scrollTop(0);
         }
 
         /* Step 1 validation */
         function checkS1() {
-          const filled =
+          const valid =
             $("#cname").val().trim() &&
             $("#fname").val().trim() &&
             /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test($("#email").val()) &&
-            $(phoneEl).val().trim();
-          const ok = filled && iti.isValidNumber();
-          $("#s1Btn").prop("disabled", !ok).toggleClass("on", !!ok);
+            $(phoneEl).val().trim() &&
+            iti.isValidNumber();
+          $("#s1Btn").prop("disabled", !valid).toggleClass("is-ready", !!valid);
         }
         $("#cname, #fname, #email").on("input", checkS1);
         $(phoneEl).on("input keyup", checkS1);
@@ -979,15 +963,15 @@
         /* Back */
         $("#backBtn").on("click", () => goStep(1));
 
-        /* Plans */
+        /* Plan selection */
         const PLANS = {
           starter: { text: "$97 Starter Plan", due: "DUE TODAY: $97.00" },
           unlimited: { text: "$297 Unlimited Plan", due: "DUE TODAY: $297.00" },
           pro: { text: "$497 Pro Plan", due: "DUE TODAY: $497.00" },
         };
         $('input[name="plan"]').on("change", function () {
-          $(".plan-card").removeClass("sel");
-          $(this).closest(".plan-card").addClass("sel");
+          $(".ag-plan").removeClass("is-selected");
+          $(this).closest(".ag-plan").addClass("is-selected");
           const p = PLANS[$(this).val()];
           $("#sumPlan").text(p.text);
           $("#sumDue").text(p.due);
@@ -995,9 +979,9 @@
 
         /* Step 2 validation */
         function checkS2() {
-          const ok =
+          const valid =
             $("#terms").is(":checked") && $("#cardNum").val().length >= 12;
-          $("#s2Btn").prop("disabled", !ok).toggleClass("on", ok);
+          $("#s2Btn").prop("disabled", !valid).toggleClass("is-ready", valid);
         }
         $("#terms, #cardNum").on("change input", checkS2);
 
@@ -1007,9 +991,9 @@
         });
 
         /* Close */
-        $("#xBtn").on("click", () => $(".backdrop").fadeOut(300));
+        $("#xBtn").on("click", () => $(".ag-backdrop").fadeOut(300));
 
-        /* Auto-format */
+        /* Input formatters */
         $("#cardNum").on("input", function () {
           let v = $(this).val().replace(/\D/g, "").slice(0, 16);
           v = v.match(/.{1,4}/g)?.join(" ") || v;
