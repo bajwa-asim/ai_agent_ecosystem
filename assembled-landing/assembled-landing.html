@@ -1120,6 +1120,9 @@
         font-weight: 800;
         text-transform: uppercase;
       }
+      .cn-onb-autofill-wrap .cn-onb-input {
+        padding-right: 5rem;
+      }
       .cn-onb-summary {
         display: flex;
         justify-content: space-between;
@@ -1231,6 +1234,92 @@
       }
       .cn-onb-wrap .iti__country--highlight {
         background: rgba(242, 202, 80, 0.15) !important;
+      }
+      @media (max-width: 540px) {
+        .cn-modal-panel.cn-onb-wrap {
+          max-width: 100%;
+          max-height: 94vh;
+          padding: 1.5rem 1rem 1rem;
+        }
+        .cn-onb-head {
+          padding-right: 2.4rem;
+          padding-top: 1rem;
+        }
+        .cn-onb-title {
+          white-space: normal;
+          margin-top: 10px;
+        }
+        .cn-onb-step {
+          padding-bottom: 0.75rem;
+        }
+        .cn-onb-step-desc {
+          display: block;
+          white-space: nowrap;
+        }
+        .cn-onb-form-pad {
+          padding: 0 0.05rem 0.25rem;
+        }
+        .cn-onb-panel-scroll {
+          padding-right: 0;
+          margin-right: -0.25rem;
+        }
+      }
+      @media (max-width: 400px) {
+        .cn-modal-panel.cn-onb-wrap {
+          padding: 1.25rem 0.85rem 0.9rem;
+        }
+        .cn-onb-head {
+          padding-right: 0.1rem;
+        }
+        .cn-onb-step-label {
+          font-size: 0.64rem;
+        }
+        .cn-onb-step-desc {
+          font-size: 0.58rem;
+          white-space: nowrap;
+        }
+        .cn-onb-input {
+          font-size: 16px;
+          padding: 0.68rem 0.85rem;
+        }
+        .cn-onb-wrap .iti input#cn-onb-phone {
+          padding: 0.68rem 0.85rem 0.68rem 5.1rem !important;
+        }
+        .cn-onb-btn {
+          font-size: 0.82rem;
+          letter-spacing: 0.12em;
+        }
+        .cn-onb-autofill-wrap .cn-onb-input {
+          padding-right: 4.6rem;
+        }
+        #cn-onb-card::placeholder {
+          font-size: 0.9rem;
+        }
+      }
+      @media (max-width: 360px) {
+        .cn-onb-plan-grid {
+          gap: 0.4rem;
+        }
+        .cn-onb-plan {
+          padding: 0.62rem 0.42rem 1.65rem;
+          min-height: 126px;
+        }
+        .cn-onb-plan-name {
+          font-size: 0.54rem;
+        }
+        .cn-onb-plan-price {
+          font-size: 1rem;
+        }
+        .cn-onb-plan-info {
+          font-size: 0.5rem;
+          line-height: 1.25;
+        }
+        .cn-onb-input-row {
+          gap: 0.55rem;
+        }
+        .cn-onb-summary-total {
+          font-size: 1.65rem;
+        }
       }
       .cn-onb-btn {
         display: flex;
@@ -3159,7 +3248,9 @@
         <div id="cn-onb-panel1" class="cn-onb-panel active">
           <form id="cn-onb-form1" class="pt-2" novalidate>
             <div class="mb-3">
-              <label class="cn-onb-label" for="cn-onb-company">Company Name</label>
+              <label class="cn-onb-label" for="cn-onb-company"
+                >Company Name</label
+              >
               <input
                 class="cn-onb-input"
                 id="cn-onb-company"
@@ -3179,7 +3270,9 @@
               />
             </div>
             <div class="mb-3">
-              <label class="cn-onb-label" for="cn-onb-email">Email Address</label>
+              <label class="cn-onb-label" for="cn-onb-email"
+                >Email Address</label
+              >
               <input
                 class="cn-onb-input"
                 id="cn-onb-email"
@@ -3189,7 +3282,9 @@
               />
             </div>
             <div class="mb-3">
-              <label class="cn-onb-label" for="cn-onb-phone">Phone Number</label>
+              <label class="cn-onb-label" for="cn-onb-phone"
+                >Phone Number</label
+              >
               <input
                 class="cn-onb-input"
                 id="cn-onb-phone"
@@ -3198,7 +3293,12 @@
                 required
               />
             </div>
-            <button id="cn-onb-s1-btn" class="cn-onb-btn" type="submit" disabled>
+            <button
+              id="cn-onb-s1-btn"
+              class="cn-onb-btn"
+              type="submit"
+              disabled
+            >
               Go To Step #2
             </button>
             <p class="cn-onb-note">
@@ -3217,36 +3317,68 @@
           </div>
           <form id="cn-onb-form2" class="cn-onb-form-pad" novalidate>
             <div class="mb-3">
-              <label class="cn-onb-label d-flex justify-content-between align-items-center">
+              <label
+                class="cn-onb-label d-flex justify-content-between align-items-center"
+              >
                 <span>Select Your Plan</span>
                 <span class="cn-onb-step-desc">Price / Mo</span>
               </label>
               <div class="cn-onb-plan-grid">
                 <label class="cn-onb-plan is-selected">
-                  <input class="d-none" type="radio" name="cn-onb-plan" value="starter" checked />
+                  <input
+                    class="d-none"
+                    type="radio"
+                    name="cn-onb-plan"
+                    value="starter"
+                    checked
+                  />
                   <span class="cn-onb-plan-name">Starter</span>
                   <span class="cn-onb-plan-price">$97</span>
-                  <p class="cn-onb-plan-info">14 Day Trial then $97/mo. Perfect for individuals.</p>
-                  <div class="cn-onb-radio"><div class="cn-onb-radio-dot"></div></div>
+                  <p class="cn-onb-plan-info">
+                    14 Day Trial then $97/mo. Perfect for individuals.
+                  </p>
+                  <div class="cn-onb-radio">
+                    <div class="cn-onb-radio-dot"></div>
+                  </div>
                 </label>
                 <label class="cn-onb-plan">
-                  <input class="d-none" type="radio" name="cn-onb-plan" value="unlimited" />
+                  <input
+                    class="d-none"
+                    type="radio"
+                    name="cn-onb-plan"
+                    value="unlimited"
+                  />
                   <span class="cn-onb-plan-name">Unlimited</span>
                   <span class="cn-onb-plan-price">$297</span>
-                  <p class="cn-onb-plan-info">14 Day Trial then $297/mo. For growing teams.</p>
-                  <div class="cn-onb-radio"><div class="cn-onb-radio-dot"></div></div>
+                  <p class="cn-onb-plan-info">
+                    14 Day Trial then $297/mo. For growing teams.
+                  </p>
+                  <div class="cn-onb-radio">
+                    <div class="cn-onb-radio-dot"></div>
+                  </div>
                 </label>
                 <label class="cn-onb-plan">
-                  <input class="d-none" type="radio" name="cn-onb-plan" value="pro" />
+                  <input
+                    class="d-none"
+                    type="radio"
+                    name="cn-onb-plan"
+                    value="pro"
+                  />
                   <span class="cn-onb-plan-name">Pro</span>
                   <span class="cn-onb-plan-price">$497</span>
-                  <p class="cn-onb-plan-info">14 Day Trial then $497/mo. Enterprise scaling.</p>
-                  <div class="cn-onb-radio"><div class="cn-onb-radio-dot"></div></div>
+                  <p class="cn-onb-plan-info">
+                    14 Day Trial then $497/mo. Enterprise scaling.
+                  </p>
+                  <div class="cn-onb-radio">
+                    <div class="cn-onb-radio-dot"></div>
+                  </div>
                 </label>
               </div>
             </div>
             <div class="mb-3">
-              <label class="cn-onb-label" for="cn-onb-card">Payment Details</label>
+              <label class="cn-onb-label" for="cn-onb-card"
+                >Payment Details</label
+              >
               <div class="cn-onb-autofill-wrap">
                 <input
                   class="cn-onb-input"
@@ -3280,12 +3412,16 @@
             <div class="cn-onb-summary">
               <div>
                 <div class="cn-onb-summary-title">Active Subscription</div>
-                <div class="cn-onb-summary-value" id="cn-onb-summary-plan">$97 Starter Plan</div>
+                <div class="cn-onb-summary-value" id="cn-onb-summary-plan">
+                  $97 Starter Plan
+                </div>
                 <div class="cn-onb-step-desc">Your trial ends in 14 days</div>
               </div>
               <div class="cn-onb-summary-right">
                 <div class="cn-onb-summary-total">$0.00</div>
-                <div class="cn-onb-summary-due" id="cn-onb-summary-due">DUE TODAY: $97.00</div>
+                <div class="cn-onb-summary-due" id="cn-onb-summary-due">
+                  DUE TODAY: $97.00
+                </div>
               </div>
             </div>
             <div class="cn-onb-terms">
@@ -3295,7 +3431,12 @@
                 <a href="#">Privacy Policy</a> of 10 Ways.
               </label>
             </div>
-            <button id="cn-onb-s2-btn" class="cn-onb-btn" type="submit" disabled>
+            <button
+              id="cn-onb-s2-btn"
+              class="cn-onb-btn"
+              type="submit"
+              disabled
+            >
               <span>Start Free Trial</span>
               <span class="cn-onb-btn-sub">No Commitment. Cancel Anytime.</span>
             </button>
@@ -3493,7 +3634,9 @@
           }
         }
         function checkStep1() {
-          var validEmail = emailEl ? /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailEl.value.trim()) : false;
+          var validEmail = emailEl
+            ? /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailEl.value.trim())
+            : false;
           var phoneOk = false;
           if (phoneEl) {
             if (window.intlTelInput && phoneIti) {
@@ -3520,10 +3663,20 @@
           return !!ok;
         }
         function checkStep2() {
-          var hasCard = !!(cardEl && cardEl.value.replace(/\s/g, "").length >= 12);
-          var hasExpiry = !!(expiryEl && expiryEl.value.replace(/\s/g, "").length >= 4);
+          var hasCard = !!(
+            cardEl && cardEl.value.replace(/\s/g, "").length >= 12
+          );
+          var hasExpiry = !!(
+            expiryEl && expiryEl.value.replace(/\s/g, "").length >= 4
+          );
           var hasCvc = !!(cvcEl && cvcEl.value.replace(/\s/g, "").length >= 3);
-          var ok = !!(termsEl && termsEl.checked && hasCard && hasExpiry && hasCvc);
+          var ok = !!(
+            termsEl &&
+            termsEl.checked &&
+            hasCard &&
+            hasExpiry &&
+            hasCvc
+          );
           if (s2Btn) {
             s2Btn.disabled = !ok;
             s2Btn.classList.toggle("is-ready", ok);
