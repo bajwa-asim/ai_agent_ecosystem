@@ -1,5 +1,5 @@
 <!doctype html>
-<html class="cn-theme" lang="en">
+<html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -16,16 +16,16 @@
       href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
       rel="stylesheet"
     />
-    <style id="cn-embedded-theme">
+    <style>
       /* ── Base ── */
-      html.cn-theme {
+      html {
         scroll-behavior: smooth;
       }
-      html.cn-theme,
-      html.cn-theme body {
+      body,
+      .site-shell {
         background: #131313;
       }
-      html.cn-theme body {
+      .site-shell {
         font-family:
           "Hanken Grotesk",
           system-ui,
@@ -37,7 +37,8 @@
         color: #e5e2e1 !important;
         -webkit-font-smoothing: antialiased;
       }
-      html.cn-theme body::selection {
+      .site-shell::selection,
+      .site-shell *::selection {
         background: #f2ca50;
         color: #3c2f00;
       }
@@ -1386,8 +1387,8 @@
       }
 
       @media (max-width: 767.98px) {
-        html.cn-theme,
-        html.cn-theme body {
+        body,
+        .site-shell {
           overflow-x: hidden;
         }
 
@@ -1687,6 +1688,7 @@
     <title>10ways.ai</title>
   </head>
   <body>
+    <div class="site-shell">
     <header class="cn-site-header">
       <div class="cn-layout-max">
         <div
@@ -3919,5 +3921,6 @@
         });
       });
     </script>
+    </div>
   </body>
 </html>
